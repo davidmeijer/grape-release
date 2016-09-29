@@ -1,0 +1,1164 @@
+A42867	Asn	bOH-Cl-Tyr	NMe-Leu	Hpg	D-Glc	Rha	bOH-Tyr	Van	Dhpg	Hpg
+A51568	Asn	bOH-Cl-Tyr	Leu	Hpg	D-Glc	Van	bOH-Cl-Tyr	Dhpg	Hpg
+A54145 A	iC10:0	Trp	D-Glu	OH-Asn	Thr	NMe-Gly	Ala	Asp	D-Lys	OMe-Asp	Gly	D-Asn	Glu	Ile
+A54145 A1	C10:0	Trp	D-Glu	OH-Asn	Thr	NMe-Gly	Ala	Asp	D-Lys	OMe-Asp	Gly	D-Asn	Glu	Ile
+A54145 B	C10:0	Trp	D-Glu	OH-Asn	Thr	NMe-Gly	Ala	Asp	D-Lys	OMe-Asp	Gly	D-Asn	3Me-Glu	Ile
+A54145 B1	iC10:0	Trp	D-Glu	OH-Asn	Thr	NMe-Gly	Ala	Asp	D-Lys	OMe-Asp	Gly	D-Asn	3Me-Glu	Ile
+A54145 C	aC11:0	Trp	D-Glu	OH-Asn	Thr	NMe-Gly	Ala	Asp	D-Lys	OMe-Asp	Gly	D-Asn	3Me-Glu	Val
+A54145 D	aC11:0	Trp	D-Glu	OH-Asn	Thr	NMe-Gly	Ala	Asp	D-Lys	OMe-Asp	Gly	D-Asn	Glu	Ile
+A54145 E	aC11:0	Trp	D-Glu	OH-Asn	Thr	NMe-Gly	Ala	Asp	D-Lys	OMe-Asp	Gly	D-Asn	3Me-Glu	Ile
+A54145 F	iC10:0	Trp	D-Glu	OH-Asn	Thr	NMe-Gly	Ala	Asp	D-Lys	OMe-Asp	Gly	D-Asn	Glu	Val
+A83850	Asn	bOH-Cl-Tyr	NdMe-Leu	Hpg	D-Glc	Leu	bOH-Cl-Tyr	Dhpg	Hpg
+ACV	Aad	Cys	D-Val
+AM-toxin I	Amv	Hiv	Ala	dh-Ala
+AM-toxin II	Apv	Hiv	Ala	dh-Ala
+AM-toxin III	Ahv	Hiv	Ala	dh-Ala
+BT1583	Me2-Bmt	Leu	D-Orn	Ile	Val	Val	D-Lys	Val	D-Leu	Lys	D-Tyr	Leu	Valol
+CDA1b	C6:0-Ep(2)	Ser	Thr	D-Trp	Asp	Asp	D-Hpg	Asp	Gly	D-PO-Asn	Glu	Trp
+CDA2a	C6:0-Ep(2)	Ser	Thr	D-Trp	Asp	Asp	D-Hpg	Asp	Gly	D-PO-Asn	3Me-Glu	dh-Trp
+CDA2b	C6:0-Ep(2)	Ser	Thr	D-Trp	Asp	Asp	D-Hpg	Asp	Gly	D-PO-Asn	3Me-Glu	Trp
+CDA2d	C6:0-Ep(2)	Ser	Thr	D-Trp	Asp	Asp	D-ph-Gly	Asp	Gly	D-PO-Asn	3Me-Glu	Trp
+CDA2fa	C6:0-Ep(2)	Ser	Thr	D-Trp	Asp	Asp	D-F-ph-Gly	Asp	Gly	D-PO-Asn	3Me-Glu	dh-Trp
+CDA2fb	C6:0-Ep(2)	Ser	Thr	D-Trp	Asp	Asp	D-F-ph-Gly	Asp	Gly	D-PO-Asn	3Me-Glu	Trp
+CDA3a	C6:0-Ep(2)	Ser	Thr	D-Trp	Asp	Asp	D-Hpg	Asp	Gly	D-OH-Asn	Glu	dh-Trp
+CDA3b	C6:0-Ep(2)	Ser	Thr	D-Trp	Asp	Asp	D-Hpg	Asp	Gly	D-OH-Asn	Glu	Trp
+CDA4a	C6:0-Ep(2)	Ser	Thr	D-Trp	Asp	Asp	D-Hpg	Asp	Gly	D-OH-Asn	3Me-Glu	dh-Trp
+CDA4b	C6:0-Ep(2)	Ser	Thr	D-Trp	Asp	Asp	D-Hpg	Asp	Gly	D-OH-Asn	3Me-Glu	Trp
+HC-toxin	D-Pro	Ala	D-Ala	C10:0-NH2(2)-Ep(9)-oxo(8)
+LP237 F5	C8:0	Aib	Pro	Tyr	Aib	Gln	Gln	Aib	Et-Nva	Gln	Ala	Leuol
+LP237 F7	C10:0	Aib	Pro	Phe	Aib	Gln	Gln	Aib	Aib	Gln	Ala	Leuol
+LP237 F8	C8:0	Aib	Pro	Phe	Aib	Gln	Gln	Aib	Et-Nva	Gln	Ala	Leuol
+M43A	Asn	bOH-Cl-Tyr	NtMe-Leu	Hpg	D-Glc	Van	bOH-Cl-Tyr	Dhpg	Hpg
+M43B	Asp	bOH-Cl-Tyr	NtMe-Leu	Hpg	D-Glc	Van	bOH-Cl-Tyr	Dhpg	Hpg
+M43C	Asn	bOH-Cl-Tyr	NtMe-Leu	Hpg	D-Glc	bOH-Cl-Tyr	Dhpg	Hpg
+M43D	Asn	bOH-Cl-Tyr	NdMe-Leu	Hpg	D-Glc	Van	bOH-Cl-Tyr	Dhpg	Hpg
+M43F	Asp	bOH-Cl-Tyr	NMe-Leu	Hpg	D-Glc	Van	bOH-Cl-Tyr	Dhpg	Hpg
+MM47761	Asn	bOH-Cl-Tyr	NMe-Leu	Hpg	D-Glc	Rha	bOH-Tyr	Ere	Dhpg	Hpg
+MM49721	Asn	bOH-Tyr	NMe-Leu	Hpg	D-Glc	Rha	bOH-Tyr	Ere	Dhpg	Hpg
+OA7653	NdMe-Ala	Cl-Tyr	Gln	Hpg	bOH-Cl-Tyr	Glc	Dhpg	Hpg
+PF1022A	D-Ph-Lac	NMe-Leu	D-Lac	NMe-Leu	D-Ph-Lac	NMe-Leu	D-Lac	NMe-Leu
+PF1022B	D-Ph-Lac	NMe-Leu	D-Ph-Lac	NMe-Leu	D-Ph-Lac	NMe-Leu	D-Ph-Lac	NMe-Leu
+PF1022C	D-Ph-Lac	NMe-Leu	D-Ph-Lac	NMe-Leu	D-Lac	NMe-Leu	D-Ph-Lac	NMe-Leu
+PF1022D	D-Lac	NMe-Leu	D-Lac	NMe-Leu	D-Lac	NMe-Leu	D-Ph-Lac	NMe-Leu
+PF1022E	D-Lac	NMe-Leu	4OH-D-Ph-Lac	NMe-Leu	D-Lac	NMe-Leu	D-Ph-Lac	NMe-Leu
+aciculitin A	aThr	Tyr	dhAbu	bOH-Gln	Gly	Gln	His	Dab	C13:2(t4.t6)-OH(2.3)	Lyx	dhAbu
+aciculitin B	aThr	Tyr	dhAbu	bOH-Gln	Gly	Gln	His	Dab	C14:2(t4.t6)-OH(2.3)	Lyx	dhAbu
+aciculitin C	aThr	Tyr	dhAbu	bOH-Gln	Gly	Gln	His	Dab	C15:2(t4.t6)-OH(2.3)	Lyx	dhAbu
+actinoidin A	Phe	bOH-Tyr	Hpg	Hpg	Aco	bOH-Cl-Tyr	Act	Dhpg	Hpg	D-Glc	D-Man
+actinoidin A2	Phe	bOH-Tyr	Hpg	Hpg	Rha	bOH-Cl-Tyr	Act	Dhpg	Hpg	D-Glc	D-Man
+actinoidin B	Phe	bOH-Tyr	Hpg	Hpg	Aco	bOH-Cl-Tyr	Act	Dhpg	Hpg	D-Glc
+actinomycin D	Thr	D-Val	Pro	NMe-Gly	NMe-Val	ChrAct	Thr	D-Val	Pro	NMe-Gly	NMe-Val
+actinomycin I	D-Val	Pro	NMe-Gly	NMe-Val	Thr	ChrAct	Thr	D-Val	3OH-Pro	NMe-Gly	NMe-Val
+actinomycin II	D-Val	NMe-Gly	NMe-Gly	NMe-Val	Thr	ChrAct	Thr	D-Val	NMe-Gly	NMe-Gly	NMe-Val
+actinomycin III	D-Val	NMe-Gly	NMe-Gly	NMe-Val	Thr	ChrAct	Thr	D-Val	Pro	NMe-Gly	NMe-Val
+actinomycin pip1-alpha	D-Val	Hpr	NMe-Gly	NMe-Val	Thr	ChrAct	Thr	D-Val	4oxo-Hpr	NMe-Gly	NMe-Val
+actinomycin pip1-beta	D-Val	Hpr	NMe-Gly	NMe-Val	Thr	ChrAct	Thr	D-Val	Pro	NMe-Gly	NMe-Val
+actinomycin pip2	D-Val	Hpr	NMe-Gly	NMe-Val	Thr	ChrAct	Thr	D-Val	Hpr	NMe-Gly	NMe-Val
+actinomycin V	Thr	D-Val	4oxo-Pro	NMe-Gly	NMe-Val	ChrAct	Thr	D-Val	Pro	NMe-Gly	NMe-Val
+actinomycin VI	D-aIle	Pro	NMe-Gly	NMe-Val	Thr	ChrAct	Thr	D-Val	Pro	NMe-Gly	NMe-Val
+actinomycin VII	D-aIle	Pro	NMe-Gly	NMe-Val	Thr	ChrAct	Thr	D-aIle	Pro	NMe-Gly	NMe-Val
+actinomycin Z1	D-Val	3OH-5Me-Pro	NMe-Gly	NMe-Val	Thr	ChrAct	4OH-Thr	D-Val	4oxo-5Me-Pro	NMe-Gly	NMe-Ala
+actinomycin Z2	D-Val	3OH-5Me-Pro	NMe-Gly	NMe-Val	Thr	ChrAct	Thr	D-Val	4oxo-5Me-Pro	NMe-Gly	NMe-Ala
+actinomycin Z3	4Cl-Thr	D-Val	4oxo-5Me-Pro	NMe-Gly	NMe-Ala	ChrAct	Thr	D-Val	3OH-5Me-Pro	NMe-Gly	NMe-Val
+actinomycin Z4	D-Val	5Me-Pro	NMe-Gly	NMe-Val	Thr	ChrAct	Thr	D-Val	4oxo-5Me-Pro	NMe-Gly	NMe-Ala
+actinomycin Z5	D-Val	5Me-Pro	NMe-Gly	NMe-Val	Thr	ChrAct	4Cl-Thr	D-Val	4oxo-5Me-Pro	NMe-Gly	NMe-Ala
+oscillarin	D-Ph-Lac	D-Phe	Choi
+[Aib6] alamethicin F30	Ac-Aib	Pro	Aib	Ala	Aib	Aib	Gln	Aib	Val	Aib	Gly	Leu	Aib	Pro	Val	Aib	Aib	Glu	Gln	Pheol
+[Aib6.desPheol] alamethicin F30	Ac-Aib	Pro	Aib	Ala	Aib	Aib	Gln	Aib	Val	Aib	Gly	Leu	Aib	Pro	Val	Aib	Aib	Glu	Gln
+[Aib6.Glu19] alamethicin F30	Ac-Aib	Pro	Aib	Ala	Aib	Aib	Gln	Aib	Val	Aib	Gly	Leu	Aib	Pro	Val	Aib	Aib	Glu	Glu	Pheol
+[Aib6.Glu7] alamethicin F30	Ac-Aib	Pro	Aib	Ala	Aib	Aib	Glu	Aib	Val	Aib	Gly	Leu	Aib	Pro	Val	Aib	Aib	Glu	Glu	Pheol
+alamethicin F30	Ac-Aib	Pro	Aib	Ala	Aib	Ala	Gln	Aib	Val	Aib	Gly	Leu	Aib	Pro	Val	Aib	Aib	Glu	Gln	Pheol
+alamethicin F50	Ac-Aib	Pro	Aib	Ala	Aib	Ala	Gln	Aib	Val	Aib	Gly	Leu	Aib	Pro	Val	Aib	Aib	Gln	Gln	Pheol
+[des(1-6).Pyr7] alamethicin F30	pGlu	Aib	Val	Aib	Gly	Leu	Aib	Pro	Val	Aib	Aib	Glu	Gln	Pheol
+[des(1-6).Pyr7] alamethicin F50	pGlu	Aib	Val	Aib	Gly	Leu	Aib	Pro	Val	Aib	Aib	Gln	Gln	Pheol
+[desPheol] alamethicin F30	Ac-Aib	Pro	Aib	Ala	Aib	Ala	Gln	Aib	Val	Aib	Gly	Leu	Aib	Pro	Val	Aib	Aib	Glu	Gln
+[Glu19] alamethicin F30	Ac-Aib	Pro	Aib	Ala	Aib	Ala	Gln	Aib	Val	Aib	Gly	Leu	Aib	Pro	Val	Aib	Aib	Glu	Glu	Pheol
+[Glu7] alamethicin F30	Ac-Aib	Pro	Aib	Ala	Aib	Ala	Glu	Aib	Val	Aib	Gly	Leu	Aib	Pro	Val	Aib	Aib	Glu	Gln	Pheol
+amphibactin B	C14:0-OH(3)	Ac-OH-Orn	D-Ac-OH-Orn	Ser	D-Ac-OH-Orn
+amphibactin C	C16:1(9)-OH(3)	Ac-OH-Orn	D-Ac-OH-Orn	Ser	D-Ac-OH-Orn
+amphibactin D	C14:0	Ac-OH-Orn	D-Ac-OH-Orn	Ser	D-Ac-OH-Orn
+amphibactin E	C16:1(9)	Ac-OH-Orn	D-Ac-OH-Orn	Ser	D-Ac-OH-Orn
+amphibactin F	C16:0-OH(3)	Ac-OH-Orn	D-Ac-OH-Orn	Ser	D-Ac-OH-Orn
+amphibactin G	C18:1(9)-OH(3)	Ac-OH-Orn	D-Ac-OH-Orn	Ser	D-Ac-OH-Orn
+amphibactin H	C16:0	Ac-OH-Orn	D-Ac-OH-Orn	Ser	D-Ac-OH-Orn
+amphibactin I	C18:1(9)	Ac-OH-Orn	D-Ac-OH-Orn	Ser	D-Ac-OH-Orn
+amphisin	C10:0-OH(3)	D-Leu	D-Asp	D-aThr	D-Leu	D-Leu	D-Ser	Leu	D-Gln	Leu	Ile	Asp
+arthrofactin	C10:0-OH(3)	D-Leu	D-Asp	D-Thr	D-Leu	D-Leu	D-Ser	Leu	D-Ser	Ile	Ile	Asp
+lokisin	C10:0-OH(3)	D-Leu	D-Asp	D-aThr	D-Leu	D-Leu	D-Ser	Leu	D-Ser	Leu	Ile	Asp
+pholipeptin	C10:0-OH(3)	D-Leu	Asp	Thr	D-Leu	D-Leu	D-Ser	D-Leu	D-Ser	D-Leu	Ile	D-Asp
+tensin	C10:0-OH(3)	D-Leu	D-Asp	D-aThr	D-Leu	D-Leu	D-Ser	Leu	D-Gln	Leu	Ile	Glu
+ampullosporin A	Ac-Trp	Ala	Aib	Aib	Leu	Aib	Gln	Aib	Aib	Aib	Gln	Leu	Aib	Gln	Leuol
+ampullosporin B	Ac-Trp	Ala	Aib	Aib	Leu	Aib	Gln	Ala	Aib	Aib	Gln	Leu	Aib	Gln	Leuol
+ampullosporin C	Ac-Trp	Ala	Aib	Aib	Leu	Aib	Gln	Aib	Ala	Aib	Gln	Leu	Aib	Gln	Leuol
+ampullosporin D	Ac-Trp	Ala	Aib	Aib	Leu	Aib	Gln	Aib	Aib	Ala	Gln	Leu	Aib	Gln	Leuol
+ampullosporin E1	Ac-Trp	Ala	Aib	Aib	Leu	Aib	Gln	Ala	Aib	Aib	Gln	Leu	Ala	Gln	Leuol
+ampullosporin E2	Ac-Trp	Ala	Aib	Aib	Leu	Aib	Gln	Aib	Ala	Ala	Gln	Leu	Aib	Gln	Leuol
+ampullosporin E3	Ac-Trp	Ala	Aib	Aib	Leu	Aib	Gln	Aib	Aib	Ala	Gln	Leu	Ala	Gln	Leuol
+ampullosporin E4	Ac-Trp	Ala	Aib	Aib	Leu	Aib	Gln	Ala	Ala	Aib	Gln	Leu	Aib	Gln	Leuol
+anabaenopeptilide 202A	NFo-Pro	Gln	Thr	Hty	Ahp	Thr	NMe-OMe-Tyr	Ile
+anabaenopeptilide 202B	NFo-Pro	Gln	Thr	Hty	Ahp	Thr	Cl-NMe-Tyr	Ile
+anabaenopeptilide 90A	NFo-Gln	Thr	Hty	Ahp	Thr	NMe-OMe-Tyr	Ile
+anabaenopeptilide 90B	NFo-Gln	Thr	Hty	Ahp	Thr	Cl-NMe-Tyr	Ile
+anabaenopeptin A	Phe	NMe-Ala	Hty	Val	D-Lys	CO	Tyr
+anabaenopeptin B	Phe	NMe-Ala	Hty	Val	D-Lys	CO	Arg
+anabaenopeptin C	Phe	NMe-Ala	Hty	Val	D-Lys	CO	Lys
+anabaenopeptin D	Phe	NMe-Ala	Hty	Val	D-Lys	CO	Phe
+anabaenopeptin E	Phe	NMe-Ala	3Me-Hty	Val	D-Lys	CO	Arg
+anabaenopeptin F	Phe	NMe-Ala	Hty	Ile	D-Lys	CO	Arg
+anabaenopeptin G	Tyr	NMe-Leu	Hty	Ile	D-Lys	CO	Arg
+anabaenopeptin H	Ile	NMe-Hty	Hty	Ile	D-Lys	CO	Arg
+anabaenopeptin I	Leu	NMe-Ala	Hty	Val	D-Lys	CO	Ile
+anabaenopeptin J	Phe	NMe-Ala	Hty	Val	D-Lys	CO	Ile
+anabaenopeptin T	Ile	NMe-Hty	Hty	Val	D-Lys	CO	Ile
+andrimid	C8:3(t2.t4.t6)	D-bPhe	Val	Me-Suc
+moiramide B	C6:2(t2.t4)	D-bPhe	Val	Me-Suc
+anguibactin	DHPT	N-OH-Hta
+antiamoebin I	Ac-Phe	Aib	Aib	Aib	D-Ival	Gly	Leu	Aib	Aib	4OH-Pro	Gln	D-Ival	4OH-Pro	Aib	Pro	Pheol
+antiamoebin II	Ac-Phe	Aib	Aib	Aib	D-Ival	Gly	Leu	Aib	Aib	4OH-Pro	Gln	D-Ival	Pro	Aib	Pro	Pheol
+antiamoebin III	Ac-Phe	Aib	Aib	Aib	Aib	Gly	Leu	Aib	Aib	4OH-Pro	Gln	D-Ival	4OH-Pro	Aib	Pro	Pheol
+antiamoebin IV	Ac-Phe	Aib	Aib	Ala	D-Ival	Gly	Leu	Aib	Aib	4OH-Pro	Gln	D-Ival	4OH-Pro	Aib	Pro	Pheol
+antiamoebin IX	Ac-Phe	Aib	Ala	Aib	D-Ival	Gly	Leu	Aib	Aib	4OH-Pro	Gln	D-Ival	4OH-Pro	Aib	Pro	Pheol
+antiamoebin V	Ac-Phe	Aib	Aib	Aib	D-Ival	Ala	Leu	Aib	Aib	4OH-Pro	Gln	D-Ival	4OH-Pro	Aib	Pro	Pheol
+antiamoebin VI	Ac-Phe	Aib	Aib	Aib	Aib	Gly	Leu	Aib	Aib	4OH-Pro	Gln	Aib	4OH-Pro	Aib	Pro	Pheol
+antiamoebin VII	Ac-Phe	Ala	Aib	D-Ival	Aib	Gly	Leu	Aib	Aib	4OH-Pro	Gln	D-Ival	4OH-Pro	Aib	Pro	Pheol
+antiamoebin VIII	Ac-Phe	Aib	Aib	Aib	D-Ival	Gly	Leu	Aib	Aib	4OH-Pro	Gln	Aib	4OH-Pro	Aib	Pro	Pheol
+antiamoebin X	Ac-Phe	Aib	Aib	Aib	D-Ival	Gly	Leu	D-Ival	Aib	4OH-Pro	Gln	Aib	4OH-Pro	Aib	Pro	Pheol
+antiamoebin XI	Ac-Phe	Aib	Aib	Aib	Aib	Ala	Leu	Aib	Aib	4OH-Pro	Gln	D-Ival	4OH-Pro	Aib	Pro	Pheol
+antiamoebin XII	Ac-Phe	Aib	Aib	Aib	Aib	Gly	Leu	Ala	Aib	4OH-Pro	Gln	D-Ival	4OH-Pro	Aib	Pro	Pheol
+antiamoebin XIII	Ac-Val	Aib	Aib	Aib	Aib	Gly	Leu	Aib	Aib	4OH-Pro	Gln	D-Ival	4OH-Pro	Aib	Pro	Pheol
+antiamoebin XIV	Ac-Val	Aib	Aib	Aib	Val	Gly	Leu	Aib	Aib	4OH-Pro	Gln	D-Ival	4OH-Pro	Aib	Pro	Pheol
+antiamoebin XV	NAc-Leu	Aib	Aib	Aib	Aib	Gly	Leu	Aib	Aib	4OH-Pro	Gln	D-Ival	4OH-Pro	Aib	Pro	Pheol
+antiamoebin XVI	NAc-Leu	Aib	Aib	Aib	D-Ival	Gly	Leu	Aib	Aib	4OH-Pro	Gln	D-Ival	4OH-Pro	Aib	Pro	Pheol
+antipain	Phe	CO	Arg	Val	Argal
+apicidin	C10:0-NH2(2)-oxo(8)	D-Hpr	Ile	OMe-Trp
+apicidin A	C10:0-NH2(2)-oxo(8)	D-Hpr	Ile	Trp
+apicidin B	C10:0-NH2(2)-oxo(8)	D-Pro	Ile	OMe-Trp
+apicidin C	C10:0-NH2(2)-oxo(8)	D-Hpr	Val	OMe-Trp
+apicidin D1	C10:0-OH(9)-NH2(2)-oxo(8)	D-Hpr	Ile	OMe-Trp
+apicidin D2	C10:0-OH(8)-NH2(2)	D-Hpr	Ile	OMe-Trp
+apicidin D3	C10:0-OH(9)-NH2(2)	D-Hpr	Ile	OMe-Trp
+apramide A	C8:0:1(7)-Me(2)	NMe-Ala	NMe-Val	Pro	NMe-Val	NMe-Val	NMe-OMe-Tyr	NMe-Gly-Thz
+apramide B	C8:0:1(7)	NMe-Ala	NMe-Val	Pro	NMe-Val	NMe-Val	NMe-OMe-Tyr	NMe-Gly-Thz
+apramide C	C9:1(8)-Me(2)	NMe-Ala	NMe-Val	Pro	NMe-Val	NMe-Val	NMe-OMe-Tyr	NMe-Gly-Thz
+apramide D	C8:0:1(7)-Me(2)	NMe-Ala	NMe-Val	Pro	NMe-Val	NMe-Val	NMe-OMe-Tyr	Pro-Thz
+apramide E	C8:0:1(7)	NMe-Ala	NMe-Val	Pro	NMe-Val	NMe-Val	NMe-OMe-Tyr	Pro-Thz
+apramide F	C9:1(8)-Me(2)	NMe-Ala	NMe-Val	Pro	NMe-Val	NMe-Val	NMe-OMe-Tyr	Pro-Thz
+apramide G	C8:0:1(7)-Me(2)	NMe-Ala	NMe-Val	NMe-Val	NMe-Val	NMe-Val	NMe-Val	Pro-Thz
+aquachelin A	C12:1(5)	D-OH-Asp	D-Ser	Ser	D-Gln	D-Ac-OH-Orn	D-Ser	Ac-OH-Orn
+aquachelin B	C12:0	D-OH-Asp	D-Ser	Ser	D-Gln	D-Ac-OH-Orn	D-Ser	Ac-OH-Orn
+aquachelin C	C14:1(7)	D-OH-Asp	D-Ser	Ser	D-Gln	D-Ac-OH-Orn	D-Ser	Ac-OH-Orn
+aquachelin D	C14:0	D-OH-Asp	D-Ser	Ser	D-Gln	D-Ac-OH-Orn	D-Ser	Ac-OH-Orn
+arylomycin A1	iC11:0	D-NMe-Ser	D-Ala	Gly	NMe-Hpg	Ala	Tyr
+arylomycin A2	iC12:0	D-NMe-Ser	D-Ala	Gly	NMe-Hpg	Ala	Tyr
+arylomycin A3	C12:0	D-NMe-Ser	D-Ala	Gly	NMe-Hpg	Ala	Tyr
+arylomycin A4	aC13:0	D-NMe-Ser	D-Ala	Gly	NMe-Hpg	Ala	Tyr
+arylomycin A5	iC14:0	D-NMe-Ser	D-Ala	Gly	NMe-Hpg	Ala	Tyr
+arylomycin B1	iC11:0	D-NMe-Ser	D-Ala	Gly	NMe-Hpg	Ala	3NO2-Tyr
+arylomycin B2	iC12:0	D-NMe-Ser	D-Ala	Gly	NMe-Hpg	Ala	3NO2-Tyr
+arylomycin B3	C12:0	D-NMe-Ser	D-Ala	Gly	NMe-Hpg	Ala	3NO2-Tyr
+arylomycin B4	aC13:0	D-NMe-Ser	D-Ala	Gly	NMe-Hpg	Ala	3NO2-Tyr
+arylomycin B5	iC13:0	D-NMe-Ser	D-Ala	Gly	NMe-Hpg	Ala	3NO2-Tyr
+arylomycin B6	iC14:0	D-NMe-Ser	D-Ala	Gly	NMe-Hpg	Ala	3NO2-Tyr
+arylomycin B7	aC15:0	D-NMe-Ser	D-Ala	Gly	NMe-Hpg	Ala	3NO2-Tyr
+atroviridin A	Ac-Aib	Pro	Aib	Ala	Aib	Ala	Gln	Aib	Val	Aib	Gly	Leu	Aib	Pro	Val	Aib	Aib	Gln	Gln	Pheol
+atroviridin B	Ac-Aib	Pro	Aib	Ala	Aib	Ala	Gln	Aib	Val	Aib	Gly	Leu	Aib	Pro	Val	Aib	Ival	Gln	Gln	Pheol
+atroviridin C	Ac-Aib	Pro	Aib	Ala	Aib	Aib	Gln	Aib	Val	Aib	Gly	Leu	Aib	Pro	Val	Aib	Ival	Gln	Gln	Pheol
+aureobasidin A	D-Hmp	NMe-Val	Phe	NMe-Phe	Pro	aIle	NMe-Val	Leu	bOH-NMe-Val
+aureobasidin B	D-Hiv	NMe-Val	Phe	NMe-Phe	Pro	aIle	NMe-Val	Leu	bOH-NMe-Val
+aureobasidin C	D-Hmp	NMe-Val	Phe	NMe-Phe	Pro	Val	NMe-Val	Leu	bOH-NMe-Val
+aureobasidin D	D-Hmp	NMe-Val	Phe	NMe-Phe	Pro	aIle	NMe-Val	Leu	gOH-NMe-Val
+aureobasidin E	D-Hmp	NMe-Val	Phe	bOH-NMe-Phe	Pro	aIle	NMe-Val	Leu	bOH-NMe-Val
+aureobasidin F	D-Hmp	NMe-Val	Phe	NMe-Phe	Pro	aIle	Val	Leu	bOH-NMe-Val
+aureobasidin G	D-Hmp	NMe-Val	Phe	NMe-Phe	Pro	aIle	NMe-Val	Leu	NMe-Val
+aureobasidin R	D-Hmp	NMe-Val	Phe	bOH-NMe-Phe	Pro	aIle	NMe-Val	Leu	NMe-Val
+aurilide	C11:2(t2.t8)-Me(2.6.8)-OH(5.7)	D-Hmp	Val	D-NMe-Leu	NMe-Gly	Val	NMe-Ala
+aurilide B	C11:2(t2.t8)-Me(2.6.8)-OH(5.7)	D-Hmp	Val	NMe-aIle	NMe-Gly	Val	NMe-Ala
+aurilide C	C11:2(t2.t8)-Me(2.6.8)-OH(5.7)	D-Hiv	Val	NMe-aIle	NMe-Gly	Val	NMe-Ala
+avoparcin-alpha	Rha	NMe-Hpg	Tyr	D-Man	Hpg	Hpg	Ria	D-Glc	bOH-Cl-Tyr	Ria	Hpg	Dhpg
+avoparcin-beta	Rha	NMe-Hpg	Tyr	D-Man	Cl-Hpg	Hpg	Ria	D-Glc	bOH-Cl-Tyr	Ria	Hpg	Dhpg
+avoparcin-epsilon	Rha	NMe-Hpg	Tyr	D-Man	Cl-Hpg	Hpg	Ria	D-Glc	bOH-Cl-Tyr	Hpg	Dhpg
+axinastatin 1	Pro	Phe	Val	Val	Pro	Val	Asn
+axinastatin 2	Pro	Phe	Val	Leu	Pro	Val	Asn
+axinastatin 3	Pro	Phe	Ile	Leu	Pro	Val	Asn
+axinastatin 4	Pro	Leu	Thr	Pro	Leu	Trp	Val
+axinastatin 5	Pro	Tyr	Val	Pro	Leu	Ile	Leu	Pro
+axinellin A	Pro	Phe	Thr	Ile	Phe	Pro	Asn
+axinellin B	Pro	Phe	Pro	Thr	Leu	Val	Pro	Trp
+axinellin C	Thr	Val	Pro	Trp	Pro	Phe	Pro	Leu
+azotobactin 87 -1	ChrA	Ser	D-Ser	Hse	Gly	D-OH-Asp	Hse	Hse	Hse	OH-Orn	C4:0-OH(3)	Hse
+azotobactin 87 -2	ChrA	Ser	D-Ser	Hse	Gly	D-OH-Asp	Hse	Hse	Hse	OH-Orn	C4:0-OH(3)	HseL
+azotobactin D	ChrA	Asp	D-Ser	Hse	Gly	D-OH-Asp	Ser	D-Cit	Hse	D-Ac-OH-Orn	Hse
+azotobactin delta	ChrA	Asp	D-Ser	Hse	Gly	D-OH-Asp	Ser	D-Cit	Hse	D-Ac-OH-Orn	HseL
+bacillibactin	diOH-Bz	Gly	Thr	Thr	Gly	diOH-Bz	Thr	Gly	diOH-Bz
+bacilysin	Ala	Aca
+bacitracin A1	Ile	Cys	Leu	D-Glu	Ile	Lys	D-Orn	Ile	D-Phe	His	D-Asp	Asn
+bacitracin A2	D-aIle	Cys	Leu	D-Glu	Ile	Lys	D-Orn	Ile	D-Phe	His	D-Asp	Asn
+bacitracin B1	Val	Cys	Leu	D-Glu	Ile	Lys	D-Orn	Ile	D-Phe	His	D-Asp	Asn
+bacitracin B2	Ile	Cys	Leu	D-Glu	Val	Lys	D-Orn	Ile	D-Phe	His	D-Asp	Asn
+bacitracin B3	Ile	Cys	Leu	D-Glu	Ile	Lys	D-Orn	Val	D-Phe	His	D-Asp	Asn
+bacitracin C	Ile	Cys	Leu	D-Glu	Val	Lys	D-Orn	Val	D-Phe	His	D-Asp	Asn
+bacitracin D1	Val	Cys	Leu	D-Glu	Ile	Lys	D-Orn	Val	D-Phe	His	D-Asp	Asn
+bacitracin D2	Val	Cys	Leu	D-Glu	Val	Lys	D-Orn	Ile	D-Phe	His	D-Asp	Asn
+bacitracin E	Val	Cys	Leu	D-Glu	Val	Lys	D-Orn	Val	D-Phe	His	D-Asp	Asn
+bacitracin F	Ile	dhCys	Leu	D-Glu	Ile	Lys	D-Orn	Ile	D-Phe	His	D-Asp	Asn
+bacitracin H1	Val	dhCys	Leu	D-Glu	Ile	Lys	D-Orn	Ile	D-Phe	His	D-Asp	Asn
+bacitracin H2	Ile	dhCys	Leu	D-Glu	Ile	Lys	D-Orn	Val	D-Phe	His	D-Asp	Asn
+bacitracin H3	Ile	dhCys	Leu	D-Glu	Val	Lys	D-Orn	Ile	D-Phe	His	D-Asp	Asn
+bacitracin I1	Val	dhCys	Leu	D-Glu	Ile	Lys	D-Orn	Val	D-Phe	His	D-Asp	Asn
+bacitracin I2	Val	dhCys	Leu	D-Glu	Val	Lys	D-Orn	Ile	D-Phe	His	D-Asp	Asn
+bacitracin I3	Ile	dhCys	Leu	D-Glu	Val	Lys	D-Orn	Val	D-Phe	His	D-Asp	Asn
+balhimycin	Asn	bOH-Cl-Tyr	NMe-Leu	Hpg	D-Glc	bOH-Cl-Tyr	4oxo-Van	Dhpg	Hpg
+balhimycin V	Asn	bOH-Cl-Tyr	NMe-Leu	Hpg	D-Glc	bOH-Cl-Tyr	4oxo-Van	Dhpg	Hpg	4oxo-Van
+dechloro-balhimycin V	Asn	bOH-Tyr	NMe-Leu	Hpg	D-Glc	bOH-Tyr	4oxo-Van	Dhpg	Hpg	4oxo-Van
+deglucobalhimycin	Asn	bOH-Cl-Tyr	NMe-Leu	Hpg	bOH-Cl-Tyr	4oxo-Van	Dhpg	Hpg
+demethylbalhimycin	Asn	bOH-Cl-Tyr	Leu	Hpg	D-Glc	bOH-Cl-Tyr	4oxo-Van	Dhpg	Hpg
+methylbalhimycin	Asn	bOH-Cl-Tyr	NdMe-Leu	Hpg	D-Glc	bOH-Cl-Tyr	4oxo-Van	Dhpg	Hpg
+rhamnosyl-balhimycin	Asn	bOH-Cl-Tyr	NMe-Leu	Hpg	bOH-Cl-Tyr	4oxo-Van	Dhpg	Hpg	Rha	Glc
+ureido-balhimycin	Asn	bOH-Cl-Tyr	NMe-Leu	Hpg	D-Glc	bOH-Cl-Tyr	U4oxo-Van	Dhpg	Hpg
+barangamide A	Thr	bAla	D-Leu	NMe-Ile	bAla	D-aIle	NMe-Val	Ala	bAla	D-Leu	D-NMe-aIle
+barangamide B	Thr	bAla	D-Leu	NMe-Val	bAla	D-aIle	NMe-Val	Ala	bAla	D-Leu	D-NMe-aIle
+barangamide C	Thr	bAla	D-Leu	NMe-Ile	bAla	D-Val	NMe-Val	Ala	bAla	D-Leu	D-NMe-aIle
+barangamide D	Thr	bAla	D-Leu	NMe-Ile	bAla	D-aIle	NMe-Val	Ala	bAla	D-Leu	D-NMe-Val
+beauvericin	NMe-Phe	D-Hiv	NMe-Phe	D-Hiv	NMe-Phe	D-Hiv
+beauvericin A	NMe-Phe	D-Hmp	NMe-Phe	D-Hiv	NMe-Phe	D-Hiv
+beauvericin B	NMe-Phe	D-Hmp	NMe-Phe	D-Hmp	NMe-Phe	D-Hiv
+beauvericin C	NMe-Phe	D-Hmp	NMe-Phe	D-Hmp	NMe-Phe	D-Hmp
+beauvericin D	Phe	D-Hiv	NMe-Phe	D-Hiv	NMe-Phe	D-Hiv
+beauvericin E	Ile	D-Hiv	NMe-Phe	D-Hiv	NMe-Phe	D-Hiv
+beauvericin F	NMe-Phe	4Me-D-Hva	NMe-Phe	D-Hiv	NMe-Phe	D-Hiv
+beauverolide A	C10:0-Me(4)-OH(3)	Phe	Val	D-Val
+beauverolide B	C10:0-Me(4)-OH(3)	Val	Phe	D-Ile
+beauverolide Ba	C10:0-Me(4)-OH(3)	Val	Phe	D-aIle
+beauverolide C	C10:0-Me(4)-OH(3)	Phe	Phe	D-Ile
+beauverolide Ca	C10:0-Me(4)-OH(3)	Phe	Phe	D-aIle
+beauverolide D	C8:0-Me(4)-OH(3)	Phe	Val	D-Val
+beauverolide E	C8:0-Me(4)-OH(3)	Val	Phe	D-Ile
+beauverolide Ea	C8:0-Me(4)-OH(3)	Val	Phe	D-aIle
+beauverolide F	C8:0-Me(4)-OH(3)	Phe	Phe	D-Ile
+beauverolide Fa	C8:0-Me(4)-OH(3)	Phe	Phe	D-aIle
+beauverolide H	C9:0-OH(3)	Phe	Ala	D-Leu
+beauverolide i	C11:0-OH(3)	Phe	Ala	D-Leu
+beauverolide I	C8:0-Me(4)-OH(3)	Phe	Ala	D-Leu
+beauverolide II	C10:0-Me(4)-OH(3)	Phe	Ala	D-Leu
+beauverolide III	C8:0-Me(4)-OH(3)	Phe	Ala	D-aIle
+beauverolide IV	C8:0-Me(4)-OH(3)	Ala	Val	D-Val
+beauverolide Ja	C8:0-Me(4)-OH(3)	Trp	Phe	D-aIle
+beauverolide Ka	C10:0-Me(4)-OH(3)	Trp	Phe	D-aIle
+beauverolide L	C10:0-Me(4)-OH(3)	Phe	Ala	D-Ile
+beauverolide La	C10:0-Me(4)-OH(3)	Phe	Ala	D-aIle
+beauverolide M	C8:0-Me(4)-OH(3)	Val	Ala	D-Leu
+beauverolide N	C8:0-Me(4)-OH(3)	Tyr	Ala	D-Leu
+beauverolide V	C8:0-Me(4)-OH(3)	Ala	Val	D-aIle
+beauverolide VI	C8:0-Me(4)-OH(3)	Ala	Val	D-Leu
+beauverolide VII	C8:0-Me(4)-OH(3)	Ala	Phe	D-Val
+beauverolide VIII	C10:0-Me(4)-OH(3)	Ala	Val	D-aIle
+bergofungin A	Ac-Val	Aib	Aib	Aib	Val	Gly	Leu	Aib	Aib	4OH-Pro	Gln	Ival	4OH-Pro	Aib	Pheol
+bergofungin B	Ac-Val	Aib	Aib	Aib	Val	Gly	Leu	Val	Aib	4OH-Pro	Gln	Aib	4OH-Pro	Aib	Pheol
+bergofungin C	Ac-Val	Aib	Aib	Aib	Val	Gly	Leu	Aib	Aib	4OH-Pro	Gln	Aib	4OH-Pro	Aib	Pheol
+bergofungin D	Ac-Val	Aib	Aib	Val	Gly	Leu	Aib	Aib	4OH-Pro	Gln	Aib	4OH-Pro	Aib	Pheol
+boletusin	Ac-Phe	Aib	Ala	Aib	Ival	Leu	Gln	Gly	Aib	Aib	Ala	Ala	Aib	Pro	Aib	Aib	Aib	Gln	Trpol
+bottromycin A2	Gly	3Me-Pro	Val	t-Leu	t-Leu	3Me-Phe	OMe-bAla-Thz
+brevianamide F	Trp	Pro
+callipeltin A	iC8:0-Me(2.4)-OH(3)	D-Ala	Agdha	3Me-4Me-Gln	D-aThr	D-aThr	D-Arg	Leu	NMe-Gln	bOMe-Tyr	NMe-Ala
+callipeltin B	2Me-3Me-pGlu	D-aThr	D-aThr	D-Arg	Leu	NMe-Gln	bOMe-Tyr	NMe-Ala
+callipeltin C	iC8:0-Me(2.4)-OH(3)	D-Ala	Agdha	3Me-4Me-Gln	D-aThr	D-aThr	D-Arg	Leu	NMe-Gln	bOMe-Tyr	NMe-Ala
+callipeltin D	iC8:0-Me(2.4)-OH(3)	D-Ala	Agdha	3Me-4Me-Gln	D-aThr
+callipeltin E	D-aThr	D-Arg	Leu	NMe-Gln	bOMe-Tyr	NMe-Ala
+callipeltin F	iC8:0-Me(2.4)-OH(3)	D-Ala	Agdha	3Me-4Me-Gln	D-aThr	D-aThr	D-Arg
+callipeltin G	iC8:0-Me(2.4)-OH(3)	D-Ala	Agdha	3Me-4Me-Gln	D-aThr	D-aThr	D-Arg	Leu	NMe-Gln
+callipeltin H	iC8:0-Me(2.4)-OH(3)	D-Ala	Agdha	3Me-4Me-Gln	dhAbu	D-aThr	D-Arg	Leu	NMe-Gln	bOMe-Tyr	NMe-Ala
+callipeltin I	iC8:0-Me(2.4)-OH(3)	D-Ala	Agdha	3Me-4Me-Gln	dhAbu	D-aThr	D-Arg
+callipeltin J	iC8:0-Me(2.4)-OH(3)	D-Ala	Agdha	D-bMe-Gln	D-aThr
+callipeltin K	iC8:0-Me(2.4)-OH(3)	D-Ala	Agdha	D-bMe-Gln	D-aThr	D-aThr	D-Arg	Leu	NMe-Gln	bOMe-Tyr	NMe-Ala
+callipeltin L	iC8:0-Me(2.4)-OH(3)	D-Ala	Agdha	3Me-4Me-Gln	D-aThr	D-aThr	D-Arg	Leu	NMe-Gln	bOH-Tyr	NMe-Ala
+callipeltin M	2Me-3Me-pGlu	D-aThr	D-aThr	D-Arg	Leu	NMe-Gln	bOMe-Tyr	NMe-Ala
+neamphamide A	iC8:0-Me(2.4)-OH(3)	Asn	Agdha	3Me-4Me-Gln	D-aThr	D-aThr	D-Arg	Leu	NMe-Gln	bOMe-Tyr	D-Asn	Hpr
+callynormine A	Ile	4OH-Pro	Val	Leu	Pro	Pro	Leu	aFo-Gly	Pro	Phe	Leu
+capreomycin IA	bLys	Dpr	bU-dAla	Cap	Dpr	Ser
+capreomycin IB	bLys	Dpr	bU-dAla	Cap	Dpr	Ala
+capreomycin IIA	Dpr	bU-dAla	Cap	Dpr	Ser
+capreomycin IIB	Dpr	bU-dAla	Cap	Dpr	Ala
+carmabin A	C10:0:1(9)-Me(2.4)	NMe-Phe	Ala	NMe-Ala	NMe-OMe-TyrC
+carmabin B	C10:0-Me(2.4)-oxo(9)	NMe-Phe	Ala	NMe-Ala	NMe-OMe-TyrC
+cephaibol A	Ac-Phe	Aib	Aib	Aib	Aib	Gly	Leu	D-Ival	Aib	4OH-Pro	Gln	D-Ival	4OH-Pro	Aib	Pro	Pheol
+cephaibol A2	Ac-Phe	Aib	Aib	Aib	Aib	Ala	Leu	D-Ival	Aib	4OH-Pro	Gln	D-Ival	4OH-Pro	Aib	Pro	Pheol
+cephaibol B	Ac-Phe	Aib	Aib	Aib	D-Ival	Gly	Leu	D-Ival	Aib	4OH-Pro	Gln	D-Ival	4OH-Pro	Aib	Pro	Pheol
+cephaibol C	Ac-Phe	Aib	Aib	Aib	Aib	Gly	Leu	D-Ival	Aib	4OH-Pro	Gln	Aib	4OH-Pro	Aib	Pro	Pheol
+cephaibol D	Ac-Phe	Aib	Aib	Aib	Aib	Gly	Leu	Aib	Aib	4OH-Pro	Gln	Aib	4OH-Pro	Aib	Pro	Pheol
+cephaibol E	Ac-Phe	Aib	Aib	Aib	Aib	Gly	Leu	Aib	Aib	4OH-Pro	Gln	D-Ival	4OH-Pro	Aib	Pro	Pheol
+cephaibol P	Ac-Phe	D-Ival	Gln	Aib	Ile	Thr	Aib	Leu	Aib	4OH-Pro	Gln	Aib	4OH-Pro	Aib	Pro	Phe	Serol
+cephaibol Q	Ac-Phe	D-Ival	Gln	Aib	Ile	Thr	Aib	Leu	Aib	Pro	Gln	Aib	4OH-Pro	Aib	Pro	Phe	Serol
+ceratospongamide	Pro-Thz	Phe	Pro	MeOx-Ile	Phe
+cereulide	D-Hmp	D-Ala	Hiv	Val	D-Hmp	D-Ala	Hiv	Val	D-Hmp	D-Ala	Hiv	Val
+cervinin 1	NAc-Leu	Aib	Pro	Aib	Leu	Aib	Pro	Ala	Aib	Pro	Val	Leuol
+cervinin 2	NAc-Leu	Aib	Pro	Aib	Leu	Aib	Pro	Ala	Aib	Pro	Val	OAc-Leuol
+chlamydocin	Aib	Phe	D-Pro	C10:0-NH2(2)-Ep(9)-oxo(8)
+chloropolysporin B	NMe-Hpg	Cl-Tyr	D-Man	Cl-Hpg	Hpg	D-Glc	bOH-Cl-Tyr	Ria	Dhpg	Hpg	Rha
+chloropolysporin C	NMe-Hpg	Cl-Tyr	D-Man	Cl-Hpg	Hpg	D-Glc	bOH-Cl-Tyr	Ria	Dhpg	Hpg
+chrysobactin	diOH-Bz	D-Lys	Ser
+chrysospermin A	Ac-Phe	Aib	Ser	Aib	Aib	Leu	Gln	Gly	Aib	Aib	Ala	Ala	Aib	Pro	Aib	Aib	Aib	Gln	Trpol
+chrysospermin B	Ac-Phe	Aib	Ser	Aib	Aib	Leu	Gln	Gly	Aib	Aib	Ala	Ala	Aib	Pro	D-Ival	Aib	Aib	Gln	Trpol
+chrysospermin C	Ac-Phe	Aib	Ser	Aib	D-Ival	Leu	Gln	Gly	Aib	Aib	Ala	Ala	Aib	Pro	Aib	Aib	Aib	Gln	Trpol
+chrysospermin D	Ac-Phe	Aib	Ser	Aib	D-Ival	Leu	Gln	Gly	Aib	Aib	Ala	Ala	Aib	Pro	D-Ival	Aib	Aib	Gln	Trpol
+coelichelin	D-Fo-OH-Orn	D-aThr	OH-Orn	D-Fo-OH-Orn
+coronatine	CMA	CFA
+N-coronafacoyl-L-alloisoleucine	aIle	CFA
+N-coronafacoyl-L-isoleucine	Ile	CFA
+N-coronafacoyl-L-serine	Ser	CFA
+N-coronafacoyl-L-threonine	Thr	CFA
+N-coronafacoyl-L-valine	Val	CFA
+norcoronatine	norCMA	CFA
+corpeptin A	C10:0-OH(3)	dhAbu	Pro	Ala	Ala	Ala	Val	Val	dhAbu	Hse	Val	aIle	dh-Ala	Ala	Ala	Ala	Val	dhAbu	aThr	Ala	Dab	Ser	Ile
+corpeptin B	C12:1(5)-OH(3)	dhAbu	Pro	Ala	Ala	Ala	Val	Val	dhAbu	Hse	Val	aIle	dh-Ala	Ala	Ala	Ala	Val	dhAbu	aThr	Ala	Dab	Ser	Ile
+corrugatin	C8:0	OH-His	Dab	Dab	Ser	D-Ser	OH-Asp	Dab	OH-Asp
+corticiamide A	NFo-Ala	Br-Phe	Pro	bMe-Ile	Val	Trp	Arg	CysA	Thr	NMe-Gln	Br-Phe	Thr	NMe-Asn	Gly
+cupolamide A	Val	D-Ser	D-Leu	D-Har	Val	4OH-Pro	Dab	pOH-Bz
+micropeptin A	Lys	Ahp	Leu	NMe-Tyr	Val	Tyr	Glu	C8:0
+micropeptin B	Lys	Ahp	Leu	NMe-Tyr	Val	Thr	Glu	C6:0
+astin B	bPhe	Abu	Cl2-Pro	aThr	Ser
+cyclochlorotine	bPhe	Ser	Cl2-Pro	Abu	Ser
+hydroxycyclochlorotine	bPhe	Ser	Cl2-Pro	aThr	Ser
+cyclocinamide A	MCP	Gly	Dpr	Asn	Iser	Br-Trp
+cyclocinamide B	MdCP	Gly	Dpr	Asn	Iser	Br-Trp
+cyclolinopeptide A	Pro	Pro	Phe	Phe	Leu	Ile	Ile	Leu	Val
+cyclolithistide A	Nva	Gly	Phe	aThr	Gln	Cl-Ile	NMe-Leu	Ala	C6:0-OH(3.5)-NH2(4)	NFo-Leu
+cyclonellin	Asn	Ala	Thr	Tyr	Pro	Tyr	Arg	Pro
+cyclosporin 26	D-Ala	NMe-Leu	NMe-Leu	NMe-Val	NMe-Bmt	Nva	NMe-Gly	NMe-Leu	Leu	NMe-Leu	Ala
+cyclosporin 27	D-Ala	NMe-Leu	NMe-Leu	NMe-Val	Bmt	Val	NMe-Gly	NMe-Leu	Val	NMe-Leu	Ala
+cyclosporin 28	D-Ala	NMe-Leu	NMe-Leu	NMe-Val	NMe-Leu	Abu	NMe-Gly	NMe-Leu	Val	NMe-Leu	Ala
+cyclosporin 29	D-Ala	NMe-Leu	NMe-Leu	NMe-Val	NMe-Bmt	Abu	NMe-Gly	NMe-Ile	Val	NMe-Leu	Ala
+cyclosporin 30	D-Ala	NMe-Leu	NMe-Leu	NMe-Val	NMe-Leu	Val	NMe-Gly	NMe-Leu	Val	NMe-Leu	Ala
+cyclosporin 31	D-Ala	NMe-Leu	NMe-Leu	NMe-Val	NMe-Bmt	Abu	NMe-Gly	Ile	Val	NMe-Leu	Ala
+cyclosporin 32	D-Ala	NMe-Leu	NMe-Leu	NMe-Val	NMe-Bmt	Abu	Gly	NMe-Leu	Val	NMe-Leu	Ala
+cyclosporin A	D-Ala	NMe-Leu	NMe-Leu	NMe-Val	NMe-Bmt	Abu	NMe-Gly	NMe-Leu	Val	NMe-Leu	Ala
+cyclosporin B	D-Ala	NMe-Leu	NMe-Leu	NMe-Val	NMe-Bmt	Ala	NMe-Gly	NMe-Leu	Val	NMe-Leu	Ala
+cyclosporin C	D-Ala	NMe-Leu	NMe-Leu	NMe-Val	NMe-Bmt	Thr	NMe-Gly	NMe-Leu	Val	NMe-Leu	Ala
+cyclosporin D	D-Ala	NMe-Leu	NMe-Leu	NMe-Val	NMe-Bmt	Val	NMe-Gly	NMe-Leu	Val	NMe-Leu	Ala
+cyclosporin E	D-Ala	NMe-Leu	NMe-Leu	Val	NMe-Bmt	Abu	NMe-Gly	NMe-Leu	Val	NMe-Leu	Ala
+cyclosporin F	D-Ala	NMe-Leu	NMe-Leu	NMe-Val	3d-NMe-Bmt	Nva	NMe-Gly	NMe-Leu	Val	NMe-Leu	Ala
+cyclosporin G	D-Ala	NMe-Leu	NMe-Leu	NMe-Val	NMe-Bmt	Nva	NMe-Gly	NMe-Leu	Val	NMe-Leu	Ala
+cyclosporin H	D-Ala	NMe-Leu	NMe-Leu	D-NMe-Val	NMe-Bmt	Abu	NMe-Gly	NMe-Leu	Val	NMe-Leu	Ala
+cyclosporin I	D-Ala	Leu	NMe-Leu	NMe-Val	NMe-Bmt	Val	NMe-Gly	NMe-Leu	Val	NMe-Leu	Ala
+cyclosporin K	D-Ala	NMe-Leu	NMe-Leu	NMe-Val	3d-NMe-Bmt	Val	NMe-Gly	NMe-Leu	Val	NMe-Leu	Ala
+cyclosporin L	D-Ala	NMe-Leu	NMe-Leu	NMe-Val	Bmt	Abu	NMe-Gly	NMe-Leu	Val	NMe-Leu	Ala
+cyclosporin M	D-Ala	NMe-Leu	NMe-Leu	NMe-Val	NMe-Bmt	Nva	NMe-Gly	NMe-Leu	Nva	NMe-Leu	Ala
+cyclosporin N	D-Ala	Leu	NMe-Leu	NMe-Val	NMe-Bmt	Nva	NMe-Gly	NMe-Leu	Val	NMe-Leu	Ala
+cyclosporin O	D-Ala	NMe-Leu	NMe-Leu	NMe-Val	NMe-Leu	Nva	NMe-Gly	NMe-Leu	Val	NMe-Leu	Ala
+cyclosporin P	D-Ala	NMe-Leu	NMe-Leu	NMe-Val	Bmt	Thr	NMe-Gly	NMe-Leu	Val	NMe-Leu	Ala
+cyclosporin Q	D-Ala	NMe-Leu	NMe-Leu	NMe-Val	NMe-Bmt	Abu	NMe-Gly	Val	Val	NMe-Leu	Ala
+cyclosporin R	D-Ala	Leu	NMe-Leu	NMe-Val	NMe-Bmt	Abu	NMe-Gly	NMe-Leu	Val	NMe-Leu	Ala
+cyclosporin S	D-Ala	NMe-Leu	NMe-Leu	NMe-Val	NMe-Bmt	Thr	NMe-Gly	Val	Val	NMe-Leu	Ala
+cyclosporin U	D-Ala	Leu	NMe-Leu	NMe-Val	NMe-Bmt	Abu	NMe-Gly	NMe-Leu	Val	Leu	Ala
+cyclosporin V	D-Ala	NMe-Leu	NMe-Leu	NMe-Val	NMe-Bmt	Abu	NMe-Gly	NMe-Leu	Val	NMe-Leu	Abu
+cyclosporin W	D-Ala	NMe-Leu	NMe-Leu	Val	NMe-Bmt	Thr	NMe-Gly	NMe-Leu	Val	NMe-Leu	Ala
+cyclosporin X	D-Ala	Leu	NMe-Leu	NMe-Val	NMe-Bmt	Nva	NMe-Gly	NMe-Leu	Val	NMe-Leu	Ala
+cyclosporin Y	D-Ala	NMe-Leu	NMe-Leu	NMe-Val	NMe-Bmt	Nva	NMe-Gly	NMe-Leu	Val	Leu	Ala
+cyclosporin Z	D-Ala	NMe-Leu	NMe-Leu	NMe-Val	Me-AOA	Abu	NMe-Gly	NMe-Leu	Val	NMe-Leu	Ala
+cyclotheonamide A	k-Arg	D-Phe	v-Tyr	NFo-Dpr	Pro
+cyclotheonamide B	k-Arg	D-Phe	v-Tyr	NAc-Dpr	Pro
+cyclotheonamide C	k-Arg	D-Phe	dv-Tyr	NFo-Dpr	Pro
+cyclotheonamide D	k-Arg	D-Leu	v-Tyr	NFo-Dpr	Pro
+cyclotheonamide E	Pro	k-Arg	D-aIle	v-Tyr	Dpr	Ala	Pha
+cyclotheonamide E2	Pro	k-Arg	D-aIle	v-Tyr	Dpr	Ala	Bz
+cyclotheonamide E3	Pro	k-Arg	D-aIle	v-Tyr	Dpr	Ala	Hiv
+cyclotheonamide E4	Pro	k-Arg	D-aIle	v-Tyr	Dpr	Ala	Me-Vaa
+cyclotheonamide E5	Pro	k-Arg	D-aIle	v-OH-Tyr	Dpr	Ala	Me-Vaa
+dihydrocyclotheonamide A	hk-Arg	D-Phe	v-Tyr	NFo-Dpr	Pro
+A21978C1	aC11:0	Trp	D-Asn	Asp	Thr	Gly	Orn	Asp	D-Ala	Asp	Gly	D-Ser	3Me-Glu	Kyn
+A21978C2	iC12:0	Trp	D-Asn	Asp	Thr	Gly	Orn	Asp	D-Ala	Asp	Gly	D-Ser	3Me-Glu	Kyn
+A21978C3	aC13:0	Trp	D-Asn	Asp	Thr	Gly	Orn	Asp	D-Ala	Asp	Gly	D-Ser	3Me-Glu	Kyn
+daptomycin	C10:0	Trp	D-Asn	Asp	Thr	Gly	Orn	Asp	D-Ala	Asp	Gly	D-Ser	3Me-Glu	Kyn
+decaplanin	Asn	bOH-Cl-Tyr	NMe-Leu	Hpg	D-Glc	Rha	bOH-Tyr	Ere	Dhpg	Hpg
+beta-D-Glucopyranosyl-hydroxyDestruxin B	Pro	Ile	NMe-Val	NMe-Ala	bAla	Hiv	D-Glc
+desmethylDestruxin A	Pro	Ile	Val	NMe-Ala	bAla	C4:1(3)-OH(2)
+desmethylDestruxin B	Pro	Ile	Val	NMe-Ala	bAla	Hiv
+desmethylDestruxin B2	Pro	Val	Val	NMe-Ala	bAla	Hiv
+desmethylDestruxin C	Pro	Ile	Val	NMe-Ala	bAla	iC5:0-OH(2.4)
+destruxin A	Pro	Ile	NMe-Val	NMe-Ala	bAla	C4:1(3)-OH(2)
+destruxin A1	Hpr	Ile	NMe-Val	NMe-Ala	bAla	C4:1(3)-OH(2)
+destruxin A2	Pro	Val	NMe-Val	NMe-Ala	bAla	C4:1(3)-OH(2)
+destruxin A3	Ala	Ile	NMe-Val	NMe-Ala	bAla	C4:1(3)-OH(2)
+destruxin A4	Pro	Ile	NMe-Ile	NMe-Ala	bAla	C4:1(3)-OH(2)
+destruxin A4 chlorohydrin	Pro	Ile	NMe-Ile	NMe-Ala	bAla	C4:0-OH(2.3)-Cl(4)
+destruxin B	Pro	Ile	NMe-Val	NMe-Ala	bAla	Hiv
+destruxin B1	Hpr	Ile	NMe-Val	NMe-Ala	bAla	Hiv
+destruxin B2	Pro	Val	NMe-Val	NMe-Ala	bAla	Hiv
+destruxin C	Pro	Ile	NMe-Val	NMe-Ala	bAla	iC5:0-OH(2.4)
+destruxin C2	Pro	Val	NMe-Val	NMe-Ala	bAla	iC5:0-OH(2.4)
+destruxin D	Pro	Ile	NMe-Val	NMe-Ala	bAla	iC5:0-OH(2)-CA(4)
+destruxin D1	Hpr	Ile	NMe-Val	NMe-Ala	bAla	iC5:0-OH(2)-CA(4)
+destruxin D2	Pro	Val	NMe-Val	NMe-Ala	bAla	iC5:0-OH(2)-CA(4)
+destruxin E	Pro	Ile	NMe-Val	NMe-Ala	bAla	C4:0-OH(2)-Ep(3)
+destruxin E1	Hpr	Ile	NMe-Val	NMe-Ala	bAla	C4:0-OH(2)-Ep(3)
+destruxin E2	Pro	Val	NMe-Val	NMe-Ala	bAla	C4:0-OH(2)-Ep(3)
+destruxin E2 chlorohydrin	Pro	Val	NMe-Val	NMe-Ala	bAla	C4:0-OH(2.3)-Cl(4)
+destruxin E chlorohydrin	Pro	Ile	NMe-Val	NMe-Ala	bAla	C4:0-OH(2.3)-Cl(4)
+destruxin E diol	Pro	Ile	NMe-Val	NMe-Ala	bAla	C4:0-OH(2.3.4)
+destruxin F	Pro	Ile	NMe-Val	NMe-Ala	bAla	C4:0-OH(2.3)
+homoDestruxin B	Pro	Ile	NMe-Ile	NMe-Ala	bAla	Hiv
+hydroxyDestruxin B	Pro	Ile	NMe-Val	NMe-Ala	bAla	iC5:0-OH(2.3)
+hydroxyhomoDestruxin B	Pro	Ile	NMe-Ile	NMe-Ala	bAla	iC5:0-OH(2.3)
+protoDestruxin	Pro	Ile	Val	Ala	bAla	Hiv
+acyclodidemnin A	Ist	Hip	Leu	Pro	NMe-OMe-Tyr	Thr	D-NMe-Leu
+dehydrodidemnin B	Ist	Hip	Leu	Pro	NMe-OMe-Tyr	Thr	D-NMe-Leu	Pro	Pya
+didemnin A	Ist	Hip	Leu	Pro	NMe-OMe-Tyr	Thr	D-NMe-Leu
+didemnin B	Ist	Hip	Leu	Pro	NMe-OMe-Tyr	Thr	D-NMe-Leu	Pro	Lac
+didemnin C	Ist	Hip	Leu	Pro	NMe-OMe-Tyr	Thr	D-NMe-Leu	Lac
+didemnin M	Ist	Hip	Leu	Pro	NMe-OMe-Tyr	Thr	D-NMe-Leu	Pro	Lac	Gln	pGlu
+didemnin N	Ist	Hip	Leu	Pro	Tyr	Thr	D-NMe-Leu	Pro	Lac
+didemnin X	Ist	Hip	Leu	Pro	NMe-OMe-Tyr	Thr	D-NMe-Leu	Pro	Lac	Gln	Gln	Gln	C10:0-OH(3)
+didemnin Y	Ist	Hip	Leu	Pro	NMe-OMe-Tyr	Thr	D-NMe-Leu	Pro	Lac	Gln	Gln	Gln	Gln	C10:0-OH(3)
+[Hap2]didemnin B	Ist	Hap	Leu	Pro	NMe-OMe-Tyr	Thr	D-NMe-Leu	Pro	Lac
+[Hysp2]didemnin B	Ist	Hysp	Leu	Pro	NMe-OMe-Tyr	Thr	D-NMe-Leu	Pro	Lac
+nordidemnin A	Nst	Hip	Leu	Pro	NMe-OMe-Tyr	Thr	D-NMe-Leu
+nordidemnin B	Nst	Hip	Leu	Pro	NMe-OMe-Tyr	Thr	D-NMe-Leu	Pro	Lac
+nordidemnin C	Nst	Hip	Leu	Pro	NMe-OMe-Tyr	Thr	D-NMe-Leu	Lac
+nordidemnin N	Nst	Hip	Leu	Pro	Tyr	Thr	D-NMe-Leu	Pro	Lac
+tamandarin A	Ist	Hiv	Leu	Pro	NMe-OMe-Tyr	Thr	D-NMe-Leu	Pro	Lac
+tamandarin B	Nst	Hiv	Leu	Pro	NMe-OMe-Tyr	Thr	D-NMe-Leu	Pro	Lac
+discobahamin A	Abu	Hmp	Nva	Orn	Pro	k-Leu	PALOA	OH-Trp
+discobahamin B	Abu	Hmp	Leu	Orn	Pro	k-Leu	PALOA	OH-Trp
+discodermin A	D-NFo-Ala	Phe	Pro	D-t-Leu	t-Leu	D-Trp	Arg	D-CysA	Thr	NMe-Gln	D-Leu	Thr	Asn	NMe-Gly
+discodermin E	D-NFo-Ala	Phe	Pro	D-t-Leu	t-Leu	D-Kyn	Arg	D-CysA	Thr	NMe-Gln	D-Leu	Thr	Asn	NMe-Gly
+discodermin F	D-NFo-Ala	Phe	Pro	D-t-Leu	bMe-Ile	D-Trp	Arg	D-CysA	Thr	NMe-Gln	D-Leu	Thr	Asn	NMe-Gly
+discodermin G	NFo-D-Abu	Phe	Pro	D-t-Leu	t-Leu	D-Trp	Arg	D-CysA	Thr	NMe-Gln	D-Leu	Thr	Asn	NMe-Gly
+discodermin H	D-NFo-Ala	Tyr	Pro	D-t-Leu	t-Leu	D-Trp	Arg	D-CysA	Thr	NMe-Gln	D-Leu	Thr	Asn	NMe-Gly
+dolastatin 10	Dov	Val	Dil	Dap	Doe
+dolastatin 11	Gly	NMe-Val	NMe-OMe-Tyr	Ibu	Ala	Map	Hmp	Gly	NMe-Leu
+dolastatin 12	Gly	NMe-Val	NMe-Tyr	Ibu	NMe-Ala	Map	Hmp	Gly	NMe-Leu
+dolastatin 15	Dov	Val	NMe-Val	Pro	Pro	Hiv	Dpy
+dyhydrodysamide C	Cl3-NMe-Leu	Cl3-NMe-dhLeu
+dysamide A	Cl3-NMe-Leu	Cl3-NMe-Leu
+dysamide B	Cl2-NMe-Leu	Cl2-NMe-Leu
+dysamide C	Cl3-NMe-dhLeu	Cl3-NMe-dhLeu
+dysamide D	Cl3-NMe-Leu	Cl2-NMe-Leu
+dysamide K	Cl2-NMe-Leu	Cl3-NMe-dhLeu
+dysamide M	Cl2-NMe-Leu	Cl2-NMe-dhLeu
+dysamide N	Cl3-NMe-Leu	Cl2-NMe-dhLeu
+dysamide O	Cl3-5OH-NMe-Leu	Cl3-NMe-dhLeu
+dysamide P	Cl3-2OH-NMe-Leu	Cl3-NMe-Leu
+dysamide Q	Cl3-2OH-NMe-Leu	Cl3-NMe-dhLeu
+edeine A	bTyr	Iser	Dpr	Daz	Gly	Spd
+edeine B	bTyr	Iser	Dpr	Daz	Gly	GSpd
+edeine D	bPhe	Iser	Dpr	Daz	Gly	Spd
+edeine F	bPhe	Iser	Dpr	Daz	Gly	GSpd
+emerimicin IIA	Ac-Trp	Ile	Gln	Aib	Ile	Thr	Aib	Leu	Aib	4OH-Pro	Gln	Aib	4OH-Pro	Aib	Pro	Pheol
+emerimicin IIB	Ac-Trp	Ile	Gln	Ival	Ile	Thr	Aib	Leu	Aib	4OH-Pro	Gln	Aib	4OH-Pro	Aib	Pro	Pheol
+emerimicin III	Ac-Phe	Aib	Aib	Aib	Val	Gly	Leu	Aib	Aib	4OH-Pro	Gln	D-Ival	4OH-Pro	Ala	Pheol
+emerimicin IV	Ac-Phe	Aib	Aib	Aib	Val	Gly	Leu	Aib	Aib	4OH-Pro	Gln	D-Ival	4OH-Pro	Aib	Pheol
+empedopeptin	OH-Asp	3OH-Pro	D-Ser	D-OH-Asp	Arg	Pro	D-Ser	D-Pro	C14:0-OH(3)
+enduracidin A	iC12:2(2.t4)	Asp	Thr	D-Hpg	D-Orn	D-aThr	Hpg	D-Hpg	aThr	Cit	D-End	Hpg	D-Ser	Cl2-Hpg	Gly	End	D-Ala	Hpg
+enduracidin B	aC13:2(2.t4)	Asp	Thr	D-Hpg	D-Orn	D-aThr	Hpg	D-Hpg	aThr	Cit	D-End	Hpg	D-Ser	Cl2-Hpg	Gly	End	D-Ala	Hpg
+enniatin A	D-Hiv	NMe-Ile	D-Hiv	NMe-Ile	D-Hiv	NMe-Ile
+enniatin A1	D-Hiv	NMe-Ile	D-Hiv	NMe-Ile	D-Hiv	NMe-Val
+enniatin B	D-Hiv	NMe-Val	D-Hiv	NMe-Val	D-Hiv	NMe-Val
+enniatin B1	D-Hiv	NMe-Val	D-Hiv	NMe-Val	D-Hiv	NMe-Ile
+enniatin B4	D-Hiv	NMe-Leu	D-Hiv	NMe-Val	D-Hiv	NMe-Val
+enniatin C	D-Hiv	NMe-Leu	D-Hiv	NMe-Leu	D-Hiv	NMe-Leu
+enniatin F	D-Hiv	NMe-Leu	D-Hiv	NMe-Ile	D-Hiv	NMe-Ile
+enniatin G	D-Hiv	NMe-Leu	D-Hiv	NMe-Leu	D-Hiv	NMe-Val
+enniatin  H	Hmp	NMe-Val	D-Hiv	NMe-Val	D-Hiv	NMe-Val
+enniatin I	Hmp	NMe-Val	Hmp	NMe-Val	D-Hiv	NMe-Val
+enniatin L	aC6:0-OH(2.3)	NMe-Val	D-Hiv	NMe-Val	D-Hiv	NMe-Val
+enniatin N	aC6:0-OH(2.3)	NMe-Val	Hmp	NMe-Val	Hmp	NMe-Val
+MK1688	Hmp	NMe-Val	Hmp	NMe-Val	Hmp	NMe-Val
+ADEP-1	C8:3(t2.t4.t6)	Phe	Ser	Pro	NMe-Ala	Ala	4Me-Pro
+enterobactin	diOH-Bz	Ser	Ser	diOH-Bz	Ser	diOH-Bz
+eremomycin	Asn	bOH-Cl-Tyr	NMe-Leu	Hpg	D-Glc	Ere	bOH-Tyr	Ere	Dhpg	Hpg
+eurypamide A	diOH-Phe	Tyr	diOH-Arg
+eurypamide B	diOH-Phe	Tyr	Thr
+eurypamide C	diOH-Phe	Tyr	Ser
+eurypamide D	diOH-Phe	Tyr	aThr
+renieramide	diOH-Phe	Tyr	Leu
+feglymycin	D-Hpg	D-Dhpg	Val	D-Dhpg	Hpg	D-Dhpg	Hpg	D-Dhpg	Val	D-Dhpg	Hpg	Phe	Asp
+fengycin A	C16:0-OH(3)	Glu	D-Orn	Tyr	D-aThr	Glu	D-Ala	Pro	Glu	D-Tyr	Ile
+fengycin B	C16:0-OH(3)	Glu	D-Orn	Tyr	D-aThr	Glu	D-Val	Pro	Glu	D-Tyr	Ile
+ferintoic acid A	Phe	NMe-Ala	Hty	Val	D-Lys	CO	Trp
+ferintoic acid B	Phe	NMe-Ala	Hty	aIle	D-Lys	CO	Trp
+foroxymithine	NAc-Fo-OH-Orn	Ser	OH-Orn	Fo-OH-Orn
+amphomycin A1437 A	iC13:1(3)	Asp	Dbu	Hpr	bMe-Asp	Asp	Gly	Asp	Gly	D-Dbu	Val	Pro
+amphomycin A1437 B	iC14:1(3)	Asp	Dbu	Hpr	bMe-Asp	Asp	Gly	Asp	Gly	D-Dbu	Val	Pro
+amphomycin A1437 D	aC15:1(3)	Asp	Dbu	Hpr	bMe-Asp	Asp	Gly	Asp	Gly	D-Dbu	Val	Pro
+amphomycin A1437 E	aC13:1(3)	Asp	Dbu	Hpr	bMe-Asp	Asp	Gly	Asp	Gly	D-Dbu	Val	Pro
+friulimicin A	iC13:1(3)	Asn	L-Dbu	Hpr	bMe-Asp	Asp	Gly	Asp	Gly	D-Dbu	Val	Pro
+friulimicin B	iC14:1(3)	Asn	L-Dbu	Hpr	bMe-Asp	Asp	Gly	Asp	Gly	D-Dbu	Val	Pro
+friulimicin C	aC13:1(3)	Asn	L-Dbu	Hpr	bMe-Asp	Asp	Gly	Asp	Gly	D-Dbu	Val	Pro
+friulimicin D	aC15:1(3)	Asn	L-Dbu	Hpr	bMe-Asp	Asp	Gly	Asp	Gly	D-Dbu	Val	Pro
+fuscopeptin A	C8:0-OH(3)	dhAbu	D-Pro	Leu	D-Ala	D-Ala	D-Ala	D-Ala	D-Val	Gly	D-Ala	D-Val	D-Ala	D-Val	dhAbu	D-aThr	Ala	Dab	D-Dab	Phe
+fuscopeptin B	C10:0-OH(3)	dhAbu	D-Pro	Leu	D-Ala	D-Ala	D-Ala	D-Ala	D-Val	Gly	D-Ala	D-Val	D-Ala	D-Val	dhAbu	D-aThr	Ala	Dab	D-Dab	Phe
+galacardin A	NMe-Hpg	D-Gal	Rha	bOH-Tyr	D-Man	Hpg	Cl-Hpg	D-Gal	bOH-Cl-Tyr	Dhpg	Hpg	Ria	Ria	D-Glc
+galacardin B	NMe-Hpg	D-Gal	Rha	bOH-Tyr	D-Man	Hpg	Cl-Hpg	bOH-Cl-Tyr	Dhpg	Hpg	Ria	Ria	D-Glc
+geodiamolide A	C9:1(4)-Me(2.4.6)-OH(8)	Ala	D-I-NMe-Tyr	Ala
+geodiamolide B	C9:1(4)-Me(2.4.6)-OH(8)	Ala	D-Br-NMe-Tyr	Ala
+geodiamolide C	C9:1(4)-Me(2.4.6)-OH(8)	Ala	D-Cl-NMe-Tyr	Ala
+geodiamolide D	C9:1(4)-Me(2.4.6)-OH(8)	Gly	D-I-NMe-Tyr	Ala
+geodiamolide E	C9:1(4)-Me(2.4.6)-OH(8)	Gly	D-Br-NMe-Tyr	Ala
+geodiamolide F	C9:1(4)-Me(2.4.6)-OH(8)	Gly	D-Cl-NMe-Tyr	Ala
+geodiamolide G	C9:1(Me4)-Me(2.4.6)-OH(8)-Oxo(5)	Ala	D-I-NMe-Tyr	Ala
+geodiamolide H	C9:1(4)-Me(2.4.6)-OH(8)	Ala	D-I-NMe-Tyr	bTyr
+geodiamolide I	C9:1(4)-Me(2.4.6)-OH(8)	Ala	D-Br-NMe-Tyr	bTyr
+geodiamolide J	C9:1(Me4)-Me(2.4.6)-OH(8)-Oxo(5)	Ala	D-Br-NMe-Tyr	Ala
+geodiamolide K	C9:1(Me4)-Me(2.4.6)-OH(8)-Oxo(5)	Ala	D-Cl-NMe-Tyr	Ala
+geodiamolide L	C9:1(4)-Me(2.4.6)-OH(8)	Ala	D-I-NMe-Tyr	Ser
+geodiamolide M	C9:1(4)-Me(2.4.6)-OH(8)	Ala	D-Br-NMe-Tyr	Ser
+geodiamolide N	C9:1(4)-Me(2.4.6)-OH(8)	Ala	D-Cl-NMe-Tyr	Ser
+geodiamolide O	C9:1(4)-Me(2.4.6)-OH(8)	Ser	D-I-NMe-Tyr	Ala
+geodiamolide P	C9:1(4)-Me(2.4.6)-OH(8)	Ser	D-Br-NMe-Tyr	Ala
+geodiamolide Q	C9:1(4)-Me(2.4.6)-OH(8)	Ser	D-Cl-NMe-Tyr	Ala
+geodiamolide R	C9:1(4)-Me(2.4.6)-OH(8)	Gly	D-I-NMe-Tyr	Ser
+geodiamolide TA	C9:1(4)-Me(2.4.6)-OH(8)	Ala	D-Cl-NMe-Tyr	Val
+globomycin	Gly	aThr	Ser	aIle	NMe-Leu	C9:0-Me(2)-OH(3)
+SF-1902 A2	Gly	aThr	Ser	aIle	NMe-Leu	C7:0-Me(2)-OH(3)
+SF-1902 A3	Gly	aThr	Ser	Val	NMe-Leu	C9:0-Me(2)-OH(3)
+SF-1902 A4a	Gly	aThr	Ser	aIle	NMe-Leu	C10:0-Me(2)-OH(3)
+SF-1902 A4b	Gly	aThr	Ser	Val	NMe-Leu	C11:0-Me(2)-OH(3)
+SF-1902 A5	Gly	aThr	Ser	aIle	NMe-Leu	C11:0-Me(2)-OH(3)
+gramicidin S	Val	Orn	Leu	D-Phe	Pro	Val	Orn	Leu	D-Phe	Pro
+Ile-gramicidin A	NFo-Ile	Gly	Ala	D-Leu	Ala	D-Val	Val	D-Val	Trp	D-Leu	Trp	D-Leu	Trp	D-Leu	Trp	Eta
+Ile-gramicidin B	NFo-Ile	Gly	Ala	D-Leu	Ala	D-Val	Val	D-Val	Trp	D-Leu	Phe	D-Leu	Trp	D-Leu	Trp	Eta
+Ile-gramicidin C	NFo-Ile	Gly	Ala	D-Leu	Ala	D-Val	Val	D-Val	Trp	D-Leu	Tyr	D-Leu	Trp	D-Leu	Trp	Eta
+Val-gramicidin A	NFo-Val	Gly	Ala	D-Leu	Ala	D-Val	Val	D-Val	Trp	D-Leu	Trp	D-Leu	Trp	D-Leu	Trp	Eta
+Val-gramicidin B	NFo-Val	Gly	Ala	D-Leu	Ala	D-Val	Val	D-Val	Trp	D-Leu	Phe	D-Leu	Trp	D-Leu	Trp	Eta
+Val-gramicidin C	NFo-Val	Gly	Ala	D-Leu	Ala	D-Val	Val	D-Val	Trp	D-Leu	Tyr	D-Leu	Trp	D-Leu	Trp	Eta
+gratisin	Val	Orn	Leu	D-Phe	Pro	D-Tyr	Val	Orn	Leu	D-Phe	Pro	D-Tyr
+guineamide A	Lac	NMe-Val	NMe-Phe	Ala-Thz	Map
+guineamide B	Hiv	NMe-Val	NMe-Phe	Ala-Thz	Mab
+guineamide C	Hmp	NMe-OMe-Tyr	Val	NMe-Ala	C8:0:1(7)-Me(2)-NH2(3)
+guineamide D	Hiv	D-NMe-OMe-Tyr	C6:0-Me(2)-NH2(3)	Hiv	NMe-Val
+guineamide E	NMe-Val	Pro	D-NMe-Phe	Gly	C6:0-Me(2.2)-OH(3)	Hiv	Ala
+guineamide F	NMe-Phe	Pro	NMe-Phe	Gly	C6:0-Me(2.2)-OH(3)	Val
+gymnangiamide	gSer	Ile	dDil	dDap	Ph-Ser
+halicylindramide A	D-NFo-Ala	Br-Phe	Pro	D-Val	Val	D-Trp	Arg	D-CysA	Thr	NMe-Gln	D-Phe	Thr	Asn	NMe-Gly
+halicylindramide B	D-NFo-Ala	Br-Phe	Pro	D-Val	t-Leu	D-Trp	Arg	D-CysA	Thr	NMe-Gln	D-Phe	Thr	Asn	Gly
+halicylindramide C	D-NFo-Ala	Br-Phe	Pro	D-Val	t-Leu	D-Trp	Arg	D-CysA	Thr	NMe-Gln	D-Phe	Thr	Asn	NMe-Gly
+halicylindramide D	D-NFo-Ala	Br-Phe	Pro	D-Val	Val	D-Trp	Arg	D-CysA	Thr	NMe-Gln	D-Phe	Gly	Asn
+halicylindramide E	D-NFo-Ala	Br-Phe	Pro	D-Val	t-Leu	D-Trp	Arg	D-CysA	Thr	NMe-Gln	D-Phe
+haligramide A	Met	Phe-Thz	Pro	Met	Pro	Pro
+haligramide B	O-Met	Phe-Thz	Pro	Met	Pro	Pro
+halipeptin A	C10:0-Me(2.2.4)-OH(3)-OMe(7)	Ala	aMe-Cys	NMe-OH-Ile	Ala
+halipeptin B	C10:0-Me(2.2.4)-OH(3.7)	Ala	aMe-Cys	NMe-OH-Ile	Ala
+halipeptin C	C10:0-Me(2.2.4)-OH(3.7)	Ala	aMe-Cys	NMe-Val	Ala
+halipeptin D	C10:0-Me(2.2.4)-OH(3)-OMe(7)	Ala	aMe-Cys	NMe-Ile	Ala
+harzianin HB I	Ac-Aib	Asn	Leu	Ile	Aib	Pro	Ival	Leu	Aib	Pro	Leuol
+harzianin HC I	Ac-Aib	Asn	Leu	Aib	Pro	Ser	Val	Aib	Pro	Aib	Leu	Aib	Pro	Leuol
+harzianin HC III	Ac-Aib	Asn	Leu	Aib	Pro	Ser	Val	Aib	Pro	Ival	Leu	Aib	Pro	Leuol
+harzianin HC IX	Ac-Aib	Asn	Leu	Aib	Pro	Ala	Ile	Aib	Pro	Ival	Leu	Aib	Pro	Leuol
+harzianin HC VI	Ac-Aib	Asn	Leu	Aib	Pro	Ala	Val	Aib	Pro	Aib	Leu	Aib	Pro	Leuol
+harzianin HC VIII	Ac-Aib	Asn	Leu	Aib	Pro	Ala	Val	Aib	Pro	Ival	Leu	Aib	Pro	Leuol
+harzianin HC X	Ac-Aib	Gln	Leu	Aib	Pro	Ala	Val	Aib	Pro	Ival	Leu	Aib	Pro	Leuol
+harzianin HC XI	Ac-Aib	Asn	Leu	Aib	Pro	Ser	Ile	Aib	Pro	Aib	Leu	Aib	Pro	Leuol
+harzianin HC XII	Ac-Aib	Asn	Leu	Aib	Pro	Ser	Ile	Aib	Pro	Ival	Leu	Aib	Pro	Leuol
+harzianin HC XIII	Ac-Aib	Gln	Leu	Aib	Pro	Ser	Ile	Aib	Pro	Ival	Leu	Aib	Pro	Leuol
+harzianin HC XIV	Ac-Aib	Asn	Leu	Aib	Pro	Ala	Ile	Aib	Pro	Aib	Leu	Aib	Pro	Leuol
+harzianin HC XV	Ac-Aib	Gln	Leu	Aib	Pro	Ala	Ile	Aib	Pro	Ival	Leu	Aib	Pro	Leuol
+harzianin HK VI	Ac-Aib	Asn	Ile	Ile	Aib	Pro	Leu	Leu	Aib	Pro	Leuol
+harzianin PCU4	Ac-Aib	Asn	Leu	Aib	Pro	Ser	Ile	Aib	Pro	Aib	Leu	Aib	Pro	Valol
+helvecardin A	NMe-Hpg	bOH-Tyr	D-Man	Hpg	Cl-Hpg	bOH-Cl-Tyr	Dhpg	Hpg	Ria	Ria	D-Glc	2OMe-Rha
+helvecardin B	NMe-Hpg	bOH-Tyr	Hpg	Cl-Hpg	bOH-Cl-Tyr	Dhpg	Hpg	Ria	Ria	D-Glc	2OMe-Rha
+criamide A	bbMe-NMe-Trp	t-Leu	NMe-hv-Val	Arg
+criamide B	bbNMe-NMe-Trp	t-Leu	NMe-hv-Val	Arg
+hemiasterlin	bbNMe-NMe-Trp	t-Leu	NMe-hv-Val
+hemiasterlin A	bbMe-NMe-Trp	t-Leu	NMe-hv-Val
+hemiasterlin B	bbMe-NMe-Trp	Val	NMe-hv-Val
+hemiasterlin C	bbNMe-NMe-Trp	Val	NMe-hv-Val
+heptaibin	Ac-Phe	Aib	Aib	Aib	Val	Gly	Leu	Aib	Aib	4OH-Pro	Gln	Aib	4OH-Pro	Aib	Pheol
+hymenamide A	Pro	Phe	Trp	Arg	Pro	Pro	Val
+hymenamide B	Pro	Asn	Phe	Val	Glu	Phe	Pro
+hymenamide C	Pro	Phe	Gly	Pro	Glu	Leu	Trp
+hymenamide D	Pro	Tyr	Asp	Pro	Leu	Ala	Ile
+hymenamide E	Pro	Tyr	Phe	Phe	Pro	Thr	Thr
+hymenamide F	Pro	Ala	Val	Met	Leu	Arg	Pro
+hymenamide G	Pro	Tyr	Val	Pro	Leu	Ile	Leu	Pro
+hymenamide H	Pro	Trp	Val	Pro	Leu	Thr	Pro	Leu
+hymenamide J	Pro	Tyr	Asp	Phe	Trp	Lys	Val	Tyr
+hymenamide K	Pro	Tyr	Asp	Phe	Trp	Lys	Ala	Val
+hymenistatin I	Pro	Tyr	Val	Pro	Leu	Ile	Ile	Pro
+HM A1	Ac-Aib	Gln	Val	Val	Aib	Pro	Leu	Leu	Aib	Pro	Leuol
+HM A2	Ac-Ival	Gln	Val	Val	Aib	Pro	Leu	Leu	Aib	Pro	Leuol
+HM A3	Ac-Aib	Gln	Val	Leu	Aib	Pro	Leu	Ile	Aib	Pro	Leuol
+HM A4	Ac-Aib	Gln	Val	Leu	Aib	Pro	Leu	Ile	Aib	Pro	Leuol
+HM A5	Ac-Aib	Gln	Ile	Ile	Aib	Pro	Leu	Leu	Aib	Pro	Leuol
+HM A5a	Ac-Aib	Gln	Ile	Leu	Aib	Pro	Leu	Ile	Aib	Pro	Leuol
+HM B1	Ac-Aib	Ser	Ala	Leu	Aib	Gln	Aib	Val	Aib	Gly	Aib	Aib	Pro	Leu	Aib	Aib	Gln	Valol
+HM B2	Ac-Aib	Ser	Ala	Leu	Aib	Gln	Aib	Val	Aib	Gly	Aib	Aib	Pro	Leu	Aib	Aib	Gln	Leuol
+HM B3a	Ac-Aib	Ala	Ala	Leu	Aib	Gln	Aib	Val	Aib	Gly	Aib	Aib	Pro	Leu	Aib	Aib	Gln	Valol
+HM B3b	Ac-Aib	Ser	Ala	Leu	Aib	Gln	Ival	Val	Aib	Gly	Aib	Aib	Pro	Leu	Aib	Aib	Gln	Valol
+HM B4	Ac-Aib	Ser	Ala	Leu	Aib	Gln	Aib	Val	Aib	Gly	Ival	Aib	Pro	Leu	Aib	Aib	Gln	Valol
+HM B5	Ac-Aib	Ser	Ala	Leu	Aib	Gln	Aib	Val	Aib	Gly	Ival	Aib	Pro	Leu	Aib	Aib	Gln	Leuol
+hypomurocin A1	Ac-Aib	Gln	Val	Val	Aib	Pro	Leu	Leu	Aib	Pro	Leuol
+hypomurocin A2	Ac-Ival	Gln	Val	Val	Aib	Pro	Leu	Leu	Aib	Pro	Leuol
+hypomurocin A3	Ac-Aib	Gln	Val	Leu	Aib	Pro	Leu	Ile	Aib	Pro	Leuol
+hypomurocin A4	Ac-Aib	Gln	Ile	Val	Aib	Pro	Leu	Leu	Aib	Pro	Leuol
+hypomurocin A5	Ac-Aib	Gln	Ile	Ile	Aib	Pro	Leu	Leu	Aib	Pro	Leuol
+hypomurocin A5a	Ac-Aib	Gln	Ile	Leu	Aib	Pro	Leu	Ile	Aib	Pro	Leuol
+hypomurocin B1	Ac-Aib	Ser	Ala	Leu	Aib	Gln	Aib	Val	Aib	Gly	Aib	Aib	Pro	Leu	Aib	Aib	Gln	Valol
+hypomurocin B2	Ac-Aib	Ser	Ala	Leu	Aib	Gln	Aib	Val	Aib	Gly	Aib	Aib	Pro	Leu	Aib	Aib	Gln	Leuol
+hypomurocin B3a	Ac-Aib	Ala	Ala	Leu	Aib	Gln	Aib	Val	Aib	Gly	Aib	Aib	Pro	Leu	Aib	Aib	Gln	Valol
+hypomurocin B3b	Ac-Aib	Ser	Ala	Leu	Aib	Gln	Ival	Val	Aib	Gly	Aib	Aib	Pro	Leu	Aib	Aib	Gln	Valol
+hypomurocin B4	Ac-Aib	Ser	Ala	Leu	Aib	Gln	Aib	Val	Aib	Gly	Ival	Aib	Pro	Leu	Aib	Aib	Gln	Valol
+hypomurocin B5	Ac-Aib	Ser	Ala	Leu	Aib	Gln	Aib	Val	Aib	Gly	Ival	Aib	Pro	Leu	Aib	Aib	Gln	Leuol
+isaridin A	bAla	3OH-Leu	Pro	Phe	NMe-Val	NMe-Phe
+isaridin B	bAla	3OH-Leu	3Me-Pro	Phe	NMe-Val	NMe-Phe
+isariin	Gly	Val	D-Leu	Ala	Val	C12:0-OH(3)
+isariin B	Gly	Val	D-Leu	Ala	Val	C9:0-OH(3)
+isariin C	Gly	Val	D-Leu	Ala	Ala	C9:0-OH(3)
+isariin D	Gly	Val	D-Leu	Ala	Ala	C7:0-OH(3)
+bacillomycin D-1	C14:0-NH2(3)	Asn	D-Tyr	D-Asn	Pro	Glu	D-Ser	Thr
+bacillomycin D-2	iC15:0-NH2(3)	Asn	D-Tyr	D-Asn	Pro	Glu	D-Ser	Thr
+bacillomycin D-3	aC15:0-NH2(3)	Asn	D-Tyr	D-Asn	Pro	Glu	D-Ser	Thr
+bacillomycin D-4	C16:0-NH2(3)	Asn	D-Tyr	D-Asn	Pro	Glu	D-Ser	Thr
+bacillomycin D-5	iC16:0-NH2(3)	Asn	D-Tyr	D-Asn	Pro	Glu	D-Ser	Thr
+bacillomycin F-1	iC15:0-NH2(3)	Asn	D-Tyr	D-Asn	Gln	Pro	D-Asn	Thr
+bacillomycin F-2	aC15:0-NH2(3)	Asn	D-Tyr	D-Asn	Gln	Pro	D-Asn	Thr
+bacillomycin F-3	iC16:0-NH2(3)	Asn	D-Tyr	D-Asn	Gln	Pro	D-Asn	Thr
+bacillomycin F-4	C16:0-NH2(3)	Asn	D-Tyr	D-Asn	Gln	Pro	D-Asn	Thr
+bacillomycin F-5	iC17:0-NH2(3)	Asn	D-Tyr	D-Asn	Gln	Pro	D-Asn	Thr
+bacillomycin F-6	aC17:0-NH2(3)	Asn	D-Tyr	D-Asn	Gln	Pro	D-Asn	Thr
+bacillomycin L-1	C14:0-NH2(3)	Asn	D-Tyr	D-Asn	Ser	Glu	D-Ser	Thr
+bacillomycin L-2	iC15:0-NH2(3)	Asn	D-Tyr	D-Asn	Ser	Glu	D-Ser	Thr
+bacillomycin L-3	aC15:0-NH2(3)	Asn	D-Tyr	D-Asn	Ser	Glu	D-Ser	Thr
+bacillomycin L-4	C16:0-NH2(3)	Asn	D-Tyr	D-Asn	Ser	Glu	D-Ser	Thr
+bacillomycin L-5	iC16:0-NH2(3)	Asn	D-Tyr	D-Asn	Ser	Glu	D-Ser	Thr
+iturin A-1	C13:0-NH2(3)	Asn	D-Tyr	D-Asn	Gln	Pro	D-Asn	Ser
+iturin A-2	C14:0-NH2(3)	Asn	D-Tyr	D-Asn	Gln	Pro	D-Asn	Ser
+iturin A-3	aC15:0-NH2(3)	Asn	D-Tyr	D-Asn	Gln	Pro	D-Asn	Ser
+iturin A-4	iC15:0-NH2(3)	Asn	D-Tyr	D-Asn	Gln	Pro	D-Asn	Ser
+iturin A-5	C15:0-NH2(3)	Asn	D-Tyr	D-Asn	Gln	Pro	D-Asn	Ser
+iturin A-6	iC16:0-NH2(3)	Asn	D-Tyr	D-Asn	Gln	Pro	D-Asn	Ser
+iturin A-7	C16:0-NH2(3)	Asn	D-Tyr	D-Asn	Gln	Pro	D-Asn	Ser
+iturin A-8	aC17:0-NH2(3)	Asn	D-Tyr	D-Asn	Gln	Pro	D-Asn	Ser
+iturin C-1	iC14:0-NH2(3)	Asp	D-Tyr	D-Asn	Gln	Pro	D-Asn	Ser
+iturin C-2	aC15:0-NH2(3)	Asp	D-Tyr	D-Asn	Gln	Pro	D-Asn	Ser
+iturin C-3	iC16:0-NH2(3)	Asp	D-Tyr	D-Asn	Gln	Pro	D-Asn	Ser
+iturin C-4	aC17:0-NH2(3)	Asp	D-Tyr	D-Asn	Gln	Pro	D-Asn	Ser
+mycosubtilin 1	C16:0-NH2(3)	Asn	D-Tyr	D-Asn	Gln	Pro	D-Ser	Asn
+mycosubtilin 2	iC16:0-NH2(3)	Asn	D-Tyr	D-Asn	Gln	Pro	D-Ser	Asn
+mycosubtilin 3	iC17:0-NH2(3)	Asn	D-Tyr	D-Asn	Gln	Pro	D-Ser	Asn
+mycosubtilin 4	aC17:0-NH2(3)	Asn	D-Tyr	D-Asn	Gln	Pro	D-Ser	Asn
+jaspamide	C9:1(4)-Me(2.4.6)-OH(8)	Ala	NMe-Br-Trp	bTyr
+kahalalide A	C4:0-Me(2)	D-Phe	Thr	D-Leu	D-Phe	D-Leu	Thr	Ser
+kahalalide B	iC7:0	Tyr	D-Ser	Phe	D-Leu	Pro	Thr	Gly
+kahalalide C	C4:0	D-Phe	Thr	D-Tyr	Arg	D-Tyr	Ile
+kahalalide D	iC9:0-OH(3)	D-Trp	Pro	Arg
+kahalalide E	iC11:0-OH(3)	D-Ala	D-Ala	Leu	Pro	Leu	Trp
+kahalalide F	iC7:0	D-Val	Thr	Val	D-Val	D-Pro	Orn	D-aIle	D-aThr	D-aIle	D-Val	Phe	dhAbu	Val
+kahalalide G	iC7:0	D-Val	Thr	Val	D-Val	D-Pro	Orn	D-aIle	D-aThr	D-aIle	D-Val	Phe	dhAbu	Val
+kahalalide H	iC11:0-OH(3)	D-Asp	D-Phe	Ser	D-Val	4OH-Pro	Ser	D-Leu	Phe
+kahalalide J	iC11:0-OH(3)	D-Asp	D-Phe	Ser	D-Val	4OH-Pro	Ser	D-Leu	Phe	Lys
+kahalalide K	iC11:0-OH(3)	D-Phe	4OH-Pro	D-Ala	Val	D-Asn	Tyr
+kahalalide R	iC7:0	D-Val	Thr	Val	D-Val	D-Pro	Orn	D-Val	D-aThr	D-aIle	D-Val	Phe	dhAbu	Val
+kahalalide S	iC7:0	D-Val	Thr	Val	D-Val	D-Pro	Lys	D-aIle	D-aThr	D-aIle	D-Val	Phe	dhAbu	Val
+kahalalide V	iC9:0-OH(3)	D-Trp	Pro	Arg
+kahalalide W	iC9:0-OH(3)	D-Trp	4OH-Pro	Arg
+kahalalide X	C4:0	D-Phe	Thr	D-Tyr	Arg	D-Tyr	Ile
+kahalalide Y	iC11:0-OH(3)	D-Phe	Pro	D-Ala	Val	D-Asn	Tyr
+kapakahine A	Tyr	Trp	Ile	Pro	Val	Pro	Ile	Trp
+kapakahine B	Phe	Trp	Ala	Leu	Trp	Phe
+kapakahine E	Phe	Trp	Ala	Tyr	Pro	Phe	Trp
+kapakahine F	Phe	Trp	Leu	Ala	Trp
+kapakahine G	Phe	Trp	Thr	Pro	Val	Pro	O-Met	Trp
+kempopeptin A	Ac-Pro	Thr	Thr	Val	NMe-Tyr	Phe	Ahp	Leu
+keramamide A	Phe	CO	Lys	Leu	Leu	NMe-Cl-OH-Trp	Phe
+keramamide B	Hmp	Ile	Nva	Orn	Pro	k-Leu	PAOA	Br-OH-Trp
+keramamide C	Hmp	Ile	Abu	Orn	Pro	k-Leu	PAOA	Br-OH-Trp
+keramamide D	Hmp	Ile	Abu	Orn	Pro	k-Leu	PALOA	Br-OH-Trp
+keramamide E	Hmp	Ile	Nva	Orn	Pro	k-Leu	PALOA	Br-OH-Trp
+keramamide F	NFo-Iser	Ile	Dpr	Ala	Ile	CO	PMST	dh-Trp
+keramamide G	NFo-Iser	Ile	Dpr	Ala	D-Ile	CO	PMST	dh-Trp
+keramamide H	NFo-Iser	Ile	Dpr	Ala	Ile	CO	PMST	Br-OH-Trp
+keramamide J	NFo-Iser	Ile	Dpr	Ala	Ile	CO	PMST	Trp
+keramamide K	NFo-Iser	Ile	Dpr	Ala	Ile	CO	PMST	1Me-Trp
+keramamide L	Phe	CO	Lys	Leu	Leu	NMe-Cl-Trp	Phe
+keramamide M	OSu-Hmp	Ile	Abu	Orn	Pro	k-Leu	PALOA	Br-OH-Trp
+keramamide N	OSu-Hmp	Ile	Nva	Orn	Pro	k-Leu	PALOA	Br-OH-Trp
+konbamide	Leu	CO	Lys	Ala	Leu	NMe-Leu	Br-OH-Trp
+koshikamide A1	NOMe-Ac-D-Phe	NMe-Val	NMe-Asn	NMe-aIle	NMe-Val	NMe-Leu	Asn	D-Phe	Pro	Pro
+koshikamide A2	NOMe-Ac-D-Phe	NMe-Val	NMe-Asn	NMe-aIle	NMe-Val	NMe-Leu	Asn	D-Phe	Pro	Pro	Arg
+kulokainalide	Phe	Val	Pro	Pro	Lac	D-NMe-Val	Val	C8:0:1(7)-Me(2.2)-OH(3)
+kulolide 1	Ala	Val	Pro	Ph-Lac	D-NMe-Val	Val	C8:0:1(7)-Me(2.2)-OH(3)
+kulolide 2	Ala	Val	Pro	Ph-Lac	D-NMe-Val	Val	C8:1(7)-Me(2.2)-OH(3)
+kulolide 3	Ala	Val	Pro	Ph-Lac	D-NMe-Val	Val	C8:0-Me(2.2)-OH(3)
+kulomo opunalide 1	Hmp	NMe-Ile	Val	C8:0:1(7)-Me(2)-OH(3)	NMe-Ile	Pro
+kulomo opunalide 2	Hiv	NMe-Ile	Val	C8:0:1(7)-Me(2)-OH(3)	NMe-Ile	Pro
+largamide A	Tig	Val	Tyr	Thr	Ala	Abu	Glu	Leu
+Methyl ester largamide A	Tig	Val	Tyr	Thr	Ala	Abu	MeO-Glu	Leu
+tiglicamide A	Tig	Val	Tyr	Thr	Ala	Abu	Glu	Hty
+tiglicamide B	Tig	Val	Tyr	Thr	Ala	Abu	Glu	Phe
+tiglicamide C	Tig	Val	Tyr	Thr	Ala	Abu	Glu	O-Met
+leupeptin	NAc-Leu	Leu	Argal
+lichenysin A aC13	aC13:0-OH(3)	Gln	Leu	D-Leu	Val	Asp	D-Leu	Ile
+lichenysin A aC15	aC15:0-OH(3)	Gln	Leu	D-Leu	Val	Asp	D-Leu	Ile
+lichenysin A aC17	aC17:0-OH(3)	Gln	Leu	D-Leu	Val	Asp	D-Leu	Ile
+lichenysin A iC12	iC12:0-OH(3)	Gln	Leu	D-Leu	Val	Asp	D-Leu	Ile
+lichenysin A iC13	iC13:0-OH(3)	Gln	Leu	D-Leu	Val	Asp	D-Leu	Ile
+lichenysin A iC14	iC14:0-OH(3)	Gln	Leu	D-Leu	Val	Asp	D-Leu	Ile
+lichenysin A iC15	iC15:0-OH(3)	Gln	Leu	D-Leu	Val	Asp	D-Leu	Ile
+lichenysin A iC16	iC16:0-OH(3)	Gln	Leu	D-Leu	Val	Asp	D-Leu	Ile
+lichenysin A iC17	iC17:0-OH(3)	Gln	Leu	D-Leu	Val	Asp	D-Leu	Ile
+lichenysin A nC12	C12:0-OH(3)	Gln	Leu	D-Leu	Val	Asp	D-Leu	Ile
+lichenysin A nC13	C13:0-OH(3)	Gln	Leu	D-Leu	Val	Asp	D-Leu	Ile
+lichenysin A nC14	C14:0-OH(3)	Gln	Leu	D-Leu	Val	Asp	D-Leu	Ile
+lichenysin A nC15	C15:0-OH(3)	Gln	Leu	D-Leu	Val	Asp	D-Leu	Ile
+lichenysin A nC16	C16:0-OH(3)	Gln	Leu	D-Leu	Val	Asp	D-Leu	Ile
+longibrachin A1	Ac-Aib	Ala	Aib	Ala	Aib	Ala	Gln	Aib	Val	Aib	Gly	Leu	Aib	Pro	Val	Aib	Aib	Gln	Gln	Pheol
+longibrachin A2	Ac-Aib	Ala	Aib	Ala	Aib	Ala	Gln	Aib	Val	Aib	Gly	Leu	Aib	Pro	Val	Aib	Ival	Gln	Gln	Pheol
+longibrachin A3	Ac-Aib	Ala	Aib	Ala	Aib	Aib	Gln	Aib	Val	Aib	Gly	Leu	Aib	Pro	Val	Aib	Aib	Gln	Gln	Pheol
+longibrachin A4	Ac-Aib	Ala	Aib	Ala	Aib	Aib	Gln	Aib	Val	Aib	Gly	Leu	Aib	Pro	Val	Aib	Ival	Gln	Gln	Pheol
+longibrachin B1	Ac-Aib	Ala	Aib	Ala	Aib	Ala	Gln	Aib	Val	Aib	Gly	Leu	Aib	Pro	Val	Aib	Aib	Glu	Gln	Pheol
+longibrachin B2	Ac-Aib	Ala	Aib	Ala	Aib	Ala	Gln	Aib	Val	Aib	Gly	Leu	Aib	Pro	Val	Aib	Ival	Glu	Gln	Pheol
+lysobactin	D-Leu	Leu	Ph-Ser	3OH-Leu	Leu	D-Arg	Ile	D-aThr	Gly	OH-Asn	Ser
+majusculamide C	Map	Ala	Ibu	NMe-OMe-Tyr	NMe-Val	Gly	NMe-Ile	Gly	Hmp
+allomalformin	D-Cys	D-Cys	Ile	D-Leu	Val
+malformin A1	D-Cys	D-Cys	Val	D-Leu	Ile
+malformin A2	D-Cys	D-Cys	Val	D-Leu	Val
+malformin B1	D-Cys	D-Cys	Val	D-Leu	aIle
+malformin B2	D-Cys	D-Cys	Val	D-Val	Leu
+malformin C	D-Cys	D-Cys	Val	D-Leu	Leu
+marinobactin A	C12:0	D-OH-Asp	Dab	D-Ser	D-Ac-OH-Orn	Ser	Ac-OH-Orn
+marinobactin B	C14:1(7)	D-OH-Asp	Dab	D-Ser	D-Ac-OH-Orn	Ser	Ac-OH-Orn
+marinobactin C	C14:0	D-OH-Asp	Dab	D-Ser	D-Ac-OH-Orn	Ser	Ac-OH-Orn
+marinobactin D1	C16:1(9)	D-OH-Asp	Dab	D-Ser	D-Ac-OH-Orn	Ser	Ac-OH-Orn
+marinobactin D2	C16:1(7)	D-OH-Asp	Dab	D-Ser	D-Ac-OH-Orn	Ser	Ac-OH-Orn
+marinobactin E	C16:0	D-OH-Asp	Dab	D-Ser	D-Ac-OH-Orn	Ser	Ac-OH-Orn
+[ADMAdda5.MeSer7]microcystin-LR	D-Ala	Leu	D-bMe-Asp	Arg	ADMAdda	D-Glu	NMe-Ser
+[ADMAdda5]microcystin-LHar	D-Ala	Leu	D-bMe-Asp	Har	ADMAdda	D-Glu	NMe-Dha
+[ADMAdda5]microcystin-LR	D-Ala	Leu	D-bMe-Asp	Arg	ADMAdda	D-Glu	NMe-Dha
+[DAsp3.ADMAdda5.Dhb7]microcystin-HtyR	D-Ala	Hty	D-Asp	Arg	ADMAdda	D-Glu	dhAbu
+[D-Asp3.ADMAdda5.Dhb7]microcystin-LR	D-Ala	Leu	D-Asp	Arg	ADMAdda	D-Glu	dhAbu
+[D-Asp3.ADMAdda5.Dhb7]microcystin-RR	D-Ala	Arg	D-Asp	Arg	ADMAdda	D-Glu	dhAbu
+[D-Asp3.ADMAdda5]microcystin-LHar	D-Ala	Leu	D-Asp	Har	ADMAdda	D-Glu	NMe-Dha
+[D-Asp3.ADMAdda5]microcystin-LR	D-Ala	Leu	D-Asp	Arg	ADMAdda	D-Glu	NMe-Dha
+[D-Asp3.D-Glu(OCH3)6]microcystin-LR	D-Ala	Leu	D-Asp	Arg	Adda	MeO-D-Glu	NMe-Dha
+[D-Asp3.Dha7]microcystin-EE(OMe)	D-Ala	Glu	D-Asp	MeO-Glu	Adda	D-Glu	dh-Ala
+[D-Asp3.Dha7]microcystin-E(OMe)E(OMe)	D-Ala	MeO-Glu	D-Asp	MeO-Glu	Adda	D-Glu	dh-Ala
+[D-Asp3. Dha7]microcystin-HtyR	D-Ala	Hty	D-Asp	Arg	Adda	D-Glu	dh-Ala
+[D-Asp3.Dha7]microcystin-RR	D-Ala	Arg	D-Asp	Arg	Adda	D-Glu	dh-Ala
+[D-Asp3.Dha7]mycrocystin-LR	D-Ala	Leu	D-Asp	Arg	Adda	D-Glu	dh-Ala
+[D-Asp3.MeSer7]microcystin-RR	D-Ala	Arg	D-Asp	Arg	Adda	D-Glu	NMe-Ser
+[D-Asp3]microcystin-HtyR	D-Ala	Hty	D-Asp	Arg	Adda	D-Glu	NMe-Dha
+[D-Asp3]microcystin-LR	D-Ala	Leu	D-Asp	Arg	Adda	D-Glu	NMe-Dha
+[D-Asp3]microcystin-RR	D-Ala	Arg	D-Asp	Arg	Adda	D-Glu	NMe-Dha
+[D-Asp3]microcystin-YR	D-Ala	Tyr	D-Asp	Arg	Adda	D-Glu	NMe-Dha
+[D-Asp3.Ser7]microcystin-E(OMe)E(OMe)	D-Ala	MeO-Glu	D-Asp	MeO-Glu	Adda	D-Glu	Ser
+[D-Glu(OCH3)6]microcystin-LR	D-Ala	Leu	D-bMe-Asp	Arg	Adda	MeO-D-Glu	NMe-Dha
+[Dha7]MCYST-E(OMe)E(OMe)	D-Ala	MeO-Glu	D-bMe-Asp	MeO-Glu	Adda	D-Glu	dh-Ala
+[Dha7]microcystin-EE(OMe)	D-Ala	Glu	D-bMe-Asp	MeO-Glu	Adda	D-Glu	dh-Ala
+[Dha7]microcystin-FR	D-Ala	Phe	D-bMe-Asp	Arg	Adda	D-Glu	dh-Ala
+[Dha7]microcystin-HphR	D-Ala	Hph	D-bMe-Asp	Arg	Adda	D-Glu	dh-Ala
+[Dha7]microcystin-HtyR	D-Ala	Hty	D-bMe-Asp	Arg	Adda	D-Glu	dh-Ala
+[Dha7]microcystin-LR	D-Ala	Leu	D-bMe-Asp	Arg	Adda	D-Glu	dh-Ala
+[Dha7]microcystin-RR	D-Ala	Arg	D-bMe-Asp	Arg	Adda	D-Glu	dh-Ala
+[Dha7]microcystin-YR	D-Ala	Tyr	D-bMe-Asp	Arg	Adda	D-Glu	dh-Ala
+[DMAdda5]microcystin-LR	D-Ala	Leu	D-bMe-Asp	Arg	DMAdda	D-Glu	NMe-Dha
+[D-Ser1. ADMAdda5]microcystin-LR	D-Ser	Leu	D-bMe-Asp	Arg	ADMAdda	D-Glu	NMe-Dha
+[L-MeLan7]microcystin-LR	D-Ala	Leu	D-bMe-Asp	Arg	Adda	D-Glu	NMe-Lan
+[L-MeSer7]microcytin-LR	D-Ala	Leu	D-bMe-Asp	Arg	Adda	D-Glu	NMe-Ser
+[L-Ser7]microcystin-E(OMe)E(OMe)	D-Ala	MeO-Glu	D-bMe-Asp	MeO-Glu	Adda	D-Glu	Ser
+[L-Ser7]microcystin-HtyR	D-Ala	Hty	D-bMe-Asp	Arg	Adda	D-Glu	Ser
+[L-Ser7]microcystin-LR	D-Ala	Leu	D-bMe-Asp	Arg	Adda	D-Glu	Ser
+[L-Ser7]microcystin-RR	D-Ala	Arg	D-bMe-Asp	Arg	Adda	D-Glu	Ser
+[L-Ser7]microcytin-EE(OMe)	D-Ala	Glu	D-bMe-Asp	MeO-Glu	Adda	D-Glu	Ser
+microcystin AR	D-Ala	Ala	D-bMe-Asp	Arg	Adda	D-Glu	NMe-Dha
+microcystin FR	D-Ala	Phe	D-bMe-Asp	Arg	Adda	D-Glu	NMe-Dha
+microcystin HilR	D-Ala	Hil	D-bMe-Asp	Arg	Adda	D-Glu	NMe-Dha
+microcystin-HtyR	D-Ala	Hty	D-bMe-Asp	Arg	Adda	D-Glu	NMe-Dha
+microcystin LA	D-Ala	Leu	D-bMe-Asp	Ala	Adda	D-Glu	NMe-Dha
+microcystin LAib	D-Ala	Leu	D-bMe-Asp	Aib	Adda	D-Glu	NMe-Dha
+microcystin LF	D-Ala	Leu	D-bMe-Asp	Phe	Adda	D-Glu	NMe-Dha
+microcystin LL	D-Ala	Leu	D-bMe-Asp	Leu	Adda	D-Glu	NMe-Dha
+microcystin LR	D-Ala	Leu	D-bMe-Asp	Arg	Adda	D-Glu	NMe-Dha
+microcystin LW	D-Ala	Leu	D-bMe-Asp	Trp	Adda	D-Glu	NMe-Dha
+microcystin LY	D-Ala	Leu	D-bMe-Asp	Tyr	Adda	D-Glu	NMe-Dha
+microcystin-M(O)R	D-Ala	O-Met	D-bMe-Asp	Arg	Adda	D-Glu	NMe-Dha
+microcystin RR	D-Ala	Arg	D-bMe-Asp	Arg	Adda	D-Glu	NMe-Dha
+microcystin VF	D-Ala	Val	D-bMe-Asp	Phe	Adda	D-Glu	NMe-Dha
+microcystin-WR	D-Ala	Trp	D-bMe-Asp	Arg	Adda	D-Glu	NMe-Dha
+microcystin YA	D-Ala	Tyr	D-bMe-Asp	Ala	Adda	D-Glu	NMe-Dha
+microcystin-YM(O)	D-Ala	Tyr	D-bMe-Asp	O-Met	Adda	D-Glu	NMe-Dha
+microcystin YR	D-Ala	Tyr	D-bMe-Asp	Arg	Adda	D-Glu	NMe-Dha
+cyanostatin A	Adda	Ala	Val	NMe-Tyr	Hty
+cyanostatin B	Adda	Tyr	NMe-Ile	Pro	Tyr
+microginin 711	Adda	Hty	Ala	Pro	Tyr
+microginin FR3	Adda	Thr	Pro	Tyr	Tyr
+microginin FR5	Adda	Val	Pro	Tyr	Tyr
+microginin FR9	Adda	Thr	Pro	Tyr	Trp
+microginin T2	Adda	Ala	Pro	Tyr	Tyr
+micromide	NMe-Gly-Thz	NMe-Phe	NMe-Ile	Val	D-NMe-Val	Phe	C6:0-OMe(3)
+microsclerodermin A	C12:1(11)-Me(6)-OH(2.4.5)-NH2(3)-mPhe(11)	OH-Pyr	NMe-Gly	D-COOH-Trp	Gly	OH-4Abu
+microsclerodermin B	C12:1(11)-Me(6)-OH(2.4.5)-NH2(3)-mPhe(11)	Pyr	NMe-Gly	D-COOH-Trp	Gly	OH-4Abu
+microsclerodermin C	C8:1(7)-OH(2.4.5)-NH2(3)-Ph(8)	Pyr	NMe-Gly	D-Cl-CONH2-Trp	Gly	OH-4Abu
+microsclerodermin D	C8:1(7)-OH(2.4.5)-NH2(3)-Ph(8)	Pyr	NMe-Gly	D-Cl-Trp	Gly	OH-4Abu
+microsclerodermin E	C10:2(7.9)-OH(2.4.5)-NH2(3)-ePh(10)	dPyr	NMe-Gly	D-COOH-Trp	Gly	OH-4Abu
+microsclerodermin F	C12:3(7.9.11)-Me(6)-OH(2.4.5)-NH2(3)-Ph(12)	Pyr	NMe-Gly	D-Trp	Gly	OH-4Abu
+microsclerodermin G	C12:3(7.9.11)-Me(6.10)-OH(2.4.5)-NH2(3)-Ph(12)	Pyr	NMe-Gly	D-Trp	Gly	OH-4Abu
+microsclerodermin H	C12:3(7.9.11)-Me(6)-OH(2.4.5)-NH2(3)-Ph(12)	Pyr	NMe-Gly	dh-Trp	Gly	OH-4Abu
+microsclerodermin I	C12:3(7.9.11)-Me(6.10)-OH(2.4.5)-NH2(3)-Ph(12)	Pyr	NMe-Gly	dh-Trp	Gly	OH-4Abu
+microspinosamide	D-NFo-Ala	bOH-Br-Phe	Pro	t-Leu	bMe-Ile	D-Trp	Arg	D-CysA	Thr	NMe-Gln	D-Val	Pro	D-Asp
+miraziridine A	Azd	Leu	Sta	Abu	v-Arg
+montanastatin	D-Hiv	D-Val	Lac	Val	D-Hiv	D-Val	Lac	Val
+mozamide A	aIle	CO	Lys	D-Val	Leu	NMe-OH-Trp	Phe
+mozamide B	aIle	CO	Lys	D-Ile	Leu	NMe-OH-Trp	Phe
+mycobacillin	Pro	D-Asp	D-Glu	Tyr	Asp	Tyr	Ser	D-Asp	Leu	D-Glu	D-Asp	Ala	D-Asp
+nagahamide A	Ser	Gly	bMe-Asn	OH-Asn	Val	DHMDA	OH-4Abu
+nazumamide A	diOH-Bz	Arg	Pro	Ile	Abu
+neosiphoniamolide A	C9:1(4)-Me(2.4.6)-OH(8)	Gly	D-I-NMe-Tyr	Val
+neoviridogrisein I	Hpa	Thr	NMe-Ph-Gly	Abu	NMe-bMe-Leu	NMe-Gly	D-Pro	D-Leu
+neoviridogrisein II	Hpa	Thr	NMe-Ph-Gly	Ala	NMe-bMe-Leu	NMe-Gly	D-Pro	D-Leu
+neoviridogrisein III	Hpa	Thr	NMe-Ph-Gly	Abu	NMe-bMe-Leu	NMe-Gly	D-4OH-Pro	D-Leu
+viridogrisein	Hpa	Thr	NMe-Ph-Gly	Ala	NMe-bMe-Leu	NMe-Gly	D-4OH-Pro	D-Leu
+nocardicin A	Hse	OH-dHpg	Ser	Hpg
+nocardicin B	Hse	D-OH-dHpg	Ser	Hpg
+nocardicin C	Hse	Hpg	Ser	Hpg
+nocardicin D	Hse	Hpoe	Ser	Hpg
+nocardicin E	OH-dHpg	Ser	Hpg
+nocardicin F	D-OH-dHpg	Ser	Hpg
+nocardicin G	Hpg	Ser	Hpg
+nodulapeptin A	Ac-Ser	NMe-Hty	Hph	O2-Met	D-Lys	CO	Ile
+nodulapeptin B	Ac-Ser	NMe-Hty	Hph	O-Met	D-Lys	CO	Ile
+[D-Asp1]nodularin	D-Asp	Arg	Adda	D-Glu	2Dh-Mabu
+[Dhb5]nodularin	D-bMe-Asp	Arg	Adda	D-Glu	dhAbu
+[DMAdda3]nodularin	D-bMe-Asp	Arg	DMAdda	D-Glu	2Dh-Mabu
+linear nodularin	Adda	D-Glu	2Dh-Mabu	D-bMe-Asp	Arg
+[MeO-Glu4]nodularin	D-bMe-Asp	Arg	Adda	D-MeO-Glu	2Dh-Mabu
+motuporin	D-bMe-Asp	Val	Adda	D-Glu	2Dh-Mabu
+nodularin-Har	D-bMe-Asp	Har	Adda	D-Glu	2Dh-Mabu
+nodularin R	D-bMe-Asp	Arg	Adda	D-Glu	2Dh-Mabu
+obyanamide	Lac	NMe-Val	NMe-Phe	Ala-Thz	C5:0-NH2(3)
+onchidin	NMe-Val	C8:0:1(7)-Me(2)-NH2(3)	Val	Hiv	Hiv	NMe-Val	C8:0:1(7)-Me(2)-NH2(3)	Val	Hiv	Hiv
+onchidin B	Pro	Hmp	Hiv	D-NMe-Val	C8:0:1(7)-Me(2)-OH(3)	D-Pro	Hmp	Hiv	D-NMe-Val	C8:0:1(7)-Me(2)-OH(3)
+orbiculamide A	Me-Vaa	Abu	Orn	Pro	k-Leu	PALOA	Br-OH-Trp
+oriamide	diOH-Bz	Gly	Ala	Dpr	Nva	Ile	CO	PTTA	CysA
+chloroorienticin A	Asn	bOH-Cl-Tyr	NMe-Leu	Hpg	D-Glc	Ere	bOH-Cl-Tyr	Ere	Dhpg	Hpg
+chloroorienticin B	Asn	bOH-Cl-Tyr	NMe-Leu	Hpg	D-Glc	bOH-Cl-Tyr	Ere	Dhpg	Hpg
+chloroorienticin C	Asn	bOH-Cl-Tyr	NMe-Leu	Hpg	bOH-Cl-Tyr	Ere	Dhpg	Hpg
+chloroorienticin D	Asn	bOH-Cl-Tyr	NdMe-Leu	Hpg	D-Glc	Ere	bOH-Cl-Tyr	Ere	Dhpg	Hpg
+chloroorienticin E	Asn	bOH-Cl-Tyr	NdMe-Leu	Hpg	D-Glc	bOH-Cl-Tyr	Ere	Dhpg	Hpg
+orienticin A	Asn	bOH-Tyr	NMe-Leu	Hpg	D-Glc	Ere	bOH-Cl-Tyr	Ere	Dhpg	Hpg
+orienticin B	Asn	bOH-Tyr	NMe-Leu	Hpg	D-Glc	Oli	bOH-Cl-Tyr	Ere	Dhpg	Hpg
+orienticin C	Asn	bOH-Tyr	NMe-Leu	Hpg	D-Glc	Ere	bOH-Tyr	Ere	Dhpg	Hpg
+orienticin D	Asn	bOH-Tyr	NdMe-Leu	Hpg	D-Glc	Ere	bOH-Cl-Tyr	Ere	Dhpg	Hpg
+ornibactin C4	C4:0-OH(3)	OH-Orn	D-OH-Asp	Ser	Fo-OH-Orn	Put
+ornibactin C6	C6:0-OH(3)	OH-Orn	D-OH-Asp	Ser	Fo-OH-Orn	Put
+ornibactin C8	C8:0-OH(3)	OH-Orn	D-OH-Asp	Ser	Fo-OH-Orn	Put
+oscillamide B	Phe	NMe-Ala	Hty	Met	D-Lys	CO	Arg
+oscillamide C	Phe	NMe-Hty	Hty	Ile	D-Lys	CO	Arg
+oscillamide Y	Phe	NMe-Ala	Hty	Ile	D-Lys	CO	Tyr
+pallidin	N1-COOH-bhTrp	NMe-Ile
+papuamide A	aC11:2(4.6)-Me(2.6)-OH(2.3)	Gly	Thr	L-Dbu	3Me-4Me-Gln	3OH-Leu	Hpr	bOMe-Tyr	NMe-Thr	Ala	Gly	D-3OMe-Ala
+papuamide B	aC11:2(4.6)-Me(2.6)-OH(2.3)	Gly	Thr	L-Dbu	3Me-4Me-Gln	3OH-Leu	Hpr	bOMe-Tyr	Thr	Ala	Gly	D-3OMe-Ala
+papuamide C	aC11:2(4.6)-Me(2.6)-OH(2.3)	Gly	Thr	dhAbu	3Me-4Me-Gln	3OH-Leu	Hpr	bOMe-Tyr	NMe-Thr	Ala	Gly	D-3OMe-Ala
+papuamide D	aC11:2(4.6)-Me(2.6)-OH(2.3)	Gly	Thr	dhAbu	3Me-4Me-Gln	3OH-Leu	Hpr	bOMe-Tyr	Thr	Ala	Gly	D-3OMe-Ala
+paracelsin A	Ac-Aib	Ala	Aib	Ala	Aib	Ala	Gln	Aib	Val	Aib	Gly	Aib	Aib	Pro	Val	Aib	Aib	Gln	Gln	Pheol
+paracelsin B	Ac-Aib	Ala	Aib	Ala	Aib	Ala	Gln	Aib	Leu	Aib	Gly	Aib	Aib	Pro	Val	Aib	Aib	Gln	Gln	Pheol
+paracelsin C	Ac-Aib	Ala	Aib	Ala	Aib	Aib	Gln	Aib	Val	Aib	Gly	Aib	Aib	Pro	Val	Aib	Aib	Gln	Gln	Pheol
+paracelsin D	Ac-Aib	Ala	Aib	Ala	Aib	Aib	Gln	Aib	Leu	Aib	Gly	Aib	Aib	Pro	Val	Aib	Aib	Gln	Gln	Pheol
+paracelsin E	Ac-Aib	Ala	Aib	Ala	Aib	Ala	Gln	Aib	Leu	Aib	Gly	Aib	Ala	Pro	Val	Aib	Aib	Gln	Gln	Pheol
+peptaibolin	NAc-Leu	Aib	Leu	Aib	Pheol
+peptaivirin A	Ac-Phe	Aib	Ala	Aib	Ival	Leu	Gln	Gly	Aib	Aib	Ala	Ala	Aib	Pro	Ival	Aib	Aib	Gln	Trpol
+peptaivirin B	Ac-Phe	Aib	Ser	Aib	Ival	Leu	Gln	Gly	Aib	Aib	Ala	Ala	Aib	Pro	Ival	Aib	Aib	Gln	Pheol
+perthamide B	aC9:0-OH(2)-NH2(3)	dhAbu	NMe-Gly	OH-Asn	OMe-Thr	4Me-Pro	Br-Tyr	Asn
+petrosifungin A	Bz	Thr	Hpr	Hpr	Pro	Val
+petrosifungin B	pOH-Bz	Thr	Hpr	Hpr	Pro	Val
+phakellistatin 1	Pro	Tyr	Pro	Ile	Pro	Ile	Phe
+phakellistatin 10	Pro	Tyr	Val	Pro	Leu	Thr	Pro	Ile
+phakellistatin 11	Pro	Phe	Pro	Phe	Ile	Phe	Pro	Gln
+phakellistatin 12	Ile	Phe	Thr	Leu	Pro	Pro	Tyr	Ile	Pro	Pro
+phakellistatin 13	Pro	Trp	Leu	Thr	Pro	Gly	Phe
+phakellistatin 14	Phe	bOMe-Asp	Ala	O-Met	Ala	Ile	Pro
+phakellistatin 2	Pro	Phe	Pro	Ile	Ile	Pro	Tyr
+phakellistatin 3	Pro	Phe	Gly	Pro	Thr	Leu	pTrp
+phakellistatin 4	Pro	Phe	Ile	Phe	Ser	Pro	Thr
+phakellistatin 5	Pro	Phe	Asn	Ala	Met	Ala	Ile
+phakellistatin 6	Pro	Phe	Pro	Trp	Leu	Pro	Ile
+phakellistatin 7	Pro	Tyr	Ile	Pro	Pro	Ile	Phe	Ala	Leu	Pro
+phakellistatin 8	Pro	Tyr	Ile	Pro	Pro	Ile	Phe	Val	Leu	Pro
+phakellistatin 9	Pro	Tyr	Val	Pro	Pro	Ile	Phe	Val	Leu	Pro
+phoriospongin A	D-Nva	Gly	Phe	D-aThr	D-Asn	Cl-Ile	D-NMe-Nva	D-Ala	C6:0-OH(3.5)-NH2(4)	NFo-Leu
+phoriospongin B	D-Nva	Gly	Phe	D-aThr	Asn	Cl-Ile	D-NMe-Leu	D-Ala	C6:0-OH(3.5)-NH2(4)	NFo-Leu
+phosphinothricin tripeptide	PT	Ala	Ala
+plusbacin A1	OH-Asp	3OH-Pro	D-Ser	D-OH-Asp	Arg	3OH-Pro	D-Ala	D-aThr	C14:0-OH(3)
+plusbacin A2	OH-Asp	3OH-Pro	D-Ser	D-OH-Asp	Arg	3OH-Pro	D-Ala	D-aThr	iC15:0-OH(3)
+plusbacin A3	OH-Asp	3OH-Pro	D-Ser	D-OH-Asp	Arg	3OH-Pro	D-Ala	D-aThr	iC16:0-OH(3)
+plusbacin A4	OH-Asp	3OH-Pro	D-Ser	D-OH-Asp	Arg	3OH-Pro	D-Ala	D-aThr	C16:0-OH(3)
+plusbacin B1	OH-Asp	3OH-Pro	D-Ser	D-OH-Asp	Arg	Pro	D-Ala	D-aThr	C14:0-OH(3)
+plusbacin B2	OH-Asp	3OH-Pro	D-Ser	D-OH-Asp	Arg	Pro	D-Ala	D-aThr	iC15:0-OH(3)
+plusbacin B3	OH-Asp	3OH-Pro	D-Ser	D-OH-Asp	Arg	Pro	D-Ala	D-aThr	iC16:0-OH(3)
+plusbacin B4	OH-Asp	3OH-Pro	D-Ser	D-OH-Asp	Arg	Pro	D-Ala	D-aThr	C16:0-OH(3)
+polydiscamide A	D-NFo-Ala	Br-Phe	Pro	D-t-Leu	bMe-Ile	D-Trp	Arg	D-CysA	Thr	NMe-Gln	D-Val	Pro	D-Asn
+polydiscamide B	D-NFo-Ala	Br-Phe	Pro	D-t-Leu	bMe-Ile	D-Trp	Arg	D-CysA	Thr	NMe-Gln	D-Val	Pro	D-Asp
+polydiscamide C	D-NFo-Ala	Br-Phe	Pro	D-Val	bMe-Ile	D-Trp	Arg	D-CysA	Thr	NMe-Gln	D-Val	Pro	D-Asp
+polydiscamide D	D-NFo-Ala	Br-Phe	Pro	D-Val	t-Leu	D-Trp	Arg	D-CysA	Thr	NMe-Gln	D-Val	Pro	D-Asp
+Ile-polymyxin B1	aC9:0	Dab	Thr	Dab	Dab	Dab	D-Phe	Ile	Dab	Dab	Thr
+Ile-polymyxin E1	aC9:0	Dab	Thr	Dab	Dab	Dab	D-Leu	Ile	Dab	Dab	Thr
+Ile-polymyxin E2	iC8:0	Dab	Thr	Dab	Dab	Dab	D-Leu	Ile	Dab	Dab	Thr
+Ile-polymyxin E8	aC10:0	Dab	Thr	Dab	Dab	Dab	D-Leu	Ile	Dab	Dab	Thr
+Nva-polymyxin E1	aC9:0	Dab	Thr	Dab	Dab	Dab	D-Leu	Nva	Dab	Dab	Thr
+polymyxin B1	aC9:0	Dab	Thr	Dab	Dab	Dab	D-Phe	Leu	Dab	Dab	Thr
+polymyxin B2	iC8:0	Dab	Thr	Dab	Dab	Dab	D-Phe	Leu	Dab	Dab	Thr
+polymyxin B3	C8:0	Dab	Thr	Dab	Dab	Dab	D-Phe	Leu	Dab	Dab	Thr
+polymyxin B4	C7:0	Dab	Thr	Dab	Dab	Dab	D-Phe	Leu	Dab	Dab	Thr
+polymyxin B5	C9:0	Dab	Thr	Dab	Dab	Dab	D-Phe	Leu	Dab	Dab	Thr
+polymyxin B6	aC9:0-OH(3)	Dab	Thr	Dab	Dab	Dab	D-Phe	Leu	Dab	Dab	Thr
+polymyxin E1	aC9:0	Dab	Thr	Dab	Dab	Dab	D-Leu	Leu	Dab	Dab	Thr
+polymyxin E2	iC8:0	Dab	Thr	Dab	Dab	Dab	D-Leu	Leu	Dab	Dab	Thr
+polymyxin E3	C8:0	Dab	Thr	Dab	Dab	Dab	D-Leu	Leu	Dab	Dab	Thr
+polymyxin E4	C7:0	Dab	Thr	Dab	Dab	Dab	D-Leu	Leu	Dab	Dab	Thr
+polymyxin E7	iC9:0	Dab	Thr	Dab	Dab	Dab	D-Leu	Leu	Dab	Dab	Thr
+polymyxin M	aC9:0	Dab	Thr	Dab	Dab	Dab	D-Leu	Thr	Dab	Dab	Thr
+Val-polymyxin E1	aC9:0	Dab	Thr	Dab	Dab	Dab	D-Leu	Val	Dab	Dab	Thr
+Val-polymyxin E2	iC8:0	Dab	Thr	Dab	Dab	Dab	D-Leu	Val	Dab	Dab	Thr
+polytheonamide B	C6:0-Me(5.5)-oxo(2)	Gly	bMe-Ile	Gly	t-Leu	D-t-Leu	t-Leu	D-Ala	D-t-Leu	t-Leu	D-Ala	Gly	Ala	D-t-Leu	Ala	D-N2Me-Asn	bOH-Val	Gly	Ala	Gly	t-Leu	D-N2Me-Asn	bMe-Gln	D-bOH-Val	Ala	Gly	Gly	D-N2Me-Asn	Ile	D-N2Me-bOH-Asn	t-Leu	D-bOH-Val	Gly	D-N2Me-Asn	Ile	D-N2Me-Asn	Val	D-N2Me-bOH-Asn	Ala	D-N2Me-Asn	Val	D-Ser	Val	D-Asn	bbMe2-O-Met	D-Asn	Gln	D-aThr	Thr
+pristinamycin IA	Hpa	Thr	D-Abu	Pro	NMe-Me2A-Phe	4oxo-Hpr	Ph-Gly
+pristinamycin IB	Hpa	Thr	D-Abu	Pro	NMe-MeA-Phe	4oxo-Hpr	Ph-Gly
+pristinamycin IC	Hpa	Thr	D-Ala	Pro	NMe-Me2A-Phe	4oxo-Hpr	Ph-Gly
+pseudotheonamide A1	D-Phe	e-Tyr	NFo-Dpr	Pro	ck-Arg
+pseudotheonamide B2	D-Phe	e-Tyr	NFo-Dpr	Pro	ck-Arg
+pseudotheonamide C	D-Phe	v-Tyr	NFo-Dpr	Pro	ck-Arg
+pseudotheonamide D	D-Phe	v-Tyr	NFo-Dpr	ProC
+pupukeamide	C4:0	NMe-Val	Val	NMe-OMe-Tyr	NMe-OMe-Ile
+putisolvin I	C6:0	Leu	Glu	Leu	Ile	Gln	Ser	Val	Ile	Ser	Leu	Val	Ser
+putisolvin II	C6:0	Leu	Glu	Leu	Ile	Gln	Ser	Val	Ile	Ser	Leu	Leu	Ser
+putisolvin III	C6:0	Leu	Glu	Leu	Ile	Gln	Ser	Val	Ile	Ser	Leu	Ile	Ser
+azoverdin	ChrI	Hse	D-Hse	Dab	D-Ac-OH-Orn	D-Ser	Ac-OH-Orn
+isopyoverdin 90-33	Glu	ChrI	Asp	Lys	Thr	D-OH-Asp	Thr	D-aThr	OH-cOrn
+isopyoverdin 90-44	ChrI	Asp	Lys	D-Ac-OH-Orn	Thr	Ser	Ser	Gly	Ser	Ser	D-OH-cOrn
+isopyoverdin BTP1	ChrI	Asp	Ala	Asp	D-Ac-OH-Orn	Ser	OH-cOrn
+PaB	ChrP	Lys	D-OH-Asp	Thr	Thr	Gly	D-OH-Asp	Ser
+pseudobactin	ChrP	Lys	D-OH-Asp	Ala	D-aThr	Ala	D-OH-cOrn
+pseudobactin 36167-I	ChrP	Ser	Ala	Ac-OH-Orn	Gly	Ala	OH-Asp	Ser	Thr
+pseudobactin 36167-II	ChrP	Ser	Ala	Ac-OH-Orn	Gly	Ala	OH-Asp	Ser	Thr
+pseudobactin 589A	ChrP	Asp	Lys	D-OH-Asp	Ser	Thr	D-Ala	D-Glu	Ser	OH-cOrn
+pseudobactin A	ChrD	Lys	D-OH-Asp	Ala	D-aThr	Ala	D-OH-cOrn
+pseudobactin A214	ChrP	D-Ser	D-Ac-OH-Orn	Ala	Gly	D-Ser	Ala	OH-Asp	Thr
+pseudobactin A225-I	ChrP	Ser	Ala	Ac-OH-Orn	Gly	Ser	OH-Asp	Ser	Thr
+pseudobactin A225-II	ChrP	Ser	Ala	Ac-OH-Orn	Gly	Ser	OH-Asp	Ser	Thr
+pyoverdin 11370	ChrP	Asp	Lys	D-OH-Asp	D-Ser	Ala	D-Ser	OH-cOrn
+pyoverdin 12	ChrP	D-Ser	Lys	Gly	Fo-OH-Orn	D-Ser	Ser	Gly	Lys	D-Fo-OH-Orn	Glu	Ser
+pyoverdin 1.2	ChrP	Ser	Thr	D-Ser	Orn	OH-Asp	D-Gln	Dab	Ser	D-aThr	OH-cOrn
+pyoverdin 1.2 dihydro	ChrD	D-Ser	Lys	Gly	Fo-OH-Orn	D-Ser	Ser	Gly	Lys	D-Fo-OH-Orn	Glu	Ser
+pyoverdin 1.3	ChrP	D-Ala	D-Lys	Gly	Gly	OH-Asp	D-Gln	Dab	Gly	Ser	OH-cOrn
+pyoverdin 13525	ChrP	D-Ser	Lys	Gly	Fo-OH-Orn	Lys	D-Fo-OH-Orn	Ser
+pyoverdin 1547	ChrP	D-Ser	Lys	D-Ala	Ac-OH-Orn	Thr	D-Ala	Gly	D-Gln	D-Ala	Ser	Ser	OH-cOrn
+pyoverdin 17400	ChrP	D-Ala	D-Lys	Gly	Gly	OH-Asp	D-Gln	Dab	Ser	D-Ala	OH-cOrn
+pyoverdin 18-1	ChrP	D-Ser	Lys	Gly	Fo-OH-Orn	Ser	D-Ser	Gly	Lys	D-Fo-OH-Orn	Ser
+pyoverdin 19310	ChrP	Lys	D-OH-Asp	Thr	Thr	Ser	D-OH-Asp	Ser
+pyoverdin 2192	ChrP	D-Ser	Lys	Ser	D-Ser	Thr	D-Ser	Ac-OH-Orn	Thr	D-Ser	OH-cOrn
+pyoverdin 2392	ChrP	D-Lys	D-Ac-OH-Orn	Gly	D-aThr	Thr	Gln	Gly	D-Ser	OH-cOrn
+pyoverdin 2461	ChrP	Asp	Lys	D-OH-Asp	Ser	D-aThr	D-Ala	Thr	D-Lys	OH-cOrn
+pyoverdin 2798	ChrP	Ser	Dab	Gly	Ser	D-OH-Asp	Ala	Gly	D-Ala	Gly	OH-cOrn
+pyoverdin 2908	ChrP	D-Ser	Orn	OH-Asp	Ser	Ser	D-Ser	OH-cOrn
+pyoverdin 3b	ChrP	Asp	Ac-OH-Orn	Dab	Thr	D-Ala	Thr	Thr	D-Gln	OH-cOrn
+pyoverdin 4a	ChrP	D-Ala	Lys	Thr	D-Ser	Ac-OH-Orn	OH-cOrn
+pyoverdin 51W	ChrP	D-Ala	D-Lys	Gly	Gly	D-OH-Asp	D-Gln	D-Ser	Ala	Gly	D-aThr	OH-cOrn
+pyoverdin 6-10	D-Ala	Orn	OH-Asp	Dab	Ac-OH-Orn	Lys
+pyoverdin 90-51	ChrP	Asp	Lys	D-OH-Asp	Ser	Gly	D-aThr	Lys	OH-cOrn
+pyoverdin 95-275	ChrP	D-Ser	Ser	Fo-OH-Orn	Ser	Ser	Lys	Fo-OH-Orn	Lys	Ser
+pyoverdin 96.188	ChrP	D-Ser	Lys	Fo-OH-Orn	Lys	D-Fo-OH-Orn	D-Glu	D-Ser
+pyoverdin 96-312	ChrP	D-Ser	Ser	Fo-OH-Orn	Lys	Fo-OH-Orn	Lys	Ser
+pyoverdin 96-318	ChrP	D-Ser	Orn	Fo-OH-Orn	D-Ser	Ser	Lys	Fo-OH-Orn	Ser
+pyoverdin 9AW	ChrP	D-Ser	Lys	OH-His	D-aThr	Ser	OH-cOrn
+pyoverdin BTP16	ChrP	Asp	D-OH-Orn	C4:0-OH(3)	D-Dab	Thr	Gly	Ser	Ser	OH-Asp	aThr
+pyoverdin BTP2	ChrP	D-Ser	Val	OH-Asp	Gly	Thr	D-Ser	OH-cOrn
+pyoverdin C	ChrP	Asp	D-OH-Orn	C4:0-OH(3)	D-Dab	Thr	Gly	D-Ser	Ser	OH-Asp	Thr
+pyoverdin C-E	ChrP	D-Ser	Arg	D-Ser	Fo-OH-Orn	Lys	Fo-OH-Orn	Thr	Thr
+pyoverdin CHAO	ChrP	Asp	D-Fo-OH-Orn	Lys	Thr	Ala	Ala	D-Fo-OH-Orn	Lys
+pyoverdin D47	ChrP	D-Ser	Orn	Fo-OH-Orn	Lys	D-Fo-OH-Orn	Glu	Ser
+pyoverdin D-TR133	ChrP	Asp	D-Fo-OH-Orn	Lys	Thr	Ala	Ala	D-Fo-OH-Orn	Ala
+pyoverdin G173	ChrP	D-Ser	Ala	Ac-OH-Orn	Orn	D-Asp	Ac-OH-Orn	Ser
+pyoverdin G4R	ChrP	Asp	Orn	D-OH-Asp	Dab	Gly	Ser	OH-cOrn
+pyoverdin GM	ChrP	D-Ala	D-Lys	Gly	Gly	D-OH-Asp	D-Gln	D-Ser	Ala	D-Ala	D-Ala	Ala	OH-cOrn
+pyoverdin I-III	ChrP	Asn	D-Fo-OH-Orn	Lys	Thr	Ala	Ala	D-Fo-OH-Orn	Lys
+pyoverdin P19	ChrP	D-Ser	D-Ac-OH-Orn	Ala	Gly	D-Ser	Ser	D-OH-Asp	Thr
+pyoverdin Pau	ChrP	D-Ser	D-Ac-OH-Orn	Gly	D-aThr	Thr	Gln	Gly	D-Ser	D-OH-cOrn
+pyoverdin PL7	ChrP	D-Ser	D-Ac-OH-Orn	Ala	Gly	D-aThr	Ala	OH-cOrn
+pyoverdin PL8	ChrP	D-Lys	D-Ac-OH-Orn	Ala	Gly	D-aThr	Ser	OH-cOrn
+pyoverdin R	ChrP	D-Ser	Dab	Fo-OH-Orn	Gln	D-Gln	D-Fo-OH-Orn	Gly
+pyoverdin R prime	ChrP	D-Ser	Dab	Fo-OH-Orn	D-Gln	D-Fo-OH-Orn	Gly
+pyoverdin Thai	ChrP	Ser	Dab	Thr	Ser	Ac-OH-Orn	OH-cOrn
+pyoverdin T II	ChrP	D-Ser	D-Fo-OH-Orn	Orn	Gly	D-aThr	Ser	OH-cOrn
+echinomycin	D-Ser	COOH-Qui	Ala	diMe-Cys	NMe-Val	D-Ser	COOH-Qui	Ala	NMe-Cys	NMe-Val
+quinomycin B	COOH-Qui	D-Ser	Ala	diMe-Cys	NMe-aIle	D-Ser	COOH-Qui	Ala	NMe-Cys	NMe-aIle
+quinomycin C	COOH-Qui	D-Ser	Ala	diMe-Cys	diMe-aIle	D-Ser	COOH-Qui	Ala	NMe-Cys	diMe-aIle
+ramoplanin A1	C8:2(2.t4)	Asn	OH-Asn	D-Hpg	D-Orn	D-aThr	Hpg	D-Hpg	aThr	Phe	D-Orn	Hpg	D-Man	D-Man	D-aThr	Hpg	Gly	Leu	D-Ala	Cl-Hpg
+ramoplanin A2	iC9:2(2.t4)	Asn	OH-Asn	D-Hpg	D-Orn	D-aThr	Hpg	D-Hpg	aThr	Phe	D-Orn	Hpg	D-Man	D-Man	D-aThr	Hpg	Gly	Leu	D-Ala	Cl-Hpg
+ramoplanin A3	iC10:2(2.t4)	Asn	OH-Asn	D-Hpg	D-Orn	D-aThr	Hpg	D-Hpg	aThr	Phe	D-Orn	Hpg	D-Man	D-Man	D-aThr	Hpg	Gly	Leu	D-Ala	Cl-Hpg
+scytalidamide A	Phe	NMe-Phe	Phe	Aib	NMe-Leu	Pro	Leu
+scytalidamide B	Phe	NMe-Phe	Phe	Aib	NMe-Leu	3Me-Pro	Leu
+serrawettin W1	C10:0-OH(3)	Ser	C10:0-OH(3)	Ser
+serrawettin W2	C10:0-OH(3)	D-Leu	Ser	Thr	D-Phe	Ile
+somamide A	Val	NMe-Tyr	Phe	Ahp	Abu	Thr	O-Met	C6:0
+somamide B	Val	NMe-Tyr	Phe	Ahp	Abu	Thr	Gln	C4:0
+stilboflavin A1	Ac-Aib	Pro	Aib	Ala	Aib	Ala	Gln	Aib	Val	Aib	Gly	Aib	Aib	Pro	Val	Aib	Aib	Glu	Gln	Valol
+stilboflavin A2	Ac-Aib	Pro	Aib	Ala	Aib	Ala	Gln	Aib	Leu	Aib	Gly	Aib	Aib	Pro	Val	Aib	Aib	Glu	Gln	Valol
+stilboflavin A3	Ac-Aib	Pro	Aib	Ala	Aib	Aib	Gln	Aib	Val	Aib	Gly	Aib	Ala	Pro	Val	Aib	Aib	Glu	Gln	Leuol
+stilboflavin A4	Ac-Aib	Pro	Aib	Ala	Aib	Ala	Gln	Aib	Leu	Aib	Gly	Aib	Aib	Pro	Val	Aib	Aib	Glu	Gln	Leuol
+stilboflavin A5	Ac-Aib	Pro	Aib	Ala	Aib	Aib	Gln	Aib	Leu	Aib	Gly	Aib	Aib	Pro	Val	Aib	Aib	Glu	Gln	Valol
+stilboflavin A6	Ac-Aib	Pro	Aib	Ala	Aib	Ala	Gln	Aib	Leu	Aib	Gly	Aib	Aib	Pro	Val	Aib	Aib	Glu	Gln	Ivalol
+stilboflavin A7	Ac-Aib	Pro	Aib	Ala	Aib	Aib	Gln	Aib	Leu	Aib	Gly	Aib	Aib	Pro	Val	Aib	Aib	Glu	Gln	Ileol
+stilboflavin B1	Ac-Aib	Pro	Aib	Ala	Aib	Ala	Gln	Aib	Val	Aib	Gly	Aib	Aib	Pro	Val	Aib	Aib	Gln	Gln	Valol
+stilboflavin B10	Ac-Aib	Pro	Aib	Ala	Aib	Aib	Gln	Aib	Val	Aib	Gly	Aib	Aib	Pro	Val	Aib	Aib	Gln	Gln	Ileol
+stilboflavin B2	Ac-Aib	Pro	Aib	Ala	Aib	Ala	Gln	Aib	Leu	Aib	Gly	Aib	Aib	Pro	Val	Aib	Aib	Gln	Gln	Valol
+stilboflavin B3	Ac-Aib	Pro	Aib	Ala	Aib	Ala	Gln	Aib	Val	Aib	Gly	Aib	Aib	Pro	Val	Aib	Aib	Gln	Gln	Leuol
+stilboflavin B4	Ac-Aib	Pro	Aib	Ala	Aib	Ala	Gln	Aib	Leu	Aib	Gly	Aib	Aib	Pro	Val	Aib	Aib	Gln	Gln	Leuol
+stilboflavin B5	Ac-Aib	Pro	Aib	Ala	Aib	Aib	Gln	Aib	Leu	Aib	Gly	Aib	Aib	Pro	Val	Aib	Aib	Gln	Gln	Valol
+stilboflavin B6	Ac-Aib	Pro	Aib	Ala	Aib	Aib	Gln	Aib	Val	Aib	Gly	Aib	Aib	Pro	Val	Aib	Aib	Gln	Gln	Valol
+stilboflavin B7	Ac-Aib	Pro	Aib	Ala	Aib	Aib	Gln	Aib	Leu	Aib	Gly	Aib	Aib	Pro	Val	Aib	Aib	Gln	Gln	Leuol
+stilboflavin B8	Ac-Aib	Pro	Aib	Ala	Aib	Aib	Gln	Aib	Val	Aib	Gly	Aib	Aib	Pro	Val	Aib	Aib	Gln	Gln	Leuol
+stilboflavin B9	Ac-Aib	Pro	Aib	Ala	Aib	Aib	Gln	Aib	Leu	Aib	Gly	Aib	Aib	Pro	Val	Aib	Aib	Gln	Gln	Ileol
+stylopeptide I	Pro	Ile	Pro	Leu	Ile	Phe	Ser
+stylopeptide II	Pro	Thr	Pro	Phe	Leu	Leu	Pro	Phe	Pro	Tyr
+stylostatin 1	Pro	Phe	Asn	Ser	Leu	Ala	Ile
+[Ala4]surfactin aC15	aC15:0-OH(3)	Glu	Leu	D-Leu	Ala	Asp	D-Leu	Leu
+[Ala4]surfactin iC14	iC14:0-OH(3)	Glu	Leu	D-Leu	Ala	Asp	D-Leu	Leu
+[Ala4]surfactin iC15	iC15:0-OH(3)	Glu	Leu	D-Leu	Ala	Asp	D-Leu	Leu
+[Ala4]surfactin nC14	C14:0-OH(3)	Glu	Leu	D-Leu	Ala	Asp	D-Leu	Leu
+[Ala4]surfactin nC15	C15:0-OH(3)	Glu	Leu	D-Leu	Ala	Asp	D-Leu	Leu
+[Gln1]surfactin	C15:0-OH(3)	Gln	Leu	D-Leu	Val	Asp	D-Leu	Ile
+[Gln1]surfactin aC15	aC15:0-OH(3)	Gln	Leu	D-Leu	Val	Asp	D-Leu	Ile
+[Gln1]surfactin iC15	iC15:0-OH(3)	Gln	Leu	D-Leu	Val	Asp	D-Leu	Ile
+[Ile2.4.7]surfactin	aC15:0-OH(3)	Glu	Ile	D-Leu	Ile	Asp	D-Leu	Ile
+[Ile4.7]surfactin	aC15:0-OH(3)	Glu	Leu	D-Leu	Ile	Asp	D-Leu	Ile
+[Ile4]surfactin	aC15:0-OH(3)	Glu	Leu	D-Leu	Ile	Asp	D-Leu	Leu
+[Ile7]surfactin	aC15:0-OH(3)	Glu	Leu	D-Leu	Val	Asp	D-Leu	Ile
+[Leu4]surfactin	aC15:0-OH(3)	Glu	Leu	D-Leu	Leu	Asp	D-Leu	Leu
+surfactin aC13	aC13:0-OH(3)	Glu	Leu	D-Leu	Val	Asp	D-Leu	Leu
+surfactin aC15	aC15:0-OH(3)	Glu	Leu	D-Leu	Val	Asp	D-Leu	Leu
+surfactin iC12	iC12:0-OH(3)	Glu	Leu	D-Leu	Val	Asp	D-Leu	Leu
+surfactin iC14	iC14:0-OH(3)	Glu	Leu	D-Leu	Val	Asp	D-Leu	Leu
+surfactin iC15	iC15:0-OH(3)	Glu	Leu	D-Leu	Val	Asp	D-Leu	Leu
+surfactin iC16	iC16:0-OH(3)	Glu	Leu	D-Leu	Val	Asp	D-Leu	Leu
+surfactin nC13	C13:0-OH(3)	Glu	Leu	D-Leu	Val	Asp	D-Leu	Leu
+surfactin nC14	C14:0-OH(3)	Glu	Leu	D-Leu	Val	Asp	D-Leu	Leu
+surfactin nC15	C15:0-OH(3)	Glu	Leu	D-Leu	Val	Asp	D-Leu	Leu
+[Val7]surfactin	aC15:0-OH(3)	Glu	Leu	D-Leu	Val	Asp	D-Leu	Val
+syringafactin A	C10:0-OH(3)	Leu	Leu	Gln	Leu	Thr	Val	Leu	Leu
+syringafactin B	C10:0-OH(3)	Leu	Leu	Gln	Leu	Thr	Leu	Leu	Leu
+syringafactin C	C10:0-OH(3)	Leu	Leu	Gln	Leu	Thr	Ile	Leu	Leu
+syringafactin D	C12:0-OH(3)	Leu	Leu	Gln	Leu	Thr	Val	Leu	Leu
+syringafactin E	C12:0-OH(3)	Leu	Leu	Gln	Leu	Thr	Leu	Leu	Leu
+syringafactin F	C12:0-OH(3)	Leu	Leu	Gln	Leu	Thr	Ile	Leu	Leu
+cormycin A	C16:0-OH(3.4)	Ser	D-Orn	Asn	D-Hse	His	aThr	dhAbu	OH-Asp	4Cl-Thr
+pseudomycin A	C14:0-OH(3.4)	Ser	D-Dab	Asp	Lys	Dab	aThr	dhAbu	OH-Asp	4Cl-Thr
+pseudomycin B	C14:0-OH(3)	Ser	D-Dab	Asp	Lys	Dab	aThr	dhAbu	OH-Asp	4Cl-Thr
+pseudomycin C	C16:0-OH(3.4)	Ser	D-Dab	Asp	Lys	Dab	aThr	dhAbu	OH-Asp	4Cl-Thr
+pseudomycin C2	C16:0-OH(3)	Ser	D-Dab	Asp	Lys	Dab	aThr	dhAbu	OH-Asp	4Cl-Thr
+syringomycin A1	C10:0-OH(3)	Ser	D-Ser	Dab	D-Dab	Arg	Phe	dhAbu	OH-Asp	4Cl-Thr
+syringomycin E	C12:0-OH(3)	Ser	D-Ser	Dab	D-Dab	Arg	Phe	dhAbu	OH-Asp	4Cl-Thr
+syringomycin G	C14:0-OH(3)	Ser	D-Ser	Dab	D-Dab	Arg	Phe	dhAbu	OH-Asp	4Cl-Thr
+syringostatin A	C14:0-OH(3)	Ser	D-Dab	Dab	D-Hse	Orn	aThr	dhAbu	OH-Asp	4Cl-Thr
+syringostatin B	C14:0-OH(3.4)	Ser	D-Dab	Dab	D-Hse	Orn	aThr	dhAbu	OH-Asp	4Cl-Thr
+syringotoxin B	C14:0-OH(3)	Ser	D-Dab	Gly	D-Hse	Orn	aThr	dhAbu	OH-Asp	4Cl-Thr
+[Phe25]syringopeptin 25A	C10:0-OH(3)	dhAbu	D-Pro	D-Val	Ala	D-Ala	Val	D-Leu	D-Ala	D-Ala	dhAbu	D-Val	dhAbu	D-Ala	D-Val	D-Ala	D-Ala	dhAbu	D-aThr	D-Ser	D-Ala	Val	Ala	Dab	D-Dab	Phe
+syringopeptin 22A	C10:0-OH(3)	dhAbu	D-Pro	D-Val	Val	D-Ala	D-Ala	D-Val	D-Val	dhAbu	D-Ala	D-Val	Ala	D-Ala	dhAbu	D-aThr	D-Ser	D-Ala	dhAbu	Ala	Dab	D-Dab	Tyr
+syringopeptin 22B	C12:0-OH(3)	dhAbu	D-Pro	D-Val	Val	D-Ala	D-Ala	D-Val	D-Val	dhAbu	D-Ala	D-Val	Ala	D-Ala	dhAbu	D-aThr	D-Ser	D-Ala	dhAbu	Ala	Dab	D-Dab	Tyr
+syringopeptin 22 PhvA	C10:0-OH(3)	dhAbu	Pro	Val	Leu	Ala	Ala	Ala	Val	dhAbu	Ala	Val	Ala	Ala	dhAbu	aThr	Ser	Ala	dhAbu	Ala	Dab	Dab	Tyr
+syringopeptin 22 PhvB	C12:0-OH(3)	dhAbu	Pro	Val	Leu	Ala	Ala	Ala	Val	dhAbu	Ala	Val	Ala	Ala	dhAbu	aThr	Ser	Ala	dhAbu	Ala	Dab	Dab	Tyr
+syringopeptin 25A	C10:0-OH(3)	dhAbu	D-Pro	D-Val	Ala	D-Ala	Val	D-Leu	D-Ala	D-Ala	dhAbu	D-Val	dhAbu	D-Ala	D-Val	D-Ala	D-Ala	dhAbu	D-aThr	D-Ser	D-Ala	Val	Ala	Dab	D-Dab	Tyr
+syringopeptin 25B	C12:0-OH(3)	dhAbu	D-Pro	D-Val	Ala	D-Ala	Val	D-Leu	D-Ala	D-Ala	dhAbu	D-Val	dhAbu	D-Ala	D-Val	D-Ala	D-Ala	dhAbu	D-aThr	D-Ser	D-Ala	Val	Ala	Dab	D-Dab	Tyr
+syringopeptin 508A	C12:0-OH(3)	dhAbu	Pro	Val	Leu	Ala	Ala	Leu	Val	Ala	Ala	Val	Ala	Ala	dhAbu	aThr	Ser	Ala	dhAbu	Ala	Dab	Dab	Tyr
+syringopeptin 508B	C14:0-OH(3)	dhAbu	Pro	Val	Leu	Ala	Ala	Leu	Val	Ala	Ala	Val	Ala	Ala	dhAbu	aThr	Ser	Ala	dhAbu	Ala	Dab	Dab	Tyr
+syringopeptin SC 1	C10:0-OH(3)	dhAbu	Pro	Val	Leu	Ala	Ala	Leu	Val	dh-Ala	Ala	Val	Ala	Ala	dhAbu	aThr	Ser	Ala	dhAbu	Ala	Dab	Dab	Tyr
+syringopeptin SC 2	C12:0-OH(3)	dhAbu	Pro	Val	Leu	Ala	Ala	Leu	Val	dh-Ala	Ala	Val	Ala	Ala	dhAbu	aThr	Ser	Ala	dhAbu	Ala	Dab	Dab	Tyr
+tentoxin	NMe-Ala	Leu	NMe-dPhe	Gly
+theonegramide	Ser	C8:2(5.7)-Me(6)-OH(4)-NH2(3)-Ph(8)	Phe	Ser	aThr	His	Aad	Iser	bMe-Br-Phe	OH-Asn	Asn	Ala	D-Ara
+theonellamide A	Ser	C8:2(5.7)-Me(6)-OH(4)-NH2(3)-Ph(8)	Phe	Ser	aThr	His	Ahad	Iser	bMe-Br-Phe	OH-Asn	Asn	Ala	bD-Gal
+theonellamide B	Ser	C8:2(5.7)-Me(6)-OH(4)-NH2(3)-Ph(8)	Phe	Ser	aThr	His	Ahad	Iser	bMe-Br-Phe	OH-Asn	Asn	Ala
+theonellamide C	Ser	C8:2(5.7)-Me(6)-OH(4)-NH2(3)-brPh(8)	Phe	Ser	aThr	His	Ahad	bAla	Phe	OH-Asn	Asn	Ala
+theonellamide D	Ser	C8:2(5.7)-Me(6)-OH(4)-NH2(3)-brPh(8)	Phe	Ser	aThr	His	Ahad	bAla	Br-Phe	OH-Asn	Asn	Ala	Ara
+theonellamide E	Ser	C8:2(5.7)-Me(6)-OH(4)-NH2(3)-brPh(8)	Phe	Ser	aThr	His	Ahad	bAla	Br-Phe	OH-Asn	Asn	Ala	bD-Gal
+theonellamide F	Ser	C8:2(5.7)-Me(6)-OH(4)-NH2(3)-brPh(8)	Phe	Ser	aThr	His	Ahad	bAla	Br-Phe	OH-Asn	Asn	Ala
+theonellapeptolide Ia	NOMe-Ac-Val	D-NMe-Leu	Thr	bAla	D-Leu	NMe-Ile	bAla	D-Val	NMe-Val	NMe-Ala	bAla	D-Leu	D-NMe-aIle
+theonellapeptolide Id	NOMe-Ac-Val	D-NMe-Leu	Thr	bAla	D-Leu	NMe-Ile	bAla	D-aIle	NMe-Val	NMe-Ala	bAla	D-Leu	D-NMe-aIle
+theonellapeptolide Ie	NOMe-Ac-Val	D-NMe-Leu	Thr	NMe-bAla	D-Leu	NMe-Ile	bAla	D-aIle	NMe-Val	NMe-Ala	bAla	D-Leu	D-NMe-aIle
+theonellapeptolide IId	NOMe-Ac-Val	D-NMe-Leu	Thr	bAla	D-Leu	NMe-Ile	bAla	D-aIle	NMe-Val	Ala	bAla	D-Leu	D-NMe-aIle
+theonellapeptolide IIe	NOMe-Ac-Val	D-NMe-Leu	Thr	NMe-bAla	D-Leu	NMe-Ile	bAla	D-aIle	NMe-Val	Ala	bAla	D-Leu	D-NMe-aIle
+theonellapeptolide IIIe	NOMe-Ac-Val	D-NMe-Leu	Thr	NMe-bAla	D-Val	NMe-Ile	bAla	D-aIle	NMe-Ile	NMe-Ala	Ala	D-Leu	D-NMe-Leu
+theopalauamide	Ser	C8:2(5.7)-Me(6)-OH(4)-NH2(3)-Ph(8)	Phe	Ser	aThr	His	Aad	Iser	bMe-Br-Phe	OH-Asn	Asn	Ala	bD-Gal
+tokaramide A	pOH-Bz	Val	Val	Argal
+tolaasin A	Pda	dhAbu	D-Pro	D-Ser	D-Leu	D-Val	D-Ser	D-Leu	D-Val	Val	D-Gln	Leu	D-Val	dhAbu	D-aThr	Ile	D-Hse	D-Dab	Lys
+tolaasin B	C8:0-OH(3)	dhAbu	D-Pro	D-Ser	D-Leu	D-Val	D-Ser	D-Leu	D-Val	Val	D-Gln	Leu	D-Val	dhAbu	D-aThr	Val	D-Hse	D-Dab	Lys
+tolaasin C	C8:0-OH(3)	dhAbu	D-Pro	D-Ser	D-Leu	D-Val	D-Ser	D-Leu	D-Val	Val	D-Gln	Leu	D-Val	dhAbu	D-aThr	Ile	D-Hse	D-Dab	Lys
+tolaasin D	C8:0-OH(3)	dhAbu	D-Pro	D-Ser	D-Leu	D-Val	D-Ser	D-Leu	D-Val	Val	D-Gln	Leu	D-Val	dhAbu	D-aThr	Leu	D-Hse	D-Dab	Lys
+tolaasin E	C8:0-OH(3)	dhAbu	D-Pro	D-Ser	D-Leu	D-Val	D-Ser	D-Leu	D-Val	Val	D-Gln	Leu	D-Val	dhAbu	D-aThr	Leu	Gly	D-Dab	Lys
+tolaasin I	C8:0-OH(3)	dhAbu	D-Pro	D-Ser	D-Leu	D-Val	D-Ser	D-Leu	D-Val	Val	D-Gln	Leu	D-Val	dhAbu	D-aThr	Ile	D-Hse	D-Dab	Lys
+tolaasin II	C8:0-OH(3)	dhAbu	D-Pro	D-Ser	D-Leu	D-Val	D-Ser	D-Leu	D-Val	Val	D-Gln	Leu	D-Val	dhAbu	D-aThr	Ile	Gly	D-Dab	Lys
+trichobrachin A1	Ac-Aib	Asn	Leu	Leu	Aib	Pro	Leu	Aib	Aib	Pro	Leuol
+trichobrachin A2	Ac-Aib	Asn	Leu	Leu	Aib	Pro	Val	Leu	Aib	Pro	Valol
+trichobrachin A3	Ac-Aib	Asn	Val	Leu	Aib	Pro	Leu	Leu	Aib	Pro	Valol
+trichobrachin A4	Ac-Aib	Asn	Leu	Val	Aib	Pro	Leu	Leu	Aib	Pro	Valol
+trichobrachin B1	Ac-Aib	Asn	Leu	Leu	Aib	Pro	Val	Aib	Val	Pro	Leuol
+trichobrachin B2	Ac-Aib	Asn	Val	Leu	Aib	Pro	Leu	Aib	Val	Pro	Leuol
+trichobrachin B3	Ac-Aib	Asn	Leu	Val	Aib	Pro	Leu	Aib	Val	Pro	Leuol
+trichobrachin B4	Ac-Aib	Asn	Leu	Leu	Aib	Pro	Leu	Aib	Val	Pro	Valol
+PA II	Ac-Aib	Ser	Ala	Aib	Ival	Gln	Aib	Val	Aib	Gly	Leu	Aib	Pro	Leu	Aib	Aib	Gln	Trpol
+PA IV	Ac-Aib	Ser	Ala	Aib	Ival	Gln	Ival	Val	Aib	Gly	Leu	Aib	Pro	Leu	Aib	Aib	Gln	Trpol
+PA IX	Ac-Aib	Ser	Ala	Ival	Ival	Gln	Aib	Val	Aib	Gly	Leu	Aib	Pro	Leu	Aib	Aib	Gln	Pheol
+PAU4	Ac-Aib	Ser	Ala	Aib	Aib	Gln	Aib	Val	Aib	Gly	Leu	Aib	Pro	Leu	Aib	Aib	Gln	Trpol
+PA V	Ac-Aib	Ser	Ala	Ival	Ival	Gln	Aib	Val	Aib	Gly	Leu	Aib	Pro	Leu	Aib	Aib	Gln	Trpol
+PA VI	Ac-Aib	Ser	Ala	Aib	Ival	Gln	Aib	Val	Aib	Gly	Leu	Aib	Pro	Leu	Aib	Aib	Gln	Pheol
+PA VIII	Ac-Aib	Ser	Ala	Aib	Ival	Gln	Ival	Val	Aib	Gly	Leu	Aib	Pro	Leu	Aib	Aib	Gln	Pheol
+TVB I	Ac-Aib	Gly	Ala	Val	Aib	Gln	Aib	Ala	Aib	Ser	Leu	Aib	Pro	Leu	Aib	Aib	Gln	Valol
+TVB II	Ac-Aib	Gly	Ala	Leu	Aib	Gln	Aib	Ala	Aib	Ser	Leu	Aib	Pro	Leu	Aib	Aib	Gln	Valol
+TVB IV	Ac-Aib	Gly	Ala	Leu	Aib	Gln	Ival	Ala	Aib	Ser	Leu	Aib	Pro	Leu	Aib	Aib	Gln	Valol
+trichotoxin A-40	Ac-Aib	Gly	Aib	Leu	Aib	Glu	Aib	Aib	Aib	Ala	Aib	Aib	Pro	Leu	Aib	D-Ival	Gln	Valol
+trichotoxin A-40 I	Ac-Aib	Gly	Aib	Leu	Aib	Gln	Aib	Aib	Ala	Ala	Aib	Aib	Pro	Leu	Aib	Aib	Glu	Valol
+trichotoxin A-40 II	Ac-Aib	Gly	Aib	Leu	Aib	Gln	Aib	Aib	Aib	Ala	Ala	Aib	Pro	Leu	Aib	Aib	Glu	Valol
+trichotoxin A-40 III	Ac-Aib	Gly	Aib	Leu	Aib	Gln	Aib	Aib	Ala	Ala	Aib	Aib	Pro	Leu	Aib	D-Ival	Glu	Valol
+trichotoxin A-40 IV	Ac-Aib	Gly	Aib	Leu	Aib	Gln	Aib	Aib	Aib	Ala	Aib	Aib	Pro	Leu	Aib	Aib	Glu	Valol
+trichotoxin A-40 V	Ac-Aib	Gly	Aib	Leu	Aib	Gln	Aib	Aib	Aib	Ala	Aib	Aib	Pro	Leu	Aib	D-Ival	Glu	Valol
+trichotoxin A-40 Va	Ac-Aib	Ala	Aib	Leu	Aib	Gln	Aib	Aib	Aib	Ala	Aib	Aib	Pro	Leu	Aib	Aib	Glu	Valol
+trichotoxin A-50 E	Ac-Aib	Gly	Aib	Leu	Aib	Gln	Aib	Aib	Aib	Ala	Ala	Aib	Pro	Leu	Aib	Aib	Gln	Valol
+trichotoxin A-50 F	Ac-Aib	Gly	Aib	Leu	Aib	Gln	Aib	Aib	Ala	Ala	Ala	Aib	Pro	Leu	Aib	D-Ival	Gln	Valol
+trichotoxin A-50 G	Ac-Aib	Gly	Aib	Leu	Aib	Gln	Aib	Aib	Aib	Ala	Ala	Aib	Pro	Leu	Aib	D-Ival	Gln	Valol
+trichotoxin A-50 H	Ac-Aib	Ala	Aib	Leu	Aib	Gln	Aib	Aib	Aib	Ala	Ala	Aib	Pro	Leu	Aib	D-Ival	Gln	Valol
+trichotoxin A-50 I	Ac-Aib	Gly	Aib	Leu	Aib	Gln	Aib	Aib	Aib	Ala	Aib	Aib	Pro	Leu	Aib	D-Ival	Gln	Valol
+trichotoxin A-50 J	Ac-Aib	Ala	Aib	Leu	Aib	Gln	Aib	Aib	Aib	Ala	Aib	Aib	Pro	Leu	Aib	D-Ival	Gln	Valol
+triostin A	D-Ser	COOH-Qui	Ala	NMe-Cys	NMe-Val	D-Ser	COOH-Qui	Ala	NMe-Cys	NMe-Val
+triostin C	COOH-Qui	D-Ser	Ala	NMe-Cys	diMe-aIle	D-Ser	COOH-Qui	Ala	NMe-Cys	diMe-aIle
+tripropeptin A	OH-Asp	3OH-Pro	Ser	OH-Asp	Arg	Pro	Pro	Thr	iC13:0-OH(3)
+tripropeptin B	OH-Asp	3OH-Pro	Ser	OH-Asp	Arg	Pro	Pro	Thr	iC14:0-OH(3)
+tripropeptin C	OH-Asp	3OH-Pro	Ser	OH-Asp	Arg	Pro	Pro	Thr	iC15:0-OH(3)
+tripropeptin D	OH-Asp	3OH-Pro	Ser	OH-Asp	Arg	Pro	Pro	Thr	iC16:0-OH(3)
+tripropeptin E	OH-Asp	3OH-Pro	Ser	OH-Asp	Arg	Pro	Pro	Thr	iC17:0-OH(3)
+tripropeptin Z	OH-Asp	3OH-Pro	Ser	OH-Asp	Arg	Pro	Pro	Thr	iC12:0-OH(3)
+tuberactinamine	Dpr	Ser	Ser	bU-dAla	Cap
+tuberactinomycin A	OH-bLys	Dpr	Ser	Ser	bU-dAla	5OH-Cap
+tuberactinomycin N	OH-bLys	Dpr	Ser	Ser	bU-dAla	Cap
+tuberactinomycin O	bLys	Dpr	Ser	Ser	bU-dAla	Cap
+viomycin	bLys	Dpr	Ser	Ser	bU-dAla	5OH-Cap
+tyrocidine A	D-Phe	Pro	Phe	D-Phe	Asn	Gln	Tyr	Val	Orn	Leu
+tyrocidine B	D-Phe	Pro	Trp	D-Phe	Asn	Gln	Tyr	Val	Orn	Leu
+tyrocidine C	D-Phe	Pro	Trp	D-Trp	Asn	Gln	Tyr	Val	Orn	Leu
+tyrocidine D	D-Phe	Pro	Trp	D-Trp	Asn	Gln	Trp	Val	Orn	Leu
+valinomycin	D-Val	Lac	Val	D-Hiv	D-Val	Lac	Val	D-Hiv	D-Val	Lac	Val	D-Hiv
+vancomycin	Asn	bOH-Cl-Tyr	NMe-Leu	Hpg	D-Glc	Van	bOH-Cl-Tyr	Dhpg	Hpg
+vibriobactin	diOH-Bz	NSpd	DMOG	DMOG
+virginiamycin S	Hpa	Thr	D-Abu	Pro	NMe-Phe	4oxo-Hpr	Ph-Gly
+massetolide A	C10:0-OH(3)	Leu	D-Glu	D-aThr	D-aIle	Leu	D-Ser	Leu	D-Ser	Ile
+massetolide B	C11:0-OH(3)	Leu	D-Glu	D-aThr	D-aIle	Leu	D-Ser	Leu	D-Ser	Ile
+massetolide C	C12:0-OH(3)	Leu	D-Glu	D-aThr	D-aIle	Leu	D-Ser	Leu	D-Ser	Ile
+massetolide D	C10:0-OH(3)	Leu	D-Glu	D-aThr	D-aIle	Leu	D-Ser	Leu	D-Ser	Leu
+massetolide E	C10:0-OH(3)	Leu	D-Glu	D-aThr	D-Val	Leu	D-Ser	Leu	D-Ser	Val
+massetolide F	C10:0-OH(3)	Leu	D-Glu	D-aThr	D-Val	Leu	D-Ser	Leu	D-Ser	Leu
+massetolide G	C11:0-OH(3)	Leu	D-Glu	D-aThr	D-Val	Leu	D-Ser	Leu	D-Ser	Ile
+massetolide H	C12:0-OH(3)	Leu	D-Glu	D-aThr	D-Val	Leu	D-Ser	Leu	D-Ser	Ile
+massetolide L	C10:0-OH(3)	Leu	D-Glu	D-aThr	D-aIle	Leu	D-Ser	Leu	D-Ser	Val
+pseudophomin A	C10:0-OH(3)	Leu	D-Glu	D-aThr	D-Ile	D-Leu	D-Ser	Leu	D-Ser	Ile
+pseudophomin B	C12:0-OH(3)	Leu	D-Glu	D-aThr	D-Ile	D-Leu	D-Ser	Leu	D-Ser	Ile
+viscosin	C10:0-OH(3)	Leu	D-Glu	D-aThr	D-Val	Leu	D-Ser	Leu	D-Ser	Ile
+viscosinamide	C10:0-OH(3)	Leu	D-Gln	D-aThr	D-Val	Leu	D-Ser	Leu	D-Ser	Ile
+White Line Inducing Principle	C10:0-OH(3)	Leu	D-Glu	D-aThr	D-Val	D-Leu	D-Ser	Leu	D-Ser	Ile
+waiakeamide	O-Met	Phe-Thz	Pro	O-Met	Pro	Pro
+wainunuamide	Pro	His	Pro	Pro	Gly	Leu	Phe
+Leu1-zervamicin	NAc-Leu	Ile	Gln	D-Ival	Ile	Thr	Aib	Leu	Aib	4OH-Pro	Gln	Aib	4OH-Pro	Aib	Pro	Pheol
+zervamicin IA	Ac-Trp	Ile	Glu	D-Ival	Val	Thr	Aib	Leu	Aib	4OH-Pro	Gln	Aib	4OH-Pro	Aib	Pro	Pheol
+zervamicin IB	Ac-Trp	Val	Glu	D-Ival	Ile	Thr	Aib	Leu	Aib	4OH-Pro	Gln	Aib	4OH-Pro	Aib	Pro	Pheol
+zervamicin IB prime	Ac-Trp	Ile	Glu	Aib	Ile	Thr	Aib	Leu	Aib	4OH-Pro	Gln	Aib	4OH-Pro	Aib	Pro	Pheol
+zervamicin IC	Ac-Trp	Ile	Glu	D-Ival	Ile	Thr	Aib	Leu	Aib	4OH-Pro	Gln	Aib	4OH-Pro	Aib	Pro	Pheol
+zervamicin II-1	Ac-Trp	Ile	Gln	Aib	Val	Thr	Aib	Leu	Aib	4OH-Pro	Gln	Aib	4OH-Pro	Aib	Pro	Pheol
+zervamicin II-2	Ac-Trp	Ile	Gln	Aib	Ile	Thr	Aib	Val	Aib	4OH-Pro	Gln	Aib	4OH-Pro	Aib	Pro	Pheol
+zervamicin II-3	Ac-Trp	Val	Gln	Aib	Ile	Thr	Aib	Leu	Aib	4OH-Pro	Gln	Aib	4OH-Pro	Aib	Pro	Pheol
+zervamicin II-4	Ac-Trp	Ile	Gln	D-Ival	Val	Thr	Aib	Leu	Aib	4OH-Pro	Gln	Aib	4OH-Pro	Aib	Pro	Pheol
+zervamicin II-5	Ac-Trp	Ile	Gln	D-Ival	Ile	Thr	Aib	Val	Aib	4OH-Pro	Gln	Aib	4OH-Pro	Aib	Pro	Pheol
+zervamicin IIA	Ac-Trp	Ile	Gln	Aib	Ile	Thr	Aib	Leu	Aib	4OH-Pro	Gln	Aib	4OH-Pro	Aib	Pro	Pheol
+zervamicin IIB	Ac-Trp	Ile	Gln	D-Ival	Ile	Thr	Aib	Leu	Aib	4OH-Pro	Gln	Aib	4OH-Pro	Aib	Pro	Pheol

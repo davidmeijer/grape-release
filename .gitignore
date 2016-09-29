@@ -1,0 +1,26 @@
+*~
+data/preprocessing/prism-standalone/*
+src/Test.java
+images/
+output/
+results/
+bin/
+#Eclipse
+*.pydevproject
+.metadata
+.gradle
+*.tmp
+*.bak
+*.swp
+*~.nib
+.settings/
+.loadpath
+
+# CDT-specific
+.cproject
+
+# PDT-specific
+.buildpath
+
+# TeXlipse plugin
+.texlipse

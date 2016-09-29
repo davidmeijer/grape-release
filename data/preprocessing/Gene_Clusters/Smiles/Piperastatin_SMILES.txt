@@ -1,0 +1,2 @@
+>Piperastatin SMILES
+O=C(C(C(C)C)NC(C(CC(C)C)NC(C(NC(C(NC=O)CC(C)C)=O)C(O)C)=O)=O)N1C(CCCN1)C(NC(CC(C)C)C(N2C(CCCN2)C(O)=O)=O)=O

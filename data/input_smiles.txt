@@ -1,0 +1,8 @@
+Astin E	CCC(NC(CC(NC(C(CO)NC(C(C(O)C)NC(C1N2C(Cl)=CC1)=O)=O)=O)C3=CC=CC=C3)=O)C2=O
+Geodiamolide A	O=C(NC(C)C(OC(C)CC(C)/C=C(C)/CC(C)C(NC(C1=O)C)=O)=O)C(N1C)CC(C=C2Cl)=CC=C2O
+Raocyclamide A	O=C(C1=CSC(C(NC(C2=COC3=N2)=O)C(C)CC)=N1)NC(CC4=CC=CC=C4)C5=NC(C(NC3C)=O)CO5
+Scutianine C	CC(C(C(C(NC1C(C2=CC=CC=C2)O)=O)NC(C(N(C)C)C(CC)C)=O)OC(C=C3)=CC=C3/C=C\NC1=O)C
+Bulgecin A	O=C(C)NC1C(OC(CO)C(OS(O)(=O)=O)C1O)OC2CC(C(NCCS(O)(=O)=O)=O)NC2CO
+Jacpaniculine	OC1=CC=C(C=C1OC)C2C(C(C(C3=CC(OC)=C(O)C=C3)O2)C(NCCC4=CC=C(O)C=C4)=O)COC(C)=O
+Jacpaniculine	OC1=CC=C(C=C1OC)C2C(C(C(C3=CC(OC)=C(O)C=C3)O2)C(NCCC4=CC=C(O)C=C4)=O)COC(C)=O
+N-[14-Methyl-3-(13-methyl-4Z-tetradecenoyloxy)-pentadecanoyl]glycine	O=C(NCC(O)=O)C[C@H](CCCCCCCCCCC(C)C)OC(CC/C=C\CCCCCCCC(C)C)=O

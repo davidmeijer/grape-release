@@ -1,0 +1,1164 @@
+Van Rha NMe-Leu Hpg Hpg Dhpg D-Glc bOH-Tyr bOH-Cl-Tyr Asn                                       
+Van Leu Hpg Hpg Dhpg D-Glc bOH-Cl-Tyr bOH-Cl-Tyr Asn                                        
+Trp Thr OMe-Asp OH-Asn NMe-Gly Ile iC10:0 Gly Glu D-Lys D-Glu D-Asn Asp Ala                                   
+Trp Thr OMe-Asp OH-Asn NMe-Gly Ile Gly Glu D-Lys D-Glu D-Asn C10:0 Asp Ala                                   
+Trp Thr OMe-Asp OH-Asn NMe-Gly Ile Gly D-Lys D-Glu D-Asn C10:0 Asp Ala 3Me-Glu                                   
+Trp Thr OMe-Asp OH-Asn NMe-Gly Ile iC10:0 Gly D-Lys D-Glu D-Asn Asp Ala 3Me-Glu                                   
+Val Trp Thr OMe-Asp OH-Asn NMe-Gly Gly D-Lys D-Glu D-Asn Asp Ala aC11:0 3Me-Glu                                   
+Trp Thr OMe-Asp OH-Asn NMe-Gly Ile Gly Glu D-Lys D-Glu D-Asn Asp Ala aC11:0                                   
+Trp Thr OMe-Asp OH-Asn NMe-Gly Ile Gly D-Lys D-Glu D-Asn Asp Ala aC11:0 3Me-Glu                                   
+Val Trp Thr OMe-Asp OH-Asn NMe-Gly iC10:0 Gly Glu D-Lys D-Glu D-Asn Asp Ala                                   
+NdMe-Leu Leu Hpg Hpg Dhpg D-Glc bOH-Cl-Tyr bOH-Cl-Tyr Asn                                        
+D-Val Cys Aad                                              
+Hiv dh-Ala Amv Ala                                             
+Hiv dh-Ala Apv Ala                                             
+Hiv dh-Ala Ala Ahv                                             
+Valol Val Val Val Me2-Bmt Lys Leu Leu Ile D-Tyr D-Orn D-Lys D-Leu                                    
+Trp Thr Ser Gly Glu D-Trp D-PO-Asn D-Hpg C6:0-Ep(2) Asp Asp Asp                                     
+Thr Ser Gly D-Trp D-PO-Asn dh-Trp D-Hpg C6:0-Ep(2) Asp Asp Asp 3Me-Glu                                     
+Trp Thr Ser Gly D-Trp D-PO-Asn D-Hpg C6:0-Ep(2) Asp Asp Asp 3Me-Glu                                     
+Trp Thr Ser Gly D-Trp D-PO-Asn D-ph-Gly C6:0-Ep(2) Asp Asp Asp 3Me-Glu                                     
+Thr Ser Gly D-Trp D-PO-Asn dh-Trp D-F-ph-Gly C6:0-Ep(2) Asp Asp Asp 3Me-Glu                                     
+Trp Thr Ser Gly D-Trp D-PO-Asn D-F-ph-Gly C6:0-Ep(2) Asp Asp Asp 3Me-Glu                                     
+Thr Ser Gly Glu D-Trp D-OH-Asn dh-Trp D-Hpg C6:0-Ep(2) Asp Asp Asp                                     
+Trp Thr Ser Gly Glu D-Trp D-OH-Asn D-Hpg C6:0-Ep(2) Asp Asp Asp                                     
+Thr Ser Gly D-Trp D-OH-Asn dh-Trp D-Hpg C6:0-Ep(2) Asp Asp Asp 3Me-Glu                                     
+Trp Thr Ser Gly D-Trp D-OH-Asn D-Hpg C6:0-Ep(2) Asp Asp Asp 3Me-Glu                                     
+D-Pro D-Ala C10:0-NH2(2)-Ep(9)-oxo(8) Ala                                             
+Tyr Pro Leuol Gln Gln Gln Et-Nva C8:0 Ala Aib Aib Aib                                     
+Pro Phe Leuol Gln Gln Gln C10:0 Ala Aib Aib Aib Aib                                     
+Pro Phe Leuol Gln Gln Gln Et-Nva C8:0 Ala Aib Aib Aib                                     
+Van NtMe-Leu Hpg Hpg Dhpg D-Glc bOH-Cl-Tyr bOH-Cl-Tyr Asn                                        
+Van NtMe-Leu Hpg Hpg Dhpg D-Glc bOH-Cl-Tyr bOH-Cl-Tyr Asp                                        
+NtMe-Leu Hpg Hpg Dhpg D-Glc bOH-Cl-Tyr bOH-Cl-Tyr Asn                                         
+Van NdMe-Leu Hpg Hpg Dhpg D-Glc bOH-Cl-Tyr bOH-Cl-Tyr Asn                                        
+Van NMe-Leu Hpg Hpg Dhpg D-Glc bOH-Cl-Tyr bOH-Cl-Tyr Asp                                        
+Rha NMe-Leu Hpg Hpg Ere Dhpg D-Glc bOH-Tyr bOH-Cl-Tyr Asn                                       
+Rha NMe-Leu Hpg Hpg Ere Dhpg D-Glc bOH-Tyr bOH-Tyr Asn                                       
+NdMe-Ala Hpg Hpg Gln Glc Dhpg Cl-Tyr bOH-Cl-Tyr                                         
+NMe-Leu NMe-Leu NMe-Leu NMe-Leu D-Ph-Lac D-Ph-Lac D-Lac D-Lac                                         
+NMe-Leu NMe-Leu NMe-Leu NMe-Leu D-Ph-Lac D-Ph-Lac D-Ph-Lac D-Ph-Lac                                         
+NMe-Leu NMe-Leu NMe-Leu NMe-Leu D-Ph-Lac D-Ph-Lac D-Ph-Lac D-Lac                                         
+NMe-Leu NMe-Leu NMe-Leu NMe-Leu D-Ph-Lac D-Lac D-Lac D-Lac                                         
+NMe-Leu NMe-Leu NMe-Leu NMe-Leu D-Ph-Lac D-Lac D-Lac 4OH-D-Ph-Lac                                         
+Tyr Lyx His Gly Gln dhAbu dhAbu Dab C13:2(t4.t6)-OH(2.3) bOH-Gln aThr                                      
+Tyr Lyx His Gly Gln dhAbu dhAbu Dab C14:2(t4.t6)-OH(2.3) bOH-Gln aThr                                      
+Tyr Lyx His Gly Gln dhAbu dhAbu Dab C15:2(t4.t6)-OH(2.3) bOH-Gln aThr                                      
+Phe Hpg Hpg Hpg D-Man Dhpg D-Glc bOH-Tyr bOH-Cl-Tyr Act Aco                                      
+Rha Phe Hpg Hpg Hpg D-Man Dhpg D-Glc bOH-Tyr bOH-Cl-Tyr Act                                      
+Phe Hpg Hpg Hpg Dhpg D-Glc bOH-Tyr bOH-Cl-Tyr Act Aco                                       
+Thr Thr Pro Pro NMe-Val NMe-Val NMe-Gly NMe-Gly D-Val D-Val ChrAct                                      
+Thr Thr Pro NMe-Val NMe-Val NMe-Gly NMe-Gly D-Val D-Val ChrAct 3OH-Pro                                      
+Thr Thr NMe-Val NMe-Val NMe-Gly NMe-Gly NMe-Gly NMe-Gly D-Val D-Val ChrAct                                      
+Thr Thr Pro NMe-Val NMe-Val NMe-Gly NMe-Gly NMe-Gly D-Val D-Val ChrAct                                      
+Thr Thr NMe-Val NMe-Val NMe-Gly NMe-Gly Hpr D-Val D-Val ChrAct 4oxo-Hpr                                      
+Thr Thr Pro NMe-Val NMe-Val NMe-Gly NMe-Gly Hpr D-Val D-Val ChrAct                                      
+Thr Thr NMe-Val NMe-Val NMe-Gly NMe-Gly Hpr Hpr D-Val D-Val ChrAct                                      
+Thr Thr Pro NMe-Val NMe-Val NMe-Gly NMe-Gly D-Val D-Val ChrAct 4oxo-Pro                                      
+Thr Thr Pro Pro NMe-Val NMe-Val NMe-Gly NMe-Gly D-Val D-aIle ChrAct                                      
+Thr Thr Pro Pro NMe-Val NMe-Val NMe-Gly NMe-Gly D-aIle D-aIle ChrAct                                      
+Thr NMe-Val NMe-Gly NMe-Gly NMe-Ala D-Val D-Val ChrAct 4oxo-5Me-Pro 4OH-Thr 3OH-5Me-Pro                                      
+Thr Thr NMe-Val NMe-Gly NMe-Gly NMe-Ala D-Val D-Val ChrAct 4oxo-5Me-Pro 3OH-5Me-Pro                                      
+Thr NMe-Val NMe-Gly NMe-Gly NMe-Ala D-Val D-Val ChrAct 4oxo-5Me-Pro 4Cl-Thr 3OH-5Me-Pro                                      
+Thr Thr NMe-Val NMe-Gly NMe-Gly NMe-Ala D-Val D-Val ChrAct 5Me-Pro 4oxo-5Me-Pro                                      
+Thr NMe-Val NMe-Gly NMe-Gly NMe-Ala D-Val D-Val ChrAct 5Me-Pro 4oxo-5Me-Pro 4Cl-Thr                                      
+D-Ph-Lac D-Phe Choi                                              
+Val Val Pro Pro Pheol Leu Gly Glu Gln Gln Ala Aib Aib Aib Aib Aib Aib Aib Aib Ac-Aib                             
+Val Val Pro Pro Leu Gly Glu Gln Gln Ala Aib Aib Aib Aib Aib Aib Aib Aib Ac-Aib                              
+Val Val Pro Pro Pheol Leu Gly Glu Glu Gln Ala Aib Aib Aib Aib Aib Aib Aib Aib Ac-Aib                             
+Val Val Pro Pro Pheol Leu Gly Glu Glu Glu Ala Aib Aib Aib Aib Aib Aib Aib Aib Ac-Aib                             
+Val Val Pro Pro Pheol Leu Gly Glu Gln Gln Ala Ala Aib Aib Aib Aib Aib Aib Aib Ac-Aib                             
+Val Val Pro Pro Pheol Leu Gly Gln Gln Gln Ala Ala Aib Aib Aib Aib Aib Aib Aib Ac-Aib                             
+Val Val Pro Pheol pGlu Leu Gly Glu Gln Aib Aib Aib Aib Aib                                   
+Val Val Pro Pheol pGlu Leu Gly Gln Gln Aib Aib Aib Aib Aib                                   
+Val Val Pro Pro Leu Gly Glu Gln Gln Ala Ala Aib Aib Aib Aib Aib Aib Aib Ac-Aib                              
+Val Val Pro Pro Pheol Leu Gly Glu Glu Gln Ala Ala Aib Aib Aib Aib Aib Aib Aib Ac-Aib                             
+Val Val Pro Pro Pheol Leu Gly Glu Glu Gln Ala Ala Aib Aib Aib Aib Aib Aib Aib Ac-Aib                             
+Ser D-Ac-OH-Orn D-Ac-OH-Orn C14:0-OH(3) Ac-OH-Orn                                            
+Ser D-Ac-OH-Orn D-Ac-OH-Orn C16:1(9)-OH(3) Ac-OH-Orn                                            
+Ser D-Ac-OH-Orn D-Ac-OH-Orn C14:0 Ac-OH-Orn                                            
+Ser D-Ac-OH-Orn D-Ac-OH-Orn C16:1(9) Ac-OH-Orn                                            
+Ser D-Ac-OH-Orn D-Ac-OH-Orn C16:0-OH(3) Ac-OH-Orn                                            
+Ser D-Ac-OH-Orn D-Ac-OH-Orn C18:1(9)-OH(3) Ac-OH-Orn                                            
+Ser D-Ac-OH-Orn D-Ac-OH-Orn C16:0 Ac-OH-Orn                                            
+Ser D-Ac-OH-Orn D-Ac-OH-Orn C18:1(9) Ac-OH-Orn                                            
+Leu Leu Ile D-Ser D-Leu D-Leu D-Leu D-Gln D-aThr D-Asp C10:0-OH(3) Asp                                     
+Leu Ile Ile D-Thr D-Ser D-Ser D-Leu D-Leu D-Leu D-Asp C10:0-OH(3) Asp                                     
+Leu Leu Ile D-Ser D-Ser D-Leu D-Leu D-Leu D-aThr D-Asp C10:0-OH(3) Asp                                     
+Thr Ile D-Ser D-Ser D-Leu D-Leu D-Leu D-Leu D-Leu D-Asp C10:0-OH(3) Asp                                     
+Leu Leu Ile Glu D-Ser D-Leu D-Leu D-Leu D-Gln D-aThr D-Asp C10:0-OH(3)                                     
+Leuol Leu Leu Gln Gln Gln Ala Aib Aib Aib Aib Aib Aib Aib Ac-Trp                                  
+Leuol Leu Leu Gln Gln Gln Ala Ala Aib Aib Aib Aib Aib Aib Ac-Trp                                  
+Leuol Leu Leu Gln Gln Gln Ala Ala Aib Aib Aib Aib Aib Aib Ac-Trp                                  
+Leuol Leu Leu Gln Gln Gln Ala Ala Aib Aib Aib Aib Aib Aib Ac-Trp                                  
+Leuol Leu Leu Gln Gln Gln Ala Ala Ala Aib Aib Aib Aib Aib Ac-Trp                                  
+Leuol Leu Leu Gln Gln Gln Ala Ala Ala Aib Aib Aib Aib Aib Ac-Trp                                  
+Leuol Leu Leu Gln Gln Gln Ala Ala Ala Aib Aib Aib Aib Aib Ac-Trp                                  
+Leuol Leu Leu Gln Gln Gln Ala Ala Ala Aib Aib Aib Aib Aib Ac-Trp                                  
+Thr Thr NMe-OMe-Tyr NFo-Pro Ile Hty Gln Ahp                                         
+Thr Thr NFo-Pro Ile Hty Gln Cl-NMe-Tyr Ahp                                         
+Thr Thr NMe-OMe-Tyr NFo-Gln Ile Hty Ahp                                          
+Thr Thr NFo-Gln Ile Hty Cl-NMe-Tyr Ahp                                          
+Val Tyr Phe NMe-Ala Hty D-Lys CO                                          
+Val Phe NMe-Ala Hty D-Lys CO Arg                                          
+Val Phe NMe-Ala Lys Hty D-Lys CO                                          
+Val Phe Phe NMe-Ala Hty D-Lys CO                                          
+Val Phe NMe-Ala D-Lys CO Arg 3Me-Hty                                          
+Phe NMe-Ala Ile Hty D-Lys CO Arg                                          
+Tyr NMe-Leu Ile Hty D-Lys CO Arg                                          
+NMe-Hty Ile Ile Hty D-Lys CO Arg                                          
+Val NMe-Ala Leu Ile Hty D-Lys CO                                          
+Val Phe NMe-Ala Ile Hty D-Lys CO                                          
+Val NMe-Hty Ile Ile Hty D-Lys CO                                          
+Val Me-Suc D-bPhe C8:3(t2.t4.t6)                                             
+Val Me-Suc D-bPhe C6:2(t2.t4)                                             
+N-OH-Hta DHPT                                               
+Pro Pheol Leu Gly Gln D-Ival D-Ival Aib Aib Aib Aib Aib Aib Ac-Phe 4OH-Pro 4OH-Pro                                 
+Pro Pro Pheol Leu Gly Gln D-Ival D-Ival Aib Aib Aib Aib Aib Aib Ac-Phe 4OH-Pro                                 
+Pro Pheol Leu Gly Gln D-Ival Aib Aib Aib Aib Aib Aib Aib Ac-Phe 4OH-Pro 4OH-Pro                                 
+Pro Pheol Leu Gly Gln D-Ival D-Ival Ala Aib Aib Aib Aib Aib Ac-Phe 4OH-Pro 4OH-Pro                                 
+Pro Pheol Leu Gly Gln D-Ival D-Ival Ala Aib Aib Aib Aib Aib Ac-Phe 4OH-Pro 4OH-Pro                                 
+Pro Pheol Leu Gln D-Ival D-Ival Ala Aib Aib Aib Aib Aib Aib Ac-Phe 4OH-Pro 4OH-Pro                                 
+Pro Pheol Leu Gly Gln Aib Aib Aib Aib Aib Aib Aib Aib Ac-Phe 4OH-Pro 4OH-Pro                                 
+Pro Pheol Leu Gly Gln D-Ival D-Ival Ala Aib Aib Aib Aib Aib Ac-Phe 4OH-Pro 4OH-Pro                                 
+Pro Pheol Leu Gly Gln D-Ival Aib Aib Aib Aib Aib Aib Aib Ac-Phe 4OH-Pro 4OH-Pro                                 
+Pro Pheol Leu Gly Gln D-Ival D-Ival Aib Aib Aib Aib Aib Aib Ac-Phe 4OH-Pro 4OH-Pro                                 
+Pro Pheol Leu Gln D-Ival Ala Aib Aib Aib Aib Aib Aib Aib Ac-Phe 4OH-Pro 4OH-Pro                                 
+Pro Pheol Leu Gly Gln D-Ival Ala Aib Aib Aib Aib Aib Aib Ac-Phe 4OH-Pro 4OH-Pro                                 
+Pro Pheol Leu Gly Gln D-Ival Aib Aib Aib Aib Aib Aib Aib Ac-Val 4OH-Pro 4OH-Pro                                 
+Val Pro Pheol Leu Gly Gln D-Ival Aib Aib Aib Aib Aib Aib Ac-Val 4OH-Pro 4OH-Pro                                 
+Pro Pheol NAc-Leu Leu Gly Gln D-Ival Aib Aib Aib Aib Aib Aib Aib 4OH-Pro 4OH-Pro                                 
+Pro Pheol NAc-Leu Leu Gly Gln D-Ival D-Ival Aib Aib Aib Aib Aib Aib 4OH-Pro 4OH-Pro                                 
+Val Phe CO Argal Arg                                            
+OMe-Trp Ile D-Hpr C10:0-NH2(2)-oxo(8)                                             
+Trp Ile D-Hpr C10:0-NH2(2)-oxo(8)                                             
+OMe-Trp Ile D-Pro C10:0-NH2(2)-oxo(8)                                             
+Val OMe-Trp D-Hpr C10:0-NH2(2)-oxo(8)                                             
+OMe-Trp Ile D-Hpr C10:0-OH(9)-NH2(2)-oxo(8)                                             
+OMe-Trp Ile D-Hpr C10:0-OH(8)-NH2(2)                                             
+OMe-Trp Ile D-Hpr C10:0-OH(9)-NH2(2)                                             
+Pro NMe-Val NMe-Val NMe-Val NMe-OMe-Tyr NMe-Gly-Thz NMe-Ala C8:0:1(7)-Me(2)                                         
+Pro NMe-Val NMe-Val NMe-Val NMe-OMe-Tyr NMe-Gly-Thz NMe-Ala C8:0:1(7)                                         
+Pro NMe-Val NMe-Val NMe-Val NMe-OMe-Tyr NMe-Gly-Thz NMe-Ala C9:1(8)-Me(2)                                         
+Pro-Thz Pro NMe-Val NMe-Val NMe-Val NMe-OMe-Tyr NMe-Ala C8:0:1(7)-Me(2)                                         
+Pro-Thz Pro NMe-Val NMe-Val NMe-Val NMe-OMe-Tyr NMe-Ala C8:0:1(7)                                         
+Pro-Thz Pro NMe-Val NMe-Val NMe-Val NMe-OMe-Tyr NMe-Ala C9:1(8)-Me(2)                                         
+Pro-Thz NMe-Val NMe-Val NMe-Val NMe-Val NMe-Val NMe-Ala C8:0:1(7)-Me(2)                                         
+Ser D-Ser D-Ser D-OH-Asp D-Gln D-Ac-OH-Orn C12:1(5) Ac-OH-Orn                                         
+Ser D-Ser D-Ser D-OH-Asp D-Gln D-Ac-OH-Orn C12:0 Ac-OH-Orn                                         
+Ser D-Ser D-Ser D-OH-Asp D-Gln D-Ac-OH-Orn C14:1(7) Ac-OH-Orn                                         
+Ser D-Ser D-Ser D-OH-Asp D-Gln D-Ac-OH-Orn C14:0 Ac-OH-Orn                                         
+Tyr NMe-Hpg iC11:0 Gly D-NMe-Ser D-Ala Ala                                          
+Tyr NMe-Hpg iC12:0 Gly D-NMe-Ser D-Ala Ala                                          
+Tyr NMe-Hpg Gly D-NMe-Ser D-Ala C12:0 Ala                                          
+Tyr NMe-Hpg Gly D-NMe-Ser D-Ala Ala aC13:0                                          
+Tyr NMe-Hpg iC14:0 Gly D-NMe-Ser D-Ala Ala                                          
+NMe-Hpg iC11:0 Gly D-NMe-Ser D-Ala Ala 3NO2-Tyr                                          
+NMe-Hpg iC12:0 Gly D-NMe-Ser D-Ala Ala 3NO2-Tyr                                          
+NMe-Hpg Gly D-NMe-Ser D-Ala C12:0 Ala 3NO2-Tyr                                          
+NMe-Hpg Gly D-NMe-Ser D-Ala Ala aC13:0 3NO2-Tyr                                          
+NMe-Hpg iC13:0 Gly D-NMe-Ser D-Ala Ala 3NO2-Tyr                                          
+NMe-Hpg iC14:0 Gly D-NMe-Ser D-Ala Ala 3NO2-Tyr                                          
+NMe-Hpg Gly D-NMe-Ser D-Ala Ala aC15:0 3NO2-Tyr                                          
+Val Val Pro Pro Pheol Leu Gly Gln Gln Gln Ala Ala Aib Aib Aib Aib Aib Aib Aib Ac-Aib                             
+Val Val Pro Pro Pheol Leu Ival Gly Gln Gln Gln Ala Ala Aib Aib Aib Aib Aib Aib Ac-Aib                             
+Val Val Pro Pro Pheol Leu Ival Gly Gln Gln Gln Ala Aib Aib Aib Aib Aib Aib Aib Ac-Aib                             
+Pro Phe NMe-Val NMe-Val NMe-Phe Leu D-Hmp bOH-NMe-Val aIle                                        
+Pro Phe NMe-Val NMe-Val NMe-Phe Leu D-Hiv bOH-NMe-Val aIle                                        
+Val Pro Phe NMe-Val NMe-Val NMe-Phe Leu D-Hmp bOH-NMe-Val                                        
+Pro Phe NMe-Val NMe-Val NMe-Phe Leu gOH-NMe-Val D-Hmp aIle                                        
+Pro Phe NMe-Val NMe-Val Leu D-Hmp bOH-NMe-Val bOH-NMe-Phe aIle                                        
+Val Pro Phe NMe-Val NMe-Phe Leu D-Hmp bOH-NMe-Val aIle                                        
+Pro Phe NMe-Val NMe-Val NMe-Val NMe-Phe Leu D-Hmp aIle                                        
+Pro Phe NMe-Val NMe-Val NMe-Val Leu D-Hmp bOH-NMe-Phe aIle                                        
+Val Val NMe-Gly NMe-Ala D-NMe-Leu D-Hmp C11:2(t2.t8)-Me(2.6.8)-OH(5.7)                                          
+Val Val NMe-Gly NMe-Ala NMe-aIle D-Hmp C11:2(t2.t8)-Me(2.6.8)-OH(5.7)                                          
+Val Val NMe-Gly NMe-Ala NMe-aIle D-Hiv C11:2(t2.t8)-Me(2.6.8)-OH(5.7)                                          
+Tyr Ria Ria Rha NMe-Hpg Hpg Hpg Hpg D-Man Dhpg D-Glc bOH-Cl-Tyr                                     
+Tyr Ria Ria Rha NMe-Hpg Hpg Hpg D-Man Dhpg D-Glc Cl-Hpg bOH-Cl-Tyr                                     
+Tyr Ria Rha NMe-Hpg Hpg Hpg D-Man Dhpg D-Glc Cl-Hpg bOH-Cl-Tyr                                      
+Val Val Val Pro Pro Phe Asn                                          
+Val Val Pro Pro Phe Leu Asn                                          
+Val Pro Pro Phe Leu Ile Asn                                          
+Val Trp Thr Pro Pro Leu Leu                                          
+Val Tyr Pro Pro Pro Leu Leu Ile                                         
+Thr Pro Pro Phe Phe Ile Asn                                          
+Val Trp Thr Pro Pro Pro Phe Leu                                         
+Val Trp Thr Pro Pro Pro Phe Leu                                         
+Ser OH-Orn Hse Hse Hse Hse Hse Gly D-Ser D-OH-Asp ChrA C4:0-OH(3)                                     
+Ser OH-Orn HseL Hse Hse Hse Hse Gly D-Ser D-OH-Asp ChrA C4:0-OH(3)                                     
+Ser Hse Hse Hse Gly D-Ser D-OH-Asp D-Cit D-Ac-OH-Orn ChrA Asp                                      
+Ser HseL Hse Hse Gly D-Ser D-OH-Asp D-Cit D-Ac-OH-Orn ChrA Asp                                      
+Thr Thr Thr Gly Gly Gly diOH-Bz diOH-Bz diOH-Bz                                        
+Ala Aca                                               
+Lys Leu Ile Ile Ile His D-Phe D-Orn D-Glu D-Asp Cys Asn                                     
+Lys Leu Ile Ile His D-Phe D-Orn D-Glu D-Asp D-aIle Cys Asn                                     
+Val Lys Leu Ile Ile His D-Phe D-Orn D-Glu D-Asp Cys Asn                                     
+Val Lys Leu Ile Ile His D-Phe D-Orn D-Glu D-Asp Cys Asn                                     
+Val Lys Leu Ile Ile His D-Phe D-Orn D-Glu D-Asp Cys Asn                                     
+Val Val Lys Leu Ile His D-Phe D-Orn D-Glu D-Asp Cys Asn                                     
+Val Val Lys Leu Ile His D-Phe D-Orn D-Glu D-Asp Cys Asn                                     
+Val Val Lys Leu Ile His D-Phe D-Orn D-Glu D-Asp Cys Asn                                     
+Val Val Val Lys Leu His D-Phe D-Orn D-Glu D-Asp Cys Asn                                     
+Lys Leu Ile Ile Ile His D-Phe D-Orn dhCys D-Glu D-Asp Asn                                     
+Val Lys Leu Ile Ile His D-Phe D-Orn dhCys D-Glu D-Asp Asn                                     
+Val Lys Leu Ile Ile His D-Phe D-Orn dhCys D-Glu D-Asp Asn                                     
+Val Lys Leu Ile Ile His D-Phe D-Orn dhCys D-Glu D-Asp Asn                                     
+Val Val Lys Leu Ile His D-Phe D-Orn dhCys D-Glu D-Asp Asn                                     
+Val Val Lys Leu Ile His D-Phe D-Orn dhCys D-Glu D-Asp Asn                                     
+Val Val Lys Leu Ile His D-Phe D-Orn dhCys D-Glu D-Asp Asn                                     
+NMe-Leu Hpg Hpg Dhpg D-Glc bOH-Cl-Tyr bOH-Cl-Tyr Asn 4oxo-Van                                        
+NMe-Leu Hpg Hpg Dhpg D-Glc bOH-Cl-Tyr bOH-Cl-Tyr Asn 4oxo-Van 4oxo-Van                                       
+NMe-Leu Hpg Hpg Dhpg D-Glc bOH-Tyr bOH-Tyr Asn 4oxo-Van 4oxo-Van                                       
+NMe-Leu Hpg Hpg Dhpg bOH-Cl-Tyr bOH-Cl-Tyr Asn 4oxo-Van                                         
+Leu Hpg Hpg Dhpg D-Glc bOH-Cl-Tyr bOH-Cl-Tyr Asn 4oxo-Van                                        
+NdMe-Leu Hpg Hpg Dhpg D-Glc bOH-Cl-Tyr bOH-Cl-Tyr Asn 4oxo-Van                                        
+Rha NMe-Leu Hpg Hpg Glc Dhpg bOH-Cl-Tyr bOH-Cl-Tyr Asn 4oxo-Van                                       
+U4oxo-Van NMe-Leu Hpg Hpg Dhpg D-Glc bOH-Cl-Tyr bOH-Cl-Tyr Asn                                        
+Thr NMe-Val NMe-Ile D-NMe-aIle D-Leu D-Leu D-aIle bAla bAla bAla Ala                                      
+Thr NMe-Val NMe-Val D-NMe-aIle D-Leu D-Leu D-aIle bAla bAla bAla Ala                                      
+Thr NMe-Val NMe-Ile D-Val D-NMe-aIle D-Leu D-Leu bAla bAla bAla Ala                                      
+Thr NMe-Val NMe-Ile D-NMe-Val D-Leu D-Leu D-aIle bAla bAla bAla Ala                                      
+NMe-Phe NMe-Phe NMe-Phe D-Hiv D-Hiv D-Hiv                                           
+NMe-Phe NMe-Phe NMe-Phe D-Hmp D-Hiv D-Hiv                                           
+NMe-Phe NMe-Phe NMe-Phe D-Hmp D-Hmp D-Hiv                                           
+NMe-Phe NMe-Phe NMe-Phe D-Hmp D-Hmp D-Hmp                                           
+Phe NMe-Phe NMe-Phe D-Hiv D-Hiv D-Hiv                                           
+NMe-Phe NMe-Phe Ile D-Hiv D-Hiv D-Hiv                                           
+NMe-Phe NMe-Phe NMe-Phe D-Hiv D-Hiv 4Me-D-Hva                                           
+Val Phe D-Val C10:0-Me(4)-OH(3)                                             
+Val Phe D-Ile C10:0-Me(4)-OH(3)                                             
+Val Phe D-aIle C10:0-Me(4)-OH(3)                                             
+Phe Phe D-Ile C10:0-Me(4)-OH(3)                                             
+Phe Phe D-aIle C10:0-Me(4)-OH(3)                                             
+Val Phe D-Val C8:0-Me(4)-OH(3)                                             
+Val Phe D-Ile C8:0-Me(4)-OH(3)                                             
+Val Phe D-aIle C8:0-Me(4)-OH(3)                                             
+Phe Phe D-Ile C8:0-Me(4)-OH(3)                                             
+Phe Phe D-aIle C8:0-Me(4)-OH(3)                                             
+Phe D-Leu C9:0-OH(3) Ala                                             
+Phe D-Leu C11:0-OH(3) Ala                                             
+Phe D-Leu C8:0-Me(4)-OH(3) Ala                                             
+Phe D-Leu C10:0-Me(4)-OH(3) Ala                                             
+Phe D-aIle C8:0-Me(4)-OH(3) Ala                                             
+Val D-Val C8:0-Me(4)-OH(3) Ala                                             
+Trp Phe D-aIle C8:0-Me(4)-OH(3)                                             
+Trp Phe D-aIle C10:0-Me(4)-OH(3)                                             
+Phe D-Ile C10:0-Me(4)-OH(3) Ala                                             
+Phe D-aIle C10:0-Me(4)-OH(3) Ala                                             
+Val D-Leu C8:0-Me(4)-OH(3) Ala                                             
+Tyr D-Leu C8:0-Me(4)-OH(3) Ala                                             
+Val D-aIle C8:0-Me(4)-OH(3) Ala                                             
+Val D-Leu C8:0-Me(4)-OH(3) Ala                                             
+Phe D-Val C8:0-Me(4)-OH(3) Ala                                             
+Val D-aIle C10:0-Me(4)-OH(3) Ala                                             
+Val Pheol Leu Ival Gly Gln Aib Aib Aib Aib Aib Aib Ac-Val 4OH-Pro 4OH-Pro                                  
+Val Val Pheol Leu Gly Gln Aib Aib Aib Aib Aib Aib Ac-Val 4OH-Pro 4OH-Pro                                  
+Val Pheol Leu Gly Gln Aib Aib Aib Aib Aib Aib Aib Ac-Val 4OH-Pro 4OH-Pro                                  
+Val Pheol Leu Gly Gln Aib Aib Aib Aib Aib Aib Ac-Val 4OH-Pro 4OH-Pro                                   
+Trpol Pro Leu Ival Gly Gln Gln Ala Ala Ala Aib Aib Aib Aib Aib Aib Aib Aib Ac-Phe                              
+Val t-Leu t-Leu OMe-bAla-Thz Gly 3Me-Pro 3Me-Phe                                          
+Trp Pro                                               
+NMe-Gln NMe-Ala Leu iC8:0-Me(2.4)-OH(3) D-aThr D-aThr D-Arg D-Ala bOMe-Tyr Agdha 3Me-4Me-Gln                                      
+NMe-Gln NMe-Ala Leu D-aThr D-aThr D-Arg bOMe-Tyr 2Me-3Me-pGlu                                         
+NMe-Gln NMe-Ala Leu iC8:0-Me(2.4)-OH(3) D-aThr D-aThr D-Arg D-Ala bOMe-Tyr Agdha 3Me-4Me-Gln                                      
+iC8:0-Me(2.4)-OH(3) D-aThr D-Ala Agdha 3Me-4Me-Gln                                            
+NMe-Gln NMe-Ala Leu D-aThr D-Arg bOMe-Tyr                                           
+iC8:0-Me(2.4)-OH(3) D-aThr D-aThr D-Arg D-Ala Agdha 3Me-4Me-Gln                                          
+NMe-Gln Leu iC8:0-Me(2.4)-OH(3) D-aThr D-aThr D-Arg D-Ala Agdha 3Me-4Me-Gln                                        
+NMe-Gln NMe-Ala Leu iC8:0-Me(2.4)-OH(3) dhAbu D-aThr D-Arg D-Ala bOMe-Tyr Agdha 3Me-4Me-Gln                                      
+iC8:0-Me(2.4)-OH(3) dhAbu D-aThr D-Arg D-Ala Agdha 3Me-4Me-Gln                                          
+iC8:0-Me(2.4)-OH(3) D-bMe-Gln D-aThr D-Ala Agdha                                            
+NMe-Gln NMe-Ala Leu iC8:0-Me(2.4)-OH(3) D-bMe-Gln D-aThr D-aThr D-Arg D-Ala bOMe-Tyr Agdha                                      
+NMe-Gln NMe-Ala Leu iC8:0-Me(2.4)-OH(3) D-aThr D-aThr D-Arg D-Ala bOH-Tyr Agdha 3Me-4Me-Gln                                      
+NMe-Gln NMe-Ala Leu D-aThr D-aThr D-Arg bOMe-Tyr 2Me-3Me-pGlu                                         
+NMe-Gln Leu iC8:0-Me(2.4)-OH(3) Hpr D-aThr D-aThr D-Asn D-Arg bOMe-Tyr Asn Agdha 3Me-4Me-Gln                                     
+Val Pro Pro Pro Phe Leu Leu Leu Ile aFo-Gly 4OH-Pro                                      
+Ser Dpr Dpr Cap bU-dAla bLys                                           
+Dpr Dpr Cap bU-dAla bLys Ala                                           
+Ser Dpr Dpr Cap bU-dAla                                            
+Dpr Dpr Cap bU-dAla Ala                                            
+NMe-Phe NMe-OMe-TyrC NMe-Ala C10:0:1(9)-Me(2.4) Ala                                            
+NMe-Phe NMe-OMe-TyrC NMe-Ala C10:0-Me(2.4)-oxo(9) Ala                                            
+Pro Pheol Leu Gly Gln D-Ival D-Ival Aib Aib Aib Aib Aib Aib Ac-Phe 4OH-Pro 4OH-Pro                                 
+Pro Pheol Leu Gln D-Ival D-Ival Ala Aib Aib Aib Aib Aib Aib Ac-Phe 4OH-Pro 4OH-Pro                                 
+Pro Pheol Leu Gly Gln D-Ival D-Ival D-Ival Aib Aib Aib Aib Aib Ac-Phe 4OH-Pro 4OH-Pro                                 
+Pro Pheol Leu Gly Gln D-Ival Aib Aib Aib Aib Aib Aib Aib Ac-Phe 4OH-Pro 4OH-Pro                                 
+Pro Pheol Leu Gly Gln Aib Aib Aib Aib Aib Aib Aib Aib Ac-Phe 4OH-Pro 4OH-Pro                                 
+Pro Pheol Leu Gly Gln D-Ival Aib Aib Aib Aib Aib Aib Aib Ac-Phe 4OH-Pro 4OH-Pro                                 
+Thr Serol Pro Phe Leu Ile Gln Gln D-Ival Aib Aib Aib Aib Aib Ac-Phe 4OH-Pro 4OH-Pro                                
+Thr Serol Pro Pro Phe Leu Ile Gln Gln D-Ival Aib Aib Aib Aib Aib Ac-Phe 4OH-Pro                                
+Pro-Thz Pro Phe Phe MeOx-Ile                                            
+Val Val Val Hiv Hiv Hiv D-Hmp D-Hmp D-Hmp D-Ala D-Ala D-Ala                                     
+Val Pro Pro Pro NAc-Leu Leuol Leu Ala Aib Aib Aib Aib                                     
+Val Pro Pro Pro OAc-Leuol NAc-Leu Leu Ala Aib Aib Aib Aib                                     
+Phe D-Pro C10:0-NH2(2)-Ep(9)-oxo(8) Aib                                             
+Ria Rha NMe-Hpg Hpg Hpg D-Man Dhpg D-Glc Cl-Tyr Cl-Hpg bOH-Cl-Tyr                                      
+Ria NMe-Hpg Hpg Hpg D-Man Dhpg D-Glc Cl-Tyr Cl-Hpg bOH-Cl-Tyr                                       
+Ser D-Lys diOH-Bz                                              
+Trpol Ser Pro Leu Gly Gln Gln Ala Ala Aib Aib Aib Aib Aib Aib Aib Aib Aib Ac-Phe                              
+Trpol Ser Pro Leu Gly Gln Gln D-Ival Ala Ala Aib Aib Aib Aib Aib Aib Aib Aib Ac-Phe                              
+Trpol Ser Pro Leu Gly Gln Gln D-Ival Ala Ala Aib Aib Aib Aib Aib Aib Aib Aib Ac-Phe                              
+Trpol Ser Pro Leu Gly Gln Gln D-Ival D-Ival Ala Ala Aib Aib Aib Aib Aib Aib Aib Ac-Phe                              
+OH-Orn D-Fo-OH-Orn D-Fo-OH-Orn D-aThr                                             
+CMA CFA                                               
+CFA aIle                                               
+Ile CFA                                               
+Ser CFA                                               
+Thr CFA                                               
+Val CFA                                               
+norCMA CFA                                               
+Val Val Val Val Ser Pro Ile Hse dh-Ala dhAbu dhAbu dhAbu Dab C10:0-OH(3) aThr Ala Ala Ala Ala Ala Ala Ala aIle                          
+Val Val Val Val Ser Pro Ile Hse dh-Ala dhAbu dhAbu dhAbu Dab C12:1(5)-OH(3) aThr Ala Ala Ala Ala Ala Ala Ala aIle                          
+Ser OH-His OH-Asp OH-Asp D-Ser Dab Dab Dab C8:0                                        
+Val Trp Thr Thr Pro NMe-Gln NMe-Asn NFo-Ala Gly CysA Br-Phe Br-Phe bMe-Ile Arg                                   
+Val Val pOH-Bz D-Ser D-Leu D-Har Dab 4OH-Pro                                         
+Val Tyr NMe-Tyr Lys Leu Glu C8:0 Ahp                                         
+Val Thr NMe-Tyr Lys Leu Glu C6:0 Ahp                                         
+Ser Cl2-Pro bPhe aThr Abu                                            
+Ser Ser Cl2-Pro bPhe Abu                                            
+Ser Ser Cl2-Pro bPhe aThr                                            
+MCP Iser Gly Dpr Br-Trp Asn                                           
+MdCP Iser Gly Dpr Br-Trp Asn                                           
+Val Pro Pro Phe Phe Leu Leu Ile Ile                                        
+Phe Nva NMe-Leu NFo-Leu Gly Gln Cl-Ile C6:0-OH(3.5)-NH2(4) aThr Ala                                       
+Tyr Tyr Thr Pro Pro Asn Arg Ala                                         
+Nva NMe-Val NMe-Leu NMe-Leu NMe-Leu NMe-Leu NMe-Gly NMe-Bmt Leu D-Ala Ala                                      
+Val Val NMe-Val NMe-Leu NMe-Leu NMe-Leu NMe-Leu NMe-Gly D-Ala Bmt Ala                                      
+Val NMe-Val NMe-Leu NMe-Leu NMe-Leu NMe-Leu NMe-Leu NMe-Gly D-Ala Ala Abu                                      
+Val NMe-Val NMe-Leu NMe-Leu NMe-Leu NMe-Ile NMe-Gly NMe-Bmt D-Ala Ala Abu                                      
+Val Val NMe-Val NMe-Leu NMe-Leu NMe-Leu NMe-Leu NMe-Leu NMe-Gly D-Ala Ala                                      
+Val NMe-Val NMe-Leu NMe-Leu NMe-Leu NMe-Gly NMe-Bmt Ile D-Ala Ala Abu                                      
+Val NMe-Val NMe-Leu NMe-Leu NMe-Leu NMe-Leu NMe-Bmt Gly D-Ala Ala Abu                                      
+Val NMe-Val NMe-Leu NMe-Leu NMe-Leu NMe-Leu NMe-Gly NMe-Bmt D-Ala Ala Abu                                      
+Val NMe-Val NMe-Leu NMe-Leu NMe-Leu NMe-Leu NMe-Gly NMe-Bmt D-Ala Ala Ala                                      
+Val Thr NMe-Val NMe-Leu NMe-Leu NMe-Leu NMe-Leu NMe-Gly NMe-Bmt D-Ala Ala                                      
+Val Val NMe-Val NMe-Leu NMe-Leu NMe-Leu NMe-Leu NMe-Gly NMe-Bmt D-Ala Ala                                      
+Val Val NMe-Leu NMe-Leu NMe-Leu NMe-Leu NMe-Gly NMe-Bmt D-Ala Ala Abu                                      
+Val Nva NMe-Val NMe-Leu NMe-Leu NMe-Leu NMe-Leu NMe-Gly D-Ala Ala 3d-NMe-Bmt                                      
+Val Nva NMe-Val NMe-Leu NMe-Leu NMe-Leu NMe-Leu NMe-Gly NMe-Bmt D-Ala Ala                                      
+Val NMe-Leu NMe-Leu NMe-Leu NMe-Leu NMe-Gly NMe-Bmt D-NMe-Val D-Ala Ala Abu                                      
+Val Val NMe-Val NMe-Leu NMe-Leu NMe-Leu NMe-Gly NMe-Bmt Leu D-Ala Ala                                      
+Val Val NMe-Val NMe-Leu NMe-Leu NMe-Leu NMe-Leu NMe-Gly D-Ala Ala 3d-NMe-Bmt                                      
+Val NMe-Val NMe-Leu NMe-Leu NMe-Leu NMe-Leu NMe-Gly D-Ala Bmt Ala Abu                                      
+Nva Nva NMe-Val NMe-Leu NMe-Leu NMe-Leu NMe-Leu NMe-Gly NMe-Bmt D-Ala Ala                                      
+Val Nva NMe-Val NMe-Leu NMe-Leu NMe-Leu NMe-Gly NMe-Bmt Leu D-Ala Ala                                      
+Val Nva NMe-Val NMe-Leu NMe-Leu NMe-Leu NMe-Leu NMe-Leu NMe-Gly D-Ala Ala                                      
+Val Thr NMe-Val NMe-Leu NMe-Leu NMe-Leu NMe-Leu NMe-Gly D-Ala Bmt Ala                                      
+Val Val NMe-Val NMe-Leu NMe-Leu NMe-Leu NMe-Gly NMe-Bmt D-Ala Ala Abu                                      
+Val NMe-Val NMe-Leu NMe-Leu NMe-Leu NMe-Gly NMe-Bmt Leu D-Ala Ala Abu                                      
+Val Val Thr NMe-Val NMe-Leu NMe-Leu NMe-Leu NMe-Gly NMe-Bmt D-Ala Ala                                      
+Val NMe-Val NMe-Leu NMe-Leu NMe-Gly NMe-Bmt Leu Leu D-Ala Ala Abu                                      
+Val NMe-Val NMe-Leu NMe-Leu NMe-Leu NMe-Leu NMe-Gly NMe-Bmt D-Ala Abu Abu                                      
+Val Val Thr NMe-Leu NMe-Leu NMe-Leu NMe-Leu NMe-Gly NMe-Bmt D-Ala Ala                                      
+Val Nva NMe-Val NMe-Leu NMe-Leu NMe-Leu NMe-Gly NMe-Bmt Leu D-Ala Ala                                      
+Val Nva NMe-Val NMe-Leu NMe-Leu NMe-Leu NMe-Gly NMe-Bmt Leu D-Ala Ala                                      
+Val NMe-Val NMe-Leu NMe-Leu NMe-Leu NMe-Leu NMe-Gly Me-AOA D-Ala Ala Abu                                      
+v-Tyr Pro NFo-Dpr k-Arg D-Phe                                            
+v-Tyr Pro NAc-Dpr k-Arg D-Phe                                            
+Pro NFo-Dpr k-Arg dv-Tyr D-Phe                                            
+v-Tyr Pro NFo-Dpr k-Arg D-Leu                                            
+v-Tyr Pro Pha k-Arg Dpr D-aIle Ala                                          
+v-Tyr Pro k-Arg Dpr D-aIle Bz Ala                                          
+v-Tyr Pro k-Arg Hiv Dpr D-aIle Ala                                          
+v-Tyr Pro Me-Vaa k-Arg Dpr D-aIle Ala                                          
+v-OH-Tyr Pro Me-Vaa k-Arg Dpr D-aIle Ala                                          
+v-Tyr Pro NFo-Dpr hk-Arg D-Phe                                            
+Trp Thr Orn Kyn Gly Gly D-Ser D-Asn D-Ala Asp Asp Asp aC11:0 3Me-Glu                                   
+Trp Thr Orn Kyn iC12:0 Gly Gly D-Ser D-Asn D-Ala Asp Asp Asp 3Me-Glu                                   
+Trp Thr Orn Kyn Gly Gly D-Ser D-Asn D-Ala Asp Asp Asp aC13:0 3Me-Glu                                   
+Trp Thr Orn Kyn Gly Gly D-Ser D-Asn D-Ala C10:0 Asp Asp Asp 3Me-Glu                                   
+Rha NMe-Leu Hpg Hpg Ere Dhpg D-Glc bOH-Tyr bOH-Cl-Tyr Asn                                       
+Pro NMe-Val NMe-Ala Ile Hiv D-Glc bAla                                          
+Val Pro NMe-Ala Ile C4:1(3)-OH(2) bAla                                           
+Val Pro NMe-Ala Ile Hiv bAla                                           
+Val Val Pro NMe-Ala Hiv bAla                                           
+Val Pro NMe-Ala Ile iC5:0-OH(2.4) bAla                                           
+Pro NMe-Val NMe-Ala Ile C4:1(3)-OH(2) bAla                                           
+NMe-Val NMe-Ala Ile Hpr C4:1(3)-OH(2) bAla                                           
+Val Pro NMe-Val NMe-Ala C4:1(3)-OH(2) bAla                                           
+NMe-Val NMe-Ala Ile C4:1(3)-OH(2) bAla Ala                                           
+Pro NMe-Ile NMe-Ala Ile C4:1(3)-OH(2) bAla                                           
+Pro NMe-Ile NMe-Ala Ile C4:0-OH(2.3)-Cl(4) bAla                                           
+Pro NMe-Val NMe-Ala Ile Hiv bAla                                           
+NMe-Val NMe-Ala Ile Hpr Hiv bAla                                           
+Val Pro NMe-Val NMe-Ala Hiv bAla                                           
+Pro NMe-Val NMe-Ala Ile iC5:0-OH(2.4) bAla                                           
+Val Pro NMe-Val NMe-Ala iC5:0-OH(2.4) bAla                                           
+Pro NMe-Val NMe-Ala Ile iC5:0-OH(2)-CA(4) bAla                                           
+NMe-Val NMe-Ala Ile iC5:0-OH(2)-CA(4) Hpr bAla                                           
+Val Pro NMe-Val NMe-Ala iC5:0-OH(2)-CA(4) bAla                                           
+Pro NMe-Val NMe-Ala Ile C4:0-OH(2)-Ep(3) bAla                                           
+NMe-Val NMe-Ala Ile Hpr C4:0-OH(2)-Ep(3) bAla                                           
+Val Pro NMe-Val NMe-Ala C4:0-OH(2)-Ep(3) bAla                                           
+Val Pro NMe-Val NMe-Ala C4:0-OH(2.3)-Cl(4) bAla                                           
+Pro NMe-Val NMe-Ala Ile C4:0-OH(2.3)-Cl(4) bAla                                           
+Pro NMe-Val NMe-Ala Ile C4:0-OH(2.3.4) bAla                                           
+Pro NMe-Val NMe-Ala Ile C4:0-OH(2.3) bAla                                           
+Pro NMe-Ile NMe-Ala Ile Hiv bAla                                           
+Pro NMe-Val NMe-Ala Ile iC5:0-OH(2.3) bAla                                           
+Pro NMe-Ile NMe-Ala Ile iC5:0-OH(2.3) bAla                                           
+Val Pro Ile Hiv bAla Ala                                           
+Thr Pro NMe-OMe-Tyr Leu Ist Hip D-NMe-Leu                                          
+Thr Pya Pro Pro NMe-OMe-Tyr Leu Ist Hip D-NMe-Leu                                        
+Thr Pro NMe-OMe-Tyr Leu Ist Hip D-NMe-Leu                                          
+Thr Pro Pro NMe-OMe-Tyr Leu Lac Ist Hip D-NMe-Leu                                        
+Thr Pro NMe-OMe-Tyr Leu Lac Ist Hip D-NMe-Leu                                         
+Thr Pro Pro pGlu NMe-OMe-Tyr Leu Lac Ist Hip Gln D-NMe-Leu                                      
+Tyr Thr Pro Pro Leu Lac Ist Hip D-NMe-Leu                                        
+Thr Pro Pro NMe-OMe-Tyr Leu Lac Ist Hip Gln Gln Gln D-NMe-Leu C10:0-OH(3)                                    
+Thr Pro Pro NMe-OMe-Tyr Leu Lac Ist Hip Gln Gln Gln Gln D-NMe-Leu C10:0-OH(3)                                   
+Thr Pro Pro NMe-OMe-Tyr Leu Lac Ist Hap D-NMe-Leu                                        
+Thr Pro Pro NMe-OMe-Tyr Leu Lac Ist Hysp D-NMe-Leu                                        
+Thr Pro Nst NMe-OMe-Tyr Leu Hip D-NMe-Leu                                          
+Thr Pro Pro Nst NMe-OMe-Tyr Leu Lac Hip D-NMe-Leu                                        
+Thr Pro Nst NMe-OMe-Tyr Leu Lac Hip D-NMe-Leu                                         
+Tyr Thr Pro Pro Nst Leu Lac Hip D-NMe-Leu                                        
+Thr Pro Pro NMe-OMe-Tyr Leu Lac Ist Hiv D-NMe-Leu                                        
+Thr Pro Pro Nst NMe-OMe-Tyr Leu Lac Hiv D-NMe-Leu                                        
+Pro PALOA Orn OH-Trp Nva k-Leu Hmp Abu                                         
+Pro PALOA Orn OH-Trp Leu k-Leu Hmp Abu                                         
+t-Leu Thr Thr Pro Phe NMe-Gly NMe-Gln D-Trp D-t-Leu D-NFo-Ala D-Leu D-CysA Asn Arg                                   
+t-Leu Thr Thr Pro Phe NMe-Gly NMe-Gln D-t-Leu D-NFo-Ala D-Leu D-Kyn D-CysA Asn Arg                                   
+Thr Thr Pro Phe NMe-Gly NMe-Gln D-Trp D-t-Leu D-NFo-Ala D-Leu D-CysA bMe-Ile Asn Arg                                   
+t-Leu Thr Thr Pro Phe NMe-Gly NMe-Gln NFo-D-Abu D-Trp D-t-Leu D-Leu D-CysA Asn Arg                                   
+Tyr t-Leu Thr Thr Pro NMe-Gly NMe-Gln D-Trp D-t-Leu D-NFo-Ala D-Leu D-CysA Asn Arg                                   
+Val Dov Doe Dil Dap                                            
+NMe-Val NMe-OMe-Tyr NMe-Leu Map Ibu Hmp Gly Gly Ala                                        
+NMe-Val NMe-Tyr NMe-Leu NMe-Ala Map Ibu Hmp Gly Gly                                        
+Val Pro Pro NMe-Val Hiv Dpy Dov                                          
+Cl3-NMe-Leu Cl3-NMe-dhLeu                                               
+Cl3-NMe-Leu Cl3-NMe-Leu                                               
+Cl2-NMe-Leu Cl2-NMe-Leu                                               
+Cl3-NMe-dhLeu Cl3-NMe-dhLeu                                               
+Cl3-NMe-Leu Cl2-NMe-Leu                                               
+Cl3-NMe-dhLeu Cl2-NMe-Leu                                               
+Cl2-NMe-Leu Cl2-NMe-dhLeu                                               
+Cl3-NMe-Leu Cl2-NMe-dhLeu                                               
+Cl3-NMe-dhLeu Cl3-5OH-NMe-Leu                                               
+Cl3-NMe-Leu Cl3-2OH-NMe-Leu                                               
+Cl3-NMe-dhLeu Cl3-2OH-NMe-Leu                                               
+Spd Iser Gly Dpr Daz bTyr                                           
+Iser GSpd Gly Dpr Daz bTyr                                           
+Spd Iser Gly Dpr Daz bPhe                                           
+Iser GSpd Gly Dpr Daz bPhe                                           
+Thr Pro Pheol Leu Ile Ile Gln Gln Aib Aib Aib Aib Aib Ac-Trp 4OH-Pro 4OH-Pro                                 
+Thr Pro Pheol Leu Ival Ile Ile Gln Gln Aib Aib Aib Aib Ac-Trp 4OH-Pro 4OH-Pro                                 
+Val Pheol Leu Gly Gln D-Ival Ala Aib Aib Aib Aib Aib Ac-Phe 4OH-Pro 4OH-Pro                                  
+Val Pheol Leu Gly Gln D-Ival Aib Aib Aib Aib Aib Aib Ac-Phe 4OH-Pro 4OH-Pro                                  
+Pro OH-Asp D-Ser D-Ser D-Pro D-OH-Asp C14:0-OH(3) Arg 3OH-Pro                                        
+Thr iC12:2(2.t4) Hpg Hpg Hpg Gly End D-Ser D-Orn D-Hpg D-Hpg D-End D-aThr D-Ala Cl2-Hpg Cit aThr Asp                               
+Thr Hpg Hpg Hpg Gly End D-Ser D-Orn D-Hpg D-Hpg D-End D-aThr D-Ala Cl2-Hpg Cit aThr Asp aC13:2(2.t4)                               
+NMe-Ile NMe-Ile NMe-Ile D-Hiv D-Hiv D-Hiv                                           
+NMe-Val NMe-Ile NMe-Ile D-Hiv D-Hiv D-Hiv                                           
+NMe-Val NMe-Val NMe-Val D-Hiv D-Hiv D-Hiv                                           
+NMe-Val NMe-Val NMe-Ile D-Hiv D-Hiv D-Hiv                                           
+NMe-Val NMe-Val NMe-Leu D-Hiv D-Hiv D-Hiv                                           
+NMe-Leu NMe-Leu NMe-Leu D-Hiv D-Hiv D-Hiv                                           
+NMe-Leu NMe-Ile NMe-Ile D-Hiv D-Hiv D-Hiv                                           
+NMe-Val NMe-Leu NMe-Leu D-Hiv D-Hiv D-Hiv                                           
+NMe-Val NMe-Val NMe-Val Hmp D-Hiv D-Hiv                                           
+NMe-Val NMe-Val NMe-Val Hmp Hmp D-Hiv                                           
+NMe-Val NMe-Val NMe-Val D-Hiv D-Hiv aC6:0-OH(2.3)                                           
+NMe-Val NMe-Val NMe-Val Hmp Hmp aC6:0-OH(2.3)                                           
+NMe-Val NMe-Val NMe-Val Hmp Hmp Hmp                                           
+Ser Pro Phe NMe-Ala C8:3(t2.t4.t6) Ala 4Me-Pro                                          
+Ser Ser Ser diOH-Bz diOH-Bz diOH-Bz                                           
+NMe-Leu Hpg Hpg Ere Ere Dhpg D-Glc bOH-Tyr bOH-Cl-Tyr Asn                                       
+Tyr diOH-Phe diOH-Arg                                              
+Tyr Thr diOH-Phe                                              
+Tyr Ser diOH-Phe                                              
+Tyr diOH-Phe aThr                                              
+Tyr Leu diOH-Phe                                              
+Val Val Phe Hpg Hpg Hpg D-Hpg D-Dhpg D-Dhpg D-Dhpg D-Dhpg D-Dhpg Asp                                    
+Tyr Pro Ile Glu Glu Glu D-Tyr D-Orn D-aThr D-Ala C16:0-OH(3)                                      
+Tyr Pro Ile Glu Glu Glu D-Val D-Tyr D-Orn D-aThr C16:0-OH(3)                                      
+Val Trp Phe NMe-Ala Hty D-Lys CO                                          
+Trp Phe NMe-Ala Hty D-Lys CO aIle                                          
+Ser OH-Orn NAc-Fo-OH-Orn Fo-OH-Orn                                             
+Val Pro iC13:1(3) Hpr Gly Gly D-Dbu Dbu bMe-Asp Asp Asp Asp                                     
+Val Pro iC14:1(3) Hpr Gly Gly D-Dbu Dbu bMe-Asp Asp Asp Asp                                     
+Val Pro Hpr Gly Gly D-Dbu Dbu bMe-Asp Asp Asp Asp aC15:1(3)                                     
+Val Pro Hpr Gly Gly D-Dbu Dbu bMe-Asp Asp Asp Asp aC13:1(3)                                     
+Val Pro L-Dbu iC13:1(3) Hpr Gly Gly D-Dbu bMe-Asp Asp Asp Asn                                     
+Val Pro L-Dbu iC14:1(3) Hpr Gly Gly D-Dbu bMe-Asp Asp Asp Asn                                     
+Val Pro L-Dbu Hpr Gly Gly D-Dbu bMe-Asp Asp Asp Asn aC13:1(3)                                     
+Val Pro L-Dbu Hpr Gly Gly D-Dbu bMe-Asp Asp Asp Asn aC15:1(3)                                     
+Phe Leu Gly D-Val D-Val D-Val D-Pro dhAbu dhAbu D-Dab D-aThr D-Ala D-Ala D-Ala D-Ala D-Ala D-Ala Dab C8:0-OH(3) Ala                             
+Phe Leu Gly D-Val D-Val D-Val D-Pro dhAbu dhAbu D-Dab D-aThr D-Ala D-Ala D-Ala D-Ala D-Ala D-Ala Dab C10:0-OH(3) Ala                             
+Ria Ria Rha NMe-Hpg Hpg Hpg D-Man Dhpg D-Glc D-Gal D-Gal Cl-Hpg bOH-Tyr bOH-Cl-Tyr                                   
+Ria Ria Rha NMe-Hpg Hpg Hpg D-Man Dhpg D-Glc D-Gal Cl-Hpg bOH-Tyr bOH-Cl-Tyr                                    
+D-I-NMe-Tyr C9:1(4)-Me(2.4.6)-OH(8) Ala Ala                                             
+D-Br-NMe-Tyr C9:1(4)-Me(2.4.6)-OH(8) Ala Ala                                             
+D-Cl-NMe-Tyr C9:1(4)-Me(2.4.6)-OH(8) Ala Ala                                             
+Gly D-I-NMe-Tyr C9:1(4)-Me(2.4.6)-OH(8) Ala                                             
+Gly D-Br-NMe-Tyr C9:1(4)-Me(2.4.6)-OH(8) Ala                                             
+Gly D-Cl-NMe-Tyr C9:1(4)-Me(2.4.6)-OH(8) Ala                                             
+D-I-NMe-Tyr C9:1(Me4)-Me(2.4.6)-OH(8)-Oxo(5) Ala Ala                                             
+D-I-NMe-Tyr C9:1(4)-Me(2.4.6)-OH(8) bTyr Ala                                             
+D-Br-NMe-Tyr C9:1(4)-Me(2.4.6)-OH(8) bTyr Ala                                             
+D-Br-NMe-Tyr C9:1(Me4)-Me(2.4.6)-OH(8)-Oxo(5) Ala Ala                                             
+D-Cl-NMe-Tyr C9:1(Me4)-Me(2.4.6)-OH(8)-Oxo(5) Ala Ala                                             
+Ser D-I-NMe-Tyr C9:1(4)-Me(2.4.6)-OH(8) Ala                                             
+Ser D-Br-NMe-Tyr C9:1(4)-Me(2.4.6)-OH(8) Ala                                             
+Ser D-Cl-NMe-Tyr C9:1(4)-Me(2.4.6)-OH(8) Ala                                             
+Ser D-I-NMe-Tyr C9:1(4)-Me(2.4.6)-OH(8) Ala                                             
+Ser D-Br-NMe-Tyr C9:1(4)-Me(2.4.6)-OH(8) Ala                                             
+Ser D-Cl-NMe-Tyr C9:1(4)-Me(2.4.6)-OH(8) Ala                                             
+Ser Gly D-I-NMe-Tyr C9:1(4)-Me(2.4.6)-OH(8)                                             
+Val D-Cl-NMe-Tyr C9:1(4)-Me(2.4.6)-OH(8) Ala                                             
+Ser NMe-Leu Gly C9:0-Me(2)-OH(3) aThr aIle                                           
+Ser NMe-Leu Gly C7:0-Me(2)-OH(3) aThr aIle                                           
+Val Ser NMe-Leu Gly C9:0-Me(2)-OH(3) aThr                                           
+Ser NMe-Leu Gly C10:0-Me(2)-OH(3) aThr aIle                                           
+Val Ser NMe-Leu Gly C11:0-Me(2)-OH(3) aThr                                           
+Ser NMe-Leu Gly C11:0-Me(2)-OH(3) aThr aIle                                           
+Val Val Pro Pro Orn Orn Leu Leu D-Phe D-Phe                                       
+Val Trp Trp Trp Trp NFo-Ile Gly Eta D-Val D-Val D-Leu D-Leu D-Leu D-Leu Ala Ala                                 
+Val Trp Trp Trp Phe NFo-Ile Gly Eta D-Val D-Val D-Leu D-Leu D-Leu D-Leu Ala Ala                                 
+Val Tyr Trp Trp Trp NFo-Ile Gly Eta D-Val D-Val D-Leu D-Leu D-Leu D-Leu Ala Ala                                 
+Val Trp Trp Trp Trp NFo-Val Gly Eta D-Val D-Val D-Leu D-Leu D-Leu D-Leu Ala Ala                                 
+Val Trp Trp Trp Phe NFo-Val Gly Eta D-Val D-Val D-Leu D-Leu D-Leu D-Leu Ala Ala                                 
+Val Tyr Trp Trp Trp NFo-Val Gly Eta D-Val D-Val D-Leu D-Leu D-Leu D-Leu Ala Ala                                 
+Val Val Pro Pro Orn Orn Leu Leu D-Tyr D-Tyr D-Phe D-Phe                                     
+NMe-Val NMe-Phe Map Lac Ala-Thz                                            
+NMe-Val NMe-Phe Mab Hiv Ala-Thz                                            
+Val NMe-OMe-Tyr NMe-Ala Hmp C8:0:1(7)-Me(2)-NH2(3)                                            
+NMe-Val Hiv Hiv D-NMe-OMe-Tyr C6:0-Me(2)-NH2(3)                                            
+Pro NMe-Val Hiv Gly D-NMe-Phe C6:0-Me(2.2)-OH(3) Ala                                          
+Val Pro NMe-Phe NMe-Phe Gly C6:0-Me(2.2)-OH(3)                                           
+Ph-Ser Ile gSer dDil dDap                                            
+Val Thr Thr Pro NMe-Gly NMe-Gln D-Val D-Trp D-Phe D-NFo-Ala D-CysA Br-Phe Asn Arg                                   
+t-Leu Thr Thr Pro NMe-Gln Gly D-Val D-Trp D-Phe D-NFo-Ala D-CysA Br-Phe Asn Arg                                   
+t-Leu Thr Thr Pro NMe-Gly NMe-Gln D-Val D-Trp D-Phe D-NFo-Ala D-CysA Br-Phe Asn Arg                                   
+Val Thr Pro NMe-Gln Gly D-Val D-Trp D-Phe D-NFo-Ala D-CysA Br-Phe Asn Arg                                    
+t-Leu Thr Pro NMe-Gln D-Val D-Trp D-Phe D-NFo-Ala D-CysA Br-Phe Arg                                      
+Pro Pro Pro Phe-Thz Met Met                                           
+Pro Pro Pro Phe-Thz O-Met Met                                           
+NMe-OH-Ile C10:0-Me(2.2.4)-OH(3)-OMe(7) aMe-Cys Ala Ala                                            
+NMe-OH-Ile C10:0-Me(2.2.4)-OH(3.7) aMe-Cys Ala Ala                                            
+NMe-Val C10:0-Me(2.2.4)-OH(3.7) aMe-Cys Ala Ala                                            
+NMe-Ile C10:0-Me(2.2.4)-OH(3)-OMe(7) aMe-Cys Ala Ala                                            
+Pro Pro Leuol Leu Leu Ival Ile Asn Aib Aib Ac-Aib                                      
+Val Ser Pro Pro Pro Leuol Leu Leu Asn Aib Aib Aib Aib Ac-Aib                                   
+Val Ser Pro Pro Pro Leuol Leu Leu Ival Asn Aib Aib Aib Ac-Aib                                   
+Pro Pro Pro Leuol Leu Leu Ival Ile Asn Ala Aib Aib Aib Ac-Aib                                   
+Val Pro Pro Pro Leuol Leu Leu Asn Ala Aib Aib Aib Aib Ac-Aib                                   
+Val Pro Pro Pro Leuol Leu Leu Ival Asn Ala Aib Aib Aib Ac-Aib                                   
+Val Pro Pro Pro Leuol Leu Leu Ival Gln Ala Aib Aib Aib Ac-Aib                                   
+Ser Pro Pro Pro Leuol Leu Leu Ile Asn Aib Aib Aib Aib Ac-Aib                                   
+Ser Pro Pro Pro Leuol Leu Leu Ival Ile Asn Aib Aib Aib Ac-Aib                                   
+Ser Pro Pro Pro Leuol Leu Leu Ival Ile Gln Aib Aib Aib Ac-Aib                                   
+Pro Pro Pro Leuol Leu Leu Ile Asn Ala Aib Aib Aib Aib Ac-Aib                                   
+Pro Pro Pro Leuol Leu Leu Ival Ile Gln Ala Aib Aib Aib Ac-Aib                                   
+Pro Pro Leuol Leu Leu Ile Ile Asn Aib Aib Ac-Aib                                      
+Valol Ser Pro Pro Pro Leu Leu Ile Asn Aib Aib Aib Aib Ac-Aib                                   
+Ria Ria NMe-Hpg Hpg Hpg D-Man Dhpg D-Glc Cl-Hpg bOH-Tyr bOH-Cl-Tyr 2OMe-Rha                                     
+Ria Ria NMe-Hpg Hpg Hpg Dhpg D-Glc Cl-Hpg bOH-Tyr bOH-Cl-Tyr 2OMe-Rha                                      
+t-Leu NMe-hv-Val bbMe-NMe-Trp Arg                                             
+t-Leu NMe-hv-Val bbNMe-NMe-Trp Arg                                             
+t-Leu NMe-hv-Val bbNMe-NMe-Trp                                              
+t-Leu NMe-hv-Val bbMe-NMe-Trp                                              
+Val NMe-hv-Val bbMe-NMe-Trp                                              
+Val NMe-hv-Val bbNMe-NMe-Trp                                              
+Val Pheol Leu Gly Gln Aib Aib Aib Aib Aib Aib Aib Ac-Phe 4OH-Pro 4OH-Pro                                  
+Val Trp Pro Pro Pro Phe Arg                                          
+Val Pro Pro Phe Phe Glu Asn                                          
+Trp Pro Pro Phe Leu Gly Glu                                          
+Tyr Pro Pro Leu Ile Asp Ala                                          
+Tyr Thr Thr Pro Pro Phe Phe                                          
+Val Pro Pro Met Leu Arg Ala                                          
+Val Tyr Pro Pro Pro Leu Leu Ile                                         
+Val Trp Thr Pro Pro Pro Leu Leu                                         
+Val Tyr Tyr Trp Pro Phe Lys Asp                                         
+Val Tyr Trp Pro Phe Lys Asp Ala                                         
+Val Tyr Pro Pro Pro Leu Ile Ile                                         
+Val Val Pro Pro Leuol Leu Leu Gln Aib Aib Ac-Aib                                      
+Val Val Pro Pro Leuol Leu Leu Gln Aib Aib Ac-Ival                                      
+Val Pro Pro Leuol Leu Leu Ile Gln Aib Aib Ac-Aib                                      
+Val Pro Pro Leuol Leu Leu Ile Gln Aib Aib Ac-Aib                                      
+Pro Pro Leuol Leu Leu Ile Ile Gln Aib Aib Ac-Aib                                      
+Pro Pro Leuol Leu Leu Ile Ile Gln Aib Aib Ac-Aib                                      
+Valol Val Ser Pro Leu Leu Gly Gln Gln Ala Aib Aib Aib Aib Aib Aib Aib Ac-Aib                               
+Val Ser Pro Leuol Leu Leu Gly Gln Gln Ala Aib Aib Aib Aib Aib Aib Aib Ac-Aib                               
+Valol Val Pro Leu Leu Gly Gln Gln Ala Ala Aib Aib Aib Aib Aib Aib Aib Ac-Aib                               
+Valol Val Ser Pro Leu Leu Ival Gly Gln Gln Ala Aib Aib Aib Aib Aib Aib Ac-Aib                               
+Valol Val Ser Pro Leu Leu Ival Gly Gln Gln Ala Aib Aib Aib Aib Aib Aib Ac-Aib                               
+Val Ser Pro Leuol Leu Leu Ival Gly Gln Gln Ala Aib Aib Aib Aib Aib Aib Ac-Aib                               
+Val Val Pro Pro Leuol Leu Leu Gln Aib Aib Ac-Aib                                      
+Val Val Pro Pro Leuol Leu Leu Gln Aib Aib Ac-Ival                                      
+Val Pro Pro Leuol Leu Leu Ile Gln Aib Aib Ac-Aib                                      
+Val Pro Pro Leuol Leu Leu Ile Gln Aib Aib Ac-Aib                                      
+Pro Pro Leuol Leu Leu Ile Ile Gln Aib Aib Ac-Aib                                      
+Pro Pro Leuol Leu Leu Ile Ile Gln Aib Aib Ac-Aib                                      
+Valol Val Ser Pro Leu Leu Gly Gln Gln Ala Aib Aib Aib Aib Aib Aib Aib Ac-Aib                               
+Val Ser Pro Leuol Leu Leu Gly Gln Gln Ala Aib Aib Aib Aib Aib Aib Aib Ac-Aib                               
+Valol Val Pro Leu Leu Gly Gln Gln Ala Ala Aib Aib Aib Aib Aib Aib Aib Ac-Aib                               
+Valol Val Ser Pro Leu Leu Ival Gly Gln Gln Ala Aib Aib Aib Aib Aib Aib Ac-Aib                               
+Valol Val Ser Pro Leu Leu Ival Gly Gln Gln Ala Aib Aib Aib Aib Aib Aib Ac-Aib                               
+Val Ser Pro Leuol Leu Leu Ival Gly Gln Gln Ala Aib Aib Aib Aib Aib Aib Ac-Aib                               
+Pro Phe NMe-Val NMe-Phe bAla 3OH-Leu                                           
+Phe NMe-Val NMe-Phe bAla 3OH-Leu 3Me-Pro                                           
+Val Val Gly D-Leu C12:0-OH(3) Ala                                           
+Val Val Gly D-Leu C9:0-OH(3) Ala                                           
+Val Gly D-Leu C9:0-OH(3) Ala Ala                                           
+Val Gly D-Leu C7:0-OH(3) Ala Ala                                           
+Thr Pro Glu D-Tyr D-Ser D-Asn C14:0-NH2(3) Asn                                         
+Thr Pro iC15:0-NH2(3) Glu D-Tyr D-Ser D-Asn Asn                                         
+Thr Pro Glu D-Tyr D-Ser D-Asn Asn aC15:0-NH2(3)                                         
+Thr Pro Glu D-Tyr D-Ser D-Asn C16:0-NH2(3) Asn                                         
+Thr Pro iC16:0-NH2(3) Glu D-Tyr D-Ser D-Asn Asn                                         
+Thr Pro iC15:0-NH2(3) Gln D-Tyr D-Asn D-Asn Asn                                         
+Thr Pro Gln D-Tyr D-Asn D-Asn Asn aC15:0-NH2(3)                                         
+Thr Pro iC16:0-NH2(3) Gln D-Tyr D-Asn D-Asn Asn                                         
+Thr Pro Gln D-Tyr D-Asn D-Asn C16:0-NH2(3) Asn                                         
+Thr Pro iC17:0-NH2(3) Gln D-Tyr D-Asn D-Asn Asn                                         
+Thr Pro Gln D-Tyr D-Asn D-Asn Asn aC17:0-NH2(3)                                         
+Thr Ser Glu D-Tyr D-Ser D-Asn C14:0-NH2(3) Asn                                         
+Thr Ser iC15:0-NH2(3) Glu D-Tyr D-Ser D-Asn Asn                                         
+Thr Ser Glu D-Tyr D-Ser D-Asn Asn aC15:0-NH2(3)                                         
+Thr Ser Glu D-Tyr D-Ser D-Asn C16:0-NH2(3) Asn                                         
+Thr Ser iC16:0-NH2(3) Glu D-Tyr D-Ser D-Asn Asn                                         
+Ser Pro Gln D-Tyr D-Asn D-Asn C13:0-NH2(3) Asn                                         
+Ser Pro Gln D-Tyr D-Asn D-Asn C14:0-NH2(3) Asn                                         
+Ser Pro Gln D-Tyr D-Asn D-Asn Asn aC15:0-NH2(3)                                         
+Ser Pro iC15:0-NH2(3) Gln D-Tyr D-Asn D-Asn Asn                                         
+Ser Pro Gln D-Tyr D-Asn D-Asn C15:0-NH2(3) Asn                                         
+Ser Pro iC16:0-NH2(3) Gln D-Tyr D-Asn D-Asn Asn                                         
+Ser Pro Gln D-Tyr D-Asn D-Asn C16:0-NH2(3) Asn                                         
+Ser Pro Gln D-Tyr D-Asn D-Asn Asn aC17:0-NH2(3)                                         
+Ser Pro iC14:0-NH2(3) Gln D-Tyr D-Asn D-Asn Asp                                         
+Ser Pro Gln D-Tyr D-Asn D-Asn Asp aC15:0-NH2(3)                                         
+Ser Pro iC16:0-NH2(3) Gln D-Tyr D-Asn D-Asn Asp                                         
+Ser Pro Gln D-Tyr D-Asn D-Asn Asp aC17:0-NH2(3)                                         
+Pro Gln D-Tyr D-Ser D-Asn C16:0-NH2(3) Asn Asn                                         
+Pro iC16:0-NH2(3) Gln D-Tyr D-Ser D-Asn Asn Asn                                         
+Pro iC17:0-NH2(3) Gln D-Tyr D-Ser D-Asn Asn Asn                                         
+Pro Gln D-Tyr D-Ser D-Asn Asn Asn aC17:0-NH2(3)                                         
+NMe-Br-Trp C9:1(4)-Me(2.4.6)-OH(8) bTyr Ala                                             
+Thr Thr Ser D-Phe D-Phe D-Leu D-Leu C4:0-Me(2)                                         
+Tyr Thr Pro Phe iC7:0 Gly D-Ser D-Leu                                         
+Thr Ile D-Tyr D-Tyr D-Phe C4:0 Arg                                          
+Pro iC9:0-OH(3) D-Trp Arg                                             
+Trp Pro Leu Leu iC11:0-OH(3) D-Ala D-Ala                                          
+Val Val Thr Phe Orn iC7:0 D-Val D-Val D-Val D-Pro dhAbu D-aThr D-aIle D-aIle                                   
+Val Val Thr Phe Orn iC7:0 D-Val D-Val D-Val D-Pro dhAbu D-aThr D-aIle D-aIle                                   
+Ser Ser Phe iC11:0-OH(3) D-Val D-Phe D-Leu D-Asp 4OH-Pro                                        
+Ser Ser Phe Lys iC11:0-OH(3) D-Val D-Phe D-Leu D-Asp 4OH-Pro                                       
+Val Tyr iC11:0-OH(3) D-Phe D-Asn D-Ala 4OH-Pro                                          
+Val Val Thr Phe Orn iC7:0 D-Val D-Val D-Val D-Val D-Pro dhAbu D-aThr D-aIle                                   
+Val Val Thr Phe Lys iC7:0 D-Val D-Val D-Val D-Pro dhAbu D-aThr D-aIle D-aIle                                   
+Pro iC9:0-OH(3) D-Trp Arg                                             
+iC9:0-OH(3) D-Trp Arg 4OH-Pro                                             
+Thr Ile D-Tyr D-Tyr D-Phe C4:0 Arg                                          
+Val Tyr Pro iC11:0-OH(3) D-Phe D-Asn D-Ala                                          
+Val Tyr Trp Trp Pro Pro Ile Ile                                         
+Trp Trp Phe Phe Leu Ala                                           
+Tyr Trp Trp Pro Phe Phe Ala                                          
+Trp Trp Phe Leu Ala                                            
+Val Trp Trp Thr Pro Pro Phe O-Met                                         
+Val Thr Thr Phe NMe-Tyr Leu Ahp Ac-Pro                                         
+Phe Phe NMe-Cl-OH-Trp Lys Leu Leu CO                                          
+Pro PAOA Orn Nva k-Leu Ile Hmp Br-OH-Trp                                         
+Pro PAOA Orn k-Leu Ile Hmp Br-OH-Trp Abu                                         
+Pro PALOA Orn k-Leu Ile Hmp Br-OH-Trp Abu                                         
+Pro PALOA Orn Nva k-Leu Ile Hmp Br-OH-Trp                                         
+PMST NFo-Iser Ile Ile Dpr dh-Trp CO Ala                                         
+PMST NFo-Iser Ile Dpr D-Ile dh-Trp CO Ala                                         
+PMST NFo-Iser Ile Ile Dpr CO Br-OH-Trp Ala                                         
+Trp PMST NFo-Iser Ile Ile Dpr CO Ala                                         
+PMST NFo-Iser Ile Ile Dpr CO Ala 1Me-Trp                                         
+Phe Phe NMe-Cl-Trp Lys Leu Leu CO                                          
+Pro PALOA OSu-Hmp Orn k-Leu Ile Br-OH-Trp Abu                                         
+Pro PALOA OSu-Hmp Orn Nva k-Leu Ile Br-OH-Trp                                         
+NMe-Leu Lys Leu Leu CO Br-OH-Trp Ala                                          
+Pro Pro NOMe-Ac-D-Phe NMe-Val NMe-Val NMe-Leu NMe-Asn NMe-aIle D-Phe Asn                                       
+Pro Pro NOMe-Ac-D-Phe NMe-Val NMe-Val NMe-Leu NMe-Asn NMe-aIle D-Phe Asn Arg                                      
+Val Val Pro Pro Phe Lac D-NMe-Val C8:0:1(7)-Me(2.2)-OH(3)                                         
+Val Val Pro Ph-Lac D-NMe-Val C8:0:1(7)-Me(2.2)-OH(3) Ala                                          
+Val Val Pro Ph-Lac D-NMe-Val C8:1(7)-Me(2.2)-OH(3) Ala                                          
+Val Val Pro Ph-Lac D-NMe-Val C8:0-Me(2.2)-OH(3) Ala                                          
+Val Pro NMe-Ile NMe-Ile Hmp C8:0:1(7)-Me(2)-OH(3)                                           
+Val Pro NMe-Ile NMe-Ile Hiv C8:0:1(7)-Me(2)-OH(3)                                           
+Val Tyr Tig Thr Leu Glu Ala Abu                                         
+Val Tyr Tig Thr MeO-Glu Leu Ala Abu                                         
+Val Tyr Tig Thr Hty Glu Ala Abu                                         
+Val Tyr Tig Thr Phe Glu Ala Abu                                         
+Val Tyr Tig Thr O-Met Glu Ala Abu                                         
+NAc-Leu Leu Argal                                              
+Val Leu Ile Gln D-Leu D-Leu Asp aC13:0-OH(3)                                         
+Val Leu Ile Gln D-Leu D-Leu Asp aC15:0-OH(3)                                         
+Val Leu Ile Gln D-Leu D-Leu Asp aC17:0-OH(3)                                         
+Val Leu Ile iC12:0-OH(3) Gln D-Leu D-Leu Asp                                         
+Val Leu Ile iC13:0-OH(3) Gln D-Leu D-Leu Asp                                         
+Val Leu Ile iC14:0-OH(3) Gln D-Leu D-Leu Asp                                         
+Val Leu Ile iC15:0-OH(3) Gln D-Leu D-Leu Asp                                         
+Val Leu Ile iC16:0-OH(3) Gln D-Leu D-Leu Asp                                         
+Val Leu Ile iC17:0-OH(3) Gln D-Leu D-Leu Asp                                         
+Val Leu Ile Gln D-Leu D-Leu C12:0-OH(3) Asp                                         
+Val Leu Ile Gln D-Leu D-Leu C13:0-OH(3) Asp                                         
+Val Leu Ile Gln D-Leu D-Leu C14:0-OH(3) Asp                                         
+Val Leu Ile Gln D-Leu D-Leu C15:0-OH(3) Asp                                         
+Val Leu Ile Gln D-Leu D-Leu C16:0-OH(3) Asp                                         
+Val Val Pro Pheol Leu Gly Gln Gln Gln Ala Ala Ala Aib Aib Aib Aib Aib Aib Aib Ac-Aib                             
+Val Val Pro Pheol Leu Ival Gly Gln Gln Gln Ala Ala Ala Aib Aib Aib Aib Aib Aib Ac-Aib                             
+Val Val Pro Pheol Leu Gly Gln Gln Gln Ala Ala Aib Aib Aib Aib Aib Aib Aib Aib Ac-Aib                             
+Val Val Pro Pheol Leu Ival Gly Gln Gln Gln Ala Ala Aib Aib Aib Aib Aib Aib Aib Ac-Aib                             
+Val Val Pro Pheol Leu Gly Glu Gln Gln Ala Ala Ala Aib Aib Aib Aib Aib Aib Aib Ac-Aib                             
+Val Val Pro Pheol Leu Ival Gly Glu Gln Gln Ala Ala Ala Aib Aib Aib Aib Aib Aib Ac-Aib                             
+Ser Ph-Ser OH-Asn Leu Leu Ile Gly D-Leu D-aThr D-Arg 3OH-Leu                                      
+NMe-Val NMe-OMe-Tyr NMe-Ile Map Ibu Hmp Gly Gly Ala                                        
+Val Ile D-Leu D-Cys D-Cys                                            
+Val Ile D-Leu D-Cys D-Cys                                            
+Val Val D-Leu D-Cys D-Cys                                            
+Val D-Leu D-Cys D-Cys aIle                                            
+Val Leu D-Val D-Cys D-Cys                                            
+Val Leu D-Leu D-Cys D-Cys                                            
+Ser D-Ser D-OH-Asp D-Ac-OH-Orn Dab C12:0 Ac-OH-Orn                                          
+Ser D-Ser D-OH-Asp D-Ac-OH-Orn Dab C14:1(7) Ac-OH-Orn                                          
+Ser D-Ser D-OH-Asp D-Ac-OH-Orn Dab C14:0 Ac-OH-Orn                                          
+Ser D-Ser D-OH-Asp D-Ac-OH-Orn Dab C16:1(9) Ac-OH-Orn                                          
+Ser D-Ser D-OH-Asp D-Ac-OH-Orn Dab C16:1(7) Ac-OH-Orn                                          
+Ser D-Ser D-OH-Asp D-Ac-OH-Orn Dab C16:0 Ac-OH-Orn                                          
+NMe-Ser Leu D-Glu D-bMe-Asp D-Ala Arg ADMAdda                                          
+NMe-Dha Leu Har D-Glu D-bMe-Asp D-Ala ADMAdda                                          
+NMe-Dha Leu D-Glu D-bMe-Asp D-Ala Arg ADMAdda                                          
+Hty dhAbu D-Glu D-Asp D-Ala Arg ADMAdda                                          
+Leu dhAbu D-Glu D-Asp D-Ala Arg ADMAdda                                          
+dhAbu D-Glu D-Asp D-Ala Arg Arg ADMAdda                                          
+NMe-Dha Leu Har D-Glu D-Asp D-Ala ADMAdda                                          
+NMe-Dha Leu D-Glu D-Asp D-Ala Arg ADMAdda                                          
+NMe-Dha MeO-D-Glu Leu D-Asp D-Ala Arg Adda                                          
+MeO-Glu Glu dh-Ala D-Glu D-Asp D-Ala Adda                                          
+MeO-Glu MeO-Glu dh-Ala D-Glu D-Asp D-Ala Adda                                          
+Hty dh-Ala D-Glu D-Asp D-Ala Arg Adda                                          
+dh-Ala D-Glu D-Asp D-Ala Arg Arg Adda                                          
+Leu dh-Ala D-Glu D-Asp D-Ala Arg Adda                                          
+NMe-Ser D-Glu D-Asp D-Ala Arg Arg Adda                                          
+NMe-Dha Hty D-Glu D-Asp D-Ala Arg Adda                                          
+NMe-Dha Leu D-Glu D-Asp D-Ala Arg Adda                                          
+NMe-Dha D-Glu D-Asp D-Ala Arg Arg Adda                                          
+Tyr NMe-Dha D-Glu D-Asp D-Ala Arg Adda                                          
+Ser MeO-Glu MeO-Glu D-Glu D-Asp D-Ala Adda                                          
+NMe-Dha MeO-D-Glu Leu D-bMe-Asp D-Ala Arg Adda                                          
+MeO-Glu MeO-Glu dh-Ala D-Glu D-bMe-Asp D-Ala Adda                                          
+MeO-Glu Glu dh-Ala D-Glu D-bMe-Asp D-Ala Adda                                          
+Phe dh-Ala D-Glu D-bMe-Asp D-Ala Arg Adda                                          
+Hph dh-Ala D-Glu D-bMe-Asp D-Ala Arg Adda                                          
+Hty dh-Ala D-Glu D-bMe-Asp D-Ala Arg Adda                                          
+Leu dh-Ala D-Glu D-bMe-Asp D-Ala Arg Adda                                          
+dh-Ala D-Glu D-bMe-Asp D-Ala Arg Arg Adda                                          
+Tyr dh-Ala D-Glu D-bMe-Asp D-Ala Arg Adda                                          
+NMe-Dha Leu DMAdda D-Glu D-bMe-Asp D-Ala Arg                                          
+NMe-Dha Leu D-Ser D-Glu D-bMe-Asp Arg ADMAdda                                          
+NMe-Lan Leu D-Glu D-bMe-Asp D-Ala Arg Adda                                          
+NMe-Ser Leu D-Glu D-bMe-Asp D-Ala Arg Adda                                          
+Ser MeO-Glu MeO-Glu D-Glu D-bMe-Asp D-Ala Adda                                          
+Ser Hty D-Glu D-bMe-Asp D-Ala Arg Adda                                          
+Ser Leu D-Glu D-bMe-Asp D-Ala Arg Adda                                          
+Ser D-Glu D-bMe-Asp D-Ala Arg Arg Adda                                          
+Ser MeO-Glu Glu D-Glu D-bMe-Asp D-Ala Adda                                          
+NMe-Dha D-Glu D-bMe-Asp D-Ala Arg Ala Adda                                          
+Phe NMe-Dha D-Glu D-bMe-Asp D-Ala Arg Adda                                          
+NMe-Dha Hil D-Glu D-bMe-Asp D-Ala Arg Adda                                          
+NMe-Dha Hty D-Glu D-bMe-Asp D-Ala Arg Adda                                          
+NMe-Dha Leu D-Glu D-bMe-Asp D-Ala Ala Adda                                          
+NMe-Dha Leu D-Glu D-bMe-Asp D-Ala Aib Adda                                          
+Phe NMe-Dha Leu D-Glu D-bMe-Asp D-Ala Adda                                          
+NMe-Dha Leu Leu D-Glu D-bMe-Asp D-Ala Adda                                          
+NMe-Dha Leu D-Glu D-bMe-Asp D-Ala Arg Adda                                          
+Trp NMe-Dha Leu D-Glu D-bMe-Asp D-Ala Adda                                          
+Tyr NMe-Dha Leu D-Glu D-bMe-Asp D-Ala Adda                                          
+O-Met NMe-Dha D-Glu D-bMe-Asp D-Ala Arg Adda                                          
+NMe-Dha D-Glu D-bMe-Asp D-Ala Arg Arg Adda                                          
+Val Phe NMe-Dha D-Glu D-bMe-Asp D-Ala Adda                                          
+Trp NMe-Dha D-Glu D-bMe-Asp D-Ala Arg Adda                                          
+Tyr NMe-Dha D-Glu D-bMe-Asp D-Ala Ala Adda                                          
+Tyr O-Met NMe-Dha D-Glu D-bMe-Asp D-Ala Adda                                          
+Tyr NMe-Dha D-Glu D-bMe-Asp D-Ala Arg Adda                                          
+Val NMe-Tyr Hty Ala Adda                                            
+Tyr Tyr Pro NMe-Ile Adda                                            
+Tyr Pro Hty Ala Adda                                            
+Tyr Tyr Thr Pro Adda                                            
+Val Tyr Tyr Pro Adda                                            
+Tyr Trp Thr Pro Adda                                            
+Tyr Tyr Pro Ala Adda                                            
+Val Phe NMe-Phe NMe-Ile NMe-Gly-Thz D-NMe-Val C6:0-OMe(3)                                          
+OH-Pyr OH-4Abu NMe-Gly Gly D-COOH-Trp C12:1(11)-Me(6)-OH(2.4.5)-NH2(3)-mPhe(11)                                           
+Pyr OH-4Abu NMe-Gly Gly D-COOH-Trp C12:1(11)-Me(6)-OH(2.4.5)-NH2(3)-mPhe(11)                                           
+Pyr OH-4Abu NMe-Gly Gly D-Cl-CONH2-Trp C8:1(7)-OH(2.4.5)-NH2(3)-Ph(8)                                           
+Pyr OH-4Abu NMe-Gly Gly D-Cl-Trp C8:1(7)-OH(2.4.5)-NH2(3)-Ph(8)                                           
+OH-4Abu NMe-Gly Gly dPyr D-COOH-Trp C10:2(7.9)-OH(2.4.5)-NH2(3)-ePh(10)                                           
+Pyr OH-4Abu NMe-Gly Gly D-Trp C12:3(7.9.11)-Me(6)-OH(2.4.5)-NH2(3)-Ph(12)                                           
+Pyr OH-4Abu NMe-Gly Gly D-Trp C12:3(7.9.11)-Me(6.10)-OH(2.4.5)-NH2(3)-Ph(12)                                           
+Pyr OH-4Abu NMe-Gly Gly dh-Trp C12:3(7.9.11)-Me(6)-OH(2.4.5)-NH2(3)-Ph(12)                                           
+Pyr OH-4Abu NMe-Gly Gly dh-Trp C12:3(7.9.11)-Me(6.10)-OH(2.4.5)-NH2(3)-Ph(12)                                           
+t-Leu Thr Pro Pro NMe-Gln D-Val D-Trp D-NFo-Ala D-CysA D-Asp bOH-Br-Phe bMe-Ile Arg                                    
+v-Arg Sta Leu Azd Abu                                            
+Val Val Lac Lac D-Val D-Val D-Hiv D-Hiv                                         
+Phe NMe-OH-Trp Lys Leu D-Val CO aIle                                          
+Phe NMe-OH-Trp Lys Leu D-Ile CO aIle                                          
+Tyr Tyr Ser Pro Leu D-Glu D-Glu D-Asp D-Asp D-Asp D-Asp Asp Ala                                    
+Val Ser OH-Asn OH-4Abu Gly DHMDA bMe-Asn                                          
+Pro Ile diOH-Bz Arg Abu                                            
+Val Gly D-I-NMe-Tyr C9:1(4)-Me(2.4.6)-OH(8)                                             
+Thr NMe-Ph-Gly NMe-Gly NMe-bMe-Leu Hpa D-Pro D-Leu Abu                                         
+Thr NMe-Ph-Gly NMe-Gly NMe-bMe-Leu Hpa D-Pro D-Leu Ala                                         
+Thr NMe-Ph-Gly NMe-Gly NMe-bMe-Leu Hpa D-Leu D-4OH-Pro Abu                                         
+Thr NMe-Ph-Gly NMe-Gly NMe-bMe-Leu Hpa D-Leu D-4OH-Pro Ala                                         
+Ser OH-dHpg Hse Hpg                                             
+Ser Hse Hpg D-OH-dHpg                                             
+Ser Hse Hpg Hpg                                             
+Ser Hse Hpoe Hpg                                             
+Ser OH-dHpg Hpg                                              
+Ser Hpg D-OH-dHpg                                              
+Ser Hpg Hpg                                              
+O2-Met NMe-Hty Ile Hph D-Lys CO Ac-Ser                                          
+O-Met NMe-Hty Ile Hph D-Lys CO Ac-Ser                                          
+D-Glu D-Asp Arg Adda 2Dh-Mabu                                            
+dhAbu D-Glu D-bMe-Asp Arg Adda                                            
+DMAdda D-Glu D-bMe-Asp Arg 2Dh-Mabu                                            
+D-Glu D-bMe-Asp Arg Adda 2Dh-Mabu                                            
+D-MeO-Glu D-bMe-Asp Arg Adda 2Dh-Mabu                                            
+Val D-Glu D-bMe-Asp Adda 2Dh-Mabu                                            
+Har D-Glu D-bMe-Asp Adda 2Dh-Mabu                                            
+D-Glu D-bMe-Asp Arg Adda 2Dh-Mabu                                            
+NMe-Val NMe-Phe Lac C5:0-NH2(3) Ala-Thz                                            
+Val Val NMe-Val NMe-Val Hiv Hiv Hiv Hiv C8:0:1(7)-Me(2)-NH2(3) C8:0:1(7)-Me(2)-NH2(3)                                       
+Pro Hmp Hmp Hiv Hiv D-Pro D-NMe-Val D-NMe-Val C8:0:1(7)-Me(2)-OH(3) C8:0:1(7)-Me(2)-OH(3)                                       
+Pro PALOA Orn Me-Vaa k-Leu Br-OH-Trp Abu                                          
+PTTA Nva Ile Gly Dpr diOH-Bz CysA CO Ala                                        
+NMe-Leu Hpg Hpg Ere Ere Dhpg D-Glc bOH-Cl-Tyr bOH-Cl-Tyr Asn                                       
+NMe-Leu Hpg Hpg Ere Dhpg D-Glc bOH-Cl-Tyr bOH-Cl-Tyr Asn                                        
+NMe-Leu Hpg Hpg Ere Dhpg bOH-Cl-Tyr bOH-Cl-Tyr Asn                                         
+NdMe-Leu Hpg Hpg Ere Ere Dhpg D-Glc bOH-Cl-Tyr bOH-Cl-Tyr Asn                                       
+NdMe-Leu Hpg Hpg Ere Dhpg D-Glc bOH-Cl-Tyr bOH-Cl-Tyr Asn                                        
+NMe-Leu Hpg Hpg Ere Ere Dhpg D-Glc bOH-Tyr bOH-Cl-Tyr Asn                                       
+Oli NMe-Leu Hpg Hpg Ere Dhpg D-Glc bOH-Tyr bOH-Cl-Tyr Asn                                       
+NMe-Leu Hpg Hpg Ere Ere Dhpg D-Glc bOH-Tyr bOH-Tyr Asn                                       
+NdMe-Leu Hpg Hpg Ere Ere Dhpg D-Glc bOH-Tyr bOH-Cl-Tyr Asn                                       
+Ser Put OH-Orn Fo-OH-Orn D-OH-Asp C4:0-OH(3)                                           
+Ser Put OH-Orn Fo-OH-Orn D-OH-Asp C6:0-OH(3)                                           
+Ser Put OH-Orn Fo-OH-Orn D-OH-Asp C8:0-OH(3)                                           
+Phe NMe-Ala Met Hty D-Lys CO Arg                                          
+Phe NMe-Hty Ile Hty D-Lys CO Arg                                          
+Tyr Phe NMe-Ala Ile Hty D-Lys CO                                          
+NMe-Ile N1-COOH-bhTrp                                               
+Thr NMe-Thr L-Dbu Hpr Gly Gly D-3OMe-Ala bOMe-Tyr Ala aC11:2(4.6)-Me(2.6)-OH(2.3) 3OH-Leu 3Me-4Me-Gln                                     
+Thr Thr L-Dbu Hpr Gly Gly D-3OMe-Ala bOMe-Tyr Ala aC11:2(4.6)-Me(2.6)-OH(2.3) 3OH-Leu 3Me-4Me-Gln                                     
+Thr NMe-Thr Hpr Gly Gly dhAbu D-3OMe-Ala bOMe-Tyr Ala aC11:2(4.6)-Me(2.6)-OH(2.3) 3OH-Leu 3Me-4Me-Gln                                     
+Thr Thr Hpr Gly Gly dhAbu D-3OMe-Ala bOMe-Tyr Ala aC11:2(4.6)-Me(2.6)-OH(2.3) 3OH-Leu 3Me-4Me-Gln                                     
+Val Val Pro Pheol Gly Gln Gln Gln Ala Ala Ala Aib Aib Aib Aib Aib Aib Aib Aib Ac-Aib                             
+Val Pro Pheol Leu Gly Gln Gln Gln Ala Ala Ala Aib Aib Aib Aib Aib Aib Aib Aib Ac-Aib                             
+Val Val Pro Pheol Gly Gln Gln Gln Ala Ala Aib Aib Aib Aib Aib Aib Aib Aib Aib Ac-Aib                             
+Val Pro Pheol Leu Gly Gln Gln Gln Ala Ala Aib Aib Aib Aib Aib Aib Aib Aib Aib Ac-Aib                             
+Val Pro Pheol Leu Gly Gln Gln Gln Ala Ala Ala Ala Aib Aib Aib Aib Aib Aib Aib Ac-Aib                             
+Pheol NAc-Leu Leu Aib Aib                                            
+Trpol Pro Leu Ival Ival Gly Gln Gln Ala Ala Ala Aib Aib Aib Aib Aib Aib Aib Ac-Phe                              
+Ser Pro Pheol Leu Ival Ival Gly Gln Gln Ala Ala Aib Aib Aib Aib Aib Aib Aib Ac-Phe                              
+OMe-Thr OH-Asn NMe-Gly dhAbu Br-Tyr Asn aC9:0-OH(2)-NH2(3) 4Me-Pro                                         
+Val Thr Pro Hpr Hpr Bz                                           
+Val Thr Pro pOH-Bz Hpr Hpr                                           
+Tyr Pro Pro Pro Phe Ile Ile                                          
+Val Tyr Thr Pro Pro Pro Leu Ile                                         
+Pro Pro Pro Phe Phe Phe Ile Gln                                         
+Tyr Thr Pro Pro Pro Pro Phe Leu Ile Ile                                       
+Trp Thr Pro Pro Phe Leu Gly                                          
+Pro Phe O-Met Ile bOMe-Asp Ala Ala                                          
+Tyr Pro Pro Pro Phe Ile Ile                                          
+Thr pTrp Pro Pro Phe Leu Gly                                          
+Thr Ser Pro Pro Phe Phe Ile                                          
+Pro Phe Met Ile Asn Ala Ala                                          
+Trp Pro Pro Pro Phe Leu Ile                                          
+Tyr Pro Pro Pro Pro Phe Leu Ile Ile Ala                                       
+Val Tyr Pro Pro Pro Pro Phe Leu Ile Ile                                       
+Val Val Tyr Pro Pro Pro Pro Phe Leu Ile                                       
+Phe NFo-Leu Gly D-Nva D-NMe-Nva D-aThr D-Asn D-Ala Cl-Ile C6:0-OH(3.5)-NH2(4)                                       
+Phe NFo-Leu Gly D-Nva D-NMe-Leu D-aThr D-Ala Cl-Ile C6:0-OH(3.5)-NH2(4) Asn                                       
+PT Ala Ala                                              
+OH-Asp D-Ser D-OH-Asp D-aThr D-Ala C14:0-OH(3) Arg 3OH-Pro 3OH-Pro                                        
+OH-Asp iC15:0-OH(3) D-Ser D-OH-Asp D-aThr D-Ala Arg 3OH-Pro 3OH-Pro                                        
+OH-Asp iC16:0-OH(3) D-Ser D-OH-Asp D-aThr D-Ala Arg 3OH-Pro 3OH-Pro                                        
+OH-Asp D-Ser D-OH-Asp D-aThr D-Ala C16:0-OH(3) Arg 3OH-Pro 3OH-Pro                                        
+Pro OH-Asp D-Ser D-OH-Asp D-aThr D-Ala C14:0-OH(3) Arg 3OH-Pro                                        
+Pro OH-Asp iC15:0-OH(3) D-Ser D-OH-Asp D-aThr D-Ala Arg 3OH-Pro                                        
+Pro OH-Asp iC16:0-OH(3) D-Ser D-OH-Asp D-aThr D-Ala Arg 3OH-Pro                                        
+Pro OH-Asp D-Ser D-OH-Asp D-aThr D-Ala C16:0-OH(3) Arg 3OH-Pro                                        
+Thr Pro Pro NMe-Gln D-Val D-Trp D-t-Leu D-NFo-Ala D-CysA D-Asn Br-Phe bMe-Ile Arg                                    
+Thr Pro Pro NMe-Gln D-Val D-Trp D-t-Leu D-NFo-Ala D-CysA D-Asp Br-Phe bMe-Ile Arg                                    
+Thr Pro Pro NMe-Gln D-Val D-Val D-Trp D-NFo-Ala D-CysA D-Asp Br-Phe bMe-Ile Arg                                    
+t-Leu Thr Pro Pro NMe-Gln D-Val D-Val D-Trp D-NFo-Ala D-CysA D-Asp Br-Phe Arg                                    
+Thr Thr Ile D-Phe Dab Dab Dab Dab Dab Dab aC9:0                                      
+Thr Thr Ile D-Leu Dab Dab Dab Dab Dab Dab aC9:0                                      
+Thr Thr Ile iC8:0 D-Leu Dab Dab Dab Dab Dab Dab                                      
+Thr Thr Ile D-Leu Dab Dab Dab Dab Dab Dab aC10:0                                      
+Thr Thr Nva D-Leu Dab Dab Dab Dab Dab Dab aC9:0                                      
+Thr Thr Leu D-Phe Dab Dab Dab Dab Dab Dab aC9:0                                      
+Thr Thr Leu iC8:0 D-Phe Dab Dab Dab Dab Dab Dab                                      
+Thr Thr Leu D-Phe Dab Dab Dab Dab Dab Dab C8:0                                      
+Thr Thr Leu D-Phe Dab Dab Dab Dab Dab Dab C7:0                                      
+Thr Thr Leu D-Phe Dab Dab Dab Dab Dab Dab C9:0                                      
+Thr Thr Leu D-Phe Dab Dab Dab Dab Dab Dab aC9:0-OH(3)                                      
+Thr Thr Leu D-Leu Dab Dab Dab Dab Dab Dab aC9:0                                      
+Thr Thr Leu iC8:0 D-Leu Dab Dab Dab Dab Dab Dab                                      
+Thr Thr Leu D-Leu Dab Dab Dab Dab Dab Dab C8:0                                      
+Thr Thr Leu D-Leu Dab Dab Dab Dab Dab Dab C7:0                                      
+Thr Thr Leu iC9:0 D-Leu Dab Dab Dab Dab Dab Dab                                      
+Thr Thr Thr D-Leu Dab Dab Dab Dab Dab Dab aC9:0                                      
+Val Thr Thr D-Leu Dab Dab Dab Dab Dab Dab aC9:0                                      
+Val Thr Thr iC8:0 D-Leu Dab Dab Dab Dab Dab Dab                                      
+Val Val Val t-Leu t-Leu t-Leu t-Leu t-Leu Thr Ile Ile Gly Gly Gly Gly Gly Gly Gly Gly Gln D-t-Leu D-t-Leu D-t-Leu D-Ser D-N2Me-bOH-Asn D-N2Me-bOH-Asn D-N2Me-Asn D-N2Me-Asn D-N2Me-Asn D-N2Me-Asn D-N2Me-Asn D-N2Me-Asn D-bOH-Val D-bOH-Val D-aThr D-Asn D-Asn D-Ala D-Ala C6:0-Me(5.5)-oxo(2) bOH-Val bMe-Ile bMe-Gln bbMe2-O-Met Ala Ala Ala Ala Ala
+Thr Pro Ph-Gly NMe-Me2A-Phe Hpa D-Abu 4oxo-Hpr                                          
+Thr Pro Ph-Gly NMe-MeA-Phe Hpa D-Abu 4oxo-Hpr                                          
+Thr Pro Ph-Gly NMe-Me2A-Phe Hpa D-Ala 4oxo-Hpr                                          
+Pro NFo-Dpr e-Tyr D-Phe ck-Arg                                            
+Pro NFo-Dpr e-Tyr D-Phe ck-Arg                                            
+v-Tyr Pro NFo-Dpr D-Phe ck-Arg                                            
+v-Tyr ProC NFo-Dpr D-Phe                                             
+Val NMe-Val NMe-OMe-Tyr NMe-OMe-Ile C4:0                                            
+Val Val Ser Ser Ser Leu Leu Leu Ile Ile Glu Gln C6:0                                    
+Val Ser Ser Ser Leu Leu Leu Leu Ile Ile Glu Gln C6:0                                    
+Val Ser Ser Ser Leu Leu Leu Ile Ile Ile Glu Gln C6:0                                    
+Hse D-Ser D-Hse D-Ac-OH-Orn Dab ChrI Ac-OH-Orn                                          
+Thr Thr OH-cOrn Lys Glu D-OH-Asp D-aThr ChrI Asp                                        
+Thr Ser Ser Ser Ser Lys Gly D-OH-cOrn D-Ac-OH-Orn ChrI Asp                                      
+Ser OH-cOrn D-Ac-OH-Orn ChrI Asp Asp Ala                                          
+Thr Thr Ser Lys Gly D-OH-Asp D-OH-Asp ChrP                                         
+Lys D-OH-cOrn D-OH-Asp D-aThr ChrP Ala Ala                                          
+Thr Ser Ser OH-Asp Gly ChrP Ala Ala Ac-OH-Orn                                        
+Thr Ser Ser OH-Asp Gly ChrP Ala Ala Ac-OH-Orn                                        
+Thr Ser Ser OH-cOrn Lys D-OH-Asp D-Glu D-Ala ChrP Asp                                       
+Lys D-OH-cOrn D-OH-Asp D-aThr ChrD Ala Ala                                          
+Thr OH-Asp Gly D-Ser D-Ser D-Ac-OH-Orn ChrP Ala Ala                                        
+Thr Ser Ser Ser OH-Asp Gly ChrP Ala Ac-OH-Orn                                        
+Thr Ser Ser Ser OH-Asp Gly ChrP Ala Ac-OH-Orn                                        
+OH-cOrn Lys D-Ser D-Ser D-OH-Asp ChrP Asp Ala                                         
+Ser Ser Lys Lys Gly Gly Glu Fo-OH-Orn D-Ser D-Ser D-Fo-OH-Orn ChrP                                     
+Thr Ser Ser Orn OH-cOrn OH-Asp D-Ser D-Gln D-aThr Dab ChrP                                      
+Ser Ser Lys Lys Gly Gly Glu Fo-OH-Orn D-Ser D-Ser D-Fo-OH-Orn ChrD                                     
+Ser OH-cOrn OH-Asp Gly Gly Gly D-Lys D-Gln D-Ala Dab ChrP                                      
+Ser Lys Lys Gly Fo-OH-Orn D-Ser D-Fo-OH-Orn ChrP                                         
+Thr Ser Ser OH-cOrn Lys Gly D-Ser D-Gln D-Ala D-Ala D-Ala ChrP Ac-OH-Orn                                    
+Ser OH-cOrn OH-Asp Gly Gly D-Lys D-Gln D-Ala D-Ala Dab ChrP                                      
+Ser Ser Lys Lys Gly Gly Fo-OH-Orn D-Ser D-Ser D-Fo-OH-Orn ChrP                                      
+Thr Thr Ser Ser Lys D-OH-Asp D-OH-Asp ChrP                                         
+Thr Thr Ser OH-cOrn Lys D-Ser D-Ser D-Ser D-Ser ChrP Ac-OH-Orn                                      
+Thr OH-cOrn Gly Gly Gln D-Ser D-Lys D-aThr D-Ac-OH-Orn ChrP                                       
+Thr Ser OH-cOrn Lys D-OH-Asp D-Lys D-aThr D-Ala ChrP Asp                                       
+Ser Ser OH-cOrn Gly Gly Gly D-OH-Asp D-Ala Dab ChrP Ala                                      
+Ser Ser Orn OH-cOrn OH-Asp D-Ser D-Ser ChrP                                         
+Thr Thr Thr OH-cOrn D-Gln D-Ala Dab ChrP Asp Ac-OH-Orn                                       
+Thr OH-cOrn Lys D-Ser D-Ala ChrP Ac-OH-Orn                                          
+OH-cOrn Gly Gly Gly D-Ser D-OH-Asp D-Lys D-Gln D-aThr D-Ala ChrP Ala                                     
+Orn OH-Asp Lys D-Ala Dab Ac-OH-Orn                                           
+Ser OH-cOrn Lys Lys Gly D-OH-Asp D-aThr ChrP Asp                                        
+Ser Ser Ser Ser Lys Lys Fo-OH-Orn Fo-OH-Orn D-Ser ChrP                                       
+Lys Lys Fo-OH-Orn D-Ser D-Ser D-Glu D-Fo-OH-Orn ChrP                                         
+Ser Ser Lys Lys Fo-OH-Orn Fo-OH-Orn D-Ser ChrP                                         
+Ser Ser Orn Lys Fo-OH-Orn Fo-OH-Orn D-Ser D-Ser ChrP                                        
+Ser OH-His OH-cOrn Lys D-Ser D-aThr ChrP                                          
+Thr Ser Ser OH-Asp Gly D-OH-Orn D-Dab ChrP C4:0-OH(3) aThr Asp                                      
+Val Thr OH-cOrn OH-Asp Gly D-Ser D-Ser ChrP                                         
+Thr Thr Ser OH-Asp Gly D-Ser D-OH-Orn D-Dab ChrP C4:0-OH(3) Asp                                      
+Thr Thr Lys Fo-OH-Orn Fo-OH-Orn D-Ser D-Ser ChrP Arg                                        
+Thr Lys Lys D-Fo-OH-Orn D-Fo-OH-Orn ChrP Asp Ala Ala                                        
+Ser Orn Lys Glu Fo-OH-Orn D-Ser D-Fo-OH-Orn ChrP                                         
+Thr Lys D-Fo-OH-Orn D-Fo-OH-Orn ChrP Asp Ala Ala Ala                                        
+Ser Orn D-Ser D-Asp ChrP Ala Ac-OH-Orn Ac-OH-Orn                                         
+Ser Orn OH-cOrn Gly D-OH-Asp Dab ChrP Asp                                         
+OH-cOrn Gly Gly D-Ser D-OH-Asp D-Lys D-Gln D-Ala D-Ala D-Ala ChrP Ala Ala                                    
+Thr Lys Lys D-Fo-OH-Orn D-Fo-OH-Orn ChrP Asn Ala Ala                                        
+Thr Ser Gly D-Ser D-Ser D-OH-Asp D-Ac-OH-Orn ChrP Ala                                        
+Thr Gly Gly Gln D-Ser D-Ser D-OH-cOrn D-aThr D-Ac-OH-Orn ChrP                                       
+OH-cOrn Gly D-Ser D-aThr D-Ac-OH-Orn ChrP Ala Ala                                         
+Ser OH-cOrn Gly D-Lys D-aThr D-Ac-OH-Orn ChrP Ala                                         
+Gly Gln Fo-OH-Orn D-Ser D-Gln D-Fo-OH-Orn Dab ChrP                                         
+Gly Fo-OH-Orn D-Ser D-Gln D-Fo-OH-Orn Dab ChrP                                          
+Thr Ser Ser OH-cOrn Dab ChrP Ac-OH-Orn                                          
+Ser Orn OH-cOrn Gly D-Ser D-Fo-OH-Orn D-aThr ChrP                                         
+NMe-Val NMe-Val NMe-Cys D-Ser D-Ser diMe-Cys COOH-Qui COOH-Qui Ala Ala                                       
+NMe-Cys NMe-aIle NMe-aIle D-Ser D-Ser diMe-Cys COOH-Qui COOH-Qui Ala Ala                                       
+NMe-Cys D-Ser D-Ser diMe-Cys diMe-aIle diMe-aIle COOH-Qui COOH-Qui Ala Ala                                       
+Phe OH-Asn Leu Hpg Hpg Hpg Gly D-Orn D-Orn D-Man D-Man D-Hpg D-Hpg D-aThr D-aThr D-Ala Cl-Hpg C8:2(2.t4) aThr Asn                             
+Phe OH-Asn Leu iC9:2(2.t4) Hpg Hpg Hpg Gly D-Orn D-Orn D-Man D-Man D-Hpg D-Hpg D-aThr D-aThr D-Ala Cl-Hpg aThr Asn                             
+Phe OH-Asn Leu iC10:2(2.t4) Hpg Hpg Hpg Gly D-Orn D-Orn D-Man D-Man D-Hpg D-Hpg D-aThr D-aThr D-Ala Cl-Hpg aThr Asn                             
+Pro Phe Phe NMe-Phe NMe-Leu Leu Aib                                          
+Phe Phe NMe-Phe NMe-Leu Leu Aib 3Me-Pro                                          
+Ser Ser C10:0-OH(3) C10:0-OH(3)                                             
+Thr Ser Ile D-Phe D-Leu C10:0-OH(3)                                           
+Val Thr Phe O-Met NMe-Tyr C6:0 Ahp Abu                                         
+Val Thr Phe NMe-Tyr Gln C4:0 Ahp Abu                                         
+Valol Val Val Pro Pro Gly Glu Gln Gln Ala Ala Aib Aib Aib Aib Aib Aib Aib Aib Ac-Aib                             
+Valol Val Pro Pro Leu Gly Glu Gln Gln Ala Ala Aib Aib Aib Aib Aib Aib Aib Aib Ac-Aib                             
+Val Val Pro Pro Leuol Gly Glu Gln Gln Ala Ala Aib Aib Aib Aib Aib Aib Aib Aib Ac-Aib                             
+Val Pro Pro Leuol Leu Gly Glu Gln Gln Ala Ala Aib Aib Aib Aib Aib Aib Aib Aib Ac-Aib                             
+Valol Val Pro Pro Leu Gly Glu Gln Gln Ala Aib Aib Aib Aib Aib Aib Aib Aib Aib Ac-Aib                             
+Val Pro Pro Leu Ivalol Gly Glu Gln Gln Ala Ala Aib Aib Aib Aib Aib Aib Aib Aib Ac-Aib                             
+Val Pro Pro Leu Ileol Gly Glu Gln Gln Ala Aib Aib Aib Aib Aib Aib Aib Aib Aib Ac-Aib                             
+Valol Val Val Pro Pro Gly Gln Gln Gln Ala Ala Aib Aib Aib Aib Aib Aib Aib Aib Ac-Aib                             
+Val Val Pro Pro Ileol Gly Gln Gln Gln Ala Aib Aib Aib Aib Aib Aib Aib Aib Aib Ac-Aib                             
+Valol Val Pro Pro Leu Gly Gln Gln Gln Ala Ala Aib Aib Aib Aib Aib Aib Aib Aib Ac-Aib                             
+Val Val Pro Pro Leuol Gly Gln Gln Gln Ala Ala Aib Aib Aib Aib Aib Aib Aib Aib Ac-Aib                             
+Val Pro Pro Leuol Leu Gly Gln Gln Gln Ala Ala Aib Aib Aib Aib Aib Aib Aib Aib Ac-Aib                             
+Valol Val Pro Pro Leu Gly Gln Gln Gln Ala Aib Aib Aib Aib Aib Aib Aib Aib Aib Ac-Aib                             
+Valol Val Val Pro Pro Gly Gln Gln Gln Ala Aib Aib Aib Aib Aib Aib Aib Aib Aib Ac-Aib                             
+Val Pro Pro Leuol Leu Gly Gln Gln Gln Ala Aib Aib Aib Aib Aib Aib Aib Aib Aib Ac-Aib                             
+Val Val Pro Pro Leuol Gly Gln Gln Gln Ala Aib Aib Aib Aib Aib Aib Aib Aib Aib Ac-Aib                             
+Val Pro Pro Leu Ileol Gly Gln Gln Gln Ala Aib Aib Aib Aib Aib Aib Aib Aib Aib Ac-Aib                             
+Ser Pro Pro Phe Leu Ile Ile                                          
+Tyr Thr Pro Pro Pro Pro Phe Phe Leu Leu                                       
+Ser Pro Phe Leu Ile Asn Ala                                          
+Leu Leu Glu D-Leu D-Leu Asp Ala aC15:0-OH(3)                                         
+Leu Leu iC14:0-OH(3) Glu D-Leu D-Leu Asp Ala                                         
+Leu Leu iC15:0-OH(3) Glu D-Leu D-Leu Asp Ala                                         
+Leu Leu Glu D-Leu D-Leu C14:0-OH(3) Asp Ala                                         
+Leu Leu Glu D-Leu D-Leu C15:0-OH(3) Asp Ala                                         
+Val Leu Ile Gln D-Leu D-Leu C15:0-OH(3) Asp                                         
+Val Leu Ile Gln D-Leu D-Leu Asp aC15:0-OH(3)                                         
+Val Leu Ile iC15:0-OH(3) Gln D-Leu D-Leu Asp                                         
+Ile Ile Ile Glu D-Leu D-Leu Asp aC15:0-OH(3)                                         
+Leu Ile Ile Glu D-Leu D-Leu Asp aC15:0-OH(3)                                         
+Leu Leu Ile Glu D-Leu D-Leu Asp aC15:0-OH(3)                                         
+Val Leu Ile Glu D-Leu D-Leu Asp aC15:0-OH(3)                                         
+Leu Leu Leu Glu D-Leu D-Leu Asp aC15:0-OH(3)                                         
+Val Leu Leu Glu D-Leu D-Leu Asp aC13:0-OH(3)                                         
+Val Leu Leu Glu D-Leu D-Leu Asp aC15:0-OH(3)                                         
+Val Leu Leu iC12:0-OH(3) Glu D-Leu D-Leu Asp                                         
+Val Leu Leu iC14:0-OH(3) Glu D-Leu D-Leu Asp                                         
+Val Leu Leu iC15:0-OH(3) Glu D-Leu D-Leu Asp                                         
+Val Leu Leu iC16:0-OH(3) Glu D-Leu D-Leu Asp                                         
+Val Leu Leu Glu D-Leu D-Leu C13:0-OH(3) Asp                                         
+Val Leu Leu Glu D-Leu D-Leu C14:0-OH(3) Asp                                         
+Val Leu Leu Glu D-Leu D-Leu C15:0-OH(3) Asp                                         
+Val Val Leu Glu D-Leu D-Leu Asp aC15:0-OH(3)                                         
+Val Thr Leu Leu Leu Leu Leu Gln C10:0-OH(3)                                        
+Thr Leu Leu Leu Leu Leu Leu Gln C10:0-OH(3)                                        
+Thr Leu Leu Leu Leu Leu Ile Gln C10:0-OH(3)                                        
+Val Thr Leu Leu Leu Leu Leu Gln C12:0-OH(3)                                        
+Thr Leu Leu Leu Leu Leu Leu Gln C12:0-OH(3)                                        
+Thr Leu Leu Leu Leu Leu Ile Gln C12:0-OH(3)                                        
+Ser OH-Asp His D-Orn D-Hse dhAbu C16:0-OH(3.4) aThr Asn 4Cl-Thr                                       
+Ser OH-Asp Lys dhAbu D-Dab Dab C14:0-OH(3.4) aThr Asp 4Cl-Thr                                       
+Ser OH-Asp Lys dhAbu D-Dab Dab C14:0-OH(3) aThr Asp 4Cl-Thr                                       
+Ser OH-Asp Lys dhAbu D-Dab Dab C16:0-OH(3.4) aThr Asp 4Cl-Thr                                       
+Ser OH-Asp Lys dhAbu D-Dab Dab C16:0-OH(3) aThr Asp 4Cl-Thr                                       
+Ser Phe OH-Asp D-Ser dhAbu D-Dab Dab C10:0-OH(3) Arg 4Cl-Thr                                       
+Ser Phe OH-Asp D-Ser dhAbu D-Dab Dab C12:0-OH(3) Arg 4Cl-Thr                                       
+Ser Phe OH-Asp D-Ser dhAbu D-Dab Dab C14:0-OH(3) Arg 4Cl-Thr                                       
+Ser Orn OH-Asp D-Hse dhAbu D-Dab Dab C14:0-OH(3) aThr 4Cl-Thr                                       
+Ser Orn OH-Asp D-Hse dhAbu D-Dab Dab C14:0-OH(3.4) aThr 4Cl-Thr                                       
+Ser Orn OH-Asp Gly D-Hse dhAbu D-Dab C14:0-OH(3) aThr 4Cl-Thr                                       
+Val Val Phe D-Val D-Val D-Val D-Ser D-Pro D-Leu dhAbu dhAbu dhAbu dhAbu D-Dab D-aThr D-Ala D-Ala D-Ala D-Ala D-Ala D-Ala D-Ala Dab C10:0-OH(3) Ala Ala                       
+Val Tyr D-Val D-Val D-Val D-Val D-Ser D-Pro dhAbu dhAbu dhAbu dhAbu D-Dab D-aThr D-Ala D-Ala D-Ala D-Ala D-Ala Dab C10:0-OH(3) Ala Ala                          
+Val Tyr D-Val D-Val D-Val D-Val D-Ser D-Pro dhAbu dhAbu dhAbu dhAbu D-Dab D-aThr D-Ala D-Ala D-Ala D-Ala D-Ala Dab C12:0-OH(3) Ala Ala                          
+Val Val Val Tyr Ser Pro Leu dhAbu dhAbu dhAbu dhAbu Dab Dab C10:0-OH(3) aThr Ala Ala Ala Ala Ala Ala Ala Ala                          
+Val Val Val Tyr Ser Pro Leu dhAbu dhAbu dhAbu dhAbu Dab Dab C12:0-OH(3) aThr Ala Ala Ala Ala Ala Ala Ala Ala                          
+Val Val Tyr D-Val D-Val D-Val D-Ser D-Pro D-Leu dhAbu dhAbu dhAbu dhAbu D-Dab D-aThr D-Ala D-Ala D-Ala D-Ala D-Ala D-Ala D-Ala Dab C10:0-OH(3) Ala Ala                       
+Val Val Tyr D-Val D-Val D-Val D-Ser D-Pro D-Leu dhAbu dhAbu dhAbu dhAbu D-Dab D-aThr D-Ala D-Ala D-Ala D-Ala D-Ala D-Ala D-Ala Dab C12:0-OH(3) Ala Ala                       
+Val Val Val Tyr Ser Pro Leu Leu dhAbu dhAbu dhAbu Dab Dab C12:0-OH(3) aThr Ala Ala Ala Ala Ala Ala Ala Ala                          
+Val Val Val Tyr Ser Pro Leu Leu dhAbu dhAbu dhAbu Dab Dab C14:0-OH(3) aThr Ala Ala Ala Ala Ala Ala Ala Ala                          
+Val Val Val Tyr Ser Pro Leu Leu dh-Ala dhAbu dhAbu dhAbu Dab Dab C10:0-OH(3) aThr Ala Ala Ala Ala Ala Ala Ala                          
+Val Val Val Tyr Ser Pro Leu Leu dh-Ala dhAbu dhAbu dhAbu Dab Dab C12:0-OH(3) aThr Ala Ala Ala Ala Ala Ala Ala                          
+NMe-dPhe NMe-Ala Leu Gly                                             
+Ser Ser Phe OH-Asn Iser His D-Ara C8:2(5.7)-Me(6)-OH(4)-NH2(3)-Ph(8) bMe-Br-Phe aThr Asn Ala Aad                                    
+Ser Ser Phe OH-Asn Iser His C8:2(5.7)-Me(6)-OH(4)-NH2(3)-Ph(8) bMe-Br-Phe bD-Gal aThr Asn Ala Ahad                                    
+Ser Ser Phe OH-Asn Iser His C8:2(5.7)-Me(6)-OH(4)-NH2(3)-Ph(8) bMe-Br-Phe aThr Asn Ala Ahad                                     
+Ser Ser Phe Phe OH-Asn His C8:2(5.7)-Me(6)-OH(4)-NH2(3)-brPh(8) bAla aThr Asn Ala Ahad                                     
+Ser Ser Phe OH-Asn His C8:2(5.7)-Me(6)-OH(4)-NH2(3)-brPh(8) Br-Phe bAla aThr Asn Ara Ala Ahad                                    
+Ser Ser Phe OH-Asn His C8:2(5.7)-Me(6)-OH(4)-NH2(3)-brPh(8) Br-Phe bD-Gal bAla aThr Asn Ala Ahad                                    
+Ser Ser Phe OH-Asn His C8:2(5.7)-Me(6)-OH(4)-NH2(3)-brPh(8) Br-Phe bAla aThr Asn Ala Ahad                                     
+Thr NOMe-Ac-Val NMe-Val NMe-Ile NMe-Ala D-Val D-NMe-Leu D-NMe-aIle D-Leu D-Leu bAla bAla bAla                                    
+Thr NOMe-Ac-Val NMe-Val NMe-Ile NMe-Ala D-NMe-Leu D-NMe-aIle D-Leu D-Leu D-aIle bAla bAla bAla                                    
+Thr NOMe-Ac-Val NMe-Val NMe-Ile NMe-bAla NMe-Ala D-NMe-Leu D-NMe-aIle D-Leu D-Leu D-aIle bAla bAla                                    
+Thr NOMe-Ac-Val NMe-Val NMe-Ile D-NMe-Leu D-NMe-aIle D-Leu D-Leu D-aIle bAla bAla bAla Ala                                    
+Thr NOMe-Ac-Val NMe-Val NMe-Ile NMe-bAla D-NMe-Leu D-NMe-aIle D-Leu D-Leu D-aIle bAla bAla Ala                                    
+Thr NOMe-Ac-Val NMe-Ile NMe-Ile NMe-bAla NMe-Ala D-Val D-NMe-Leu D-NMe-Leu D-Leu D-aIle bAla Ala                                    
+Ser Ser Phe OH-Asn Iser His C8:2(5.7)-Me(6)-OH(4)-NH2(3)-Ph(8) bMe-Br-Phe bD-Gal aThr Asn Ala Aad                                    
+Val Val pOH-Bz Argal                                             
+Val Pda Lys Leu Ile D-Val D-Val D-Val D-Ser D-Ser D-Pro D-Leu D-Leu D-Hse dhAbu dhAbu D-Gln D-Dab D-aThr                              
+Val Val Lys Leu D-Val D-Val D-Val D-Ser D-Ser D-Pro D-Leu D-Leu D-Hse dhAbu dhAbu D-Gln D-Dab D-aThr C8:0-OH(3)                              
+Val Lys Leu Ile D-Val D-Val D-Val D-Ser D-Ser D-Pro D-Leu D-Leu D-Hse dhAbu dhAbu D-Gln D-Dab D-aThr C8:0-OH(3)                              
+Val Lys Leu Leu D-Val D-Val D-Val D-Ser D-Ser D-Pro D-Leu D-Leu D-Hse dhAbu dhAbu D-Gln D-Dab D-aThr C8:0-OH(3)                              
+Val Lys Leu Leu Gly D-Val D-Val D-Val D-Ser D-Ser D-Pro D-Leu D-Leu dhAbu dhAbu D-Gln D-Dab D-aThr C8:0-OH(3)                              
+Val Lys Leu Ile D-Val D-Val D-Val D-Ser D-Ser D-Pro D-Leu D-Leu D-Hse dhAbu dhAbu D-Gln D-Dab D-aThr C8:0-OH(3)                              
+Val Lys Leu Ile Gly D-Val D-Val D-Val D-Ser D-Ser D-Pro D-Leu D-Leu dhAbu dhAbu D-Gln D-Dab D-aThr C8:0-OH(3)                              
+Pro Pro Leuol Leu Leu Leu Asn Aib Aib Aib Ac-Aib                                      
+Valol Val Pro Pro Leu Leu Leu Asn Aib Aib Ac-Aib                                      
+Valol Val Pro Pro Leu Leu Leu Asn Aib Aib Ac-Aib                                      
+Valol Val Pro Pro Leu Leu Leu Asn Aib Aib Ac-Aib                                      
+Val Val Pro Pro Leuol Leu Leu Asn Aib Aib Ac-Aib                                      
+Val Val Pro Pro Leuol Leu Leu Asn Aib Aib Ac-Aib                                      
+Val Val Pro Pro Leuol Leu Leu Asn Aib Aib Ac-Aib                                      
+Valol Val Pro Pro Leu Leu Leu Asn Aib Aib Ac-Aib                                      
+Val Trpol Ser Pro Leu Leu Ival Gly Gln Gln Ala Aib Aib Aib Aib Aib Aib Ac-Aib                               
+Val Trpol Ser Pro Leu Leu Ival Ival Gly Gln Gln Ala Aib Aib Aib Aib Aib Ac-Aib                               
+Val Ser Pro Pheol Leu Leu Ival Ival Gly Gln Gln Ala Aib Aib Aib Aib Aib Ac-Aib                               
+Val Trpol Ser Pro Leu Leu Gly Gln Gln Ala Aib Aib Aib Aib Aib Aib Aib Ac-Aib                               
+Val Trpol Ser Pro Leu Leu Ival Ival Gly Gln Gln Ala Aib Aib Aib Aib Aib Ac-Aib                               
+Val Ser Pro Pheol Leu Leu Ival Gly Gln Gln Ala Aib Aib Aib Aib Aib Aib Ac-Aib                               
+Val Ser Pro Pheol Leu Leu Ival Ival Gly Gln Gln Ala Aib Aib Aib Aib Aib Ac-Aib                               
+Valol Val Ser Pro Leu Leu Gly Gln Gln Ala Ala Aib Aib Aib Aib Aib Aib Ac-Aib                               
+Valol Ser Pro Leu Leu Leu Gly Gln Gln Ala Ala Aib Aib Aib Aib Aib Aib Ac-Aib                               
+Valol Ser Pro Leu Leu Leu Ival Gly Gln Gln Ala Ala Aib Aib Aib Aib Aib Ac-Aib                               
+Valol Pro Leu Leu Gly Glu Gln D-Ival Ala Aib Aib Aib Aib Aib Aib Aib Aib Ac-Aib                               
+Valol Pro Leu Leu Gly Glu Gln Ala Ala Aib Aib Aib Aib Aib Aib Aib Aib Ac-Aib                               
+Valol Pro Leu Leu Gly Glu Gln Ala Ala Aib Aib Aib Aib Aib Aib Aib Aib Ac-Aib                               
+Valol Pro Leu Leu Gly Glu Gln D-Ival Ala Ala Aib Aib Aib Aib Aib Aib Aib Ac-Aib                               
+Valol Pro Leu Leu Gly Glu Gln Ala Aib Aib Aib Aib Aib Aib Aib Aib Aib Ac-Aib                               
+Valol Pro Leu Leu Gly Glu Gln D-Ival Ala Aib Aib Aib Aib Aib Aib Aib Aib Ac-Aib                               
+Valol Pro Leu Leu Glu Gln Ala Ala Aib Aib Aib Aib Aib Aib Aib Aib Aib Ac-Aib                               
+Valol Pro Leu Leu Gly Gln Gln Ala Ala Aib Aib Aib Aib Aib Aib Aib Aib Ac-Aib                               
+Valol Pro Leu Leu Gly Gln Gln D-Ival Ala Ala Ala Aib Aib Aib Aib Aib Aib Ac-Aib                               
+Valol Pro Leu Leu Gly Gln Gln D-Ival Ala Ala Aib Aib Aib Aib Aib Aib Aib Ac-Aib                               
+Valol Pro Leu Leu Gln Gln D-Ival Ala Ala Ala Aib Aib Aib Aib Aib Aib Aib Ac-Aib                               
+Valol Pro Leu Leu Gly Gln Gln D-Ival Ala Aib Aib Aib Aib Aib Aib Aib Aib Ac-Aib                               
+Valol Pro Leu Leu Gln Gln D-Ival Ala Ala Aib Aib Aib Aib Aib Aib Aib Aib Ac-Aib                               
+NMe-Val NMe-Val NMe-Cys NMe-Cys D-Ser D-Ser COOH-Qui COOH-Qui Ala Ala                                       
+NMe-Cys NMe-Cys D-Ser D-Ser diMe-aIle diMe-aIle COOH-Qui COOH-Qui Ala Ala                                       
+Thr Ser Pro Pro OH-Asp OH-Asp iC13:0-OH(3) Arg 3OH-Pro                                        
+Thr Ser Pro Pro OH-Asp OH-Asp iC14:0-OH(3) Arg 3OH-Pro                                        
+Thr Ser Pro Pro OH-Asp OH-Asp iC15:0-OH(3) Arg 3OH-Pro                                        
+Thr Ser Pro Pro OH-Asp OH-Asp iC16:0-OH(3) Arg 3OH-Pro                                        
+Thr Ser Pro Pro OH-Asp OH-Asp iC17:0-OH(3) Arg 3OH-Pro                                        
+Thr Ser Pro Pro OH-Asp OH-Asp iC12:0-OH(3) Arg 3OH-Pro                                        
+Ser Ser Dpr Cap bU-dAla                                            
+Ser Ser OH-bLys Dpr bU-dAla 5OH-Cap                                           
+Ser Ser OH-bLys Dpr Cap bU-dAla                                           
+Ser Ser Dpr Cap bU-dAla bLys                                           
+Ser Ser Dpr bU-dAla bLys 5OH-Cap                                           
+Val Tyr Pro Phe Orn Leu Gln D-Phe D-Phe Asn                                       
+Val Tyr Trp Pro Orn Leu Gln D-Phe D-Phe Asn                                       
+Val Tyr Trp Pro Orn Leu Gln D-Trp D-Phe Asn                                       
+Val Trp Trp Pro Orn Leu Gln D-Trp D-Phe Asn                                       
+Val Val Val Lac Lac Lac D-Val D-Val D-Val D-Hiv D-Hiv D-Hiv                                     
+Van NMe-Leu Hpg Hpg Dhpg D-Glc bOH-Cl-Tyr bOH-Cl-Tyr Asn                                        
+NSpd DMOG DMOG diOH-Bz                                             
+Thr Pro Ph-Gly NMe-Phe Hpa D-Abu 4oxo-Hpr                                          
+Leu Leu Leu Ile D-Ser D-Ser D-Glu D-aThr D-aIle C10:0-OH(3)                                       
+Leu Leu Leu Ile D-Ser D-Ser D-Glu D-aThr D-aIle C11:0-OH(3)                                       
+Leu Leu Leu Ile D-Ser D-Ser D-Glu D-aThr D-aIle C12:0-OH(3)                                       
+Leu Leu Leu Leu D-Ser D-Ser D-Glu D-aThr D-aIle C10:0-OH(3)                                       
+Val Leu Leu Leu D-Val D-Ser D-Ser D-Glu D-aThr C10:0-OH(3)                                       
+Leu Leu Leu Leu D-Val D-Ser D-Ser D-Glu D-aThr C10:0-OH(3)                                       
+Leu Leu Leu Ile D-Val D-Ser D-Ser D-Glu D-aThr C11:0-OH(3)                                       
+Leu Leu Leu Ile D-Val D-Ser D-Ser D-Glu D-aThr C12:0-OH(3)                                       
+Val Leu Leu Leu D-Ser D-Ser D-Glu D-aThr D-aIle C10:0-OH(3)                                       
+Leu Leu Ile D-Ser D-Ser D-Leu D-Ile D-Glu D-aThr C10:0-OH(3)                                       
+Leu Leu Ile D-Ser D-Ser D-Leu D-Ile D-Glu D-aThr C12:0-OH(3)                                       
+Leu Leu Leu Ile D-Val D-Ser D-Ser D-Glu D-aThr C10:0-OH(3)                                       
+Leu Leu Leu Ile D-Val D-Ser D-Ser D-Gln D-aThr C10:0-OH(3)                                       
+Leu Leu Ile D-Val D-Ser D-Ser D-Leu D-Glu D-aThr C10:0-OH(3)                                       
+Pro Pro Pro Phe-Thz O-Met O-Met                                           
+Pro Pro Pro Phe Leu His Gly                                          
+Thr Pro Pheol NAc-Leu Leu Ile Ile Gln Gln D-Ival Aib Aib Aib Aib 4OH-Pro 4OH-Pro                                 
+Val Thr Pro Pheol Leu Ile Glu Gln D-Ival Aib Aib Aib Aib Ac-Trp 4OH-Pro 4OH-Pro                                 
+Val Thr Pro Pheol Leu Ile Glu Gln D-Ival Aib Aib Aib Aib Ac-Trp 4OH-Pro 4OH-Pro                                 
+Thr Pro Pheol Leu Ile Ile Glu Gln Aib Aib Aib Aib Aib Ac-Trp 4OH-Pro 4OH-Pro                                 
+Thr Pro Pheol Leu Ile Ile Glu Gln D-Ival Aib Aib Aib Aib Ac-Trp 4OH-Pro 4OH-Pro                                 
+Val Thr Pro Pheol Leu Ile Gln Gln Aib Aib Aib Aib Aib Ac-Trp 4OH-Pro 4OH-Pro                                 
+Val Thr Pro Pheol Ile Ile Gln Gln Aib Aib Aib Aib Aib Ac-Trp 4OH-Pro 4OH-Pro                                 
+Val Thr Pro Pheol Leu Ile Gln Gln Aib Aib Aib Aib Aib Ac-Trp 4OH-Pro 4OH-Pro                                 
+Val Thr Pro Pheol Leu Ile Gln Gln D-Ival Aib Aib Aib Aib Ac-Trp 4OH-Pro 4OH-Pro                                 
+Val Thr Pro Pheol Ile Ile Gln Gln D-Ival Aib Aib Aib Aib Ac-Trp 4OH-Pro 4OH-Pro                                 
+Thr Pro Pheol Leu Ile Ile Gln Gln Aib Aib Aib Aib Aib Ac-Trp 4OH-Pro 4OH-Pro                                 
+Thr Pro Pheol Leu Ile Ile Gln Gln D-Ival Aib Aib Aib Aib Ac-Trp 4OH-Pro 4OH-Pro                                 

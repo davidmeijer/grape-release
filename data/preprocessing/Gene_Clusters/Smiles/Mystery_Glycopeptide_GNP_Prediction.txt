@@ -1,0 +1,2 @@
+>Mystery Glycopeptide GNP Prediction
+NC(C(=O)NC(C(=O)NC(C(=O)NC(C(=O)NC(C(=O)NC(C(=O)NC(C(=O)O)c1ccc(O)c(O)c1)C(O)c2ccc(O)cc2)c3ccc(O)cc3)c4ccc(O)cc4)c5ccc(O)c(O)c5)C(O)c6ccc(O)cc6)c7ccc(O)cc7
