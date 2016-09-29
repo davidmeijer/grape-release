@@ -6,7 +6,7 @@ public class GrapeConfig {
 	
 	private static GrapeConfig config = new GrapeConfig();
 	
-	private String version = "2.9.1";
+	private String version = "2.10.1";
 	private File file = null;
 	private String smiles = new String();
 	private String name = new String();
