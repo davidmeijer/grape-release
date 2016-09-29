@@ -6,7 +6,7 @@ import java.util.List;
 import org.openscience.cdk.exception.CDKException;
 import org.openscience.cdk.interfaces.IAtom;
 import org.openscience.cdk.interfaces.IAtomContainer;
-import org.openscience.cdk.interfaces.IMolecule;
+import org.openscience.cdk.interfaces.IAtomContainer;
 import org.openscience.cdk.interfaces.IRingSet;
 import org.openscience.cdk.smsd.ring.HanserRingFinder;
 import org.openscience.cdk.tools.manipulator.RingSetManipulator;
@@ -24,7 +24,7 @@ public class MacrolideChecker {
 	 * @param molecule being checked if a macrolide/lactam
 	 * @return 0 if not macrolide/lactam, 1 if macrolide, 2 if macrolactam
 	 */
-	public static int isMacrolide(IMolecule molecule){
+	public static int isMacrolide(IAtomContainer molecule){
 		int typeOfMolecule = 0; //0 for not proper, 1 for lactone, 2 for lactam
 		
 		HanserRingFinder ringSearch = new HanserRingFinder();
@@ -65,7 +65,7 @@ public class MacrolideChecker {
 	 * @param molecule being checked
 	 * @return true if a proper lactone for a macrolide
 	 */
-	private static boolean isProperLactone(IMolecule molecule) {
+	private static boolean isProperLactone(IAtomContainer molecule) {
 		List<List<IAtom>> lactoneAtomsList = MacrocycleFinder.getLactoneCandO(molecule);
 		List<IAtom> lactoneAtoms = new ArrayList<IAtom>();
 		for(List<IAtom>singleLactoneAtoms:lactoneAtomsList){
@@ -107,7 +107,7 @@ public class MacrolideChecker {
 	 * @param molecule being checked
 	 * @return true if a proper lactam for a macrolactam
 	 */
-	private static boolean isProperLactam(IMolecule molecule) {
+	private static boolean isProperLactam(IAtomContainer molecule) {
 		List<IAtom> lactamAtoms = MacrocycleFinder.getLactamCandN(molecule);
 			
 		

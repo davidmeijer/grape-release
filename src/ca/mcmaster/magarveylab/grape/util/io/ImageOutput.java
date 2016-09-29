@@ -7,7 +7,7 @@ import java.util.List;
 
 import org.openscience.cdk.exception.CDKException;
 import org.openscience.cdk.exception.InvalidSmilesException;
-import org.openscience.cdk.interfaces.IMolecule;
+import org.openscience.cdk.interfaces.IAtomContainer;
 
 import ca.mcmaster.magarveylab.grape.enums.DomainEnums.PolyKetideDomainEnums;
 import ca.mcmaster.magarveylab.grape.enums.DomainEnums.SugarModificationsEnums;
@@ -27,15 +27,16 @@ public class ImageOutput {
 	 * @throws IOException
 	 * @throws CDKException 
 	 */
-	public static void createReport(String name, String smiles, String id, ChemicalAbstraction chemicalAbstraction) throws IOException, CDKException {
-		new File("image/").mkdirs();
-		IMolecule currentMolecule = null;
+	public static void createReport(String outputPath, String name, String smiles, String id, ChemicalAbstraction chemicalAbstraction) throws IOException, CDKException {
+		outputPath = outputPath + "image/";
+		new File(outputPath).mkdirs();
+		IAtomContainer currentMolecule = null;
 		if(name == null){
 			name = id;
 		}
 		String filename = SmilesIO.getCleanFileName(name);
 		if(chemicalAbstraction.getErrorMessage() != null){
-			File output = new File("image/" +filename + ".txt");
+			File output = new File(outputPath + filename + ".txt");
 			PrintWriter writer = new PrintWriter(output, "UTF-8");
 			writer.println(chemicalAbstraction.getErrorMessage());
 			writer.close();
@@ -44,8 +45,8 @@ public class ImageOutput {
 		
 		List<Fragment> monomerFragments = chemicalAbstraction.getMonomerFragments();
 		
-		currentMolecule = SmilesIO.readSmiles(smiles);
-		SmilesIO.drawMolecule(currentMolecule, "tempCurrentNrp");
+		currentMolecule = SmilesIO.readSmilesTemplates(smiles);
+		SmilesIO.drawMolecule(outputPath, currentMolecule, "tempCurrentNrp");
 		// Make images
 		int nrows, ncols;
 		int numImages = monomerFragments.size()+1;
@@ -57,13 +58,21 @@ public class ImageOutput {
 			nrows = 4;
 			ncols = 3;
 		}
-		else {
+		else if(numImages <= 24) {
 			nrows = 6;
 			ncols = 4;
+		} 
+		else if (numImages <= 64) {
+			nrows = 8;
+			ncols = 8;
+		}
+		else {
+			nrows = 12;
+			ncols = 12;
 		}
 		
 		for(int i = 0; i < monomerFragments.size(); i++) {
-			SmilesIO.drawMolecule(monomerFragments.get(i).getMolecule(), "tempTempGeneratedFragment_" + i);
+			SmilesIO.drawMolecule(outputPath, monomerFragments.get(i).getAtomContainer(), "tempTempGeneratedFragment_" + i);
 			
 			String label = "";
 			if(monomerFragments.get(i).getFragmentType() == FragmentType.POLYKETIDE) {
@@ -118,21 +127,21 @@ public class ImageOutput {
 			*/
 			label = label.replaceAll("[\"']", "_");
 			
-			String command = "convert -background white -fill black -pointsize 72 label:'" + label + "' image/tempLabel_"+i+".png; ";
+			String command = "convert -background white -fill black -pointsize 72 label:'" + label + "' " + outputPath + "tempLabel_"+i+".png; ";
 			
 			//TODO: add monomertype label. See:
 			//convert Geodiamolide_A.png -gravity South   -background White   -splice 0x90  -pointsize 72          -annotate +0+2 'Faerie Dragon'   out.png
 			
-			command += "convert image/tempTempGeneratedFragment_" + i + ".png image/tempLabel_" + i + ".png -append image/tempGeneratedFragment_"+ i+".png;";
+			command += "convert " + outputPath + "tempTempGeneratedFragment_" + i + ".png " + outputPath + "tempLabel_" + i + ".png -append " + outputPath + "tempGeneratedFragment_"+ i+".png;";
 			
 			
 			ShellUtilities.runCommand(command);
 		}
 			
 		String command = "";
-		command += "montage image/tempCurrentNrp* image/tempGeneratedFragment_* -mode Concatenate -tile " + ncols + "x" + nrows + " image/temp_output_nolabel.png; ";
-		command += "convert image/temp_output_nolabel.png -gravity South  -background White   -splice 0x180  -pointsize 72     -annotate +0+2 'Name: " + name + "\nChemical type: " + chemicalAbstraction.getChemicalType() + "'   image/" +filename + ".png; ";
-		command += "rm image/temp*;";
+		command += "montage " + outputPath + "tempCurrentNrp* " + outputPath + "tempGeneratedFragment_* -mode Concatenate -tile " + ncols + "x" + nrows + " " + outputPath + "temp_output_nolabel.png; ";
+		command += "convert " + outputPath + "temp_output_nolabel.png -gravity South  -background White   -splice 0x180  -pointsize 72     -annotate +0+2 'Name: " + name + "\nChemical type: " + chemicalAbstraction.getChemicalType() + "'   " + outputPath + "" +filename + ".png; ";
+		command += "rm " + outputPath + "temp*;";
 		
 		ShellUtilities.runCommand(command);
 	}

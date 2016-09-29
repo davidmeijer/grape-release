@@ -1,4 +1,0 @@
-nrp1	[H]N[C@H](C(N[C@@H]([C@H](O)C)C(N[C@@H](CC(C)C)C(N[C@H](C(N[C@@H](C(C)C)C(N[C@@H](CO)C(N[C@H](C(N[C@H](C(O)=O)CS)=O)CCSC)=O)=O)=O)[C@@H](C)CC)=O)=O)=O)CC1=CC=CC=C1
-nrp2	[H]N[C@H](C(N[C@H](C(N[C@@H]([C@H](O)C)C(N[C@H](C(N[C@@H](CO)C(N[C@H](C(N[C@@H](CCC(N)=O)C(O)=O)=O)CS)=O)=O)CC1=CC=C(O)C=C1)=O)=O)CC2=CC=CC=C2)=O)CC3=CC=CC=C3
-nrp3	[H]N[C@@H](CCCCN)C(N[C@@H](CC(C)C)C(N[C@@H](CC(N)=O)C(N[C@H](C(N[C@@H]([C@H](O)C)C(N[C@H](C(N[C@H](C(N[C@@H](CCC(N)=O)C(N[C@H](C(N[C@H](C(O)=O)CC(O)=O)=O)C)=O)=O)CC1=CC=C(O)C=C1)=O)CC2=CC=CC=C2)=O)=O)CC3=CNC4=C3C=CC=C4)=O)=O)=O
-nrp4	[H]N[C@H](C(N[C@H](C(N[C@H](C(N[C@@H](CCCCN)C(N[C@@H](CC(C)C)C(O)=O)=O)=O)[C@@H](C)CC)=O)CC1=CC=C(O)C=C1)=O)CC2=CC=CC=C2

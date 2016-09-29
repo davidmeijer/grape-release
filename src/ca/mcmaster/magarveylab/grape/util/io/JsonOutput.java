@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.codehaus.jackson.map.ObjectMapper;
-
+import org.openscience.cdk.exception.CDKException;
 
 import ca.mcmaster.magarveylab.grape.GrapeConfig;
 import ca.mcmaster.magarveylab.grape.enums.DomainEnums.AminoAcidEnums;
@@ -47,8 +47,12 @@ public class JsonOutput {
 		ObjectMapper mapper = new ObjectMapper();
 		return mapper.writeValueAsString(data);
 	}
+	
+	public String getName(){
+		return name;
+	}
 		
-	public void createJson() throws IOException {
+	public void createJson() throws IOException, CDKException {
 		List<ArrayList<Fragment>> orderedMonomerFragmentSequences = ChemicalUtilities.getOrderedMonomerFragmentSequences(monomerFragments); //TODO: this should be somewhere else
 		
 		
@@ -88,12 +92,20 @@ public class JsonOutput {
 					else {
 						abbreviation = m.getAminoAcidDomains().get(0).getAbbreviation();
 					}
+					String exactName = new String();
+					if(m.getSpecificNames().size() == 0) {
+						exactName = "unknown";
+					}
+					else {
+						exactName = m.getSpecificNames().get(0);
+					}
 					sub.put("name", abbreviation);
-					
-					String smiles = SmilesIO.generateSmiles(m.getMolecule());
+					sub.put("exact_name", exactName);
+					String smiles = SmilesIO.generateSmiles(m.getAtomContainer());
 					sub.put("known_start", m.hasKnownStart());
 					sub.put("smiles", smiles);
 					sub.put("tanimoto_score", m.getTanimotoScore());
+					sub.put("num_amide_atoms", m.getAminoCs().size() + m.getAminoNs().size());
 					
 				}else if(m.getFragmentType() == FragmentType.POLYKETIDE || m.getFragmentType() == FragmentType.FA_OR_PK) {
 					for(int i = 0; i < m.getPkDomains().size(); i++) {
@@ -116,7 +128,7 @@ public class JsonOutput {
 
 						subpk.put("name", abbreviation);
 						subpk.put("type", m.getFragmentType());
-						String smiles = SmilesIO.generateSmiles(m.getMolecule());
+						String smiles = SmilesIO.generateSmiles(m.getAtomContainer());
 						subpk.put("smiles", smiles);
 
 						if(state){
@@ -130,7 +142,7 @@ public class JsonOutput {
 						Map<String,Object> subaa = new HashMap<String,Object>();	
 
 						String abbreviation = a.getAbbreviation();
-						String smiles = SmilesIO.generateSmiles(m.getMolecule());
+						String smiles = SmilesIO.generateSmiles(m.getAtomContainer());
 						subaa.put("name", abbreviation);
 						subaa.put("type", m.getFragmentType());
 						subaa.put("smiles", smiles);
@@ -143,13 +155,13 @@ public class JsonOutput {
 					abbreviation = m.getStarters().get(0).abbreviation();
 					
 					sub.put("name", abbreviation);
-					String smiles = SmilesIO.generateSmiles(m.getMolecule());
+					String smiles = SmilesIO.generateSmiles(m.getAtomContainer());
 					sub.put("smiles", smiles);
 					sub.put("tanimoto_score", m.getTanimotoScore());
 					
 				}else if(m.getKnownOther() != null){
 					sub.put("name", m.getKnownOther().getAbbreviation());
-					sub.put("smiles", SmilesIO.generateSmiles(m.getMolecule()));
+					sub.put("smiles", SmilesIO.generateSmiles(m.getAtomContainer()));
 					sub.put("tanimoto_score", m.getTanimotoScore());
 					sub.put("type", m.getFragmentType());
 					
@@ -165,7 +177,7 @@ public class JsonOutput {
 						sub.put("sugar_names", m.getSugarNames());
 						sub.put("tanimoto_score", m.getTanimotoScore());
 					}
-					String smiles = SmilesIO.generateSmiles(m.getMolecule());
+					String smiles = SmilesIO.generateSmiles(m.getAtomContainer());
 					sub.put("smiles", smiles);
 				}
 				
@@ -195,21 +207,22 @@ public class JsonOutput {
 		data = grapeResults;
 	}
 
-	public static void writeJSON(String name, String smiles, String id, ChemicalAbstraction chemicalAbstraction) {
+	public static void writeJSON(String baseDir, String name, String smiles, String id, ChemicalAbstraction chemicalAbstraction) {
 		JsonOutput jo = new JsonOutput(name, smiles, id, chemicalAbstraction);
-		new File("json/").mkdirs();
+		new File(baseDir + "json/").mkdirs();
+		name = SmilesIO.getCleanFileName(name);
 		try {
 			jo.createJson();
-		} catch (IOException e) {
+		} catch (IOException | CDKException e) {
 			e.printStackTrace();
 		}
 		try {
 			if(!name.isEmpty()){
-				jo.writeJson(new File("json/" + name + ".json"));
+				jo.writeJson(new File(baseDir + "json/" + name + ".json"));
 			}else if(!id.isEmpty()){
-				jo.writeJson(new File("json/" + id + ".json"));
+				jo.writeJson(new File(baseDir + "json/" + id + ".json"));
 			}else{
-				jo.writeJson(new File("json/output.json"));
+				jo.writeJson(new File(baseDir + "json/output.json"));
 			}
 		} catch (IOException e) {
 			e.printStackTrace();

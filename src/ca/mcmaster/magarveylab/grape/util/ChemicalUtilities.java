@@ -16,7 +16,8 @@ import org.openscience.cdk.exception.InvalidSmilesException;
 import org.openscience.cdk.graph.ConnectivityChecker;
 import org.openscience.cdk.interfaces.IAtom;
 import org.openscience.cdk.interfaces.IBond;
-import org.openscience.cdk.interfaces.IMolecule;
+import org.openscience.cdk.interfaces.IAtomContainer;
+import org.openscience.cdk.interfaces.IBond.Order;
 import org.openscience.cdk.isomorphism.UniversalIsomorphismTester;
 import org.openscience.cdk.isomorphism.mcss.RMap;
 import org.openscience.cdk.smsd.Isomorphism;
@@ -32,6 +33,7 @@ import ca.mcmaster.magarveylab.grape.util.io.SmilesIO;
 
 public class ChemicalUtilities {
 
+	static UniversalIsomorphismTester uit = new UniversalIsomorphismTester();
 	/**
 	 * Get a list of all smallest rings with size less than or equal to 6 atoms
 	 * Uses a breadth-first search starting from each atom.
@@ -39,7 +41,7 @@ public class ChemicalUtilities {
 	 * @param molecule
 	 * @return
 	 */
-	public static List<Set<IAtom>> getSmallestRings(IMolecule molecule) {
+	public static List<Set<IAtom>> getSmallestRings(IAtomContainer molecule) {
 		List<Set<IAtom>> rings = new ArrayList<Set<IAtom>>();
 	
 		class AtomNode {
@@ -138,7 +140,7 @@ public class ChemicalUtilities {
 	 *            A molecule object which may be connected or disconnected.
 	 * @return
 	 */
-	public static ArrayList<IAtom> getAtomsInRings(IMolecule molecule) {
+	public static ArrayList<IAtom> getAtomsInRings(IAtomContainer molecule) {
 		Set<IAtom> atomsInRings = new HashSet<IAtom>();
 	
 		// Track what atoms are visited
@@ -200,7 +202,7 @@ public class ChemicalUtilities {
 		return new ArrayList<IAtom>(atomsInRings);
 	}
 
-	public static boolean hasCarbonPath(IMolecule mol, IAtom carbon1,
+	public static boolean hasCarbonPath(IAtomContainer mol, IAtom carbon1,
 			IAtom carbon2, ArrayList<IAtom> visited) {
 		if (carbon1.getAtomicNumber() != 6) {
 			return false;
@@ -220,7 +222,7 @@ public class ChemicalUtilities {
 		return false;
 	}
 
-	public static boolean hasCarbonPath(IMolecule mol, IAtom carbon1,
+	public static boolean hasCarbonPath(IAtomContainer mol, IAtom carbon1,
 			IAtom carbon2) {
 		ArrayList<IAtom> visited = new ArrayList<IAtom>();
 		return hasCarbonPath(mol, carbon1, carbon2, visited);
@@ -234,7 +236,7 @@ public class ChemicalUtilities {
 	 * @return
 	 */
 	public static ArrayList<IAtom> getAtomsInRingsWithoutOxygen(
-			IMolecule molecule) {
+			IAtomContainer molecule) {
 		// List<IBond> bondsToRemove = new ArrayList<IBond>
 	
 		// Remove all bonds which contain an oxygen
@@ -279,7 +281,7 @@ public class ChemicalUtilities {
 	 * @param molecule
 	 * @return
 	 */
-	public static ArrayList<IAtom> getAtomsInCarbonRings(IMolecule molecule) {
+	public static ArrayList<IAtom> getAtomsInCarbonRings(IAtomContainer molecule) {
 		// List<IBond> bondsToRemove = new ArrayList<IBond>
 	
 		// Remove all bonds which do not contain a carbon
@@ -314,7 +316,7 @@ public class ChemicalUtilities {
 		return carbonsInRing;
 	}
 
-	public static boolean hasConnectedAtomOfAtomicNumber(IMolecule mol,
+	public static boolean hasConnectedAtomOfAtomicNumber(IAtomContainer mol,
 			IAtom atom, int atomicNumber) {
 		for (IAtom a : mol.getConnectedAtomsList(atom)) {
 			if (a.getAtomicNumber() == atomicNumber) {
@@ -332,7 +334,7 @@ public class ChemicalUtilities {
 	 * @param neighbourAtomicNumber
 	 * @return
 	 */
-	public static boolean hasNeighbourOfAtomicNumber(IMolecule molecule, IAtom atom,
+	public static boolean hasNeighbourOfAtomicNumber(IAtomContainer molecule, IAtom atom,
 			int neighbourAtomicNumber) {
 		List<IAtom> connectedAtomsList = molecule.getConnectedAtomsList(atom);
 		for (IAtom neighbour : connectedAtomsList) {
@@ -354,11 +356,11 @@ public class ChemicalUtilities {
 	 * @param molecule
 	 * @return
 	 */
-	public static List<List<IBond>> findMatchingBondsFromTemplate(IMolecule template,
-			List<IBond> templateBonds, IMolecule molecule) {
+	public static List<List<IBond>> findMatchingBondsFromTemplate(IAtomContainer template,
+			List<IBond> templateBonds, IAtomContainer molecule) {
 		List<List<RMap>> templateMatchMap = null;
 		try {
-			templateMatchMap = UniversalIsomorphismTester.getSubgraphMaps(
+			templateMatchMap = uit.getSubgraphMaps(
 					molecule, template);
 		} catch (Exception e) {
 			System.err.println("Error in UniversalIsomorphismTester");
@@ -397,8 +399,8 @@ public class ChemicalUtilities {
 	 * @param molecule
 	 * @return
 	 */
-	public static  List<IBond> findMatchingBondsFromTemplate(IMolecule template,
-			IBond templateBond, IMolecule molecule) {
+	public static  List<IBond> findMatchingBondsFromTemplate(IAtomContainer template,
+			IBond templateBond, IAtomContainer molecule) {
 		ArrayList<IBond> templateBonds = new ArrayList<IBond>();
 		templateBonds.add(templateBond);
 		List<List<IBond>> matchingBonds = findMatchingBondsFromTemplate(
@@ -410,7 +412,7 @@ public class ChemicalUtilities {
 		return new ArrayList<IBond>(matchesWithoutDuplicates);
 	}
 
-	public static double getTanimotoScore(IMolecule molecule1, IMolecule molecule2) {
+	public static double getTanimotoScore(IAtomContainer molecule1, IAtomContainer molecule2) {
 		Isomorphism iso = new Isomorphism(Algorithm.DEFAULT, true);
 		try {
 			iso.init(molecule1, molecule2, true, true);
@@ -433,12 +435,12 @@ public class ChemicalUtilities {
 	 * @param possibleMatches The list of possible matches
 	 * @return An ArrayList of same size of possibleMatches, corresponding with the Tanimoto score of molecule to each element of possibleMatches
 	 */
-	public static ArrayList<Double> getTanimotoScores(IMolecule molecule, List<IMolecule> possibleMatches) {
+	public static ArrayList<Double> getTanimotoScores(IAtomContainer molecule, List<IAtomContainer> possibleMatches) {
 		
 		// Get the max values
 		ArrayList<Double> tanimotoScores = new ArrayList<Double>();
 		for(int i = 0; i < possibleMatches.size(); i++) {
-			IMolecule p = possibleMatches.get(i);
+			IAtomContainer p = possibleMatches.get(i);
 			double score = getTanimotoScore(molecule, p);
 			tanimotoScores.add(score);
 		}
@@ -451,7 +453,7 @@ public class ChemicalUtilities {
 	 * @param possibleMatches
 	 * @return
 	 */
-	public static double getHighestTanimotoScore(IMolecule molecule, List<IMolecule> possibleMatches) {
+	public static double getHighestTanimotoScore(IAtomContainer molecule, List<IAtomContainer> possibleMatches) {
 		ArrayList<Double> tanimotoScores = getTanimotoScores(molecule, possibleMatches);
 		double maxval = 0;
 		for(double score:tanimotoScores) {
@@ -474,10 +476,11 @@ public class ChemicalUtilities {
 		return(index);
 	}
 
-	public static CStarterSubstrate matchCStarter(IMolecule mol, Map<CStarterSubstrate, IMolecule> cStarterSubstrates) {
-		for(java.util.Map.Entry<CStarterSubstrate, IMolecule> matching : cStarterSubstrates.entrySet()){
+	public static CStarterSubstrate matchCStarter(IAtomContainer mol, Map<CStarterSubstrate, IAtomContainer> cStarterSubstrates) {
+		for(java.util.Map.Entry<CStarterSubstrate, IAtomContainer> matching : cStarterSubstrates.entrySet()){
 			try {
-				if(UniversalIsomorphismTester.isSubgraph(mol, matching.getValue()))
+				UniversalIsomorphismTester uit = new UniversalIsomorphismTester();
+				if(uit.isSubgraph(mol, matching.getValue()))
 					return matching.getKey();
 			} catch (CDKException e) {
 				e.printStackTrace();
@@ -494,21 +497,25 @@ public class ChemicalUtilities {
 	 * @throws InvalidSmilesException 
 	 */
 	public static ChemicalAbstraction getChemicalAbstractionFromSmiles(String smiles, NRPPredictor predictor){
-		IMolecule currentMolecule = null;
+		IAtomContainer currentMolecule = null;
 		ChemicalAbstraction chemicalAbstraction = new ChemicalAbstraction();
 		try {
 			currentMolecule = SmilesIO.readSmiles(smiles);
 		} catch (IllegalArgumentException | IOException | CDKException e) {
+			e.printStackTrace();
 			chemicalAbstraction.setErrorMessage("Bad smiles");
 			return chemicalAbstraction;
 		}
 		if(!ConnectivityChecker.isConnected(currentMolecule)) {
 			chemicalAbstraction.setErrorMessage("Molecule not connected");
-		}else if(AtomContainerManipulator.getNaturalExactMass(currentMolecule) > 2500){
-			chemicalAbstraction.setErrorMessage("Molecule too large");
 		}else{
 			try {
-				chemicalAbstraction = predictor.getChemicalAbstraction(currentMolecule);
+				if(AtomContainerManipulator.getNaturalExactMass(currentMolecule) > 2500){ //TODO: currently no overrride
+					System.err.println("Molecule large... may take a while");
+					chemicalAbstraction = predictor.getChemicalAbstraction(currentMolecule);
+				} else{
+					chemicalAbstraction = predictor.getChemicalAbstraction(currentMolecule);
+				}
 			} catch(Exception e) {
 				e.printStackTrace();
 				chemicalAbstraction.setErrorMessage("Could not be broken down");			
@@ -573,7 +580,7 @@ public class ChemicalUtilities {
 			// Trace the fragments from the starting fragment in a NC - NC - NC direction
 			Fragment currentFragment = m;
 			while (currentFragment != null && visited.get(currentFragment) == false){
-				if(currentFragment.getAminoAcidDomains().size() > 1){
+				if(currentFragment.getFragmentType() == FragmentType.AMINO_ACID){
 					currentFragment.setKnownStart(false);
 				}
 				orderedMonomerFragments.add(currentFragment);
@@ -583,6 +590,36 @@ public class ChemicalUtilities {
 			orderedMonomerFragmentsList.add(orderedMonomerFragments);
 		}
 		return(orderedMonomerFragmentsList);
+	}
+
+	public static int getConnectedAtomsCountNonHydrogen(IAtomContainer molecule, IAtom terminalCarbonCandidate) {
+		int count = 0;
+		for(IAtom connectedAtom : molecule.getConnectedAtomsList(terminalCarbonCandidate)){
+			if(connectedAtom.getAtomicNumber() != 1){
+				count ++;
+			}
+		}
+		return count;
+	}
+	
+	public static int getTotalBondOrderExcludingHydrogen(IAtomContainer molecule, IAtom atom) {
+		int order = 0;
+		for(IAtom connectedAtom : molecule.getConnectedAtomsList(atom)){
+			if(connectedAtom.getAtomicNumber() != 1){
+				IBond bond = molecule.getBond(atom, connectedAtom);
+				order += bond.getOrder().ordinal() + 1;
+			}
+		}
+		return order;
+	}
+	
+	public static boolean connectedToAtomicNumber(IAtomContainer mol, IAtom atom, int i) {
+		for(IAtom connectedAtom : mol.getConnectedAtomsList(atom)){
+			if(connectedAtom.getAtomicNumber() == i){
+				return true;
+			}
+		}
+		return false;
 	}
 
 }

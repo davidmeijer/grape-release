@@ -25,11 +25,11 @@ public class TextOutput {
 	 * @return filename the name of the file to be written to
 	 * @throws IOException
 	 */
-	public static void writeFile(String text, String filename) throws IOException {
+	public static void writeFile(String text, String outputPath, String filename) throws IOException {
 		// make output folder if it does not already exist
-		new File("text/").mkdirs();
+		new File(outputPath).mkdirs();
 		
-		File file = new File("text/" + filename);
+		File file = new File(outputPath + filename);
 		if(!file.exists()) {
 			try {
 				file.createNewFile();

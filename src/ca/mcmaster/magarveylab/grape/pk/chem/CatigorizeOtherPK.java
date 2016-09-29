@@ -7,7 +7,7 @@ import java.util.Map.Entry;
 import org.openscience.cdk.exception.CDKException;
 import org.openscience.cdk.interfaces.IAtom;
 import org.openscience.cdk.interfaces.IBond;
-import org.openscience.cdk.interfaces.IMolecule;
+import org.openscience.cdk.interfaces.IAtomContainer;
 import org.openscience.cdk.isomorphism.UniversalIsomorphismTester;
 
 import ca.mcmaster.magarveylab.grape.enums.MoleculeClasses.AromaticFungal;
@@ -20,31 +20,32 @@ import ca.mcmaster.magarveylab.grape.util.io.SmilesIO;
 
 public class CatigorizeOtherPK {
 	
-	private static Map<String, IMolecule> otherAromaticMolecules = AromaticNotType2.getAll();
-	private static Map<String, IMolecule> type2Molecules = AromaticType2.getAll();
-	private static Map<String, IMolecule> fungalAromaticMolecules = AromaticFungal.getAll();
-	private static Map<String, IMolecule> terpeneMolecules = Terpenes.getAll();
-	private static Map<String, IMolecule[]> enedyineMolecules = Enedyine.getAll();
+	private static UniversalIsomorphismTester uit = new UniversalIsomorphismTester();
+	private static Map<String, IAtomContainer> otherAromaticMolecules = AromaticNotType2.getAll();
+	private static Map<String, IAtomContainer> type2Molecules = AromaticType2.getAll();
+	private static Map<String, IAtomContainer> fungalAromaticMolecules = AromaticFungal.getAll();
+	private static Map<String, IAtomContainer> terpeneMolecules = Terpenes.getAll();
+	private static Map<String, IAtomContainer[]> enedyineMolecules = Enedyine.getAll();
 	private ChemicalSubType type;
 	private String match;
 	
-	public void analyzeMolecule(IMolecule mol, int macrolideType) throws CDKException{
+	public void analyzeMolecule(IAtomContainer mol, int macrolideType) throws CDKException{
 		type = ChemicalSubType.STANDARD;
 		match = null;
-		IMolecule carotenoids = null;
+		IAtomContainer carotenoids = null;
 		try{
-			carotenoids = SmilesIO.readSmiles("CC(C)=C\\C=C\\C=C(/C)\\C=C\\C=C(C)C"); //specific terpene
+			carotenoids = SmilesIO.readSmilesTemplates("CC(C)=C\\C=C\\C=C(/C)\\C=C\\C=C(C)C"); //specific terpene
 		}catch(IOException e){}
-	    if(UniversalIsomorphismTester.isSubgraph(mol, carotenoids)){
+	    if(uit.isSubgraph(mol, carotenoids)){
     		type = ChemicalSubType.TERPENE;
     		match = "Carotenoid";
     		return;
 	    }
-	    for(Entry<String, IMolecule[]> entry : enedyineMolecules.entrySet()){
+	    for(Entry<String, IAtomContainer[]> entry : enedyineMolecules.entrySet()){
 	    	String name = entry.getKey();
-	    	IMolecule[] scaffolds = entry.getValue();
-	    	for(IMolecule scaffold : scaffolds){
-		    	if(UniversalIsomorphismTester.isSubgraph(mol, scaffold)){
+	    	IAtomContainer[] scaffolds = entry.getValue();
+	    	for(IAtomContainer scaffold : scaffolds){
+		    	if(uit.isSubgraph(mol, scaffold)){
 		    		type = ChemicalSubType.ENEDYINE;
 		    		match = name;
 		    		return;
@@ -52,38 +53,38 @@ public class CatigorizeOtherPK {
 	    	}
 	    }
 	    if(macrolideType == 0){
-	    	for(Entry<String, IMolecule> entry : fungalAromaticMolecules.entrySet()){
+	    	for(Entry<String, IAtomContainer> entry : fungalAromaticMolecules.entrySet()){
 		    	String name = entry.getKey();
-		    	IMolecule aro = entry.getValue();
-		    	if(UniversalIsomorphismTester.isSubgraph(mol, aro)){
+		    	IAtomContainer aro = entry.getValue();
+		    	if(uit.isSubgraph(mol, aro)){
 		    		type = ChemicalSubType.FUNGAL;
 		    		match = name;
 		    		return;
 		    	}
 		    }
-			IMolecule molSingleBondsOnly = onlySingleBonds(mol);
-		    for(Entry<String, IMolecule> entry : type2Molecules.entrySet()){
+			IAtomContainer molSingleBondsOnly = onlySingleBonds(mol);
+		    for(Entry<String, IAtomContainer> entry : type2Molecules.entrySet()){
 		    	String name = entry.getKey();
-		    	IMolecule aro = entry.getValue();
-		    	if(UniversalIsomorphismTester.isSubgraph(molSingleBondsOnly, aro)){
+		    	IAtomContainer aro = entry.getValue();
+		    	if(uit.isSubgraph(molSingleBondsOnly, aro)){
 		    		type = ChemicalSubType.TYPE_2;
 		    		match = name;
 		    		return;
 		    	}
 		    }
-		    for(Entry<String, IMolecule> entry : otherAromaticMolecules.entrySet()){
+		    for(Entry<String, IAtomContainer> entry : otherAromaticMolecules.entrySet()){
 		    	String name = entry.getKey();
-		    	IMolecule aro = entry.getValue();
-		    	if(UniversalIsomorphismTester.isSubgraph(molSingleBondsOnly, aro)){
+		    	IAtomContainer aro = entry.getValue();
+		    	if(uit.isSubgraph(molSingleBondsOnly, aro)){
 		    		type = ChemicalSubType.NON_TYPE_2_AROMATIC;
 		    		match = name;
 		    		return;
 		    	}
 		    }
-		    for(Entry<String, IMolecule> entry : terpeneMolecules.entrySet()){
+		    for(Entry<String, IAtomContainer> entry : terpeneMolecules.entrySet()){
 		    	String name = entry.getKey();
-		    	IMolecule aro = entry.getValue();
-		    	if(UniversalIsomorphismTester.isSubgraph(molSingleBondsOnly, aro)){
+		    	IAtomContainer aro = entry.getValue();
+		    	if(uit.isSubgraph(molSingleBondsOnly, aro)){
 		    		type = ChemicalSubType.TERPENE;
 		    		match = name;
 		    		return;
@@ -98,8 +99,8 @@ public class CatigorizeOtherPK {
 	public String getMatchName(){
 		return match;
 	}
-	private static IMolecule onlySingleBonds(IMolecule mol) {
-		IMolecule molClone = null;
+	private static IAtomContainer onlySingleBonds(IAtomContainer mol) {
+		IAtomContainer molClone = null;
 		try{
 			molClone = mol.clone();
 		}catch(Exception e){}

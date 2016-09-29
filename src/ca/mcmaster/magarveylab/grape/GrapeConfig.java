@@ -14,8 +14,8 @@ public class GrapeConfig {
 	private boolean image = false;
 	private boolean json = false;
 	private boolean txt = false;
-	private boolean fungal = false;
-	private String outputPath = new String();
+	private String outputPath = "./";
+	private String aminoAcidsPath = "data/amino_acids_with_domains.txt";
 	
 	private GrapeConfig() {}
 	
@@ -51,8 +51,8 @@ public class GrapeConfig {
 		return outputPath;
 	}
 	
-	public boolean fungal(){
-		return fungal;
+	public String getAminoAcidsPath() {
+		return aminoAcidsPath;
 	}
 	
 	//Setters
@@ -78,10 +78,9 @@ public class GrapeConfig {
 		txt = true;
 	}
 	public void setOutputPath(String outputPath){
-		this.outputPath = outputPath;
+		this.outputPath = outputPath + "/";
 	}
-
-	public void setFungalTrue() {
-		fungal = true;
+	public void setAminoAcidsPath(String aminoAcidsPath) {
+		this.aminoAcidsPath = aminoAcidsPath;
 	}
 }

@@ -4,7 +4,7 @@ import java.util.List;
 import org.openscience.cdk.exception.CDKException;
 import org.openscience.cdk.interfaces.IAtom;
 import org.openscience.cdk.interfaces.IAtomContainer;
-import org.openscience.cdk.interfaces.IMolecule;
+import org.openscience.cdk.interfaces.IAtomContainer;
 import org.openscience.cdk.interfaces.IRingSet;
 import org.openscience.cdk.smsd.ring.HanserRingFinder;
 import org.openscience.cdk.tools.manipulator.RingSetManipulator;
@@ -23,7 +23,7 @@ public class SubgroupCounter {
 	 * @return which subgroups are present and how many of each
 	 */
 	
-	public static Modifications getSubgroupCount(IMolecule molecule){
+	public static Modifications getSubgroupCount(IAtomContainer molecule){
 		
 		Modifications modifications = new Modifications(); //May be better to just be an Array of strings? Don't currently utilize the hashMap functionality
 		
@@ -67,7 +67,7 @@ public class SubgroupCounter {
 	 * @param molecule being analyzed
 	 * @return weather the ring is the cyclic part of a deoxysugar
 	 */
-	private static boolean isDeoxySugar(IAtomContainer ring, IMolecule molecule) {
+	private static boolean isDeoxySugar(IAtomContainer ring, IAtomContainer molecule) {
 		int oxygenCount = 0;
 		for (IAtom atom: ring.atoms()){ //Count how many oxygens are connected to the carbons in the sugar ring
 			if (atom.getAtomTypeName().contains("C.")){
@@ -149,7 +149,7 @@ public class SubgroupCounter {
 	 * @param type of atom
 	 * @return number of type in molecule
 	 */
-	public static int atomType(IMolecule moleule, String type){
+	public static int atomType(IAtomContainer moleule, String type){
 		int atomCount = 0;
 		for(IAtom atom: moleule.atoms()){
 			if(atom.getAtomTypeName().contains(type)){

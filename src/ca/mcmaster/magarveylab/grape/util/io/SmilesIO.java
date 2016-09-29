@@ -17,14 +17,12 @@ import java.util.Map;
 import javax.imageio.ImageIO;
 
 import org.openscience.cdk.DefaultChemObjectBuilder;
-import org.openscience.cdk.config.IsotopeFactory;
+import org.openscience.cdk.config.XMLIsotopeFactory;
 import org.openscience.cdk.exception.CDKException;
-import org.openscience.cdk.exception.InvalidSmilesException;
 import org.openscience.cdk.interfaces.IAtom;
 import org.openscience.cdk.interfaces.IAtomContainer;
 import org.openscience.cdk.interfaces.IBond;
 import org.openscience.cdk.interfaces.IChemObjectBuilder;
-import org.openscience.cdk.interfaces.IMolecule;
 import org.openscience.cdk.interfaces.IChemObject;
 import org.openscience.cdk.layout.StructureDiagramGenerator;
 import org.openscience.cdk.renderer.AtomContainerRenderer;
@@ -34,6 +32,7 @@ import org.openscience.cdk.renderer.visitor.AWTDrawVisitor;
 import org.openscience.cdk.smiles.FixBondOrdersTool;
 import org.openscience.cdk.smiles.SmilesGenerator;
 import org.openscience.cdk.smiles.SmilesParser;
+import org.openscience.cdk.smsd.tools.ExtAtomContainerManipulator;
 import org.openscience.cdk.tools.manipulator.AtomContainerManipulator;
 import org.openscience.cdk.renderer.generators.*;
 
@@ -45,38 +44,54 @@ import org.openscience.cdk.renderer.generators.*;
 public class SmilesIO {
 	
 	/**
-	 * Generate an IMolecule from a SMILES string.
-	 * @param smiles	The structure to generate an IMolecule instance from, as a SMILES string
-	 * @return			An IMolecule object corresponding to the input SMILES
+	 * Generate an IAtomContainer from a SMILES string. Ignores stereochemistry
+	 * @param smiles	The structure to generate an IAtomContainer instance from, as a SMILES string
+	 * @return			An IAtomContainer object corresponding to the input SMILES
 	 * @throws IOException 
 	 * @throws CDKException 
 	 */
-	public static IMolecule readSmiles(String smiles) throws IOException, CDKException {
-		IMolecule mol = null;
+	public static IAtomContainer readSmiles(String smiles) throws IOException, CDKException {
+		IAtomContainer mol = null;
 		synchronized (SmilesIO.class) {
 			IChemObjectBuilder builder = DefaultChemObjectBuilder.getInstance();
 			SmilesParser parser = new SmilesParser(builder);
-	        parser.setPreservingAromaticity(true);
+	        parser.kekulise(true);
 			mol = parser.parseSmiles(smiles);
-			FixBondOrdersTool fbot = new FixBondOrdersTool();
-			mol = fbot.kekuliseAromaticRings(mol);
 			mol = parser.parseSmiles(generateSmiles(mol));
-			IsotopeFactory fact = IsotopeFactory.getInstance(mol.getBuilder());
-			fact.configureAtoms(mol);
+			mol = AtomContainerManipulator.removeNonChiralHydrogens(mol);
+			AtomContainerManipulator.percieveAtomTypesAndConfigureAtoms(mol);
+		}
+		return mol;
+	}
+	
+	/**
+	 * This method reads the smiles, but also converts to canonical, so no stereochemistry is considered
+	 * @param smiles
+	 * @return
+	 * @throws IOException
+	 * @throws CDKException
+	 */
+	public static IAtomContainer readSmilesTemplates(String smiles) throws IOException, CDKException {
+		IAtomContainer mol = null;
+		synchronized (SmilesIO.class) {
+			IChemObjectBuilder builder = DefaultChemObjectBuilder.getInstance();
+			SmilesParser parser = new SmilesParser(builder);
+	        parser.kekulise(true);
+			mol = parser.parseSmiles(smiles);
 			// Remove hydrogens
-			mol = (IMolecule) AtomContainerManipulator.removeHydrogens(mol);
-			//redraw
-			mol = parser.parseSmiles(generateSmiles(mol));
+			mol = AtomContainerManipulator.removeNonChiralHydrogens(mol);
+			AtomContainerManipulator.percieveAtomTypesAndConfigureUnsetProperties(mol);
 		}
 		return mol;
 	}
 
 	/**
-	 * Generate a SMILES string from an IMolecule
+	 * Generate a SMILES string from an IAtomContainer, this is canonical with no stereochemistry
 	 * @param imol	The molecule to be parsed
 	 * @return		The molecule's structures as a SMILES string
+	 * @throws CDKException 
 	 */
-	public static String generateSmiles(IAtomContainer mol) {
+	public static String generateSmiles(IAtomContainer mol) throws CDKException {
 		IAtomContainer molCopy = null;
 		try {
 			molCopy = mol.clone();
@@ -84,9 +99,9 @@ public class SmilesIO {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		SmilesGenerator sg = new SmilesGenerator();
-		sg.setUseAromaticityFlag(false);
-		String smiles = sg.createSMILES(molCopy);
+		new SmilesGenerator();
+		SmilesGenerator sg = SmilesGenerator.unique();
+		String smiles = sg.create(molCopy);
 		return smiles;
 	}
 	
@@ -95,8 +110,12 @@ public class SmilesIO {
 	 * @param molecule
 	 * @param name
 	 */
-	public static void drawMolecule(IMolecule molecule, String name) {
+	public static void drawMolecule(IAtomContainer molecule, String name) {
 		drawMolecule(molecule, name, false);
+	}
+	
+	public static void drawMolecule(String outputPath, IAtomContainer molecule, String name) {
+		drawMolecule(outputPath, molecule, name, false, new ArrayList<IAtom>(), new ArrayList<IBond>(), true);
 	}
 
 	/**
@@ -104,7 +123,7 @@ public class SmilesIO {
 	 * @param molecule
 	 * @param name
 	 */
-	public static void drawMolecule(IMolecule molecule, String name, boolean atomNumbers) {
+	public static void drawMolecule(IAtomContainer molecule, String name, boolean atomNumbers) {
 		drawMolecule(molecule, name, atomNumbers, new ArrayList<IAtom>(), new ArrayList<IBond>());
 	}
 	
@@ -113,7 +132,7 @@ public class SmilesIO {
 	 * @param molecule
 	 * @param name
 	 */
-	public static void drawMoleculeHighlightingAtoms(IMolecule molecule, String name, List<IAtom> highlightedAtoms) {
+	public static void drawMoleculeHighlightingAtoms(IAtomContainer molecule, String name, List<IAtom> highlightedAtoms) {
 		drawMolecule(molecule, name, highlightedAtoms, new ArrayList<IBond>());
 	}
 	/**
@@ -121,18 +140,18 @@ public class SmilesIO {
 	 * @param molecule
 	 * @param name
 	 */
-	public static void drawMoleculeHighlightingBonds(IMolecule molecule, String name, IBond highlightedBond) {
+	public static void drawMoleculeHighlightingBonds(IAtomContainer molecule, String name, IBond highlightedBond) {
 		ArrayList<IBond> highlightedBonds = new ArrayList<IBond>();
 		highlightedBonds.add(highlightedBond);
-		drawMolecule(molecule, name, false, new ArrayList<IAtom>(), highlightedBonds, false);
+		drawMolecule("image/", molecule, name, false, new ArrayList<IAtom>(), highlightedBonds, false);
 	}
 	/**
 	 * Generate png images of a molecule with uncoloured atoms and highlighted atoms
 	 * @param molecule
 	 * @param name
 	 */
-	public static void drawMoleculeHighlightingBonds(IMolecule molecule, String name, List<IBond> highlightedBonds) {
-		drawMolecule(molecule, name, false, new ArrayList<IAtom>(), highlightedBonds, false);
+	public static void drawMoleculeHighlightingBonds(IAtomContainer molecule, String name, List<IBond> highlightedBonds) {
+		drawMolecule("image/", molecule, name, false, new ArrayList<IAtom>(), highlightedBonds, false);
 	}
 	
 	/**
@@ -140,8 +159,8 @@ public class SmilesIO {
 	 * @param molecule
 	 * @param name
 	 */
-	public static void drawMoleculeHighlightingBonds(IMolecule molecule, String name, List<IBond> highlightedBonds, boolean colorByAtomType) {
-		drawMolecule(molecule, name, false, new ArrayList<IAtom>(), highlightedBonds, colorByAtomType);
+	public static void drawMoleculeHighlightingBonds(IAtomContainer molecule, String name, List<IBond> highlightedBonds, boolean colorByAtomType) {
+		drawMolecule("image/", molecule, name, false, new ArrayList<IAtom>(), highlightedBonds, colorByAtomType);
 	}
 	
 	/**
@@ -149,7 +168,7 @@ public class SmilesIO {
 	 * @param molecule
 	 * @param name
 	 */
-	public static void drawMolecule(IMolecule molecule, String name, List<IAtom> highlightedAtoms, List<IBond> highlightedBonds) {
+	public static void drawMolecule(IAtomContainer molecule, String name, List<IAtom> highlightedAtoms, List<IBond> highlightedBonds) {
 		drawMolecule(molecule, name, false, highlightedAtoms, highlightedBonds);
 	}
 	
@@ -158,7 +177,7 @@ public class SmilesIO {
 	 * @param molecule
 	 * @param name
 	 */
-	public static void drawMolecules(List<IMolecule> molecules, List<String> names) {
+	public static void drawMolecules(List<IAtomContainer> molecules, List<String> names) {
 		for(int i = 0; i < molecules.size(); i++) {
 			System.out.println("Drawing molecule " + i);
 			drawMolecule(molecules.get(i), names.get(i));
@@ -171,8 +190,8 @@ public class SmilesIO {
 	 * @param name
 	 * @throws CloneNotSupportedException 
 	 */
-	private static void drawMolecule(IMolecule molecule, String name, boolean atomNumbers, List<IAtom> highlightedAtoms, List<IBond> highlightedBonds) {
-		drawMolecule(molecule, name, atomNumbers, highlightedAtoms, highlightedBonds, true);
+	private static void drawMolecule(IAtomContainer molecule, String name, boolean atomNumbers, List<IAtom> highlightedAtoms, List<IBond> highlightedBonds) {
+		drawMolecule("image/", molecule, name, atomNumbers, highlightedAtoms, highlightedBonds, true);
 	}
 	
 	/**
@@ -181,17 +200,18 @@ public class SmilesIO {
 	 * @param name
 	 * @throws CloneNotSupportedException 
 	 */
-	private static void drawMolecule(IMolecule molecule, String name, boolean atomNumbers, List<IAtom> highlightedAtoms, List<IBond> highlightedBonds, boolean colorByAtomType) {
+	private static void drawMolecule(String outputPath, IAtomContainer inMolecule, String name, boolean atomNumbers, List<IAtom> highlightedAtoms, List<IBond> highlightedBonds, boolean colorByAtomType) {
 		// Derive from snippet from http://chem-bla-ics.blogspot.ca/2010/06/cdk-jchempaint-6-rendering-atom-numbers.html
 		   int WIDTH = 1000;
 	       int HEIGHT = 1000;
+	       IAtomContainer molecule = AtomContainerManipulator.removeHydrogens(inMolecule);
 	       // the draw area and the image should be the same size
 	       Rectangle drawArea = new Rectangle(WIDTH, HEIGHT);
 	       Image image = new BufferedImage(
 	               WIDTH, HEIGHT, BufferedImage.TYPE_INT_RGB);
 	       
 	       // set the ID of highlighted atoms and bonds to the string "HIGHLIGHT"
-	       IMolecule newMolecule = null;
+	       IAtomContainer newMolecule = null;
 		try {
 			newMolecule = molecule.clone();
 		} catch (CloneNotSupportedException e2) {
@@ -235,13 +255,13 @@ public class SmilesIO {
 	       
 	       RendererModel model = renderer.getRenderer2DModel(); 
 	       
-	       model.set(BasicBondGenerator.BondWidth.class, 3.0);
+	       model.set(BasicBondGenerator.BondWidth.class, 1.0);
 	       if(atomNumbers == true) {
 		       model.set( AtomNumberGenerator.ColorByType.class, true);
 	       }
 	       else {
 	    	 //model.set(BasicAtomGenerator.CompactAtom.class, true);
-		     model.set(BasicAtomGenerator.AtomRadius.class, 12.0);
+		     model.set(BasicAtomGenerator.AtomRadius.class, 50.0);
 		     model.set(BasicAtomGenerator.CompactShape.class, BasicAtomGenerator.Shape.OVAL);
 		     model.set(BasicAtomGenerator.KekuleStructure.class, true);
 		     if(!colorByAtomType) {
@@ -295,9 +315,9 @@ public class SmilesIO {
 	       // the paint method also needs a toolkit-specific renderer
 	       renderer.paint(newMolecule, new AWTDrawVisitor(g2), new Rectangle2D.Double(0, 0, WIDTH, HEIGHT), true);
 	       
-	       try {
-	    	   new File("image/" + name + ".png").mkdirs();
-	    	   ImageIO.write((RenderedImage)image, "PNG", new File("image/" + name + ".png"));
+       try {
+    	   new File(outputPath).mkdirs();
+    	   ImageIO.write((RenderedImage)image, "PNG", new File(outputPath + name + ".png"));
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -305,7 +325,7 @@ public class SmilesIO {
 	}
 	
 	public static String getCleanFileName(String fileName) {
-		String name = fileName.replaceAll("[^A-Za-z0-9\\-_]+", "_");
+		String name = fileName.replaceAll("[^A-Za-z0-9\\-/,_]+", "_");
 		if(name.length() > 100) {
 			name = name.substring(0, 100);
 		}

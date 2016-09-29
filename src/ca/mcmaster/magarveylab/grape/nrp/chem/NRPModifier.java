@@ -2,7 +2,9 @@ package ca.mcmaster.magarveylab.grape.nrp.chem;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Collections;
+import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
@@ -10,17 +12,23 @@ import java.util.Set;
 
 import org.openscience.cdk.Atom;
 import org.openscience.cdk.Bond;
+import org.openscience.cdk.DefaultChemObjectBuilder;
+import org.openscience.cdk.Element;
 import org.openscience.cdk.exception.CDKException;
 import org.openscience.cdk.exception.InvalidSmilesException;
 import org.openscience.cdk.graph.ConnectivityChecker;
 import org.openscience.cdk.interfaces.IAtom;
+import org.openscience.cdk.interfaces.IAtomContainer;
+import org.openscience.cdk.interfaces.IAtomContainerSet;
 import org.openscience.cdk.interfaces.IBond;
 import org.openscience.cdk.interfaces.IBond.Order;
-import org.openscience.cdk.interfaces.IMolecule;
-import org.openscience.cdk.interfaces.IMoleculeSet;
+import org.openscience.cdk.interfaces.IChemObjectBuilder;
 import org.openscience.cdk.isomorphism.UniversalIsomorphismTester;
 import org.openscience.cdk.isomorphism.mcss.RMap;
+import org.openscience.cdk.smiles.SmilesParser;
 import org.openscience.cdk.smiles.smarts.SMARTSQueryTool;
+import org.openscience.cdk.smiles.smarts.parser.SMARTSParser;
+import org.openscience.cdk.tools.manipulator.AtomContainerManipulator;
 
 import ca.mcmaster.magarveylab.grape.GrapeMain;
 import ca.mcmaster.magarveylab.grape.enums.DomainEnums.PolyKetideDomainEnums;
@@ -37,11 +45,12 @@ import ca.mcmaster.magarveylab.grape.util.io.SmilesIO;
  */
 public class NRPModifier {
 
+	IChemObjectBuilder builder = DefaultChemObjectBuilder.getInstance();
+	UniversalIsomorphismTester uit = new UniversalIsomorphismTester();
 	private final static boolean imageDump = false;
 	private final static boolean showBonds = false;
 	private final static boolean printSteps = false;
 
-	private boolean fungal = false; // set true if fungal chemistry should be done
 	private List<Fragment> monomerFragments;
 
 	// This global list is necessary for determining the presence and
@@ -49,45 +58,32 @@ public class NRPModifier {
 	// whose adjacent monomers are separated in the peptide cleavage stage.
 	private List<IAtom> lactoneCarboxylCList;
 	private List<IAtom> thiazoleSList;
-	private List<IAtom> betaLactamSList;
+	private List<IAtom> thiazolineSList;
+	private List<IAtom> methylatedCarbonsList;
 	private List<IAtom> oxazoleOList;
-	private List<IAtom> sugarOxygens;
+	private List<IAtom> oxazolineOList;
+	private List<IAtom> sugarCarbons;
 	private ChemicalAbstraction chemicalAbstraction;
 
 	/**
 	 * Constructor for this NRPModifier. Typical usage: construct an NRPModifier
-	 * from an original NRP IMolecule, and get the output from method
+	 * from an original NRP IAtomContainer, and get the output from method
 	 * getMonomerFragments.
 	 * 
-	 * @param originalMolecule
+	 * @param originalAtomContainer
 	 */
-	public NRPModifier(IMolecule originalMolecule, ChemicalAbstraction chemicalAbstraction) {
+	public NRPModifier(IAtomContainer originalAtomContainer, ChemicalAbstraction chemicalAbstraction) {
 		lactoneCarboxylCList = new ArrayList<IAtom>();
-		thiazoleSList = new ArrayList<IAtom>();
+		methylatedCarbonsList = new ArrayList<IAtom>();
 		oxazoleOList = new ArrayList<IAtom>();
-		sugarOxygens = new ArrayList<IAtom>();
-		monomerFragments = new ArrayList<Fragment>();
-		monomerFragments.add(new Fragment(originalMolecule));
-		this.chemicalAbstraction = chemicalAbstraction; 
-		performAllNrpModifications();
-	}
-	
-	public NRPModifier(IMolecule originalMolecule, ChemicalAbstraction chemicalAbstraction, boolean fungal) {
-		lactoneCarboxylCList = new ArrayList<IAtom>();
 		thiazoleSList = new ArrayList<IAtom>();
+		thiazolineSList = new ArrayList<IAtom>();
 		oxazoleOList = new ArrayList<IAtom>();
-		sugarOxygens = new ArrayList<IAtom>();
+		oxazolineOList = new ArrayList<IAtom>();
+		sugarCarbons = new ArrayList<IAtom>();
 		monomerFragments = new ArrayList<Fragment>();
-		monomerFragments.add(new Fragment(originalMolecule));
+		monomerFragments.add(new Fragment(originalAtomContainer));
 		this.chemicalAbstraction = chemicalAbstraction;
-		this.fungal = fungal;
-		performAllNrpModifications();
-	}
-	/**
-	 * Sets the modifier to also do fungal breakdowns
-	 */
-	public void fungal(){
-		fungal = true;
 	}
 
 	/**
@@ -103,32 +99,30 @@ public class NRPModifier {
 	/**
 	 * Perform all NRP modifications in the intended order
 	 */
-	private void performAllNrpModifications() { //TODO start splitting these up into different classes
+	public void performAllNrpModifications() { //TODO start splitting these up into different classes
 		// if(false)
 		if (!imageDump) {
-			if(fungal){
-				breakFungalSubstructures();
-			}
-			breakDisulfideBridges(); //add fungal stuff to this
+			breakDisulfideBridges(); 
 			breakAromaticEthers();
 			breakAdjoinedAromaticRings();
 			processBetaLactamLike();
 			processMonobactams();
-			breakLinearEthers();
+			breakLinearEthers(); 
 			processUniqueSubstructures();
-			processThiazoles();
-			processOxazoles();
-			modifyImine();
+			processThiazs();
+			processOxazs();
+			modifyImine(); 
 			breakThioesters();
 			openLactoneRings();
 			processUreido();
 			breakEsterLinkages();
-			breakPeptideBonds();
+			breakPeptideBonds(); // do a check here and see why in prenly the amino acids are not being cleaved
 			breakSugarGroups();
 			breakSulfateGroups();
 			processAAMethylations();
 			processAACHydroxyliations();
-			processChlorinations();
+			processHalogenations();
+			processSecondaryAmineExtensions();
 			findEpoxides();
 			processPeptideEpoxiKetones(); 
 		}
@@ -142,8 +136,8 @@ public class NRPModifier {
 			Fragment.drawMonomerFragments(monomerFragments, GrapeMain.currentName
 					+ "_01-Chemical_Bridging");
 			processBetaLactamLike();
-			processThiazoles();
-			processOxazoles();
+			processThiazs();
+			processOxazs();
 			Fragment.drawMonomerFragments(monomerFragments, GrapeMain.currentName
 					+ "_02-Heterocycles");
 			breakThioesters();
@@ -156,488 +150,54 @@ public class NRPModifier {
 			breakSugarGroups();
 			breakSulfateGroups();
 			processAAMethylations();
-			processChlorinations();
+			processHalogenations();
 			findEpoxides();
 			Fragment.drawMonomerFragments(monomerFragments, GrapeMain.currentName
 					+ "_04-Tailoring");
 		}
 
-		// Update thiazole and oxazole fields
+		// Update tailoring fields fields
 		for (Fragment m : monomerFragments) {
+			for (IAtom t : methylatedCarbonsList) {
+				if (m.getAtomContainer().contains(t)) {
+					m.addTailoringDomain(TailoringDomainEnums.C_METHYLTRANSFERASE);
+				}
+			}
 			for (IAtom t : thiazoleSList) {
-				if (m.getMolecule().contains(t)) {
+				if (m.getAtomContainer().contains(t)) {
 					m.setThiazoleS(t);
 					m.addTailoringDomain(TailoringDomainEnums.THIAZOLE);
 				}
 			}
+			for (IAtom t : thiazolineSList) {
+				if (m.getAtomContainer().contains(t)) {
+					m.setThiazolineS(t);
+					m.addTailoringDomain(TailoringDomainEnums.THIAZOLINE);
+				}
+			}
 			for (IAtom o : oxazoleOList) {
-				if (m.getMolecule().contains(o)) {
+				if (m.getAtomContainer().contains(o)) {
 					m.setOxazoleO(o);
 					m.addTailoringDomain(TailoringDomainEnums.OXAZOLE);
 				}
 			}
-			for (IAtom o : sugarOxygens) {
-				if (m.getMolecule().contains(o)) {
+			for (IAtom o : oxazolineOList) {
+				if (m.getAtomContainer().contains(o)) {
+					m.setOxazolineO(o);
+					m.addTailoringDomain(TailoringDomainEnums.OXAZOLINE);
+				}
+			}
+			for (IAtom o : sugarCarbons) {
+				if (m.getAtomContainer().contains(o)) {
 					m.setFragmentType(FragmentType.SUGAR);
 				}
 			}
 			if(m.getBetaLactamS() != null) {
 				m.addTailoringDomain(TailoringDomainEnums.SULFUR_BETA_LACTAM);
 			}
-		}
-	}
-
-	/**
-	 * Breaks fungal specific substructures
-	 */
-	private void breakFungalSubstructures() {
-		processAminoDerivedTricyclicRing();
-		processPrenylations();
-		processDielsAlder();
-		process2Pyridone();
-		processBenzoquinone();
-		processDecalin();
-		processTetramicAcid();
-	}
-	private void processPrenylations() {
-		
-		SMARTSQueryTool querytool = null;
-		try {
-			querytool = new SMARTSQueryTool("C[C;D2]=[C;D3]([C;D1])[C;D1]");
-		} catch (CDKException e) {
-			e.printStackTrace();
-		}
-		Queue<Fragment> q = new LinkedList<Fragment>();
-		for (Fragment m : monomerFragments) {
-			q.add(m);
-		}
-		// go through each fragment.
-		while (!q.isEmpty()) {
-			Fragment fragment = q.poll();
-			IMolecule mol = fragment.getMolecule();
-			try {
-				while(querytool.matches(mol)){
-					List<Integer> matches = querytool.getMatchingAtoms().get(0);
-					fragment.addTailoringDomain(TailoringDomainEnums.PRENYLATION);
-										
-					//get the atoms that were matched
-					List<IAtom> matchedAtoms = new ArrayList<IAtom>();
-					for(Integer match : matches){
-						matchedAtoms.add(mol.getAtom(match));
-					}
-					
-					//add hydroxyl to the connected carbon to the group
-					for(IAtom atom : matchedAtoms){
-						for(IAtom connectedAtom : mol.getConnectedAtomsList(atom)){
-							if(!matchedAtoms.contains(connectedAtom)){ //Atom that is not in the list must be the one that had a hydroxyl before
-								Atom oxygen = new Atom("O");
-								oxygen.setAtomTypeName("O.sp3");
-								mol.addAtom(oxygen);
-								mol.addBond(
-										fragment.getMolecule().getAtomNumber(connectedAtom),
-										fragment.getMolecule().getAtomNumber(oxygen),
-										IBond.Order.SINGLE);
-							}
-						}
-					}
-					
-					//remove the matched atoms
-					for(IAtom atom : matchedAtoms){
-						mol.removeAtomAndConnectedElectronContainers(atom);
-					} // add hydroxyl
-				}
-			} catch (CDKException e) {
-				e.printStackTrace();
-			}
-		}
-	
-	}
-	private void processTetramicAcid() { // CC(=O)C1=CCNC1=O & CC(=O)C1CCNC1=O // check if dealing with epoxide first //C\C(O)=C1\CCNC1=O
-		IMolecule[] templates = new IMolecule[3]; 
-		try {
-			templates[0] = SmilesIO.readSmiles("CC(=O)C1=CCNC1=O");
-			templates[1] = SmilesIO.readSmiles("CC(=O)C1CCNC1=O"); 
-			templates[2] = SmilesIO.readSmiles("C\\C(O)=C1\\CCNC1=O");
-		} catch(Exception e) {
-			e.printStackTrace();
-		}
-		IBond[] templateBondToBreak = new IBond[]{
-				templates[0].getBond(templates[0].getAtom(3),templates[0].getAtom(4)),
-				templates[1].getBond(templates[1].getAtom(3),templates[1].getAtom(4)),
-				templates[2].getBond(templates[2].getAtom(3),templates[2].getAtom(4))
-		};
-		
-		Queue<Fragment> q = new LinkedList<Fragment>();
-		for (Fragment m : monomerFragments) {
-			q.add(m);
-		}
-		
-		// go through each fragment.
-		while (!q.isEmpty()) {
-			Fragment fragment = q.poll();
-			IMolecule mol = fragment.getMolecule();
-			List<IBond> templateBondMatches = new ArrayList<IBond>();
-			int templateIndex = 0; //template index to check
-			boolean match = false; //change to true if a match comes up in the next statement
-			while(!match && templates.length > templateIndex){
-				templateBondMatches = ChemicalUtilities.findMatchingBondsFromTemplate(templates[templateIndex], templateBondToBreak[templateIndex], mol);
-				if(templateBondMatches.size() == 0){
-					templateIndex ++;
-				}else{
-					match = true;
-				}
-			}
-			if(!match){ //if no matches breaks the loop
-				break;
-			}
-			for(IBond bond : templateBondMatches){
-				for(IAtom atom2 : mol.getConnectedAtomsList(bond.getAtom(0))){ // remove epoxide oxygen
-					if(atom2.getAtomicNumber() == 8){
-						mol.removeAtomAndConnectedElectronContainers(atom2);
-						break;
-					}
-				}
-				SmilesIO.drawMoleculeHighlightingBonds(mol, "tets", bond);
-				mol.removeBond(bond); //break bond that matched template
-				for(IAtom atom : bond.atoms()){
-					if(mol.getConnectedAtomsCount(atom) == 1){
-						Atom dub = new Atom("O");
-						dub.setAtomTypeName("O.sp2");
-						Atom single = new Atom("O");
-						single.setAtomTypeName("O.sp3");
-						mol.addAtom(dub);
-						mol.addBond(new Bond(atom, dub, IBond.Order.DOUBLE));
-						mol.addAtom(single);
-						mol.addBond(new Bond(atom, single, IBond.Order.SINGLE));
-						fragment.addAminoC(atom);
-					}
-				}
-			}
-		}
-	}
-	private void processDecalin() {
-		IMolecule[] templates = new IMolecule[3];
-		
-		try {
-			templates[0] = SmilesIO.readSmiles("CC1C=CC2CCCCC2C1C(O)=C");
-			templates[1] = SmilesIO.readSmiles("CC1C=CC2CCCCC2\\C1=C(/C)O");
-			templates[2] = SmilesIO.readSmiles("CC1C=CC2CCCCC2C1C(C)=O");
-		} catch(Exception e) {
-			e.printStackTrace();
-		}
-		IBond[] templateBondToBreak1 = new IBond[]{
-				templates[0].getBond(templates[0].getAtom(1),templates[0].getAtom(10)),
-				templates[1].getBond(templates[1].getAtom(1),templates[1].getAtom(10)),
-				templates[2].getBond(templates[2].getAtom(1),templates[2].getAtom(10))
-		};
-		
-		IBond[] templateBondToBreak2 = new IBond[]{
-				templates[0].getBond(templates[0].getAtom(4),templates[0].getAtom(9)),
-				templates[1].getBond(templates[1].getAtom(4),templates[1].getAtom(9)),
-				templates[2].getBond(templates[2].getAtom(4),templates[2].getAtom(9))
-		};
-		
-		Queue<Fragment> q = new LinkedList<Fragment>();
-		for (Fragment m : monomerFragments) {
-			q.add(m);
-		}
-		
-		// go through each fragment.
-		while (!q.isEmpty()) {
-			Fragment fragment = q.poll();
-			IMolecule mol = fragment.getMolecule();
-			List<IBond> templateBondMatches1 = new ArrayList<IBond>();
-			int templateIndex = 0; //template index to check
-			boolean match = false; //change to true if a match comes up in the next statement
-			while(!match && templates.length > templateIndex){
-				templateBondMatches1 = ChemicalUtilities.findMatchingBondsFromTemplate(templates[templateIndex], templateBondToBreak1[templateIndex], mol);
-				if(templateBondMatches1.size() == 0){
-					templateIndex ++;
-				}else{
-					match = true;
-				}
-			}
-			if(!match){ //if no matches breaks the loop
-				break;
-			}
-			List<IBond> templateBondMatches2 = ChemicalUtilities.findMatchingBondsFromTemplate(templates[templateIndex], templateBondToBreak2[templateIndex], mol);
-			for(IBond bond : templateBondMatches1){
-				mol.removeBond(bond);
-			}
-			for(IBond bond : templateBondMatches2){
-				mol.removeBond(bond);
-			}
-		}
-	}
-	private void processBenzoquinone() {
-		IMolecule benzoquinoneTemplate = null;
-		
-		try {
-			benzoquinoneTemplate = SmilesIO.readSmiles("CC1=C(O)C(=O)C(C)=C(O)C1=O");
-		} catch(Exception e) {
-			e.printStackTrace();
-		}
-		IBond templateBondToBreak1 = benzoquinoneTemplate.getBond(benzoquinoneTemplate.getAtom(1),benzoquinoneTemplate.getAtom(2));
-		
-		Queue<Fragment> q = new LinkedList<Fragment>();
-		for (Fragment m : monomerFragments) {
-			q.add(m);
-		}
-		
-		// go through each fragment.
-		while (!q.isEmpty()) {
-			Fragment fragment = q.poll();
-			IMolecule mol = fragment.getMolecule();
-			List<IBond> templateBondMatches = ChemicalUtilities.findMatchingBondsFromTemplate(benzoquinoneTemplate, templateBondToBreak1, mol);
-			for(IBond bond : templateBondMatches){
-				mol.removeBond(bond);
-				for(IAtom atom : bond.atoms()){
-					for(IAtom connectedAtom : mol.getConnectedAtomsList(atom)){ // add oxygen to carboyxlic carbon
-						if(connectedAtom.getAtomicNumber() == 8){
-							Atom oxygen = new Atom("O");
-							oxygen.setAtomTypeName("O.sp2");
-							mol.addAtom(oxygen);
-							mol.addBond(
-									fragment.getMolecule().getAtomNumber(atom),
-									fragment.getMolecule().getAtomNumber(oxygen),
-									IBond.Order.DOUBLE);
-							break;
-						}
-					}
-				}
-			}
-			if(!ConnectivityChecker.isConnected(fragment.getMolecule())){
-				IMoleculeSet splitFragments = ConnectivityChecker.partitionIntoMolecules(fragment.getMolecule());
-				int indexToReplace = monomerFragments.indexOf(fragment);
-				monomerFragments.remove(indexToReplace);
-				Fragment firstFrag = new Fragment(splitFragments.getMolecule(0));
-				monomerFragments.add(indexToReplace, firstFrag);
-				for(int i = 1; splitFragments.getMoleculeCount() > i; i++){
-					Fragment frag = new Fragment(splitFragments.getMolecule(i));
-					monomerFragments.add(indexToReplace + 1, frag);
-				}
-			}
-		}
-	}
-	private void processAminoDerivedTricyclicRing() { //Need to add an aditional breakdown here potentially
-		IMolecule template1 = null;
-		IMolecule template2 = null;
-		try {
-			template1 = SmilesIO.readSmiles("O=C1CN2C(=O)C3=C(C=CC=C3)N=C2CN1");
-			template2 = SmilesIO.readSmiles("O=C1CN2C(=O)C3=CC=CC=C3N=C2CN1"); //Two templates are use because aromaticity is not functioning properly for matching
-		} catch(Exception e) {
-			e.printStackTrace();
-		}
-		IBond templateBondToBreak1 = template1.getBond(template1.getAtom(12),template1.getAtom(13));
-		IBond templateBondToBreak2 = template2.getBond(template2.getAtom(12),template2.getAtom(13));
-		
-		Queue<Fragment> q = new LinkedList<Fragment>();
-		for (Fragment m : monomerFragments) {
-			q.add(m);
-		}
-		
-		// go through each fragment.
-		while (!q.isEmpty()) {
-			Fragment fragment = q.poll();
-			IMolecule mol = fragment.getMolecule();
-			List<IBond> templateBondMatches = ChemicalUtilities.findMatchingBondsFromTemplate(template1, templateBondToBreak1, mol);
-			if(templateBondMatches.size() == 0){
-				templateBondMatches = ChemicalUtilities.findMatchingBondsFromTemplate(template2, templateBondToBreak2, mol);
-			}
-			for(IBond bond : templateBondMatches){
-				mol.removeBond(bond);
-				for(IAtom atom : bond.atoms()){
-					if(atom.getAtomicNumber() == 6){
-						Atom oxygen = new Atom("O");
-						oxygen.setAtomTypeName("O.sp2");
-						mol.addAtom(oxygen);
-						mol.addBond(
-								fragment.getMolecule().getAtomNumber(atom),
-								fragment.getMolecule().getAtomNumber(oxygen),
-								IBond.Order.DOUBLE);
-						
-					}
-				}
-			}
-			if(!ConnectivityChecker.isConnected(fragment.getMolecule())){
-				IMoleculeSet splitFragments = ConnectivityChecker.partitionIntoMolecules(fragment.getMolecule());
-				int indexToReplace = monomerFragments.indexOf(fragment);
-				monomerFragments.remove(indexToReplace);
-				Fragment firstFrag = new Fragment(splitFragments.getMolecule(0));
-				monomerFragments.add(indexToReplace, firstFrag);
-				for(int i = 1; splitFragments.getMoleculeCount() > i; i++){
-					Fragment frag = new Fragment(splitFragments.getMolecule(i));
-					monomerFragments.add(indexToReplace + 1, frag);
-				}
-			}
-		}
-	}
-	private void process2Pyridone() {
-		IMolecule template = null;
-		try {
-			template = SmilesIO.readSmiles("CC1=C(O)C(=CNC1=O)C1=CC=C(O)C=C1");
-			template = SmilesIO.readSmiles(SmilesIO.generateSmiles(template));
-		} catch(Exception e) {
-			e.printStackTrace();
-		}
-		IBond templateBondToBreak = template.getBond(template.getAtom(12),template.getAtom(14));
-		IBond templateBondToRemoveCarbon = template.getBond(template.getAtom(2),template.getAtom(3));
-		
-		Queue<Fragment> q = new LinkedList<Fragment>();
-		for (Fragment m : monomerFragments) {
-			q.add(m);
-		}
-		
-		// go through each fragment.
-		while (!q.isEmpty()) {
-			Fragment fragment = q.poll();
-			IMolecule mol = fragment.getMolecule();
-			List<IBond> templateBondMatches = ChemicalUtilities.findMatchingBondsFromTemplate(template, templateBondToBreak, mol);
-			if(templateBondMatches.size() == 0){
-				break;
-			}
-			List<IBond> templateBondMatches2 = ChemicalUtilities.findMatchingBondsFromTemplate(template, templateBondToRemoveCarbon, mol);
-			for(IBond bond : templateBondMatches){
-				mol.removeBond(bond);
-				for(IAtom atom : bond.atoms()){
-					boolean carboxylicCarbon = false;
-					for(IAtom atom2 : mol.getConnectedAtomsList(atom)){
-						if(atom2.getAtomicNumber() == 6){
-							carboxylicCarbon = true;
-						}
-					}
-					if(carboxylicCarbon){
-						Atom oxygen = new Atom("O");
-						oxygen.setAtomTypeName("O.sp2");
-						mol.addAtom(oxygen);
-						mol.addBond(
-								fragment.getMolecule().getAtomNumber(atom),
-								fragment.getMolecule().getAtomNumber(oxygen),
-								IBond.Order.DOUBLE);
-						fragment.addAminoC(atom);
-					}
-				}
-			}
-			for(IBond bond : templateBondMatches2){ //Remove the carbon and reattach the nitrogen
-				IAtom carbonToRemove = null;
-				IAtom nitrogen = null;
-				IAtom carbon = null; //carbon to attach to nitrogen
-				for(IAtom atom : bond.atoms()){
-					if(atom.getAtomicNumber() == 6){
-						carbonToRemove = atom;
-					}else{
-						nitrogen = atom;
-					}
-				}
-				for(IAtom atom : mol.getConnectedAtomsList(carbonToRemove)){
-					if(atom.getAtomicNumber() == 6){
-						carbon = atom;
-						 break;
-					}
-				}
-				mol.removeAtomAndConnectedElectronContainers(carbonToRemove);
-				mol.addBond(
-						fragment.getMolecule().getAtomNumber(carbon),
-						fragment.getMolecule().getAtomNumber(nitrogen),
-						IBond.Order.SINGLE);
-				
-			}
-		}
-		
-	}
-	private void processDielsAlder() {
-		IMolecule dielsAlderTemplate1 = null;
-		IMolecule dielsAlderTemplate2 = null;
-		try {
-			dielsAlderTemplate1 = SmilesIO.readSmiles("O=C1NCC2CC=CCC12");
-			dielsAlderTemplate2 = SmilesIO.readSmiles("O=C1NCC2CC3OC3CC12");
-		} catch(Exception e) {
-			e.printStackTrace();
-		}
-		
-		//TODO clean these up into arrays
-		//no epoxide
-		IBond templateBondToBreak1a = dielsAlderTemplate1.getBond(dielsAlderTemplate1.getAtom(9),dielsAlderTemplate1.getAtom(4));
-		IBond templateBondToBreak1b = dielsAlderTemplate1.getBond(dielsAlderTemplate1.getAtom(4),dielsAlderTemplate1.getAtom(5));
-		IBond templateBondToBreak1c = dielsAlderTemplate1.getBond(dielsAlderTemplate1.getAtom(5),dielsAlderTemplate1.getAtom(6));
-		IBond templateBondToBreak1d = dielsAlderTemplate1.getBond(dielsAlderTemplate1.getAtom(6),dielsAlderTemplate1.getAtom(7));
-		IBond templateBondToBreak1e = dielsAlderTemplate1.getBond(dielsAlderTemplate1.getAtom(7),dielsAlderTemplate1.getAtom(8));
-		IBond templateBondToBreak1f = dielsAlderTemplate1.getBond(dielsAlderTemplate1.getAtom(8),dielsAlderTemplate1.getAtom(9));
-		
-		//epoxide
-		IBond templateBondToBreak2a = dielsAlderTemplate2.getBond(dielsAlderTemplate2.getAtom(10),dielsAlderTemplate2.getAtom(4));
-		IBond templateBondToBreak2b = dielsAlderTemplate2.getBond(dielsAlderTemplate2.getAtom(4),dielsAlderTemplate2.getAtom(5));
-		IBond templateBondToBreak2c = dielsAlderTemplate2.getBond(dielsAlderTemplate2.getAtom(5),dielsAlderTemplate2.getAtom(6));
-		IBond templateBondToBreak2d = dielsAlderTemplate2.getBond(dielsAlderTemplate2.getAtom(6),dielsAlderTemplate2.getAtom(8));
-		IBond templateBondToBreak2e = dielsAlderTemplate2.getBond(dielsAlderTemplate2.getAtom(8),dielsAlderTemplate2.getAtom(9));
-		IBond templateBondToBreak2f = dielsAlderTemplate2.getBond(dielsAlderTemplate2.getAtom(9),dielsAlderTemplate2.getAtom(10));
-		
-		Queue<Fragment> q = new LinkedList<Fragment>();
-		for (Fragment m : monomerFragments) {
-			q.add(m);
-		}
-		
-		// go through each fragment.
-		while (!q.isEmpty()) {
-			Fragment fragment = q.poll();
-			IMolecule mol = fragment.getMolecule();
-			List<IBond> templateBondMatches1 = ChemicalUtilities.findMatchingBondsFromTemplate(dielsAlderTemplate1, templateBondToBreak1a, mol);
-			List<IBond> templateBondMatches2 = null;
-			List<IBond> templateBondMatches3 = null;
-			List<IBond> templateBondMatches4 = null;
-			List<IBond> templateBondMatches5 = null;
-			List<IBond> templateBondMatches6 = null;
-			if(templateBondMatches1.size() == 0){
-				templateBondMatches1 = ChemicalUtilities.findMatchingBondsFromTemplate(dielsAlderTemplate2, templateBondToBreak2a, mol);
-				if(templateBondMatches1.size() == 0){
-					break;
-				}else{
-					templateBondMatches2 = ChemicalUtilities.findMatchingBondsFromTemplate(dielsAlderTemplate2, templateBondToBreak2b, mol);
-					templateBondMatches3 = ChemicalUtilities.findMatchingBondsFromTemplate(dielsAlderTemplate2, templateBondToBreak2c, mol);
-					templateBondMatches4 = ChemicalUtilities.findMatchingBondsFromTemplate(dielsAlderTemplate2, templateBondToBreak2d, mol);
-					templateBondMatches5 = ChemicalUtilities.findMatchingBondsFromTemplate(dielsAlderTemplate2, templateBondToBreak2e, mol);
-					templateBondMatches6 = ChemicalUtilities.findMatchingBondsFromTemplate(dielsAlderTemplate2, templateBondToBreak2f, mol);
-				}
-			}else{
-				templateBondMatches2 = ChemicalUtilities.findMatchingBondsFromTemplate(dielsAlderTemplate1, templateBondToBreak1b, mol);
-				templateBondMatches3 = ChemicalUtilities.findMatchingBondsFromTemplate(dielsAlderTemplate1, templateBondToBreak1c, mol);
-				templateBondMatches4 = ChemicalUtilities.findMatchingBondsFromTemplate(dielsAlderTemplate1, templateBondToBreak1d, mol);
-				templateBondMatches5 = ChemicalUtilities.findMatchingBondsFromTemplate(dielsAlderTemplate1, templateBondToBreak1e, mol);
-				templateBondMatches6 = ChemicalUtilities.findMatchingBondsFromTemplate(dielsAlderTemplate1, templateBondToBreak1f, mol);
-			}
-			for(IBond bond : templateBondMatches1){ //break
-				mol.removeBond(bond);
-			}
-			for(IBond bond : templateBondMatches2){ //break
-				mol.removeBond(bond);
-			}
-			for(IBond bond : templateBondMatches3){ //double
-				bond.setOrder(Order.DOUBLE);
-			}
-			for(IBond bond : templateBondMatches4){ //single, remove epoxide
-				bond.setOrder(Order.SINGLE);
-				for(IAtom atom2 : mol.getConnectedAtomsList(bond.getAtom(0))){ // remove epoxide oxygen
-					if(atom2.getAtomicNumber() == 8){
-						mol.removeAtomAndConnectedElectronContainers(atom2);
-						break;
-					}
-				}
-			}
-			for(IBond bond : templateBondMatches5){ //double
-				bond.setOrder(Order.DOUBLE);
-			}
-			for(IBond bond : templateBondMatches6){ //break
-				mol.removeBond(bond);
-			}
-			if(!ConnectivityChecker.isConnected(fragment.getMolecule())){
-				IMoleculeSet splitFragments = ConnectivityChecker.partitionIntoMolecules(fragment.getMolecule());
-				int indexToReplace = monomerFragments.indexOf(fragment);
-				monomerFragments.remove(indexToReplace);
-				Fragment firstFrag = new Fragment(splitFragments.getMolecule(0));
-				monomerFragments.add(indexToReplace, firstFrag);
-				for(int i = 1; splitFragments.getMoleculeCount() > i; i++){
-					Fragment frag = new Fragment(splitFragments.getMolecule(i));
-					monomerFragments.add(indexToReplace + 1, frag);
+			for(IAtom a : m.getLactamAtoms()){
+				if (m.getAtomContainer().contains(a)) {
+					m.addTailoringDomain(TailoringDomainEnums.LACTAM);
 				}
 			}
 		}
@@ -648,13 +208,78 @@ public class NRPModifier {
 		processPieriLikeSubstructures();
 		processAnthramycinLikeSubstructures();
 		breakHybridDiCystines();
+		processSpectinomycinLikedoubleGlycosidicBond();
+		processHygromycinLikeGlycosidicBond();
+		
+	}
+
+	private void processHygromycinLikeGlycosidicBond() { //CN[C@H]1C[C@@H](N)[C@H](O)[C@@H](O[C@@H]2O[C@H](CO)[C@H](O)[C@@H]3OC4(O[C@H]23)O[C@H]([C@@H](N)CO)[C@H](O)[C@@H](O)[C@H]4O)[C@@H]1O
+IAtomContainer tempalte = null;
+		
+		try {
+			tempalte = SmilesIO.readSmilesTemplates("COC1(C)OCCO1");
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+		IBond templateBondToBreak = tempalte.getBond(tempalte.getAtom(2),tempalte.getAtom(4));
+		
+		Queue<Fragment> q = new LinkedList<Fragment>();
+		for (Fragment m : monomerFragments) {
+			q.add(m);
+		}
+		
+		// go through each fragment.
+		while (!q.isEmpty()) {
+			Fragment fragment = q.poll();
+			IAtomContainer mol = fragment.getAtomContainer();
+			List<IBond> templateBondMatches = ChemicalUtilities.findMatchingBondsFromTemplate(tempalte, templateBondToBreak, mol);
+			for(IBond bond : templateBondMatches){
+				mol.removeBond(bond);
+				IAtomContainerSet molFrags = ConnectivityChecker.partitionIntoMolecules(mol);
+				if (molFrags.getAtomContainerCount() > 1){
+					mol.addBond(bond);
+					break;
+				}
+			}
+		}
+	}
+
+	private void processSpectinomycinLikedoubleGlycosidicBond() { //CN[C@@H]1[C@H](O)[C@H](NC)[C@H]2O[C@]3(O)[C@@H](O[C@H](C)CC3=O)O[C@@H]2[C@H]1O
+		IAtomContainer tempalte = null;
+		
+		try {
+			tempalte = SmilesIO.readSmilesTemplates("OC1COCCO1");
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+		IBond templateBondToBreak = tempalte.getBond(tempalte.getAtom(1),tempalte.getAtom(6));
+		
+		Queue<Fragment> q = new LinkedList<Fragment>();
+		for (Fragment m : monomerFragments) {
+			q.add(m);
+		}
+		
+		// go through each fragment.
+		while (!q.isEmpty()) {
+			Fragment fragment = q.poll();
+			IAtomContainer mol = fragment.getAtomContainer();
+			List<IBond> templateBondMatches = ChemicalUtilities.findMatchingBondsFromTemplate(tempalte, templateBondToBreak, mol);
+			for(IBond bond : templateBondMatches){
+				mol.removeBond(bond);
+				IAtomContainerSet molFrags = ConnectivityChecker.partitionIntoMolecules(mol);
+				if (molFrags.getAtomContainerCount() > 1){
+					mol.addBond(bond);
+					break;
+				}
+			}
+		}
 	}
 
 	private void processPeptideEpoxiKetones() {
-		IMolecule peptideEpoxiKetoneTemplate = null;
+		IAtomContainer peptideEpoxiKetoneTemplate = null;
 				
 		try {
-			peptideEpoxiKetoneTemplate = SmilesIO.readSmiles("CC1(CO1)C(=O)CN");
+			peptideEpoxiKetoneTemplate = SmilesIO.readSmilesTemplates("CC1(CO1)C(=O)CN");
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
@@ -668,7 +293,7 @@ public class NRPModifier {
 		// go through each fragment.
 		while (!q.isEmpty()) {
 			Fragment fragment = q.poll();
-			IMolecule mol = fragment.getMolecule();
+			IAtomContainer mol = fragment.getAtomContainer();
 			List<IBond> templateBondMatches = ChemicalUtilities.findMatchingBondsFromTemplate(peptideEpoxiKetoneTemplate, templateBondToBreak, mol);
 			for(IBond bond : templateBondMatches){
 				mol.removeBond(bond);
@@ -679,28 +304,27 @@ public class NRPModifier {
 						oxygen.setAtomTypeName("O.sp3");
 						mol.addAtom(oxygen);
 						mol.addBond(
-								fragment.getMolecule().getAtomNumber(atom),
-								fragment.getMolecule().getAtomNumber(oxygen),
+								fragment.getAtomContainer().getAtomNumber(atom),
+								fragment.getAtomContainer().getAtomNumber(oxygen),
 								IBond.Order.SINGLE);
 					}
 				}
 			}
 
-			IMoleculeSet molFrags = ConnectivityChecker.partitionIntoMolecules(mol);
+			IAtomContainerSet molFrags = ConnectivityChecker.partitionIntoMolecules(mol);
 			if (molFrags.getAtomContainerCount() > 1){
 				int indexToReplace = monomerFragments.indexOf(fragment);
 				monomerFragments.remove(indexToReplace);
-				IMolecule[] molPiece = new IMolecule[2];
+				IAtomContainer[] molPiece = new IAtomContainer[2];
 				try {
-					molPiece[0] = SmilesIO.readSmiles("CC1CO1");
-					molPiece[1] = SmilesIO.readSmiles("OCC1CO1");
+					molPiece[0] = SmilesIO.readSmilesTemplates("CC1CO1");
+					molPiece[1] = SmilesIO.readSmilesTemplates("OCC1CO1");
 				} catch(Exception e) {
 					e.printStackTrace();
 				}
 				 int addCount = 0;
-				for(int i = 0; molFrags.getAtomContainerCount() > i; i++){
-					IMolecule molFrag = molFrags.getMolecule(i);
-					Fragment fragmentToAdd = null;
+				for(Fragment fragmentToAdd : fragment.partitionIntoMonomerFragments()){
+					IAtomContainer molFrag = fragmentToAdd.getAtomContainer();
 					if(ChemicalUtilities.getTanimotoScore(molFrag, molPiece[0]) >= 0.8 || ChemicalUtilities.getTanimotoScore(molFrag, molPiece[0]) >= 0.8){
 						fragmentToAdd = new Fragment(molFrag);
 						fragmentToAdd.addTailoringDomain(TailoringDomainEnums.C_METHYLTRANSFERASE);
@@ -713,8 +337,6 @@ public class NRPModifier {
 						List<PKsubstrate> loadingUnits = new ArrayList<PKsubstrate>();
 						loadingUnits.add(PKsubstrate.MALONYL);
 						fragmentToAdd.setLoadingUnits(loadingUnits);
-					}else{
-						fragmentToAdd = new Fragment(molFrag);
 					}
 					monomerFragments.add(indexToReplace + addCount, fragmentToAdd);
 					addCount += 1;
@@ -725,10 +347,10 @@ public class NRPModifier {
 
 	private void processMonobactams() {
 		
-		IMolecule monobactamTemplate = null;
+		IAtomContainer monobactamTemplate = null;
 		
 		try {
-			monobactamTemplate = SmilesIO.readSmiles("O=C1CCN1");
+			monobactamTemplate = SmilesIO.readSmilesTemplates("O=C1CCN1");
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
@@ -743,7 +365,7 @@ public class NRPModifier {
 		// go through each fragment.
 		while (!q.isEmpty()) {
 			Fragment fragment = q.poll();
-			IMolecule mol = fragment.getMolecule();
+			IAtomContainer mol = fragment.getAtomContainer();
 			List<IBond> templateBondMatches = ChemicalUtilities.findMatchingBondsFromTemplate(monobactamTemplate, templateBondToBreak, mol);
 			List<IBond> templateBondMatchesSulfate = ChemicalUtilities.findMatchingBondsFromTemplate(monobactamTemplate, templateBondToBreakSulfate, mol);
 			if(templateBondMatches.size() == 0 && templateBondMatchesSulfate.size() == 0){
@@ -770,8 +392,8 @@ public class NRPModifier {
 							oxygen.setAtomTypeName("O.sp3");
 							mol.addAtom(oxygen);
 							mol.addBond(
-									fragment.getMolecule().getAtomNumber(atom),
-									fragment.getMolecule().getAtomNumber(oxygen),
+									fragment.getAtomContainer().getAtomNumber(atom),
+									fragment.getAtomContainer().getAtomNumber(oxygen),
 									IBond.Order.SINGLE);
 							fragment.addAminoC(atom);
 						}else {
@@ -789,8 +411,8 @@ public class NRPModifier {
 						oxygen.setAtomTypeName("O.sp3");
 						mol.addAtom(oxygen);
 						mol.addBond(
-								fragment.getMolecule().getAtomNumber(atom),
-								fragment.getMolecule().getAtomNumber(oxygen),
+								fragment.getAtomContainer().getAtomNumber(atom),
+								fragment.getAtomContainer().getAtomNumber(oxygen),
 								IBond.Order.SINGLE);
 					}
 				}
@@ -809,7 +431,7 @@ public class NRPModifier {
 		// go through each fragment.
 		while (!q.isEmpty()) {
 			Fragment fragment = q.poll();
-			IMolecule mol = fragment.getMolecule();
+			IAtomContainer mol = fragment.getAtomContainer();
 			List<IAtom> cyclicAtoms = ChemicalUtilities.getAtomsInRings(mol);
 			List<IAtom> linearEtherOxygens = new ArrayList<IAtom>(); 
 			for(IAtom oxiCandidate : mol.atoms()){
@@ -828,7 +450,7 @@ public class NRPModifier {
 						properEther = false; 
 						break; //Stop checking the atoms
 					}
-					if(connectedC.getAtomicNumber() != 6 //Must be connected to two carbonsw
+					if(connectedC.getAtomicNumber() != 6 //Must be connected to two carbons
 					 || mol.getConnectedAtomsCount(connectedC) < 2){
 						properEther = false; //Carbons must not be terminal
 						break; //Stop checking the atoms
@@ -847,31 +469,29 @@ public class NRPModifier {
 					oxygen.setAtomTypeName("O.sp3");
 					mol.addAtom(oxygen);
 					mol.addBond(
-							fragment.getMolecule().getAtomNumber(connectedC),
-							fragment.getMolecule().getAtomNumber(oxygen),
+							fragment.getAtomContainer().getAtomNumber(connectedC),
+							fragment.getAtomContainer().getAtomNumber(oxygen),
 							IBond.Order.SINGLE);
 				}
 			}
-			if(!ConnectivityChecker.isConnected(fragment.getMolecule())){
-				IMoleculeSet splitFragments = ConnectivityChecker.partitionIntoMolecules(fragment.getMolecule());
-				int indexToReplace = monomerFragments.indexOf(fragment);
-				monomerFragments.remove(indexToReplace);
-				Fragment firstFrag = new Fragment(splitFragments.getMolecule(0));
-				monomerFragments.add(indexToReplace, firstFrag);
-				for(int i = 1; splitFragments.getMoleculeCount() > i; i++){
-					Fragment frag = new Fragment(splitFragments.getMolecule(i));
-					monomerFragments.add(indexToReplace + 1, frag);
+			//set new fragments if not connected
+			IAtomContainerSet fragments = ConnectivityChecker
+					.partitionIntoMolecules(mol);
+			if (fragments.getAtomContainerCount() > 1) { //add bridge tailor
+				monomerFragments.remove(fragment);
+				for (Fragment newFragment : fragment.partitionIntoMonomerFragments()) {
+					monomerFragments.add(newFragment);
 				}
 			}
 		}
 	}
 
 	private void breakHybridDiCystines() {
-		IMolecule template = null;
-		try {template = SmilesIO.readSmiles("CC1=NC(=CS1)C1=NC(C)=CS1");} catch (Exception e) {}
+		IAtomContainer template = null;
+		try {template = SmilesIO.readSmilesTemplates("CC1=NC(=CS1)C1=NC(C)=CS1");} catch (Exception e) {}
 		IBond templateToBreakBond = template.getBond(template.getAtom(8),template.getAtom(9));
-		IMolecule template2 = null;
-		try {template2 = SmilesIO.readSmiles("CC1CSC(N1)C1CSC(C)=N1");} catch (Exception e) {}
+		IAtomContainer template2 = null;
+		try {template2 = SmilesIO.readSmilesTemplates("CC1CSC(N1)C1CSC(C)=N1");} catch (Exception e) {}
 		IBond templateToBreakBond2 = template2.getBond(template2.getAtom(1),template2.getAtom(0));
 		
 		Queue<Fragment> q = new LinkedList<Fragment>();
@@ -883,40 +503,54 @@ public class NRPModifier {
 		while (!q.isEmpty()) {
 
 			Fragment fragment = q.poll();
-			List<IBond> templateDoubleBondMatches = ChemicalUtilities.findMatchingBondsFromTemplate(template, templateToBreakBond, fragment.getMolecule());
-			templateDoubleBondMatches.addAll(ChemicalUtilities.findMatchingBondsFromTemplate(template2, templateToBreakBond2, fragment.getMolecule()));
+			List<IBond> templateDoubleBondMatches = ChemicalUtilities.findMatchingBondsFromTemplate(template, templateToBreakBond, fragment.getAtomContainer());
+			templateDoubleBondMatches.addAll(ChemicalUtilities.findMatchingBondsFromTemplate(template2, templateToBreakBond2, fragment.getAtomContainer()));
 			if(templateDoubleBondMatches.size() < 1) continue;
-			IMolecule mol = fragment.getMolecule();
+			IAtomContainer mol = fragment.getAtomContainer();
 			for(IBond bond : templateDoubleBondMatches){
 				mol.removeBond(bond);
 				for(IAtom atom : bond.atoms()){
-					IMolecule carboxylicAcid = null;
-					try {carboxylicAcid = SmilesIO.readSmiles("C(O)=O");} catch (Exception e) {}
+					IAtomContainer carboxylicAcid = null;
+					try {carboxylicAcid = SmilesIO.readSmilesTemplates("C(O)=O");} catch (Exception e) {}
 					IAtom carboxilicC = carboxylicAcid.getAtom(0);
 					mol.add(carboxylicAcid);
 					mol.addBond(
 							mol.getAtomNumber(atom),
 							mol.getAtomNumber(carboxilicC),
 							IBond.Order.SINGLE);
+					try {
+						AtomContainerManipulator.percieveAtomTypesAndConfigureUnsetProperties(mol);
+					} catch (CDKException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
 				}
 			}
-			if(!ConnectivityChecker.isConnected(fragment.getMolecule())){
-				IMoleculeSet splitFragments = ConnectivityChecker.partitionIntoMolecules(fragment.getMolecule());
-				int indexToReplace = monomerFragments.indexOf(fragment);
-				// there must be two fragments
-				Fragment firstFrag = new Fragment(splitFragments.getMolecule(0));
-				Fragment secondFrag = new Fragment(splitFragments.getMolecule(1));
-				monomerFragments.remove(indexToReplace);
-				monomerFragments.add(indexToReplace, firstFrag);
-				monomerFragments.add(indexToReplace + 1, secondFrag);
+			//set new fragments if not connected
+			IAtomContainerSet fragments = ConnectivityChecker
+					.partitionIntoMolecules(mol);
+			if (fragments.getAtomContainerCount() > 1) { //add bridge tailor
+				monomerFragments.remove(fragment);
+				for (Fragment newFragment : fragment.partitionIntoMonomerFragments()) {
+					monomerFragments.add(newFragment);
+				}
 			}
 		}
 	}
 	
 	private void processAnthramycinLikeSubstructures() {
-		IMolecule template = null;
-		try {template = SmilesIO.readSmiles("O=C1NCC=NC=C1");} catch (Exception e) {}
-		IBond templateToBreakBond = template.getBond(template.getAtom(4),template.getAtom(5));
+		IAtomContainer[] templates = new IAtomContainer[2];
+		try {
+			templates[0] = SmilesIO.readSmilesTemplates("O=C1NCC=NC=C1");
+			templates[1] = SmilesIO.readSmilesTemplates("O=C1CCN=CCN1");
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+		IBond[] templatesBond = new IBond[]{
+				templates[0].getBond(templates[0].getAtom(4),templates[0].getAtom(5)),
+				templates[1].getBond(templates[1].getAtom(4),templates[1].getAtom(5))
+		};
+
 		Queue<Fragment> q = new LinkedList<Fragment>();
 		for (Fragment m : monomerFragments) {
 			q.add(m);
@@ -925,11 +559,23 @@ public class NRPModifier {
 		// go through each fragment.
 		while (!q.isEmpty()) {
 			Fragment fragment = q.poll();
-			IMolecule mol = fragment.getMolecule();
-			
-			List<IBond> templateDoubleBondMatches = ChemicalUtilities.findMatchingBondsFromTemplate(template, templateToBreakBond, mol);
-			
-			for(IBond bond : templateDoubleBondMatches){
+			IAtomContainer mol = fragment.getAtomContainer();
+			List<IBond> templateBondMatches = new ArrayList<IBond>();
+			int templateIndex = 0; //template index to check
+			boolean match = false; //change to true if a match comes up in the next statement
+			while(!match && templates.length > templateIndex){
+				templateBondMatches = ChemicalUtilities.findMatchingBondsFromTemplate(templates[templateIndex], templatesBond[templateIndex], mol);
+				if(templateBondMatches.size() == 0){
+					templateIndex ++;
+				}else{
+					match = true;
+				}
+			}
+			if(!match){ //if no matches breaks the loop
+				break;
+			}
+
+			for(IBond bond : templateBondMatches){
 				bond.setOrder(Order.SINGLE);
 				IAtom carbon = null;
 				if(bond.getAtom(0).getAtomicNumber() == 6){
@@ -946,8 +592,8 @@ public class NRPModifier {
 	}
 
 	private void processPieriLikeSubstructures() {
-		IMolecule template = null;
-		try {template = SmilesIO.readSmiles("CC1=C(C)C(=O)C(O)=C(O)N1");} catch (Exception e) {}
+		IAtomContainer template = null;
+		try {template = SmilesIO.readSmilesTemplates("CC1=C(C)C(=O)C(O)=C(O)N1");} catch (Exception e) {}
 		IBond templateToBreakBond = template.getBond(template.getAtom(0),template.getAtom(1));
 		Queue<Fragment> q = new LinkedList<Fragment>();
 		for (Fragment m : monomerFragments) {
@@ -958,8 +604,8 @@ public class NRPModifier {
 		while (!q.isEmpty()) {
 
 			Fragment fragment = q.poll();
-			IMolecule molClone = null;
-			try {molClone = fragment.getMolecule().clone();}catch (CloneNotSupportedException e) {}
+			IAtomContainer molClone = null;
+			try {molClone = fragment.getAtomContainer().clone();}catch (CloneNotSupportedException e) {}
 			List<IBond> templateDoubleBondMatches = ChemicalUtilities.findMatchingBondsFromTemplate(template, templateToBreakBond, molClone);
 			
 			if(templateDoubleBondMatches.size() < 1) continue;
@@ -968,16 +614,16 @@ public class NRPModifier {
 				molClone.removeBond(bond);
 				
 				if(!ConnectivityChecker.isConnected(molClone)){
-					IMoleculeSet splitFragments = ConnectivityChecker.partitionIntoMolecules(molClone);
-					if(splitFragments.getMoleculeCount() == 2){
-						if(splitFragments.getMolecule(0).getAtomCount() > splitFragments.getMolecule(1).getAtomCount()){
+					IAtomContainerSet splitFragments = ConnectivityChecker.partitionIntoMolecules(molClone);
+					if(splitFragments.getAtomContainerCount() == 2){
+						if(splitFragments.getAtomContainer(0).getAtomCount() > splitFragments.getAtomContainer(1).getAtomCount()){
 							molClone.addBond(bond);
 							continue;
 						}
-						if(splitFragments.getMolecule(0).getAtomCount() > splitFragments.getMolecule(1).getAtomCount()){
-							molClone = splitFragments.getMolecule(0);
+						if(splitFragments.getAtomContainer(0).getAtomCount() > splitFragments.getAtomContainer(1).getAtomCount()){
+							molClone = splitFragments.getAtomContainer(0);
 						}else{
-							molClone = splitFragments.getMolecule(1);
+							molClone = splitFragments.getAtomContainer(1);
 						}
 						IAtom terminalCarbon = null;
 						if(molClone.contains(bond.getAtom(0))){
@@ -985,15 +631,15 @@ public class NRPModifier {
 						}else if(molClone.contains(bond.getAtom(1))){
 							terminalCarbon = bond.getAtom(1);
 						}else{
-							System.out.println("Something went wrong with method processPieriLikeSubstructures -- This should never happen, this method was ignored for the final breakdown of this compound");
+							System.err.println("Something went wrong with method processPieriLikeSubstructures -- This should never happen, this method was ignored for the final breakdown of this compound");
 							break;
 						}
-						IMolecule pieceToAdd = null;
-						try {pieceToAdd = SmilesIO.readSmiles("CC(C=O)C(=O)CC(O)=O");} catch (Exception e) {}
+						IAtomContainer pieceToAdd = null;
+						try {pieceToAdd = SmilesIO.readSmilesTemplates("CC(C=O)C(=O)CC(O)=O");} catch (Exception e) {}
 						IAtom atomToConnect = pieceToAdd.getAtom(2);
 						molClone.add(pieceToAdd);
 						molClone.addBond(molClone.getAtomNumber(terminalCarbon), molClone.getAtomNumber(atomToConnect), IBond.Order.SINGLE);
-						fragment.setMolecule(molClone);
+						fragment.setAtomContainer(molClone);
 					}else{
 						molClone.addBond(bond);
 						continue;
@@ -1010,8 +656,8 @@ public class NRPModifier {
 
 	private void processKendoLikeSubstructures() {
 
-		IMolecule template = null;
-		try {template = SmilesIO.readSmiles("CC1=C2OC(C)(O)C=C2C(C)=C(O)C1=O");} catch (Exception e) {}
+		IAtomContainer template = null;
+		try {template = SmilesIO.readSmilesTemplates("CC1=C2OC(C)(O)C=C2C(C)=C(O)C1=O");} catch (Exception e) {}
 		IBond templateDoubleBond = template.getBond(template.getAtom(7),template.getAtom(8));
 		IBond templateEtherBond = template.getBond(template.getAtom(3),template.getAtom(4));
 		IBond templateHydroxylBond = template.getBond(template.getAtom(4),template.getAtom(6));
@@ -1024,45 +670,45 @@ public class NRPModifier {
 		while (!q.isEmpty()) {
 
 			Fragment fragment = q.poll();
-			List<IBond> templateDoubleBondMatches = ChemicalUtilities.findMatchingBondsFromTemplate(template, templateDoubleBond, fragment.getMolecule());
+			List<IBond> templateDoubleBondMatches = ChemicalUtilities.findMatchingBondsFromTemplate(template, templateDoubleBond, fragment.getAtomContainer());
 			
 			if(templateDoubleBondMatches.size() < 1) continue;
 			
-			List<IBond> templateEtherBondMatches = ChemicalUtilities.findMatchingBondsFromTemplate(template, templateEtherBond, fragment.getMolecule());
-			List<IBond> templateHydroxylBondMatches = ChemicalUtilities.findMatchingBondsFromTemplate(template, templateHydroxylBond, fragment.getMolecule());
+			List<IBond> templateEtherBondMatches = ChemicalUtilities.findMatchingBondsFromTemplate(template, templateEtherBond, fragment.getAtomContainer());
+			List<IBond> templateHydroxylBondMatches = ChemicalUtilities.findMatchingBondsFromTemplate(template, templateHydroxylBond, fragment.getAtomContainer());
 			
 			for(IBond bond : templateDoubleBondMatches){
-				fragment.getMolecule().removeBond(bond);
+				fragment.getAtomContainer().removeBond(bond);
 				for(IAtom atom : bond.atoms()){
-					if(fragment.getMolecule().getConnectedAtomsCount(atom) == 2){ //Add ketone to carbon in the starter unit
+					if(fragment.getAtomContainer().getConnectedAtomsCount(atom) == 2){ //Add ketone to carbon in the starter unit
 						Atom ketone = new Atom("O");
 						ketone.setAtomTypeName("O.sp2");
-						fragment.getMolecule().addAtom(ketone);
-						fragment.getMolecule().addBond(
-								fragment.getMolecule().getAtomNumber(ketone),
-								fragment.getMolecule().getAtomNumber(atom),
+						fragment.getAtomContainer().addAtom(ketone);
+						fragment.getAtomContainer().addBond(
+								fragment.getAtomContainer().getAtomNumber(ketone),
+								fragment.getAtomContainer().getAtomNumber(atom),
 								IBond.Order.DOUBLE);
-					}else if(fragment.getMolecule().getConnectedAtomsCount(atom) == 1){ //Add carboxcylic acid to carbon not in starter unit
-						IMolecule carboxylicAcid = null;
-						try {carboxylicAcid = SmilesIO.readSmiles("C(O)=O");} catch (Exception e) {}
+					}else if(fragment.getAtomContainer().getConnectedAtomsCount(atom) == 1){ //Add carboxcylic acid to carbon not in starter unit
+						IAtomContainer carboxylicAcid = null;
+						try {carboxylicAcid = SmilesIO.readSmilesTemplates("C(O)=O");} catch (Exception e) {}
 						IAtom carboxilicC = carboxylicAcid.getAtom(0);
-						fragment.getMolecule().add(carboxylicAcid);
-						fragment.getMolecule().addBond(
-								fragment.getMolecule().getAtomNumber(atom),
-								fragment.getMolecule().getAtomNumber(carboxilicC),
+						fragment.getAtomContainer().add(carboxylicAcid);
+						fragment.getAtomContainer().addBond(
+								fragment.getAtomContainer().getAtomNumber(atom),
+								fragment.getAtomContainer().getAtomNumber(carboxilicC),
 								IBond.Order.SINGLE);
 						
 					}else{
-						System.out.println("Something went wrong with method processKendoLikeSubstructures (Double bond match doesn't have appropriate carbons): reattached broken bond"); //TODO make exception
-						fragment.getMolecule().addBond(bond);
+						System.err.println("Something went wrong with method processKendoLikeSubstructures (Double bond match doesn't have appropriate carbons): reattached broken bond"); //TODO make exception
+						fragment.getAtomContainer().addBond(bond);
 					}				
 				}		
 			}
 			for(IBond bond : templateEtherBondMatches){
-				fragment.getMolecule().removeBond(bond);
-				if(!ConnectivityChecker.isConnected(fragment.getMolecule())){
-					fragment.getMolecule().addBond(bond);
-					System.out.println("Something went wrong with method processKendoLikeSubstructures (Breaking ether makes molecule not connected): reattached broken bond");
+				fragment.getAtomContainer().removeBond(bond);
+				if(!ConnectivityChecker.isConnected(fragment.getAtomContainer())){
+					fragment.getAtomContainer().addBond(bond);
+					System.err.println("Something went wrong with method processKendoLikeSubstructures (Breaking ether makes AtomContainer not connected): reattached broken bond");
 				}
 			}
 			for(IBond bond : templateHydroxylBondMatches){
@@ -1082,13 +728,13 @@ public class NRPModifier {
 		while (!q.isEmpty()) {
 			Fragment fragment = q.poll();
 
-			for (int j = 0; j < fragment.getMolecule().getAtomCount(); j++) {
-				if (!(fragment.getMolecule().getAtom(j).getAtomTypeName()
+			for (int j = 0; j < fragment.getAtomContainer().getAtomCount(); j++) {
+				if (!(fragment.getAtomContainer().getAtom(j).getAtomTypeName()
 						.equals("N.sp2"))) {
 					continue;
 				}
-				IAtom imineN = fragment.getMolecule().getAtom(j);
-				List<Set<IAtom>> rings = ChemicalUtilities.getSmallestRings(fragment.getMolecule());
+				IAtom imineN = fragment.getAtomContainer().getAtom(j);
+				List<Set<IAtom>> rings = ChemicalUtilities.getSmallestRings(fragment.getAtomContainer());
 				boolean inSmallRing = false;
 				for(Set<IAtom> ringAtoms : rings){
 					if(ringAtoms.contains(imineN)){
@@ -1099,13 +745,13 @@ public class NRPModifier {
 				if(inSmallRing) continue;
 				
 				IAtom imineC = null;
-				for (IAtom c : fragment.getMolecule().getConnectedAtomsList(imineN)) {
+				for (IAtom c : fragment.getAtomContainer().getConnectedAtomsList(imineN)) {
 					if (c.getAtomTypeName().equals("C.sp2")) {
 
-						if (fragment.getMolecule()
+						if (fragment.getAtomContainer()
 										.getBond(imineN, c)
 										.getOrder() == IBond.Order.DOUBLE
-										&& fragment.getMolecule().getConnectedAtomsList(c).size() == 2){
+										&& fragment.getAtomContainer().getConnectedAtomsList(c).size() == 2){
 							imineC = c;
 							
 						}
@@ -1114,26 +760,26 @@ public class NRPModifier {
 				if(imineC == null) continue;
 				// Then check if breaking the imineN and imineC leaves
 				// one piece.
-				IBond removedBond = fragment.getMolecule().removeBond(
+				IBond removedBond = fragment.getAtomContainer().removeBond(
 						imineN, imineC);
 
-				if (ConnectivityChecker.isConnected(fragment.getMolecule())) {
+				if (ConnectivityChecker.isConnected(fragment.getAtomContainer())) {
 					//Do the removal of double bond and create single
-					fragment.getMolecule().addBond(
-							fragment.getMolecule().getAtomNumber(imineN),
-							fragment.getMolecule().getAtomNumber(imineC),
+					fragment.getAtomContainer().addBond(
+							fragment.getAtomContainer().getAtomNumber(imineN),
+							fragment.getAtomContainer().getAtomNumber(imineC),
 							IBond.Order.SINGLE);
 					Atom ketone = new Atom("O");
 					ketone.setAtomTypeName("O.sp2");
-					fragment.getMolecule().addAtom(ketone);
-					fragment.getMolecule().addBond(
-							fragment.getMolecule().getAtomNumber(ketone),
-							fragment.getMolecule().getAtomNumber(imineC),
+					fragment.getAtomContainer().addAtom(ketone);
+					fragment.getAtomContainer().addBond(
+							fragment.getAtomContainer().getAtomNumber(ketone),
+							fragment.getAtomContainer().getAtomNumber(imineC),
 							IBond.Order.DOUBLE);
 					
 				}else{
 					//re-add the original bond
-					fragment.getMolecule().addBond(removedBond);
+					fragment.getAtomContainer().addBond(removedBond);
 				}
 			}
 		}
@@ -1153,89 +799,88 @@ public class NRPModifier {
 
 		int numStandardPeptideBonds = 0;
 		int numNonStandardPeptideBonds = 0;
-		ArrayList<IBond> peptideBonds = new ArrayList<IBond>();
+		List<IBond> peptideBonds = new ArrayList<IBond>();
 
 		List<Set<IAtom>> smallRings = new ArrayList<Set<IAtom>>();
 		List<IAtom> atomsInRings = new ArrayList<IAtom>();
 		
+		// Prepare peptide template 1 (amino acids with C terminus) and
+					// peptide template 2 (amino acids with a nitrogen attached to C
+					// terminus)
+					IAtomContainer[] peptideTemplates = new IAtomContainer[5];
+					IBond[] peptideTemplateBonds = new IBond[5];
+					try {
+						peptideTemplates[0] = SmilesIO.readSmilesTemplates("CCNC(C)=O");
+						peptideTemplates[1] = SmilesIO.readSmilesTemplates("CC(=O)NC=C");
+						peptideTemplates[2] = SmilesIO.readSmilesTemplates("CC\\N=C(/C)O");
+						peptideTemplates[3] = SmilesIO.readSmilesTemplates("CCNC(C)OC");
+						peptideTemplates[4] = SmilesIO.readSmilesTemplates("C\\C(O)=N/C=C");
+						// peptideTemplates[5] = SmilesIO.readSmiles("CC(=O)NC=C");
+						// peptideTemplates.add(SmilesIO.readSmiles("CC(=O)NCC=O"));
+						// peptideTemplates.add(SmilesIO.readSmiles("CC(O)NCC=O"));
+						// peptideTemplates.add(SmilesIO.readSmiles("CC(=O)NCCO"));
+						// peptideTemplates.add(SmilesIO.readSmiles("CC(O)NCCO"));
+						// peptideTemplates.add(SmilesIO.readSmiles("C\\C(O)=N\\CCO"));
+						// peptideTemplates.add(SmilesIO.readSmiles("C\\C(O)=N\\CC=O"));
+					} catch (Exception e) {
+						e.printStackTrace();
+					}
+					
+					// Find the template bond
+					for (int i = 0; i < peptideTemplates.length; i++) {
+						IAtomContainer peptideTemplate = peptideTemplates[i];
+						for (int j = 0; j < peptideTemplate.getBondCount(); j++) {
+							if (peptideTemplate.getBond(j).getAtom(0).getAtomicNumber() == 6
+									&& peptideTemplate.getBond(j).getAtom(1)
+											.getAtomicNumber() == 7
+									|| peptideTemplate.getBond(j).getAtom(0)
+											.getAtomicNumber() == 7
+									&& peptideTemplate.getBond(j).getAtom(1)
+											.getAtomicNumber() == 6) {
+								IAtom currentCarbon = null;
+								IAtom currentNitrogen = null;
+								if (peptideTemplate.getBond(j).getAtom(0)
+										.getAtomicNumber() == 6) {
+									currentCarbon = peptideTemplate.getBond(j).getAtom(
+											0);
+									currentNitrogen = peptideTemplate.getBond(j)
+											.getAtom(1);
+								} else {
+									currentCarbon = peptideTemplate.getBond(j).getAtom(
+											1);
+									currentNitrogen = peptideTemplate.getBond(j)
+											.getAtom(0);
+								}
+								boolean carbonNextToOxygen = false;
+								for (IAtom a : peptideTemplate
+										.getConnectedAtomsList(currentCarbon)) {
+									if (a.getAtomicNumber() == 8) {
+										carbonNextToOxygen = true;
+									}
+								}
+								if (!carbonNextToOxygen) {
+									continue;
+								}
+								peptideTemplateBonds[i] = (peptideTemplate.getBond(j));
+							}
+						}
+					}
+		
 		for (Fragment frag : monomerFragments) {
-			IMolecule m = frag.getMolecule();
-			
+			IAtomContainer m = frag.getAtomContainer();
 			// Keep track of rings with six or fewer atoms. If the C-N or C=N bond participates in this ring, break it but do not
 			// change the connectivity annotation
-			smallRings.addAll(ChemicalUtilities.getSmallestRings(frag.getMolecule()));
+			smallRings.addAll(ChemicalUtilities.getSmallestRings(frag.getAtomContainer()));
 			
 			// Keep track of atoms in rings of any size
 			atomsInRings.addAll(ChemicalUtilities.getAtomsInRings(m));
 			
-			// Prepare peptide template 1 (amino acids with C terminus) and
-			// peptide template 2 (amino acids with a nitrogen attached to C
-			// terminus)
-			IMolecule[] peptideTemplates = new IMolecule[5];
-			IBond[] peptideTemplateBonds = new IBond[5];
-			try {
-				peptideTemplates[0] = SmilesIO.readSmiles("CCNC(C)=O");
-				peptideTemplates[1] = SmilesIO.readSmiles("CC(=O)NC=C");
-				peptideTemplates[2] = SmilesIO.readSmiles("CC\\N=C(/C)O");
-				peptideTemplates[3] = SmilesIO.readSmiles("CCNC(C)OC");
-				peptideTemplates[4] = SmilesIO.readSmiles("C\\C(O)=N/C=C");
-				//peptideTemplates[5] = SmilesIO.readSmiles("CC(=O)NC=C");
-				// peptideTemplates.add(SmilesIO.readSmiles("CC(=O)NCC=O"));
-				// peptideTemplates.add(SmilesIO.readSmiles("CC(O)NCC=O"));
-				// peptideTemplates.add(SmilesIO.readSmiles("CC(=O)NCCO"));
-				// peptideTemplates.add(SmilesIO.readSmiles("CC(O)NCCO"));
-				// peptideTemplates.add(SmilesIO.readSmiles("C\\C(O)=N\\CCO"));
-				// peptideTemplates.add(SmilesIO.readSmiles("C\\C(O)=N\\CC=O"));
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-			
-			// Find the template bond
-			for (int i = 0; i < peptideTemplates.length; i++) {
-				IMolecule peptideTemplate = peptideTemplates[i];
-				for (int j = 0; j < peptideTemplate.getBondCount(); j++) {
-					if (peptideTemplate.getBond(j).getAtom(0).getAtomicNumber() == 6
-							&& peptideTemplate.getBond(j).getAtom(1)
-									.getAtomicNumber() == 7
-							|| peptideTemplate.getBond(j).getAtom(0)
-									.getAtomicNumber() == 7
-							&& peptideTemplate.getBond(j).getAtom(1)
-									.getAtomicNumber() == 6) {
-						IAtom currentCarbon = null;
-						IAtom currentNitrogen = null;
-						if (peptideTemplate.getBond(j).getAtom(0)
-								.getAtomicNumber() == 6) {
-							currentCarbon = peptideTemplate.getBond(j).getAtom(
-									0);
-							currentNitrogen = peptideTemplate.getBond(j)
-									.getAtom(1);
-						} else {
-							currentCarbon = peptideTemplate.getBond(j).getAtom(
-									1);
-							currentNitrogen = peptideTemplate.getBond(j)
-									.getAtom(0);
-						}
-						boolean carbonNextToOxygen = false;
-						for (IAtom a : peptideTemplate
-								.getConnectedAtomsList(currentCarbon)) {
-							if (a.getAtomicNumber() == 8) {
-								carbonNextToOxygen = true;
-							}
-						}
-						if (!carbonNextToOxygen) {
-							continue;
-						}
-						peptideTemplateBonds[i] = (peptideTemplate.getBond(j));
-					}
-				}
-			}
-			
 			for (int x = 0; x < peptideTemplates.length; x++) {
-				IMolecule peptideTemplate = peptideTemplates[x];
+				IAtomContainer peptideTemplate = peptideTemplates[x];
 				IBond peptideTemplateBond = peptideTemplateBonds[x];
 				List<List<RMap>> templateMatchMap = null;
 				try {
-					templateMatchMap = UniversalIsomorphismTester
+					templateMatchMap = uit
 							.getSubgraphMaps(m, peptideTemplate);
 				} catch (CDKException e) {
 					e.printStackTrace();
@@ -1243,30 +888,30 @@ public class NRPModifier {
 				for (int i = 0; i < templateMatchMap.size(); i++) {
 					// None of the carbons attached to another carbon can be
 					// terminal.
-					boolean foundWrongTerminalCarbon = false;
-					for (int j = 0; j < templateMatchMap.get(i).size(); j++) {
-						IBond currentTemplateMatchBond = peptideTemplate
-								.getBond(templateMatchMap.get(i).get(j)
-										.getId2());
-						for (int k = 0; k < 2; k++) {
-							// For each bond in the molecule structure
-							IAtom a = m.getBond(
-									templateMatchMap.get(i).get(j).getId1())
-									.getAtom(k);
-							if (m.getConnectedAtomsCount(a) == 1
-									&& a.getAtomicNumber() == 6) {
-								for (IAtom connectedAtom : m
-										.getConnectedAtomsList(a)) {
-									if (connectedAtom.getAtomicNumber() == 6) {
-										foundWrongTerminalCarbon = true;
-									}
-								}
-							}
-						}
-					}
-					if (foundWrongTerminalCarbon) {
-						continue;
-					}
+//					boolean foundWrongTerminalCarbon = false;
+//					for (int j = 0; j < templateMatchMap.get(i).size(); j++) {
+//						IBond currentTemplateMatchBond = peptideTemplate
+//								.getBond(templateMatchMap.get(i).get(j)
+//										.getId2());
+//						for (int k = 0; k < 2; k++) {
+//							// For each bond in the AtomContainer structure
+//							IAtom a = m.getBond(
+//									templateMatchMap.get(i).get(j).getId1())
+//									.getAtom(k);
+//							if (m.getConnectedAtomsCount(a) == 1
+//									&& a.getAtomicNumber() == 6) {
+//								for (IAtom connectedAtom : m
+//										.getConnectedAtomsList(a)) {
+//									if (connectedAtom.getAtomicNumber() == 6) {
+//										foundWrongTerminalCarbon = true;
+//									}
+//								}
+//							}
+//						}
+//					}
+//					if (foundWrongTerminalCarbon) {
+//						continue;
+//					}
 					for (int j = 0; j < templateMatchMap.get(i).size(); j++) {
 						IBond currentTemplateMatchBond = peptideTemplate
 								.getBond(templateMatchMap.get(i).get(j)
@@ -1298,7 +943,7 @@ public class NRPModifier {
 									break;
 								}
 							}
-							if (nitrogenAlreadyPresent && frag.getMolecule().getConnectedAtomsCount(currentNitrogen) < 3) {
+							if (nitrogenAlreadyPresent && frag.getAtomContainer().getConnectedAtomsCount(currentNitrogen) < 3) {
 								break;
 							}
 
@@ -1327,7 +972,7 @@ public class NRPModifier {
 			}
 		}
 		
-		// Swap the order of peptide bonds so that bonds with the carbon in a cylcle are processed first.
+		// Swap the order of peptide bonds so that bonds with the carbon in a cycle are processed first.
 		// This takes precedence over bonds involved in amino acid side chains 
 		
 		int lastUnvisitedIndex = peptideBonds.size()-1; // All elements from lastUnvisitedIndex onward have a cyclic carbon
@@ -1344,6 +989,10 @@ public class NRPModifier {
 				i--;
 			}
 		}
+		IBond lactamBond = null;
+		if(lastUnvisitedIndex > 0){
+			lactamBond = peptideBonds.get(lastUnvisitedIndex);
+		}
 		
 		Queue<Fragment> q = new LinkedList<Fragment>();
 		for (Fragment m : monomerFragments) {
@@ -1353,9 +1002,9 @@ public class NRPModifier {
 			Fragment subfragment = q.poll();
 			// get peptide bond index or move on if there are no peptide bonds
 			int peptideBondIndex = -1;
-			int bondCount = subfragment.getMolecule().getBondCount();
+			int bondCount = subfragment.getAtomContainer().getBondCount();
 			for (int i = 0; i < bondCount; i++) {
-				if (peptideBonds.contains(subfragment.getMolecule().getBond(i))) {
+				if (peptideBonds.contains(subfragment.getAtomContainer().getBond(i))) {
 					peptideBondIndex = i;
 					break;
 				}
@@ -1363,8 +1012,13 @@ public class NRPModifier {
 			if (peptideBondIndex == -1) {
 				continue;
 			}
-			IBond peptideBond = subfragment.getMolecule().getBond(
+			IBond peptideBond = subfragment.getAtomContainer().getBond(
 					peptideBondIndex);
+			if(peptideBond.equals(lactamBond)){
+				for(IAtom atom : peptideBond.atoms()){
+					subfragment.addLactamAtom(atom);
+				}
+			}
 			IAtom betaCarbon = null;
 			IAtom backboneNitrogen = null;
 			if (peptideBond.getAtom(0).getAtomTypeName().startsWith("N.")) {
@@ -1377,28 +1031,28 @@ public class NRPModifier {
 			// For the double bond isomer, set the oxygen back to sp2 and double
 			// bonded.
 			if (peptideBond.getOrder() == IBond.Order.DOUBLE) {
-				List<IAtom> connectedBetaAtoms = subfragment.getMolecule()
+				List<IAtom> connectedBetaAtoms = subfragment.getAtomContainer()
 						.getConnectedAtomsList(betaCarbon);
 				for (IAtom a : connectedBetaAtoms) {
 					if (a.getAtomTypeName().startsWith("O.")) {
 						// This is the carbonyl oxygen
 						a.setAtomTypeName("O.sp2");
-						subfragment.getMolecule().getBond(betaCarbon, a)
+						subfragment.getAtomContainer().getBond(betaCarbon, a)
 								.setOrder(IBond.Order.DOUBLE);
 					}
 				}
 			}
 
-			subfragment.getMolecule().removeBond(peptideBondIndex);
+			subfragment.getAtomContainer().removeBond(peptideBondIndex);
 
 			// Add -O for the OH group on the carbon
 
 			Atom hydroxideO = new Atom("O");
 			hydroxideO.setAtomTypeName("O.sp3");
-			subfragment.getMolecule().addAtom(hydroxideO);
-			subfragment.getMolecule().addBond(new Bond(betaCarbon, hydroxideO));
+			subfragment.getAtomContainer().addAtom(hydroxideO);
+			subfragment.getAtomContainer().addBond(new Bond(betaCarbon, hydroxideO));
 
-			ArrayList<Fragment> fragments = subfragment
+			List<Fragment> fragments = subfragment
 					.partitionIntoMonomerFragments();
 			if (fragments.size() == 1) {
 				boolean bondParticipatesInSmallRing = false;
@@ -1418,7 +1072,7 @@ public class NRPModifier {
 			} else {
 				// there must be two fragments
 				Fragment CFragment = null, NFragment = null;
-				if (fragments.get(0).getMolecule().contains(betaCarbon)) {
+				if (fragments.get(0).getAtomContainer().contains(betaCarbon)) {
 					CFragment = fragments.get(0);
 					NFragment = fragments.get(1);
 				} else {
@@ -1438,7 +1092,7 @@ public class NRPModifier {
 				}
 				
 				for(IAtom aminoNtoAdd : subfragment.getAminoNs()){
-					if(NFragment.getMolecule().contains(aminoNtoAdd)){
+					if(NFragment.getAtomContainer().contains(aminoNtoAdd)){
 						if(!NFragment.getAminoNs().contains(aminoNtoAdd)) NFragment.addAminoN(aminoNtoAdd);
 					}
 				}
@@ -1493,29 +1147,29 @@ public class NRPModifier {
 			ArrayList<IAtom> hydroxylCList = new ArrayList<IAtom>();
 			ArrayList<IAtom> carboxylCList = new ArrayList<IAtom>();
 
-			for (int j = 0; j < fragment.getMolecule().getAtomCount(); j++) {
+			for (int j = 0; j < fragment.getAtomContainer().getAtomCount(); j++) {
 
-				if (!(fragment.getMolecule().getAtom(j).getAtomTypeName()
+				if (!(fragment.getAtomContainer().getAtom(j).getAtomTypeName()
 						.equals("O.sp3"))) {
 					continue;
 				}
 
-				IAtom hydroxyl_O = fragment.getMolecule().getAtom(j);
+				IAtom hydroxyl_O = fragment.getAtomContainer().getAtom(j);
 				// check if it is linked to two carbons, one of which has a
 				// double bond O.
 
 				IAtom carboxylC = null;
 				IAtom hydroxylC = null;
 
-				for (IAtom c : fragment.getMolecule().getConnectedAtomsList(
+				for (IAtom c : fragment.getAtomContainer().getConnectedAtomsList(
 						hydroxyl_O)) {
 					// the carboxyl carbon must be sp2 hybridized and connected
 					// to another oxygen via double bond
 					if (c.getAtomTypeName().equals("C.sp2")) {
-						for (IAtom candidateOtherO : fragment.getMolecule()
+						for (IAtom candidateOtherO : fragment.getAtomContainer()
 								.getConnectedAtomsList(c)) {
 							if (candidateOtherO != hydroxyl_O
-									&& fragment.getMolecule()
+									&& fragment.getAtomContainer()
 											.getBond(candidateOtherO, c)
 											.getOrder() == IBond.Order.DOUBLE
 									&& candidateOtherO.getAtomicNumber() == 8) {
@@ -1533,29 +1187,29 @@ public class NRPModifier {
 
 				// Then check if breaking the hydroxyl_O and carboxylC leaves
 				// one piece.
-				IBond removedBond = fragment.getMolecule().removeBond(
+				IBond removedBond = fragment.getAtomContainer().removeBond(
 						hydroxyl_O, carboxylC);
 
-				if (ConnectivityChecker.isConnected(fragment.getMolecule())) {
+				if (ConnectivityChecker.isConnected(fragment.getAtomContainer())) {
 					hydroxylOList.add(hydroxyl_O);
 					hydroxylCList.add(hydroxylC);
 					carboxylCList.add(carboxylC);
 					// Add this carboxyl C to the global list
 					lactoneCarboxylCList.add(carboxylC);
 				}
-				fragment.getMolecule().addBond(removedBond);
+				fragment.getAtomContainer().addBond(removedBond);
 			}
 
 			if (showBonds) {
-				// For testing: draw the molecule with detected bonds
+				// For testing: draw the AtomContainer with detected bonds
 				// highlighted
 				ArrayList<IBond> bonds = new ArrayList<IBond>();
 				for (int j = 0; j < hydroxylOList.size(); j++) {
-					bonds.add(fragment.getMolecule().getBond(
+					bonds.add(fragment.getAtomContainer().getBond(
 							hydroxylOList.get(j), carboxylCList.get(j)));
 				}
 				SmilesIO.drawMoleculeHighlightingBonds(
-						fragment.getMolecule(),
+						fragment.getAtomContainer(),
 						SmilesIO.getCleanFileName(GrapeMain.currentName
 								.replace(' ', '_') + "Lactone"), bonds);
 			}
@@ -1567,12 +1221,12 @@ public class NRPModifier {
 				int index = -1;
 				Fragment currentFragment = null;
 				for (int k = 0; k < subfragments.size(); k++) {
-					if (subfragments.get(k).getMolecule()
+					if (subfragments.get(k).getAtomContainer()
 							.contains(hydroxylOList.get(j))) {
-						if (!subfragments.get(k).getMolecule()
+						if (!subfragments.get(k).getAtomContainer()
 								.contains(carboxylCList.get(j))) {
 							// TODO: proper exception handling
-							System.out
+							System.err
 									.println("error: fragment does not contain both lactone O and C");
 						}
 						index = k;
@@ -1584,15 +1238,15 @@ public class NRPModifier {
 				IAtom currentHydroxylO = hydroxylOList.get(j);
 				IAtom currentHydroxylC = hydroxylCList.get(j);
 				IAtom currentCarboxylC = carboxylCList.get(j);
-				currentFragment.getMolecule().removeBond(currentHydroxylO,
+				currentFragment.getAtomContainer().removeBond(currentHydroxylO,
 						currentCarboxylC);
 				Atom atom = new Atom("O");
 				atom.setAtomTypeName("O.sp3");
-				currentFragment.getMolecule().addAtom(atom);
-				currentFragment.getMolecule().addBond(
+				currentFragment.getAtomContainer().addAtom(atom);
+				currentFragment.getAtomContainer().addBond(
 						new Bond(carboxylCList.get(j), atom));
 
-				ArrayList<Fragment> partitions = currentFragment
+				List<Fragment> partitions = currentFragment
 						.partitionIntoMonomerFragments();
 				if (partitions.size() == 1) {
 					currentFragment.setLactoneHydroxylO(currentHydroxylO);
@@ -1607,7 +1261,7 @@ public class NRPModifier {
 					Fragment carboxylPartiton = null;
 					Fragment hydroxylPartition = null;
 
-					if (partitions.get(0).getMolecule()
+					if (partitions.get(0).getAtomContainer()
 							.contains(carboxylCList.get(j))) {
 						carboxylPartiton = partitions.get(0);
 						hydroxylPartition = partitions.get(1);
@@ -1647,167 +1301,195 @@ public class NRPModifier {
 	}
 
 	/**
-	 * Process thiazoles. Searches for thiazole rings and 'undoes' the reaction.
+	 * Process thiazoles and thiazolines. Searches for thiazole/thizoline rings and 'undoes' the reaction.
 	 * This method modifies monomerFragments and updates the field
 	 * thiazoleSList.
 	 */
-	private void processThiazoles() {
+	private void processThiazs() {
 		// First, handle the situation corresponding to the five-membered S and
 		// N containing ring
 		// as in: CNC(=O)C1=CSC(CN)=N1
-		boolean hasThiazole = false;
+		List<Set<IAtom>> smallestRings = null;
+		boolean hasThiaz = false;
 		for (Fragment m : monomerFragments) {
-			IMolecule molecule = m.getMolecule();
-			ArrayList<IAtom> carbonylCAtoms = new ArrayList<IAtom>();
-			ArrayList<IAtom> thiazoneNAtoms = new ArrayList<IAtom>();
-			ArrayList<IAtom> chainC1Atoms = new ArrayList<IAtom>();
-			ArrayList<IAtom> chainC2Atoms = new ArrayList<IAtom>();
-			ArrayList<IAtom> thiazoleSAtoms = new ArrayList<IAtom>();
-			for (int i = 0; i < m.getMolecule().getAtomCount(); i++) {
-				if (molecule.getAtom(i).getAtomicNumber() != 16) {
+			IAtomContainer mol = m.getAtomContainer();
+			List<IAtom> carbonylCAtoms = new ArrayList<IAtom>();
+			List<IAtom> thiazoneNAtoms = new ArrayList<IAtom>();
+			List<IAtom> chainC1Atoms = new ArrayList<IAtom>();
+			List<IAtom> chainC2Atoms = new ArrayList<IAtom>();
+			List<IAtom> thiazSAtoms = new ArrayList<IAtom>();
+			List<Boolean> thiazoles = new ArrayList<Boolean>();
+			for (int i = 0; i < m.getAtomContainer().getAtomCount(); i++) {
+				if (mol.getAtom(i).getAtomicNumber() != 16) {
 					continue;
 				}
 				// check if this sulfur is connected to a carbon (C) double
 				// bonded with a nitrogen
-				IAtom thiazoleS = null;
+				IAtom thiazS = null;
 				IAtom carbonylC = null;
-				IAtom thiazoleN = null;
+				IAtom thiazN = null;
 				IAtom chainC_1 = null;
 				IAtom chainC_2 = null;
+				boolean thiazole = false;
 
-				for (IAtom c : molecule.getConnectedAtomsList(molecule
+				for (IAtom c : mol.getConnectedAtomsList(mol
 						.getAtom(i))) {
-					if (molecule.getBond(molecule.getAtom(i), c).getOrder() != IBond.Order.SINGLE) {
+					if (mol.getBond(mol.getAtom(i), c).getOrder() != IBond.Order.SINGLE) {
 						continue;
 					}
 					if (!c.getAtomTypeName().equals("C.sp2")) {
 						continue;
 					}
-					for (IAtom n : molecule.getConnectedAtomsList(c)) {
+					for (IAtom n : mol.getConnectedAtomsList(c)) {
 						if (n.getAtomTypeName().startsWith("C.")
-								&& molecule.getBond(c, n).getOrder() == IBond.Order.DOUBLE) {
+								&& mol.getBond(c, n).getOrder() == IBond.Order.DOUBLE) {
 							chainC_1 = c;
 							chainC_2 = n;
+							thiazole = true;
 							continue;
 						}
 						if (n.getAtomTypeName().startsWith("N.")
-								&& molecule.getBond(c, n).getOrder() == IBond.Order.DOUBLE) {
+								&& mol.getBond(c, n).getOrder() == IBond.Order.DOUBLE) {
 							carbonylC = c;
-							thiazoleN = n;
+							thiazN = n;
 						}
 					}
 				}
-				if (carbonylC == null) {
+				
+				if(smallestRings == null){
+					smallestRings = ChemicalUtilities.getSmallestRings(mol); //make sure if in ring it's 6+ size
+				}
+				
+				boolean inRingSizeFive = false; // must be in a ring size 5
+				
+				for(Set<IAtom> ring : smallestRings){
+					if(ring.contains(thiazN) && ring.size() == 5){
+						inRingSizeFive = true;
+						break;
+					}
+				}				
+				if (carbonylC == null || !inRingSizeFive) {
 					continue;
 				}
-
+				
 				if (chainC_1 != null && chainC_2 != null) {
-					molecule.getBond(chainC_1, chainC_2).setOrder(
-							IBond.Order.SINGLE);
+					IBond bond = mol.getBond(chainC_1, chainC_2);
+					bond.setOrder(IBond.Order.SINGLE);
 					chainC_1.setAtomTypeName("C.sp3");
 					chainC_2.setAtomTypeName("C.sp3");
 				}
 
-				thiazoleS = molecule.getAtom(i);
+				thiazS = mol.getAtom(i);
 
 				carbonylCAtoms.add(carbonylC);
-				thiazoneNAtoms.add(thiazoleN);
+				thiazoneNAtoms.add(thiazN);
 				chainC1Atoms.add(chainC_1);
 				chainC2Atoms.add(chainC_2);
-				thiazoleSAtoms.add(thiazoleS);
+				thiazSAtoms.add(thiazS);
+				thiazoles.add(thiazole);
 			}
-			for (int i = 0; i < thiazoleSAtoms.size(); i++) {
-				IAtom thiazoleS = thiazoleSAtoms.get(i);
+			for (int i = 0; i < thiazSAtoms.size(); i++) {
+				IAtom thiazS = thiazSAtoms.get(i);
 				IAtom carbonylC = carbonylCAtoms.get(i);
-				IAtom thiazoleN = thiazoneNAtoms.get(i);
+				IAtom thiazN = thiazoneNAtoms.get(i);
 				IAtom chainC_1 = chainC1Atoms.get(i);
 				IAtom chainC_2 = chainC2Atoms.get(i);
+				boolean thiazole = thiazoles.get(i);
 
 				// Cleave the C-S bond. If this alters connectivity, then it
 				// wasn't part of a cycle so re-add it.
-				IBond removedBond = molecule.removeBond(carbonylC, thiazoleS);
-				if (!ConnectivityChecker.isConnected(molecule)) {
-					molecule.addBond(removedBond);
+				IBond removedBond = mol.removeBond(carbonylC, thiazS);
+				if (!ConnectivityChecker.isConnected(mol)) {
+					mol.addBond(removedBond);
 					continue;
 				}
 
 				// Turn the C=N bond to C-N
-				molecule.getBond(carbonylC, thiazoleN).setOrder(
+				mol.getBond(carbonylC, thiazN).setOrder(
 						IBond.Order.SINGLE);
 
 				// Add a =0 to that C
 				Atom atom = new Atom("O");
 				atom.setAtomTypeName("O.sp2");
-				molecule.addAtom(atom);
-				molecule.addBond(new Bond(carbonylC, atom, IBond.Order.DOUBLE));
+				mol.addAtom(atom);
+				mol.addBond(new Bond(carbonylC, atom, IBond.Order.DOUBLE));
 
 				// Set carbonylC to sp2
 
 				carbonylC.setAtomTypeName("C.sp2");
-				thiazoleN.setAtomTypeName("N.amide");
+				thiazN.setAtomTypeName("N.amide");
+				
+				if(thiazole){
+					thiazoleSList.add(thiazS);
+				}else{
+					thiazolineSList.add(thiazS);
+				}
 
-				thiazoleSList.add(thiazoleS);
-				hasThiazole = true;
+				hasThiaz = true;
 			}
 		}
 		if (printSteps) {
-			if (hasThiazole) {
-				System.out.println("Processed thiazole");
+			if (hasThiaz) {
+				System.out.println("Processed thiaz");
 			}
 		}
 
 		// Next, generally look for any cysteine whose sulfur is connected to a
 		// carbon, with that S-C bond a part of a cycle.
 		boolean hasCyclizedNonThiazoleCysteine = false;
-		IMolecule template = null;
+		IAtomContainer template = null;
 		try {
-			template = SmilesIO.readSmiles("CSCC(N)C=O");
+			template = SmilesIO.readSmilesTemplates("CSCC(N)C=O");
 		} catch (IOException | CDKException e) {
 			e.printStackTrace();
 		}
-		// Find the template bond
-		IBond templateBond = null;
-		for (int i = 0; i < template.getBondCount(); i++) {
-			IBond bond = template.getBond(i);
-			if (bond.getAtom(0).getAtomicNumber() == 16
-					|| bond.getAtom(1).getAtomicNumber() == 16
-					&& template.getConnectedAtomsCount(bond.getAtom(0)) == 1
-					|| template.getConnectedAtomsCount(bond.getAtom(1)) == 1) {
-				templateBond = bond;
-			}
-		}
+		
+		IBond templateBond = template.getBond(template.getAtom(0), template.getAtom(1));
 
 		for (Fragment frag : monomerFragments) {
 			List<IBond> matchingBonds = ChemicalUtilities.findMatchingBondsFromTemplate(template,
-					templateBond, frag.getMolecule());
+					templateBond, frag.getAtomContainer());
 			for (IBond matchingBond : matchingBonds) {
-				IAtom thiazoleS = null;
+				IAtom thiazS = null;
 				IAtom carbonylC = null;
 				if (matchingBond.getAtom(0).getAtomicNumber() == 16) {
-					thiazoleS = matchingBond.getAtom(0);
+					thiazS = matchingBond.getAtom(0);
 					carbonylC = matchingBond.getAtom(1);
 				} else {
 					carbonylC = matchingBond.getAtom(0);
-					thiazoleS = matchingBond.getAtom(1);
+					thiazS = matchingBond.getAtom(1);
 				}
-				frag.getMolecule().removeBond(matchingBond);
-				if (ConnectivityChecker.isConnected(frag.getMolecule())) {
+				
+				boolean inRingSizeFive = false; // must be in a ring size 5
+				
+				for(Set<IAtom> ring : smallestRings){
+					if(ring.contains(thiazS) && ring.size() == 5){
+						inRingSizeFive = true;
+						break;
+					}
+				}
+				if(!inRingSizeFive){
+					continue;
+				}
+				
+				frag.getAtomContainer().removeBond(matchingBond);
+				if (ConnectivityChecker.isConnected(frag.getAtomContainer())) {
 					// Set all bonds connecting to carbonylC as single
-					for (int i = 0; i < frag.getMolecule().getBondCount(); i++) {
-						IBond b = frag.getMolecule().getBond(i);
+					for (int i = 0; i < frag.getAtomContainer().getBondCount(); i++) {
+						IBond b = frag.getAtomContainer().getBond(i);
 						if (b.contains(carbonylC)) {
 							b.setOrder(IBond.Order.SINGLE);
 						}
 					}
 					Atom atom = new Atom("O");
 					atom.setAtomTypeName("O.sp2");
-					frag.getMolecule().addAtom(atom);
-					frag.getMolecule().addBond(
+					frag.getAtomContainer().addAtom(atom);
+					frag.getAtomContainer().addBond(
 							new Bond(carbonylC, atom, IBond.Order.DOUBLE));
-					thiazoleSList.add(thiazoleS);
+					thiazoleSList.add(thiazS);
 					hasCyclizedNonThiazoleCysteine = true;
 				} else {
-					frag.getMolecule().addBond(matchingBond);
+					frag.getAtomContainer().addBond(matchingBond);
 				}
 			}
 		}
@@ -1819,18 +1501,19 @@ public class NRPModifier {
 	}
 
 	/**
-	 * Process oxazoles. Searches for oxazole rings and 'undoes' the reaction.
+	 * Process oxazoles and oxazolines. Searches for oxazole/oxazoline rings and 'undoes' the reaction.
+	 * Looks for CMT on the hydroxyl carbon
 	 * This method modifies monomerFragments and updates the field oxazoleOList.
 	 */
-	private void processOxazoles() {
+	private void processOxazs() {
 		boolean hasOxazole = false;
 		for (Fragment m : monomerFragments) {
-			IMolecule molecule = m.getMolecule();
-			IMolecule[] oxazoleTemplates = new IMolecule[2];
+			IAtomContainer mol = m.getAtomContainer();
+			IAtomContainer[] oxazoleTemplates = new IAtomContainer[2];
 			
 			try {
-				oxazoleTemplates[0] = SmilesIO.readSmiles("O1C=CN=C1");
-				oxazoleTemplates[1] = SmilesIO.readSmiles("C1CN=CO1");
+				oxazoleTemplates[0] = SmilesIO.readSmilesTemplates("O1C=CN=C1");
+				oxazoleTemplates[1] = SmilesIO.readSmilesTemplates("C1CN=CO1");
 			} catch(Exception e) {
 				e.printStackTrace();
 			}
@@ -1881,7 +1564,7 @@ public class NRPModifier {
 			}
 			
 			for(int i = 0; i < oxazoleTemplates.length; i++) {
-				List<List<IBond>> matchingBondsList = ChemicalUtilities.findMatchingBondsFromTemplate(oxazoleTemplates[i], templateBonds.get(i), m.getMolecule());
+				List<List<IBond>> matchingBondsList = ChemicalUtilities.findMatchingBondsFromTemplate(oxazoleTemplates[i], templateBonds.get(i), m.getAtomContainer());
 				for(List<IBond> matchingBonds : matchingBondsList) {
 					matchingBonds.get(0).setOrder(IBond.Order.SINGLE);
 					if(matchingBonds.get(0).getAtom(0).getAtomicNumber() == 6) {
@@ -1895,7 +1578,7 @@ public class NRPModifier {
 					matchingBonds.get(1).setOrder(IBond.Order.SINGLE);
 					matchingBonds.get(1).getAtom(0).setAtomTypeName("C.sp3");
 					matchingBonds.get(1).getAtom(1).setAtomTypeName("C.sp3");
-					m.getMolecule().removeBond(matchingBonds.get(2));
+					m.getAtomContainer().removeBond(matchingBonds.get(2));
 					IAtom oxazoleO = null;
 					IAtom newKetoneC = null;
 					if(matchingBonds.get(2).getAtom(0).getAtomicNumber() == 8) {
@@ -1907,22 +1590,39 @@ public class NRPModifier {
 						newKetoneC = matchingBonds.get(2).getAtom(0);
 					}
 					
+					//check if the oxazole carbon is methylated
+					for(IAtom atom : mol.getConnectedAtomsList(oxazoleO)){
+						if(mol.getConnectedBondsCount(atom) == 3){
+							for(IAtom atom2 : mol.getConnectedAtomsList(atom)){
+								if(atom2.getAtomicNumber() == 6 
+										&& ChemicalUtilities.getConnectedAtomsCountNonHydrogen(mol, atom2) == 1){
+									mol.removeAtomAndConnectedElectronContainers(atom2);
+									methylatedCarbonsList.add(atom);
+								}
+							}
+						}
+					}
+					
 					Atom ketoneO = new Atom("O");
 					ketoneO.setAtomTypeName("O.sp2");
 					newKetoneC.setAtomTypeName("C.sp2");
-					molecule.addAtom(ketoneO);
-					molecule.addBond(new Bond(newKetoneC, ketoneO, IBond.Order.DOUBLE));
+					mol.addAtom(ketoneO);
+					mol.addBond(new Bond(newKetoneC, ketoneO, IBond.Order.DOUBLE));
 					
 					hasOxazole = true;
-					oxazoleOList.add(oxazoleO);
+					if(i == 0) { //oxazole
+						oxazoleOList.add(oxazoleO);
+					}else { //oxazoline
+						oxazolineOList.add(oxazoleO);
+					}
 				}
 			}
 			
 			}
 		if (printSteps) {
-			//if (hazOxazole) {
-				//System.out.println("Processed oxazole");
-			//}
+			if (hasOxazole) {
+				System.out.println("Processed oxazole");
+			}
 		}
 	}
 
@@ -1939,7 +1639,7 @@ public class NRPModifier {
 		while (!q.isEmpty()) {
 			Fragment fragment = q.poll();
 
-			for (int i = 0; i < fragment.getMolecule().getAtomCount(); i++) {
+			for (int i = 0; i < fragment.getAtomContainer().getAtomCount(); i++) {
 
 				IAtom mainC = null;
 				IAtom main_O = null;
@@ -1948,18 +1648,18 @@ public class NRPModifier {
 				IAtom n_2 = null;
 				IAtom c_2 = null;
 
-				if (!fragment.getMolecule().getAtom(i).getAtomTypeName()
+				if (!fragment.getAtomContainer().getAtom(i).getAtomTypeName()
 						.equals("C.sp2")) {
 					continue;
 				}
-				mainC = fragment.getMolecule().getAtom(i);
-				for (int j = 0; j < fragment.getMolecule()
+				mainC = fragment.getAtomContainer().getAtom(i);
+				for (int j = 0; j < fragment.getAtomContainer()
 						.getConnectedAtomsCount(mainC); j++) {
-					IAtom connectedAtom = fragment.getMolecule()
+					IAtom connectedAtom = fragment.getAtomContainer()
 							.getConnectedAtomsList(mainC).get(j);
 
 					if (connectedAtom.getAtomTypeName().startsWith("O.")
-							&& fragment.getMolecule()
+							&& fragment.getAtomContainer()
 									.getBond(mainC, connectedAtom).getOrder() == IBond.Order.DOUBLE) {
 						main_O = connectedAtom;
 					} else if (connectedAtom.getAtomTypeName().startsWith("N.")
@@ -1975,9 +1675,9 @@ public class NRPModifier {
 					continue;
 				}
 
-				for (int j = 0; j < fragment.getMolecule()
+				for (int j = 0; j < fragment.getAtomContainer()
 						.getConnectedAtomsCount(n_1); j++) {
-					IAtom connectedAtom = fragment.getMolecule()
+					IAtom connectedAtom = fragment.getAtomContainer()
 							.getConnectedAtomsList(n_1).get(j);
 					if (connectedAtom == mainC) {
 						continue;
@@ -1986,9 +1686,9 @@ public class NRPModifier {
 						break;
 					}
 				}
-				for (int j = 0; j < fragment.getMolecule()
+				for (int j = 0; j < fragment.getAtomContainer()
 						.getConnectedAtomsCount(n_2); j++) {
-					IAtom connectedAtom = fragment.getMolecule()
+					IAtom connectedAtom = fragment.getAtomContainer()
 							.getConnectedAtomsList(n_2).get(j);
 					if (connectedAtom == mainC) {
 						continue;
@@ -2008,46 +1708,37 @@ public class NRPModifier {
 
 				ArrayList<IBond> removedBonds = new ArrayList<IBond>();
 
-				removedBonds.add(fragment.getMolecule().getBond(mainC, main_O));
-				removedBonds.add(fragment.getMolecule().getBond(mainC, n_1));
-				removedBonds.add(fragment.getMolecule().getBond(mainC, n_2));
+				removedBonds.add(fragment.getAtomContainer().getBond(mainC, main_O));
+				removedBonds.add(fragment.getAtomContainer().getBond(mainC, n_1));
+				removedBonds.add(fragment.getAtomContainer().getBond(mainC, n_2));
 
-				fragment.getMolecule().removeBond(
-						fragment.getMolecule().getBond(mainC, main_O));
-				fragment.getMolecule().removeAtom(main_O);
-				fragment.getMolecule().removeBond(
-						fragment.getMolecule().getBond(mainC, n_1));
-				fragment.getMolecule().removeBond(
-						fragment.getMolecule().getBond(mainC, n_2));
-				fragment.getMolecule().removeAtom(mainC);
+				fragment.getAtomContainer().removeBond(
+						fragment.getAtomContainer().getBond(mainC, main_O));
+				fragment.getAtomContainer().removeAtom(main_O);
+				fragment.getAtomContainer().removeBond(
+						fragment.getAtomContainer().getBond(mainC, n_1));
+				fragment.getAtomContainer().removeBond(
+						fragment.getAtomContainer().getBond(mainC, n_2));
+				fragment.getAtomContainer().removeAtom(mainC);
 
-				IMoleculeSet fragments = ConnectivityChecker
-						.partitionIntoMolecules(fragment.getMolecule());
+				IAtomContainerSet fragments = ConnectivityChecker
+						.partitionIntoMolecules(fragment.getAtomContainer());
 				if (fragments.getAtomContainerCount() != 2) {
 					// We must have had a ring, so re-add what we removed.
-					fragment.getMolecule().addAtom(main_O);
-					fragment.getMolecule().addAtom(mainC);
+					fragment.getAtomContainer().addAtom(main_O);
+					fragment.getAtomContainer().addAtom(mainC);
 					for (IBond bond : removedBonds) {
-						fragment.getMolecule().addBond(bond);
+						fragment.getAtomContainer().addBond(bond);
 					}
 					continue;
 				}
 
-				Fragment subfragment1 = new Fragment(
-						fragments.getMolecule(0));
-				Fragment subfragment2 = new Fragment(
-						fragments.getMolecule(1));
-
-				// In the future, additional data may be added to these
-				// MonomerFragments to indicate the presence of this bond.
-				// subfragment1.addOtherConnectedFragment(subfragment2);
-				// subfragment2.addOtherConnectedFragment(subfragment1);
-
-				monomerFragments.remove(indexToReplace);
-				monomerFragments.add(indexToReplace, subfragment1);
-				monomerFragments.add(indexToReplace + 1, subfragment2);
-				q.add(subfragment1);
-				q.add(subfragment2);
+				if (fragments.getAtomContainerCount() > 1) { //add bridge tailor
+					monomerFragments.remove(fragment);
+					for (Fragment newFragment : fragment.partitionIntoMonomerFragments()) {
+						monomerFragments.add(newFragment);
+					}
+				}
 				hasUreido = true;
 				break;
 			}
@@ -2066,9 +1757,9 @@ public class NRPModifier {
 	private void processBetaLactamLike() {
 		// If this is a cephem, convert to a penam
 
-		IMolecule cephemTemplate = null;
+		IAtomContainer cephemTemplate = null;
 		try {
-			cephemTemplate = SmilesIO.readSmiles("C1CN2C=CCSC12");
+			cephemTemplate = SmilesIO.readSmilesTemplates("C1CN2C=CCSC12");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -2105,20 +1796,21 @@ public class NRPModifier {
 		cephemTemplateBonds.add(cephemTemplateSulfurBondToBreak);
 
 		for (Fragment frag : monomerFragments) {
+
 			List<List<IBond>> matchingBonds = ChemicalUtilities.findMatchingBondsFromTemplate(
-					cephemTemplate, cephemTemplateBonds, frag.getMolecule());
+					cephemTemplate, cephemTemplateBonds, frag.getAtomContainer());
 			for (int i = 0; i < matchingBonds.size(); i++) {
 				matchingBonds.get(i).get(0).setOrder(IBond.Order.SINGLE);
 				matchingBonds.get(i).get(0).getAtom(0).setAtomTypeName("C.sp3");
 				matchingBonds.get(i).get(0).getAtom(1).setAtomTypeName("C.sp3");
-				frag.getMolecule().removeBond(matchingBonds.get(i).get(1));
+				frag.getAtomContainer().removeBond(matchingBonds.get(i).get(1));
 				// Create new bond between the sulfur and the carbon in the
 				// double bond to form a five-membered ring
 				IAtom carbonPreviouslyConnectedToSulfur = null;
 				IAtom carbonNewlyConnectingToSulfur = null;
 				IAtom cephemSulfur = null;
 
-				if (matchingBonds.get(i).get(1).getAtom(0).getAtomicNumber() == 13) {
+				if (matchingBonds.get(i).get(1).getAtom(0).getAtomicNumber() == 6) {
 					carbonPreviouslyConnectedToSulfur = matchingBonds.get(i)
 							.get(1).getAtom(0);
 					cephemSulfur = matchingBonds.get(i).get(1).getAtom(1);
@@ -2127,16 +1819,16 @@ public class NRPModifier {
 							.get(1).getAtom(1);
 					cephemSulfur = matchingBonds.get(i).get(1).getAtom(0);
 				}
-				for (IAtom candidateNewlyConnectedCarbon : frag.getMolecule()
+				for (IAtom candidateNewlyConnectedCarbon : frag.getAtomContainer()
 						.getConnectedAtomsList(
 								carbonPreviouslyConnectedToSulfur)) {
 					// If this candidate carbon is connected to one of the
 					// previously double bonded carbons
-					if (frag.getMolecule()
+					if (frag.getAtomContainer()
 							.getConnectedAtomsList(
 									candidateNewlyConnectedCarbon)
 							.contains(matchingBonds.get(i).get(0).getAtom(0))
-							|| frag.getMolecule()
+							|| frag.getAtomContainer()
 									.getConnectedAtomsList(
 											candidateNewlyConnectedCarbon)
 									.contains(
@@ -2145,19 +1837,16 @@ public class NRPModifier {
 						carbonNewlyConnectingToSulfur = candidateNewlyConnectedCarbon;
 					}
 				}
-
-				// Create a new bond
 				IBond newCephemBond = new Bond(cephemSulfur,
 						carbonNewlyConnectingToSulfur);
-
-				frag.getMolecule().addBond(newCephemBond);
+				frag.getAtomContainer().addBond(newCephemBond);
 				frag.setBetaLactamS(cephemSulfur);
 			}
 		}
 
-		IMolecule sulfurBetaLactamTemplate = null;
+		IAtomContainer sulfurBetaLactamTemplate = null;
 		try {
-			sulfurBetaLactamTemplate = SmilesIO.readSmiles("CSC1CC(=O)N1");
+			sulfurBetaLactamTemplate = SmilesIO.readSmilesTemplates("CSC1CC(=O)N1");
 		} catch (IOException | CDKException e) {
 			e.printStackTrace();
 		}
@@ -2200,9 +1889,9 @@ public class NRPModifier {
 		sulfurBetaLactamTemplateBonds.add(sulfurBetaLactamTemplateBond2);
 		
 		//check for clauvalnicAcidLike, these are the same as sulphur but oxygen replaces the sulfur
-		IMolecule clavualnicAcidLikeTemplate = null;
+		IAtomContainer clavualnicAcidLikeTemplate = null;
 		try {
-			clavualnicAcidLikeTemplate = SmilesIO.readSmiles("COC1CC(=O)N1");
+			clavualnicAcidLikeTemplate = SmilesIO.readSmilesTemplates("COC1CC(=O)N1");
 		} catch (IOException | CDKException e) {
 			e.printStackTrace();
 		}
@@ -2245,9 +1934,9 @@ public class NRPModifier {
 		clavualnicAcidLikeTemplateBonds.add(clavualnicAcidLikeTemplateBond2);
 		
 		
-		IMolecule gammaLactamBetaLactoneTemplate = null;
+		IAtomContainer gammaLactamBetaLactoneTemplate = null;
 		try {
-			gammaLactamBetaLactoneTemplate = SmilesIO.readSmiles("O=C1OC2CC(=O)NC12");
+			gammaLactamBetaLactoneTemplate = SmilesIO.readSmilesTemplates("O=C1OC2CC(=O)NC12");
 		} catch (IOException | CDKException e) {
 			e.printStackTrace();
 		}
@@ -2263,26 +1952,25 @@ public class NRPModifier {
 		boolean foundMatch = false;
 		for (Fragment frag : monomerFragments) {
 			List<List<IBond>> matchingBonds = ChemicalUtilities.findMatchingBondsFromTemplate(
-					sulfurBetaLactamTemplate, sulfurBetaLactamTemplateBonds, frag.getMolecule());
+					sulfurBetaLactamTemplate, sulfurBetaLactamTemplateBonds, frag.getAtomContainer());
 			if(matchingBonds.size() < 1){
 				matchingBonds = ChemicalUtilities.findMatchingBondsFromTemplate(
-						gammaLactamBetaLactoneTemplate, gammaLactamBetaLactoneTemplateBonds, frag.getMolecule());
+						gammaLactamBetaLactoneTemplate, gammaLactamBetaLactoneTemplateBonds, frag.getAtomContainer());
 			}
 			if(matchingBonds.size() < 1){
 				matchingBonds = ChemicalUtilities.findMatchingBondsFromTemplate(
-						clavualnicAcidLikeTemplate, clavualnicAcidLikeTemplateBonds, frag.getMolecule());
-			}	
+						clavualnicAcidLikeTemplate, clavualnicAcidLikeTemplateBonds, frag.getAtomContainer());
+			}
 			for (int i = 0; i < matchingBonds.size(); i++) {
-				frag.getMolecule().removeBond(matchingBonds.get(i).get(0));
-				frag.getMolecule().removeBond(matchingBonds.get(i).get(1));
-				// If the molecule is no longer connected, then re-add these
+				frag.getAtomContainer().removeBond(matchingBonds.get(i).get(0));
+				frag.getAtomContainer().removeBond(matchingBonds.get(i).get(1));
+				// If the AtomContainer is no longer connected, then re-add these
 				// bonds.
-				if (!ConnectivityChecker.isConnected(frag.getMolecule())) {
-					frag.getMolecule().addBond(matchingBonds.get(i).get(0));
-					frag.getMolecule().addBond(matchingBonds.get(i).get(1));
+				if (!ConnectivityChecker.isConnected(frag.getAtomContainer())) {
+					frag.getAtomContainer().addBond(matchingBonds.get(i).get(0));
+					frag.getAtomContainer().addBond(matchingBonds.get(i).get(1));
 				} else {
 					foundMatch = true;
-					//SmilesIO.drawMolecule(frag.getMolecule(), "afterbetalactam");
 				}
 			}
 		}
@@ -2294,9 +1982,9 @@ public class NRPModifier {
 	}
 
 	private void breakThioesters() {
-		IMolecule template = null;
+		IAtomContainer template = null;
 		try {
-			template = SmilesIO.readSmiles("CSC(C)=O");
+			template = SmilesIO.readSmilesTemplates("CSC(C)=O");
 		} catch (IOException | CDKException e) {
 			e.printStackTrace();
 		}
@@ -2322,7 +2010,7 @@ public class NRPModifier {
 		while (!q.isEmpty()) {
 			Fragment currentFragment = q.poll();
 			List<IBond> matchedBonds = ChemicalUtilities.findMatchingBondsFromTemplate(template,
-					templateBond, currentFragment.getMolecule());
+					templateBond, currentFragment.getAtomContainer());
 
 			for (IBond currentBond : matchedBonds) {
 				IAtom thioesterCarbon = null;
@@ -2331,20 +2019,22 @@ public class NRPModifier {
 				} else {
 					thioesterCarbon = currentBond.getAtom(1);
 				}
-				currentFragment.getMolecule().removeBond(currentBond);
+				currentFragment.addThioEsterAtom(currentBond.getAtom(0));
+				currentFragment.addThioEsterAtom(currentBond.getAtom(1));
+				currentFragment.getAtomContainer().removeBond(currentBond);
 				Atom carboxylO = new Atom("O");
 				carboxylO.setAtomTypeName("O.sp3");
-				currentFragment.getMolecule().addAtom(carboxylO);
+				currentFragment.getAtomContainer().addAtom(carboxylO);
 				Bond newBond = new Bond(thioesterCarbon, carboxylO);
-				currentFragment.getMolecule().addBond(newBond);
+				currentFragment.getAtomContainer().addBond(newBond);
 
-				ArrayList<Fragment> fragments = currentFragment
+				List<Fragment> fragments = currentFragment
 						.partitionIntoMonomerFragments();
 
 				if (fragments.size() == 2) {
 					Fragment sFrag = null;
 					Fragment cFrag = null;
-					if (fragments.get(0).getMolecule()
+					if (fragments.get(0).getAtomContainer()
 							.contains(thioesterCarbon)) {
 						cFrag = fragments.get(0);
 						sFrag = fragments.get(1);
@@ -2375,10 +2065,10 @@ public class NRPModifier {
 		boolean hasAdjoinedAromaticRings = false;
 		while (!q.isEmpty()) {
 			Fragment fragment = q.poll();
-			IMolecule currentMolecule = fragment.getMolecule();
-			IMolecule template = null;
+			IAtomContainer currentAtomContainer = fragment.getAtomContainer();
+			IAtomContainer template = null;
 			try {
-				template = SmilesIO.readSmiles("C1=CC=C(C=C1)C1=CC=CC=C1");
+				template = SmilesIO.readSmilesTemplates("C1=CC=C(C=C1)C1=CC=CC=C1");
 			} catch (IOException | CDKException e) {
 				e.printStackTrace();
 			}
@@ -2395,15 +2085,15 @@ public class NRPModifier {
 				}
 			}
 			List<IBond> matchedBonds = ChemicalUtilities.findMatchingBondsFromTemplate(template,
-					templateBond, currentMolecule);
+					templateBond, currentAtomContainer);
 
 			// At this point, conditions have been met. Break the bond if it
 			// leads to one piece.
 			for (IBond currentBond : matchedBonds) {
-				currentMolecule.removeBond(currentBond);
-				if (ConnectivityChecker.partitionIntoMolecules(currentMolecule)
-						.getMoleculeCount() > 1) {
-					currentMolecule.addBond(currentBond);
+				currentAtomContainer.removeBond(currentBond);
+				if (ConnectivityChecker.partitionIntoMolecules(currentAtomContainer)
+						.getAtomContainerCount() > 1) {
+					currentAtomContainer.addBond(currentBond);
 				} else {
 					hasAdjoinedAromaticRings = true;
 				}
@@ -2429,62 +2119,39 @@ public class NRPModifier {
 			Fragment fragment = q.poll();
 			ArrayList<Fragment> subfragments = new ArrayList<Fragment>();
 			subfragments.add(fragment);
-			IMolecule currentMolecule = fragment.getMolecule();
-			// Prepare peptide template 1 (amino acids with C terminus) and
-			// peptide template 2 (amino acids with a nitrogen attached to C
-			// terminus)
-			IMolecule[] sugarTemplates = new IMolecule[2];
-			IBond[] sugarTemplateBonds = new IBond[2];
+			IAtomContainer currentAtomContainer = fragment.getAtomContainer();
+			//prepare sugar templates, and find sugar bonds
+			IAtomContainer[] sugarTemplates = new IAtomContainer[4];
+			IBond[] sugarTemplateBonds = new IBond[4];
 			try {
-				sugarTemplates[0] = SmilesIO.readSmiles("COC1CCCCO1"); 
-				sugarTemplates[1] = SmilesIO.readSmiles("COC1CCCO1");
+				sugarTemplates[0] = SmilesIO.readSmilesTemplates("COC1CCCCO1"); 
+				sugarTemplates[1] = SmilesIO.readSmilesTemplates("COC1CCCO1");
+				sugarTemplates[2] = SmilesIO.readSmilesTemplates("CSC1CCCO1");
+				sugarTemplates[3] = SmilesIO.readSmilesTemplates("CSC1CCCCO1");
 
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
 
-			// Find the template bond
-			for(int i = 0; i < sugarTemplateBonds.length; i++){
-				IMolecule sugarTemplate = sugarTemplates[i];
-				for (int j = 0; j < sugarTemplate.getBondCount(); j++) {
-					if (sugarTemplate.getBond(j).getAtom(0).getAtomicNumber() == 6
-							&& sugarTemplate.getBond(j).getAtom(1)
-									.getAtomicNumber() == 8
-							|| sugarTemplate.getBond(j).getAtom(0)
-									.getAtomicNumber() == 8
-							&& sugarTemplate.getBond(j).getAtom(1)
-									.getAtomicNumber() == 6) {
-						IAtom currentCarbon = null;
-						IAtom currentOxygen = null;
-						if (sugarTemplate.getBond(j).getAtom(0).getAtomicNumber() == 6) {
-							currentCarbon = sugarTemplate.getBond(j).getAtom(0);
-							currentOxygen = sugarTemplate.getBond(j).getAtom(1);
-						} else {
-							currentCarbon = sugarTemplate.getBond(j).getAtom(1);
-							currentOxygen = sugarTemplate.getBond(j).getAtom(0);
-						}
-
-						if (sugarTemplate.getConnectedAtomsCount(currentCarbon) != 1) {
-							continue;
-						}
-						sugarTemplateBonds[i] = sugarTemplate.getBond(j);
-					}
-				}
-			}
+			// Set template bonds
+			sugarTemplateBonds[0] = sugarTemplates[0].getBond(sugarTemplates[0].getAtom(2), sugarTemplates[0].getAtom(1));
+			sugarTemplateBonds[1] = sugarTemplates[1].getBond(sugarTemplates[1].getAtom(2), sugarTemplates[1].getAtom(1));
+			sugarTemplateBonds[2] = sugarTemplates[2].getBond(sugarTemplates[2].getAtom(2), sugarTemplates[2].getAtom(1));
+			sugarTemplateBonds[3] = sugarTemplates[3].getBond(sugarTemplates[3].getAtom(2), sugarTemplates[3].getAtom(1));
+	
 
 			// Find all sugar bonds
 			
 			for(int i = 0; i < sugarTemplateBonds.length; i++){
-				IMolecule sugarTemplate = sugarTemplates[i];
+				IAtomContainer sugarTemplate = sugarTemplates[i];
 				IBond sugarTemplateBond = sugarTemplateBonds[i];
 				List<IBond> sugarBonds = ChemicalUtilities.findMatchingBondsFromTemplate(
-						sugarTemplate, sugarTemplateBond, currentMolecule);
+						sugarTemplate, sugarTemplateBond, currentAtomContainer);
 
-				List<IAtom> carbonsNotInSugar = new ArrayList<IAtom>();
 				for (IBond sugarBond : sugarBonds) {
 					Fragment subfragment = null;
 					for (Fragment possibleSubfragment : subfragments) {
-						if (possibleSubfragment.getMolecule().contains(sugarBond)) {
+						if (possibleSubfragment.getAtomContainer().contains(sugarBond)) {
 							subfragment = possibleSubfragment;
 						}
 					}
@@ -2497,28 +2164,30 @@ public class NRPModifier {
 						bondOxygen = sugarBond.getAtom(0);
 						bondCarbon = sugarBond.getAtom(1);
 					}
+					
+					//add check where the oxygen cannot be part of a small cycle
 
-					subfragment.getMolecule().removeBond(sugarBond);
+					subfragment.getAtomContainer().removeBond(sugarBond);
 					// Check if this led to two pieces
-					if (ConnectivityChecker.isConnected(subfragment.getMolecule())) {
-						subfragment.getMolecule().addBond(sugarBond);
+					if (ConnectivityChecker.isConnected(subfragment.getAtomContainer())) {
+						subfragment.getAtomContainer().addBond(sugarBond);
 						continue;
 					}
 
-					sugarOxygens.add(bondOxygen);
+					sugarCarbons.add(bondCarbon);
 					IAtom hydroxylO = new Atom("O");
 					hydroxylO.setAtomTypeName("O.sp3");
-					subfragment.getMolecule().addAtom(hydroxylO);
-					subfragment.getMolecule().addBond(
+					subfragment.getAtomContainer().addAtom(hydroxylO);
+					subfragment.getAtomContainer().addBond(
 							new Bond(hydroxylO, bondCarbon));
 
-					ArrayList<Fragment> partitions = subfragment
+					List<Fragment> partitions = subfragment
 							.partitionIntoMonomerFragments();
 
 					// There must be two partitions
 					Fragment sugarPart;
 					Fragment nonSugarPart;
-					if (partitions.get(0).getMolecule().contains(bondCarbon)) {
+					if (partitions.get(0).getAtomContainer().contains(bondCarbon)) {
 						nonSugarPart = partitions.get(0);
 						sugarPart = partitions.get(1);
 					} else {
@@ -2553,10 +2222,10 @@ public class NRPModifier {
 	}
 
 	private void breakEsterLinkages() {
-		IMolecule template = null;
+		IAtomContainer template = null;
 		IBond templateBond = null;
 		try {
-			template = SmilesIO.readSmiles("COC=O");
+			template = SmilesIO.readSmilesTemplates("COC=O");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -2569,7 +2238,7 @@ public class NRPModifier {
 		while (!q.isEmpty()) {
 			Fragment frag = q.poll();
 			List<IBond> esterBonds = ChemicalUtilities.findMatchingBondsFromTemplate(template,
-					templateBond, frag.getMolecule());
+					templateBond, frag.getAtomContainer());
 			for (IBond esterBond : esterBonds) {
 				foundEster = true;
 				IAtom esterC = null;
@@ -2579,14 +2248,14 @@ public class NRPModifier {
 					esterC = esterBond.getAtom(1);
 				}
 				// Remove bond
-				frag.getMolecule().removeBond(esterBond);
+				frag.getAtomContainer().removeBond(esterBond);
 				IAtom carboxylO = new Atom("O");
 				carboxylO.setAtomTypeName("O.sp3");
-				frag.getMolecule().addAtom(carboxylO);
-				frag.getMolecule().addBond(new Bond(esterC, carboxylO));
+				frag.getAtomContainer().addAtom(carboxylO);
+				frag.getAtomContainer().addBond(new Bond(esterC, carboxylO));
 			}
-			if (!ConnectivityChecker.isConnected(frag.getMolecule())) {
-				ArrayList<Fragment> subfragments = frag
+			if (!ConnectivityChecker.isConnected(frag.getAtomContainer())) {
+				List<Fragment> subfragments = frag
 						.partitionIntoMonomerFragments();
 				monomerFragments.remove(frag);
 				for (Fragment subfrag : subfragments) {
@@ -2605,10 +2274,10 @@ public class NRPModifier {
 	 * Break off sulfate groups
 	 */
 	private void breakSulfateGroups() {
-		IMolecule template = null;
+		IAtomContainer template = null;
 		IBond templateBond = null;
 		try {
-			template = SmilesIO.readSmiles("COS");
+			template = SmilesIO.readSmilesTemplates("COS");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -2623,7 +2292,7 @@ public class NRPModifier {
 		boolean hasSulfate = false;
 		for (Fragment frag : monomerFragments) {
 			List<IBond> sulfateBonds = ChemicalUtilities.findMatchingBondsFromTemplate(template,
-					templateBond, frag.getMolecule());
+					templateBond, frag.getAtomContainer());
 			for (IBond sulfateBond : sulfateBonds) {
 				IAtom sulfateO = null;
 				IAtom connectingCarbon = null;
@@ -2635,23 +2304,23 @@ public class NRPModifier {
 					sulfateO = sulfateBond.getAtom(1);
 				}
 				// Remove bond
-				frag.getMolecule().removeBond(sulfateBond);
+				frag.getAtomContainer().removeBond(sulfateBond);
 				// Check that the bond removal has led to two pieces, of of
 				// which has exactly one sulfur and four oxygens
-				IMoleculeSet partitions = ConnectivityChecker
-						.partitionIntoMolecules(frag.getMolecule());
-				if (partitions.getMoleculeCount() != 2) {
-					frag.getMolecule().addBond(sulfateBond);
+				IAtomContainerSet partitions = ConnectivityChecker
+						.partitionIntoMolecules(frag.getAtomContainer());
+				if (partitions.getAtomContainerCount() != 2) {
+					frag.getAtomContainer().addBond(sulfateBond);
 					continue;
 				}
-				IMolecule sulfatePiece = null;
-				IMolecule nonSulfatePiece = null;
-				if (partitions.getMolecule(0).contains(sulfateO)) {
-					sulfatePiece = partitions.getMolecule(0);
-					nonSulfatePiece = partitions.getMolecule(1);
+				IAtomContainer sulfatePiece = null;
+				IAtomContainer nonSulfatePiece = null;
+				if (partitions.getAtomContainer(0).contains(sulfateO)) {
+					sulfatePiece = partitions.getAtomContainer(0);
+					nonSulfatePiece = partitions.getAtomContainer(1);
 				} else {
-					sulfatePiece = partitions.getMolecule(1);
-					nonSulfatePiece = partitions.getMolecule(0);
+					sulfatePiece = partitions.getAtomContainer(1);
+					nonSulfatePiece = partitions.getAtomContainer(0);
 				}
 				// Make sure there are no carbons and at least four oxygens
 				int numOxygens = 0;
@@ -2665,26 +2334,26 @@ public class NRPModifier {
 					}
 				}
 				if (hasCarbon || numOxygens < 4) {
-					frag.getMolecule().addBond(sulfateBond);
+					frag.getAtomContainer().addBond(sulfateBond);
 					continue;
 				}
 				hasSulfate = true;
 				// At this point, we conclude that this is indeed a sulfate
-				// piece. Set this fragment molecule the non-sulfur piece, set
+				// piece. Set this fragment AtomContainer the non-sulfur piece, set
 				// enum.
 				IAtom hydroxylO = new Atom("O");
 				hydroxylO.setAtomTypeName("O.sp3");
 				nonSulfatePiece.addAtom(hydroxylO);
 				nonSulfatePiece.addBond(new Bond(connectingCarbon, hydroxylO));
-				frag.setMolecule(nonSulfatePiece);
+				frag.setAtomContainer(nonSulfatePiece);
 				frag.addTailoringDomain(TailoringDomainEnums.SULFOTRANSFERASE);
 			}
 			
 			for (Fragment m : monomerFragments) { // check for *S(O)(O)O
 				List<IAtom> sulfurAtoms = new ArrayList<IAtom>();
-				for (int i = 0; i < m.getMolecule().getAtomCount(); i++) {
-					if (m.getMolecule().getAtom(i).getAtomicNumber() == 16) {
-						sulfurAtoms.add(m.getMolecule().getAtom(i));
+				for (int i = 0; i < m.getAtomContainer().getAtomCount(); i++) {
+					if (m.getAtomContainer().getAtom(i).getAtomicNumber() == 16) {
+						sulfurAtoms.add(m.getAtomContainer().getAtom(i));
 					}
 				}
 				if (sulfurAtoms.size() == 0) {
@@ -2692,15 +2361,15 @@ public class NRPModifier {
 				}
 				List<IAtom> oxygens = new ArrayList<IAtom>(); 
 				for(IAtom sulfur : sulfurAtoms){
-					for(IAtom connectedAtom : m.getMolecule().getConnectedAtomsList(sulfur)){
-						if(connectedAtom.getAtomicNumber() == 8 && m.getMolecule().getConnectedAtomsList(connectedAtom).size() == 1){
+					for(IAtom connectedAtom : m.getAtomContainer().getConnectedAtomsList(sulfur)){
+						if(connectedAtom.getAtomicNumber() == 8 && m.getAtomContainer().getConnectedAtomsList(connectedAtom).size() == 1){
 							oxygens.add(connectedAtom);
 						}
 					}
 					if(oxygens.size() == 3){
-						m.getMolecule().removeAtomAndConnectedElectronContainers(sulfur);
+						m.getAtomContainer().removeAtomAndConnectedElectronContainers(sulfur);
 						for(IAtom oxygen : oxygens){
-							m.getMolecule().removeAtomAndConnectedElectronContainers(oxygen);
+							m.getAtomContainer().removeAtomAndConnectedElectronContainers(oxygen);
 						}
 						hasSulfate = true;
 						m.getTailoringDomains().add(TailoringDomainEnums.SULFOTRANSFERASE);
@@ -2728,15 +2397,15 @@ public class NRPModifier {
 		int numBonds = 0;
 		while (!q.isEmpty()) {
 			Fragment fragment = q.poll();
-			IMolecule currentMolecule = fragment.getMolecule();
+			IAtomContainer currentAtomContainer = fragment.getAtomContainer();
 
-			IMolecule[] templates = new IMolecule[2];
+			IAtomContainer[] templates = new IAtomContainer[2];
 			IBond[] templateBonds = new IBond[2];
 			try {
 				// Benzene rings connected to each other
-				templates[0] = SmilesIO.readSmiles("OC1=CC=CC=C1OC1=CC=CC=C1");
+				templates[0] = SmilesIO.readSmilesTemplates("OC1=CC=CC=C1OC1=CC=CC=C1");
 				templates[1] = SmilesIO
-						.readSmiles("OC1=C(OC2=CC=CC=C2)C=CC=C1");
+						.readSmilesTemplates("OC1=C(OC2=CC=CC=C2)C=CC=C1");
 				// Benzene rings connected to another carbon chain
 				// templates[2] = SmilesIO.readSmiles("CCOC1=CC=C(C)C=C1");
 				// templates[3] = SmilesIO.readSmiles("CCOC1=CC(O)=CC(C)=C1");
@@ -2785,22 +2454,22 @@ public class NRPModifier {
 			 */
 			for (int x = 0; x < templates.length; x++) {
 				List<IBond> bondsToBreak = ChemicalUtilities.findMatchingBondsFromTemplate(
-						templates[x], templateBonds[x], currentMolecule);
+						templates[x], templateBonds[x], currentAtomContainer);
 				for (IBond b : bondsToBreak) {
-					if (currentMolecule.contains(b)) {
-						currentMolecule.removeBond(b);
+					if (currentAtomContainer.contains(b)) {
+						currentAtomContainer.removeBond(b);
 						numBonds++;
 					}
 				}
 			}
 
-			IMoleculeSet fragments = ConnectivityChecker
-					.partitionIntoMolecules(currentMolecule);
-			if (fragments.getMoleculeCount() > 1) {
+			IAtomContainerSet fragments = ConnectivityChecker
+					.partitionIntoMolecules(currentAtomContainer);
+			if (fragments.getAtomContainerCount() > 1) {
 				monomerFragments.remove(fragment);
-				for (int i = 0; i < fragments.getMoleculeCount(); i++) {
+				for (int i = 0; i < fragments.getAtomContainerCount(); i++) {
 					monomerFragments.add(new Fragment(fragments
-							.getMolecule(i)));
+							.getAtomContainer(i)));
 				}
 			}
 		}
@@ -2823,11 +2492,11 @@ public class NRPModifier {
 		int numBonds = 0;
 		while (!q.isEmpty()) {
 			Fragment fragment = q.poll();
-			IMolecule currentMolecule = fragment.getMolecule();
+			IAtomContainer currentAtomContainer = fragment.getAtomContainer();
 
-			IMolecule template = null;
+			IAtomContainer template = null;
 			try {
-				template = SmilesIO.readSmiles("CSSC");
+				template = SmilesIO.readSmilesTemplates("CSSC");
 
 			} catch (Exception e) {
 				e.printStackTrace();
@@ -2843,44 +2512,25 @@ public class NRPModifier {
 			}
 			
 			List<IBond> bondsToBreak = ChemicalUtilities.findMatchingBondsFromTemplate(template,
-					templateBond, currentMolecule);
+					templateBond, currentAtomContainer);
 			
 			if(bondsToBreak.size() > 0){
-				if(fungal){
-					IMolecule fungalTemplate = null;
-					try {
-						fungalTemplate = SmilesIO.readSmiles("O=C1NC2SSC11CC3=CC=CCC3N1C2=O");
-					} catch(Exception e) {
-						e.printStackTrace();
-					}
-					IBond fungalTemplateBond = fungalTemplate.getBond(fungalTemplate.getAtom(13),fungalTemplate.getAtom(14));
-
-					List<IBond> fungalBondsToBreak = ChemicalUtilities.findMatchingBondsFromTemplate(fungalTemplate, fungalTemplateBond, currentMolecule);
-					for(IBond bond : fungalBondsToBreak){
-						currentMolecule.removeBond(bond);
-					}
-					for(IBond b : bondsToBreak){
-						for(IAtom a : b.atoms()){
-							currentMolecule.removeAtomAndConnectedElectronContainers(a);
-						}
-					}
-				}else{
-					for (IBond b : bondsToBreak) {
-						if (currentMolecule.contains(b)) {
-							currentMolecule.removeBond(b);
-							numBonds++;
-						}
+				for (IBond b : bondsToBreak) {
+					if (currentAtomContainer.contains(b)) {
+						currentAtomContainer.removeBond(b);
+						numBonds++;
 					}
 				}
-				IMoleculeSet fragments = ConnectivityChecker
-						.partitionIntoMolecules(currentMolecule);
-				if (fragments.getMoleculeCount() > 1) {
+				IAtomContainerSet fragments = ConnectivityChecker
+						.partitionIntoMolecules(currentAtomContainer);
+				if (fragments.getAtomContainerCount() > 1) { //add bridge tailor
 					monomerFragments.remove(fragment);
-					for (int i = 0; i < fragments.getMoleculeCount(); i++) {
+					for (int i = 0; i < fragments.getAtomContainerCount(); i++) {
 						monomerFragments.add(new Fragment(fragments
-								.getMolecule(i)));
+								.getAtomContainer(i)));
 					}
 				}
+				
 			}
 		}
 		if (printSteps) {
@@ -2900,9 +2550,25 @@ public class NRPModifier {
 		int numOMethylations = 0;
 		int numCMethylations = 0;
 		for (Fragment m : monomerFragments) {
-			for (int i = 0; i < m.getMolecule().getBondCount(); i++) {
-				IBond currentBond = m.getMolecule().getBond(i);
-
+			
+			//guess amino N if it wasn't cleaved (ie N terminus)
+			IAtomContainer mol = m.getAtomContainer();
+			if(m.getAminoNs().size() == 0 && m.getAminoCs().size() == 1){
+				IAtom aminoC =  m.getAminoCs().get(0);
+				for(IAtom atom : mol.getConnectedAtomsList(aminoC)){
+					if(atom.getAtomicNumber() == 6){
+						for(IAtom atom2 : mol.getConnectedAtomsList(atom)){
+							if(atom2.getAtomicNumber() == 7){
+								m.addAminoN(atom2);
+							}
+						}
+					}
+				}
+			}
+			
+			for (int i = 0; i < m.getAtomContainer().getBondCount(); i++) {
+				IBond currentBond = m.getAtomContainer().getBond(i);
+				
 				// N methylations
 				if (m.getAminoNs().size() > 0) {
 					IAtom candidateMethylC = null;
@@ -2914,13 +2580,14 @@ public class NRPModifier {
 						candidateMethylC = currentBond.getAtom(0);
 					}
 					if (candidateMethylC != null
-							&& m.getMolecule().getConnectedAtomsCount(
+							&& m.getAtomContainer().getConnectedAtomsCount(
 									candidateMethylC) == 1) {
-						m.getMolecule().removeBond(currentBond);
-						m.getMolecule().removeAtom(candidateMethylC);
+						m.getAtomContainer().removeBond(currentBond);
+						m.getAtomContainer().removeAtom(candidateMethylC);
 						m.getTailoringDomains().add(
 								TailoringDomainEnums.N_METHYLTRANSFERASE);
 						numNMethylations++;
+						i --;
 						continue;
 					}
 				}
@@ -2930,29 +2597,30 @@ public class NRPModifier {
 					IAtom candidateAlphaCarbon = null;
 					if (currentBond.getAtom(0).getAtomicNumber() == 6
 							&& currentBond.getAtom(1).getAtomicNumber() == 6) {
-						if (m.getMolecule()
+						if (m.getAtomContainer()
 										.getConnectedAtomsList(
 												currentBond.getAtom(0))
 										.contains(m.getAminoNs().get(0))) {
 							candidateAlphaCarbon = currentBond.getAtom(0);
 							candidateMethylC = currentBond.getAtom(1);
 						}
-						if (m.getMolecule()
+						if (m.getAtomContainer()
 										.getConnectedAtomsList(
 												currentBond.getAtom(1))
 										.contains(m.getAminoNs().get(0))) {
 							candidateAlphaCarbon = currentBond.getAtom(1);
 							candidateMethylC = currentBond.getAtom(0);
 						}
-						if (m.getMolecule().getConnectedAtomsCount(
+						if (m.getAtomContainer().getConnectedAtomsCount(
 								candidateAlphaCarbon) == 4
-								&& m.getMolecule().getConnectedAtomsCount(
+								&& m.getAtomContainer().getConnectedAtomsCount(
 										candidateMethylC) == 1) {
-							m.getMolecule().removeBond(currentBond);
-							m.getMolecule().removeAtom(candidateMethylC);
+							m.getAtomContainer().removeBond(currentBond);
+							m.getAtomContainer().removeAtom(candidateMethylC);
 							m.getTailoringDomains().add(
 									TailoringDomainEnums.C_METHYLTRANSFERASE);
 							numCMethylations++;
+							i --;
 							continue;
 						}
 					}
@@ -2962,29 +2630,30 @@ public class NRPModifier {
 					IAtom candidateAlphaCarbon = null;
 					if (currentBond.getAtom(0).getAtomicNumber() == 6
 							&& currentBond.getAtom(1).getAtomicNumber() == 6) {
-						if (m.getMolecule()
+						if (m.getAtomContainer()
 								.getConnectedAtomsList(currentBond.getAtom(0))
 								.contains(m.getAminoCs().get(0))
 								) {
 							candidateAlphaCarbon = currentBond.getAtom(0);
 							candidateMethylC = currentBond.getAtom(1);
 						}
-						if (m.getMolecule()
+						if (m.getAtomContainer()
 								.getConnectedAtomsList(currentBond.getAtom(1))
 								.contains(m.getAminoCs().get(0))
 								) {
 							candidateAlphaCarbon = currentBond.getAtom(1);
 							candidateMethylC = currentBond.getAtom(0);
 						}
-						if (m.getMolecule().getConnectedAtomsCount(
+						if (m.getAtomContainer().getConnectedAtomsCount(
 								candidateAlphaCarbon) == 4
-								&& m.getMolecule().getConnectedAtomsCount(
+								&& m.getAtomContainer().getConnectedAtomsCount(
 										candidateMethylC) == 1) {
-							m.getMolecule().removeBond(currentBond);
-							m.getMolecule().removeAtom(candidateMethylC);
+							m.getAtomContainer().removeBond(currentBond);
+							m.getAtomContainer().removeAtom(candidateMethylC);
 							m.getTailoringDomains().add(
 									TailoringDomainEnums.C_METHYLTRANSFERASE);
 							numCMethylations++;
+							i --;
 							continue;
 						}
 					}
@@ -3002,18 +2671,19 @@ public class NRPModifier {
 						candidateMethylC = currentBond.getAtom(0);
 						candidateO = currentBond.getAtom(1);
 					}
-					if (m.getMolecule().getConnectedAtomsList(candidateO)
+					if (m.getAtomContainer().getConnectedAtomsList(candidateO)
 							.contains(m.getAminoCs().get(0))
-							&& m.getMolecule().getConnectedAtomsCount(
+							&& m.getAtomContainer().getConnectedAtomsCount(
 									candidateMethylC) == 1) {
 						candidateO.setAtomTypeName("O.sp3");
-						m.getMolecule().getBond(candidateO, m.getAminoCs().get(0))
+						m.getAtomContainer().getBond(candidateO, m.getAminoCs().get(0))
 								.setOrder(IBond.Order.DOUBLE);
-						m.getMolecule().removeBond(currentBond);
-						m.getMolecule().removeAtom(candidateMethylC);
+						m.getAtomContainer().removeBond(currentBond);
+						m.getAtomContainer().removeAtom(candidateMethylC);
 						m.getTailoringDomains().add(
 								TailoringDomainEnums.O_METHYLTRANSFERASE);
 						numOMethylations++;
+						i --;
 						continue;
 					}
 				}
@@ -3037,8 +2707,8 @@ public class NRPModifier {
 	
 	private void processAACHydroxyliations() {
 		for (Fragment m : monomerFragments) {
-			for (int i = 0; i < m.getMolecule().getBondCount(); i++) {
-				IBond currentBond = m.getMolecule().getBond(i);
+			for (int i = 0; i < m.getAtomContainer().getBondCount(); i++) {
+				IBond currentBond = m.getAtomContainer().getBond(i);
 				if (m.getAminoNs().size() > 0) {
 					IAtom candidateHydroxylO = null;
 					IAtom candidateAlphaCarbon = null;
@@ -3051,12 +2721,12 @@ public class NRPModifier {
 						candidateAlphaCarbon = currentBond.getAtom(1);
 						candidateHydroxylO = currentBond.getAtom(0);
 					}
-					if (m.getMolecule().getConnectedAtomsCount(
+					if (m.getAtomContainer().getConnectedAtomsCount(
 							candidateAlphaCarbon) == 4
-							&& m.getMolecule().getConnectedAtomsCount(
+							&& m.getAtomContainer().getConnectedAtomsCount(
 									candidateHydroxylO) == 1) {
-						m.getMolecule().removeBond(currentBond);
-						m.getMolecule().removeAtom(candidateHydroxylO);
+						m.getAtomContainer().removeBond(currentBond);
+						m.getAtomContainer().removeAtom(candidateHydroxylO);
 						m.getTailoringDomains().add(
 								TailoringDomainEnums.C_HYDROXYLATION);
 						continue;
@@ -3074,12 +2744,12 @@ public class NRPModifier {
 						candidateAlphaCarbon = currentBond.getAtom(1);
 						candidateHydroxylO = currentBond.getAtom(0);
 					}
-					if (m.getMolecule().getConnectedAtomsCount(
+					if (m.getAtomContainer().getConnectedAtomsCount(
 							candidateAlphaCarbon) == 4
-							&& m.getMolecule().getConnectedAtomsCount(
+							&& m.getAtomContainer().getConnectedAtomsCount(
 									candidateHydroxylO) == 1) {
-						m.getMolecule().removeBond(currentBond);
-						m.getMolecule().removeAtom(candidateHydroxylO);
+						m.getAtomContainer().removeBond(currentBond);
+						m.getAtomContainer().removeAtom(candidateHydroxylO);
 						m.getTailoringDomains().add(
 								TailoringDomainEnums.C_HYDROXYLATION);
 						continue;
@@ -3092,28 +2762,30 @@ public class NRPModifier {
 	/**
 	 * Find, annotate, and remove chlorine groups
 	 */
-	private void processChlorinations() {
-		boolean hasChlorine = false;
+	private void processHalogenations() {
+		boolean hasHalogen = false;
 		for (Fragment m : monomerFragments) {
-			List<IAtom> chlorineAtoms = new ArrayList<IAtom>();
-			for (int i = 0; i < m.getMolecule().getAtomCount(); i++) {
-				if (m.getMolecule().getAtom(i).getAtomicNumber() == 17) {
-					chlorineAtoms.add(m.getMolecule().getAtom(i));
+			List<IAtom> halogenAtoms = new ArrayList<IAtom>();
+			for (int i = 0; i < m.getAtomContainer().getAtomCount(); i++) {
+				if (m.getAtomContainer().getAtom(i).getAtomicNumber() == 17
+						|| m.getAtomContainer().getAtom(i).getAtomicNumber() == 35) {
+					halogenAtoms.add(m.getAtomContainer().getAtom(i));
 				}
 			}
-			if (chlorineAtoms.size() == 0) {
+			if (halogenAtoms.size() == 0) {
 				continue;
 			}
-			m.getTailoringDomains().add(TailoringDomainEnums.CHLORINATION);
+			m.getTailoringDomains().add(TailoringDomainEnums.HALOGENATION);
 			
-			if(chlorineAtoms.size() >= 3) {
-				for(IAtom chlorine : chlorineAtoms){
+			if(halogenAtoms.size() >= 3) {
+				for(IAtom chlorine : halogenAtoms){
 					IAtom connectedToChlorine = null;
 					int numConnectedToSameAtom = 0;
-					if(m.getMolecule().getConnectedAtomsCount(chlorine) != 1) continue;
-					connectedToChlorine = m.getMolecule().getConnectedAtomsList(chlorine).get(0);
-					for(IAtom atom : m.getMolecule().getConnectedAtomsList(connectedToChlorine)){
-						if(atom.getAtomicNumber() == 17){
+					if(m.getAtomContainer().getConnectedAtomsCount(chlorine) != 1) continue;
+					connectedToChlorine = m.getAtomContainer().getConnectedAtomsList(chlorine).get(0);
+					for(IAtom atom : m.getAtomContainer().getConnectedAtomsList(connectedToChlorine)){
+						if(atom.getAtomicNumber() == 17
+								|| atom.getAtomicNumber() == 35){
 							numConnectedToSameAtom ++;
 						}
 					}
@@ -3121,37 +2793,188 @@ public class NRPModifier {
 						Atom firstO = new Atom("O");
 						firstO.setAtomTypeName("O.sp3");
 						Atom secondO = new Atom("O");
-						firstO.setAtomTypeName("O.sp2");
+						secondO.setAtomTypeName("O.sp2");
 						Atom carbonylCarbon = new Atom("C");
 						carbonylCarbon.setAtomTypeName("C.sp2");
-						m.getMolecule().addAtom(firstO);
-						m.getMolecule().addAtom(secondO);
-						m.getMolecule().addAtom(carbonylCarbon);
-						m.getMolecule().addBond(new Bond(carbonylCarbon, firstO, IBond.Order.SINGLE));
-						m.getMolecule().addBond(new Bond(carbonylCarbon, secondO, IBond.Order.DOUBLE));
-						m.getMolecule().addBond(new Bond(carbonylCarbon, connectedToChlorine, IBond.Order.SINGLE));
+						m.getAtomContainer().addAtom(firstO);
+						m.getAtomContainer().addAtom(secondO);
+						m.getAtomContainer().addAtom(carbonylCarbon);
+						m.getAtomContainer().addBond(new Bond(carbonylCarbon, firstO, IBond.Order.SINGLE));
+						m.getAtomContainer().addBond(new Bond(carbonylCarbon, secondO, IBond.Order.DOUBLE));
+						m.getAtomContainer().addBond(new Bond(carbonylCarbon, connectedToChlorine, IBond.Order.SINGLE));
 						break;
 					}
 				}
 			}
-			for (IAtom chlorine : chlorineAtoms) {
+			for (IAtom halogen : halogenAtoms) {
 				// Check that there is exactly one connection
-				if (m.getMolecule().getConnectedAtomsCount(chlorine) != 1) {
+				if (m.getAtomContainer().getConnectedAtomsCount(halogen) != 1) {
 					continue;
 				}
-				hasChlorine = true;
-				m.getMolecule().removeBond(
-						m.getMolecule().getBond(
-								chlorine,
-								m.getMolecule().getConnectedAtomsList(chlorine)
+				hasHalogen = true;
+				m.getAtomContainer().removeBond(
+						m.getAtomContainer().getBond(
+								halogen,
+								m.getAtomContainer().getConnectedAtomsList(halogen)
 										.get(0)));
-				m.getMolecule().removeAtom(chlorine);
+				m.getAtomContainer().removeAtom(halogen);
 			}
 		}
 		if (printSteps) {
-			if (hasChlorine) {
-				System.out.println("Processed chlorination");
+			if (hasHalogen) {
+				System.out.println("Processed halogenation");
 			}
+		}
+	}
+	
+	private void processSecondaryAmineExtensions() {
+	
+		Queue<Fragment> q = new LinkedList<Fragment>();
+		for (Fragment m : monomerFragments) {
+			q.add(m);
+		}
+		
+		while (!q.isEmpty()) {
+			Fragment fragment = q.poll();
+			IAtomContainer mol = fragment.getAtomContainer();
+			Set<IBond> bondsToBreak = new HashSet<IBond>();
+			List<Set<IAtom>> smallestRings = null;
+			//find extended secondary amines
+			for(IAtom atom : mol.atoms()){
+				
+				if(smallestRings == null){
+					smallestRings = ChemicalUtilities.getSmallestRings(mol); //make sure if in ring it's 6+ size
+				}
+
+				boolean inSmallRing = false; // cannot be in a ring < 7 (then is potentially a thiazol)
+				for(Set<IAtom> ring : smallestRings){
+					if(ring.contains(atom) && ring.size() < 7){
+						inSmallRing = true;
+						break;
+					}
+				}
+				if(inSmallRing == true){
+					continue;
+				}
+				
+				//must be a nitrogen
+				boolean possible = true;
+				if(atom.getAtomicNumber() != 7){
+					continue;
+				}
+				List<IAtom> connectedCarbons = new ArrayList<IAtom>();
+				for(IAtom connectedAtom : mol.getConnectedAtomsList(atom)){
+					//can only be connected to carbons
+					if(connectedAtom.getAtomicNumber() == 6){
+						//carbons cannot be a carbonyl
+						for(IAtom connectedToCarbon : mol.getConnectedAtomsList(connectedAtom)){
+							if(connectedToCarbon.getAtomicNumber() == 8 && mol.getBond(connectedAtom, connectedToCarbon).getOrder().equals(Order.DOUBLE)){
+								possible = false;
+								break;
+							}
+						}
+						if(!possible){
+							break;
+						}else{
+							connectedCarbons.add(connectedAtom);
+						}
+					}
+				}
+				//make sure it's still possible and is connected to 2 carbons
+				if(!possible || connectedCarbons.size() != 2){
+					continue;
+				}
+				IAtom aminoCarbon = null;
+				for(IAtom carbon : connectedCarbons){
+					//determine which is connected to a COOH
+					int numConnections = 0;
+					for(IAtom connectedCarbon : mol.getConnectedAtomsList(carbon)){
+						//ensure it's a carbon
+						if(connectedCarbon.getAtomicNumber() != 1){
+							numConnections ++;
+						}
+						
+						if(connectedCarbon.getAtomicNumber() != 6){
+							continue;
+						}
+						
+						boolean connectedToOH = false; // OH
+						boolean connectedToDO = false; // =O
+						for(IAtom connectedAtom : mol.getConnectedAtomsList(connectedCarbon)){
+							if(connectedAtom.getAtomicNumber() == 8){
+								if(mol.getBond(connectedCarbon, connectedAtom).getOrder().equals(Order.DOUBLE)){
+									connectedToDO = true;
+								}else if(mol.getBond(connectedCarbon, connectedAtom).getOrder().equals(Order.SINGLE)){
+									connectedToOH = true;
+								}
+							}
+						}
+						
+						if(connectedToDO && connectedToOH){
+							aminoCarbon = carbon;
+							break;
+						}						
+					}
+					if(numConnections < 2){
+						possible = false;
+						break;
+					}
+					if(aminoCarbon != null){
+						break;
+					}
+					
+				}
+				if(aminoCarbon != null && possible){
+					for(IAtom carbon : connectedCarbons){
+						if(!carbon.equals(aminoCarbon)){
+							bondsToBreak.add(mol.getBond(carbon, atom));
+						}
+					}
+					
+				}
+			}
+			//break the secondary amines
+			for(IBond bondToBreak : bondsToBreak){
+				mol.removeBond(bondToBreak);
+				
+				//get the carbon
+				IAtom carbon = null;
+				for(IAtom atom : bondToBreak.atoms()){
+					
+					if(atom.getAtomicNumber() == 6){
+						carbon = atom;
+						break;
+					}					
+				}
+				
+				for(IAtom atom : mol.getConnectedAtomsList(carbon)){
+					mol.removeBond(atom, carbon);
+					IBond bond = new Bond(atom, carbon, Order.SINGLE);
+					mol.addBond(bond);
+				}
+				
+				//add carboxylic acid to the carbon
+				Atom firstO = new Atom("O");
+				firstO.setAtomTypeName("O.sp3");
+				Atom secondO = new Atom("O");
+				secondO.setAtomTypeName("O.sp2");
+				mol.addAtom(firstO);
+				mol.addAtom(secondO);
+				mol.addAtom(carbon);
+				mol.addBond(new Bond(carbon, firstO, IBond.Order.SINGLE));
+				mol.addBond(new Bond(carbon, secondO, IBond.Order.DOUBLE));
+				
+			}
+			
+			//set new fragments if not connected
+			IAtomContainerSet fragments = ConnectivityChecker
+					.partitionIntoMolecules(mol);
+			if (fragments.getAtomContainerCount() > 1) { //add bridge tailor
+				monomerFragments.remove(fragment);
+				for (Fragment newFragment : fragment.partitionIntoMonomerFragments()) {
+					monomerFragments.add(newFragment);
+				}
+			}		
 		}
 	}
 
@@ -3161,17 +2984,17 @@ public class NRPModifier {
 	private void findEpoxides() {
 		boolean hasEpoxide = false;
 		for (Fragment m : monomerFragments) {
-			for (int i = 0; i < m.getMolecule().getAtomCount(); i++) {
-				IAtom o = m.getMolecule().getAtom(i);
+			for (int i = 0; i < m.getAtomContainer().getAtomCount(); i++) {
+				IAtom o = m.getAtomContainer().getAtom(i);
 				if (o.getAtomicNumber() != 8)
 					continue;
-				if (m.getMolecule().getConnectedAtomsCount(o) != 2)
+				if (m.getAtomContainer().getConnectedAtomsCount(o) != 2)
 					continue;
-				IAtom c1 = m.getMolecule().getConnectedAtomsList(o).get(0);
-				IAtom c2 = m.getMolecule().getConnectedAtomsList(o).get(1);
+				IAtom c1 = m.getAtomContainer().getConnectedAtomsList(o).get(0);
+				IAtom c2 = m.getAtomContainer().getConnectedAtomsList(o).get(1);
 				if (c1.getAtomicNumber() != 6 || c2.getAtomicNumber() != 6)
 					continue;
-				if (!m.getMolecule().getConnectedAtomsList(c1).contains(c2))
+				if (!m.getAtomContainer().getConnectedAtomsList(c1).contains(c2))
 					continue;
 				hasEpoxide = true;
 				m.getTailoringDomains().add(TailoringDomainEnums.P450);

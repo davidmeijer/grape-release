@@ -3,7 +3,7 @@ package ca.mcmaster.magarveylab.grape.enums;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-import org.openscience.cdk.interfaces.IMolecule;
+import org.openscience.cdk.interfaces.IAtomContainer;
 
 
 /**
@@ -35,10 +35,14 @@ public enum AcylAdenylatingSubstrates {
 	
 	// alpha keto/alpha hydroxy acids
 	ALPHA_KETOISOCAPROATE("alpha-ketoisocaproate.hmm", "&alpha;-ketoisocaproate", "&alpha;kL", new String[]{"IC(C(CC(C)C)OF)=O"}, false),
-	ALPHA_KETOISOVALERATE("alpha-ketoisovalerate.hmm", "&alpha;-ketoisovalerate", "&alpha;kV", new String[]{"IC(C(C(C)C)OF)=O"}, false),
-	PYRUVATE("pyruvate.hmm", "Pyruvate", "Pyr", new String[]{"IC(C(C)OF)=O"}, false),
+	ALPHA_KETOISOVALERATE("alpha-ketoisovalerate.hmm", "&alpha;-ketoisovalerate", "&alpha;kV", new String[]{"IC(C(C(C)C)O)=O"}, false),
+	PYRUVATE("pyruvate.hmm", "Pyruvate", "Pyr", new String[]{"IC(C(C)O)=O", "CC(=O)C(O)=O"}, false),
 	_3_METHYL_2_OXOPENTANOIC_ACID("3-methyl-2-oxopentanoate.hmm", "3-methyl-2-oxopentanoate", "&alpha;kI", new String[]{"IC(C(OF)C(CC)C)=O"}, false),
 	PHENYLPYRUVATE("phenylpyruvate.hmm", "Phenylpyruvate", "&alpha;kF", new String[]{"IC(C(OF)CC1=CC=CC=C1)=O", "FOC(CC1=CC=CC=C1)C(I)=O"}, true),
+	_2_HYDROXY_2_METHYL_4_OXOPENTANOIC_ACID("", "2-hydroxy-2-methyl-4-oxopentanoic acid", "Hmop", new String[]{"OC(CC(C)=O)(C)C(O)=O"}, false),
+	_2_OXOBUTANOIC_ACID("","2-oxobutanoic acid", "OxobA", new String[]{"O=C(CC)C(O)=O", "CCC(C(O)=O)=O"}, false),
+	_2_HYDROXYBUTYRIC_ACID("", "2-hydroxybutyric acid", "3-HBA", new String[]{"CCC(O)C(=O)O"}, true),
+	_2_OXOBUTARATE("", "2-oxobutarate", "2-OXO", new String[]{"CCC(=O)C([O-])=O"}, true),
 	
 	// small starters
 	BETA_AMINOALANINAMIDE("beta_aminoalaninamide.hmm", "&beta;-aminoalaninamide", "&beta;-Aln", new String[]{"ICC(C(N)=O)N"}, true),
@@ -50,11 +54,12 @@ public enum AcylAdenylatingSubstrates {
 	_3_HYDROXYBUTANOIC_ACID("3-hydroxybutanoic_acid.hmm", "3-hydroxybutanoic acid", "OHBu", new String[]{"IC(CC(O)C)=O"}, false),
 	SALICYLIC_ACID("salicylic_acid.hmm", "Salicylic acid", "Sal", new String[]{"IC(C1=C(O)C=CC=C1)=O", "OC1=CC=CC=C1C(I)=O"}, true),
 	//Different structures used for GRAPE
-	LACTATE("", "lactate", "lac", new String[]{"CC(C(O)=O)O", "C[C@@H](C(=O)O)O", "C1=CC=C(C=C1)CC(C(=O)O)O", "C1=CC(=CC=C1CC(C(=O)O)O)O"}, false),
+	LACTATE("", "lactate", "lac", new String[]{"CC(C(O)=O)O", "C[C@@H](C(=O)O)O", "C1=CC=C(C=C1)CC(C(=O)O)O", "C1=CC(=CC=C1CC(C(=O)O)O)O", "O=C(O)C(C)O", "CC(O)C(=O)C(O)=O"}, false),
 	VALERAIC_ACID("", "Valeraic acid", "VLA", new String[]{"CCCCC(O)=O", "CC(C)(O)C(O)C(O)=O", "C(C(=O)O)(CCCC1=CC=C(C=C1)O)N", "COC1=CC=C(C=C1)CCCC(C(=O)O)N", "C(CC(C(=O)O)O)(C)C", "CCC(C)CC(=O)O", "C1=CC=C(C=C1)CCCC(C(=O)O)N", "O=C(O)C(O)C(C)C"}, false),
 	_3_HYDROXYLPATANOLIC_ACID("", "3-hydroxylpatanolic acid", "3-HLPA", new String[]{"OC(CC(O)CC)=O"}, false),
 	BENZOIC_ACID("", "Benzoic acid", "BZA", new String[]{"OC1=CC=CC=C1C(O)=O", "OC(=O)C1=C(O)C=CC=C1"}, false),
 	HYDROXY_3_METHYL_PENTANOIC_ACID("", "Hydroxy 3-methyl pentanoic acid", "HMP", new String[]{"OC(C(O)C(CC)C)=O", "C(C(C(CC)C)O[S](=O)(=O)O)(=O)O"}, false),
+	PRENYLATION("", "Prenylation", "PRN", new String[]{"CC(C)(C)C=C", "C/C(C)=C\\CO"}, false),
 	;
 	
 	private final String hmm;
@@ -96,29 +101,29 @@ public enum AcylAdenylatingSubstrates {
 		String[] fixedSmiles = new String[smiles.length];
 		for(int i = 0; smiles.length > i; i++){
 			String fixedSmile = smiles[i].replace("I", "");
-			fixedSmiles[i] = fixedSmile.replace("F", ""); 
+			fixedSmiles[i] = fixedSmile.replace("F", "O"); 
 		}
 		return fixedSmiles;
 	}
 	
-	public IMolecule[] mols(){
-		IMolecule[] mols = new IMolecule[smiles.length];
+	public IAtomContainer[] mols(){
+		IAtomContainer[] mols = new IAtomContainer[smiles.length];
 		for(int i = 0; smiles.length > i; i++){
 			mols[i] = MoleculeClasses.getMol(realSmiles()[i]);
 		}
 		return mols;
 	}
 	
-	public static Map<String, IMolecule[]> getAll(){
-		Map<String, IMolecule[]> all = new LinkedHashMap<String, IMolecule[]>(); 
+	public static Map<String, IAtomContainer[]> getAll(){
+		Map<String, IAtomContainer[]> all = new LinkedHashMap<String, IAtomContainer[]>(); 
 		for(AcylAdenylatingSubstrates single : AcylAdenylatingSubstrates.values()){
 			all.put(single.toString(), single.mols());
 		}
 		return all;
 	}
 	
-	public static Map<String, IMolecule[]> getSubstructureSearchable(){
-		Map<String, IMolecule[]> all = new LinkedHashMap<String, IMolecule[]>(); 
+	public static Map<String, IAtomContainer[]> getSubstructureSearchable(){
+		Map<String, IAtomContainer[]> all = new LinkedHashMap<String, IAtomContainer[]>(); 
 		for(AcylAdenylatingSubstrates single : AcylAdenylatingSubstrates.values()){
 			if(single.canCheckForSubstructure()) all.put(single.toString(), single.mols());
 		}

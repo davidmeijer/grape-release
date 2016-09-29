@@ -1,10 +1,9 @@
 *~
-data/preprocessing/prism-standalone/*
-src/Test.java
-images/
+image/
 output/
-results/
 bin/
+json/
+tmp.txt
 #Eclipse
 *.pydevproject
 .metadata
@@ -15,7 +14,9 @@ bin/
 *~.nib
 .settings/
 .loadpath
-
+.classpath
+.project
+ 
 # CDT-specific
 .cproject
 

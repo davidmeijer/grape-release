@@ -3,7 +3,7 @@ package ca.mcmaster.magarveylab.grape.enums;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-import org.openscience.cdk.interfaces.IMolecule;
+import org.openscience.cdk.interfaces.IAtomContainer;
 
 public enum FattyAcidsEnums {
 	C16_1_7("C16:1(7)", "7-hexadecenoic acid", "C(CCCCCC=CCCCCCCCC)(=O)O"),
@@ -149,8 +149,8 @@ public enum FattyAcidsEnums {
 		this.smiles = smiles;
 	}
 	
-	public static IMolecule[] mols(){
-		IMolecule[] mols = new IMolecule[FattyAcidsEnums.values().length];
+	public static IAtomContainer[] mols(){
+		IAtomContainer[] mols = new IAtomContainer[FattyAcidsEnums.values().length];
 		int i = 0;
 		for(FattyAcidsEnums single : FattyAcidsEnums.values()){
 			mols[i] = single.mol();
@@ -159,8 +159,8 @@ public enum FattyAcidsEnums {
 		return mols;
 	}
 	
-	public static Map<String, IMolecule> getAll(){
-		Map<String, IMolecule> all = new LinkedHashMap<String, IMolecule>(); 
+	public static Map<String, IAtomContainer> getAll(){
+		Map<String, IAtomContainer> all = new LinkedHashMap<String, IAtomContainer>(); 
 		for(FattyAcidsEnums single : FattyAcidsEnums.values()){
 			all.put(single.fullName(), single.mol());
 		}
@@ -179,8 +179,8 @@ public enum FattyAcidsEnums {
 		return smiles;
 	}
 	
-	public IMolecule mol(){
-		IMolecule mol = MoleculeClasses.getMol(smiles);
+	public IAtomContainer mol(){
+		IAtomContainer mol = MoleculeClasses.getMol(smiles);
 		return mol;
 	}
 	

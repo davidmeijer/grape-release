@@ -3,8 +3,7 @@ package ca.mcmaster.magarveylab.grape.enums;
 import java.io.IOException;
 
 import org.openscience.cdk.exception.CDKException;
-import org.openscience.cdk.exception.InvalidSmilesException;
-import org.openscience.cdk.interfaces.IMolecule;
+import org.openscience.cdk.interfaces.IAtomContainer;
 
 import ca.mcmaster.magarveylab.grape.util.io.SmilesIO;
 
@@ -68,6 +67,19 @@ public enum KnownOtherEnums{
 	MeOH("MeOH", "methanol", "CO"),
 	Cba("Cba", "carbamic acid", "OC(N)=O"),
 	Iva("Iva", "isovaleric acid", "O=C(O)CC(C)C"),
+	//siderophore
+	OHput("OHput", "hydroxyputrescine", "NCC(O)CCNO"),
+	DMHQ("DMHQ", "dimethyl_hydroquinolium", "NC1C[N+](C)(C)C2=C(C=C(O)C(O)=C2)C1"),
+	Cad("Cad", "cadaverine", "NCCCCCN"),
+	OH_Cad("OH-Cad", "hydroxycadaverine", "NCCCCCNO"),
+	Acp("Acp", "azotobactin_chomophore", "O=C1NC2=CC3=CC(O)=C(O)C=C3[N+]4=C2N1CCC4C(O)=O"),
+	HMPA("HMPA", "_5-hydroxy-3-methylpent-2-enoic_acid", "OCC/C(C)=C/C(O)=O"),
+	Can("Can", "cinnamic_acid", "O=C(O)/C=C/C1=CC=CC=C1"),
+	HArg("HArg", "hydroarginine", "O=C(O)C(N)CCCNC(N)N"),
+	Dapp("Dapp", "1_3_diaminopropane", "NCCCN"),
+	CA("CA", "citric_acid", "OC(CC(C(O)=O)(O)CC(O)=O)=O"),
+	CGDHBA("CGDHBA", "C-glycosylated_dihydroxybenzoic_acid", "OCC1OC(C(O)C(O)C1O)C2=CC(O)=C(O)C(C(O)=O)=C2"),
+	SA("SA", "succinic_acid", "OC(CCC(O)=O)=O"),
 	;
 	private final String abbreviation;
 	private final String fullName;
@@ -87,9 +99,9 @@ public enum KnownOtherEnums{
 	public String getSmiles() {
 		return(this.smiles);
 	}
-	public IMolecule getMol(){
+	public IAtomContainer getMol(){
 		try {
-			return(SmilesIO.readSmiles(this.smiles));
+			return(SmilesIO.readSmilesTemplates(this.smiles));
 		} catch (IOException | CDKException e) {
 			System.err.println("KnownOther: " + this.abbreviation + " Could not be converted");
 		}

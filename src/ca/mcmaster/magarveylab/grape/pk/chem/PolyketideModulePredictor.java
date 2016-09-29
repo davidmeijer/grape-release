@@ -11,8 +11,9 @@ import org.openscience.cdk.graph.PathTools;
 import org.openscience.cdk.interfaces.IAtom;
 import org.openscience.cdk.interfaces.IBond;
 import org.openscience.cdk.interfaces.IBond.Order;
-import org.openscience.cdk.interfaces.IMolecule;
-import org.openscience.cdk.interfaces.IMoleculeSet;
+import org.openscience.cdk.tools.manipulator.AtomContainerManipulator;
+import org.openscience.cdk.interfaces.IAtomContainer;
+import org.openscience.cdk.interfaces.IAtomContainerSet;
 
 import ca.mcmaster.magarveylab.grape.enums.DomainEnums.PolyKetideDomainEnums;
 import ca.mcmaster.magarveylab.grape.pk.modules.PKsubstrate;
@@ -24,7 +25,7 @@ import ca.mcmaster.magarveylab.grape.util.io.SmilesIO;
  *
  */
 public class PolyketideModulePredictor {
-	private IMolecule pk; //potential polyketide to be analyzed
+	private IAtomContainer pk; //potential polyketide to be analyzed
 	private IAtom startCarbon; //the start of the polyketide (actually the biosynthetic end)
 	private IAtom endCarbon; //the end of the polyketide (actually the biosynthetic start)
 	private Integer pkType = null;
@@ -37,8 +38,8 @@ public class PolyketideModulePredictor {
 	 * @param startCarbon the start of the polyketide, 
 	 * @param endCarbon //the end of the polyketide generally a carboxylic acid
 	 */
-	public PolyketideModulePredictor(IMolecule pk, IAtom endCarbon, IAtom startCarbon, Integer pkType){
-		IMolecule pkClone = null;
+	public PolyketideModulePredictor(IAtomContainer pk, IAtom endCarbon, IAtom startCarbon, Integer pkType){
+		IAtomContainer pkClone = null;
 		int numStart = pk.getAtomNumber(startCarbon);
 		int numEnd = pk.getAtomNumber(endCarbon);
 		try {
@@ -60,8 +61,8 @@ public class PolyketideModulePredictor {
 	 * @param startCarbon //the start of the polyketide 
 	 * @throws CDKException 
 	 */
-	public PolyketideModulePredictor(IMolecule pk, IAtom endCarbon, Integer pkType) throws CDKException{
-		IMolecule pkClone = null;
+	public PolyketideModulePredictor(IAtomContainer pk, IAtom endCarbon, Integer pkType) throws CDKException{
+		IAtomContainer pkClone = null;
 		int numEnd = pk.getAtomNumber(endCarbon);
 		try {
 			pkClone = pk.clone();
@@ -79,9 +80,14 @@ public class PolyketideModulePredictor {
 	/**
 	 * @param pk polyketide fragment to be analyzed
 	 */
-	public PolyketideModulePredictor(IMolecule pk, Integer pkType){
-		//Don't need to clone so just redraw
-		try{this.pk = SmilesIO.readSmiles(SmilesIO.generateSmiles(pk));}catch(Exception e){};
+	public PolyketideModulePredictor(IAtomContainer pk, Integer pkType){
+		IAtomContainer pkClone = null;
+		try {
+			pkClone = pk.clone();
+		} catch (CloneNotSupportedException e) {
+			e.printStackTrace();
+		};
+		this.pk = pkClone;
 		this.pkType = pkType;
 		endCarbon = predictEndCarbon(this.pk);
 		if(endCarbon != null){
@@ -115,7 +121,7 @@ public class PolyketideModulePredictor {
 	/**
 	 * Predicts the start carbon. The start carbon is predicted to be the carboxylic carbon if there is only one carboxylic carbon. Else this returns no prediction
 	 */
-	public static IAtom predictEndCarbon(IMolecule molecule) {
+	public static IAtom predictEndCarbon(IAtomContainer molecule) {
 		IAtom endCarbon = null;
 		List<IAtom> endCarbonCandidates = new ArrayList<IAtom>(); 
 		for(IAtom carbon : molecule.atoms()){
@@ -143,7 +149,7 @@ public class PolyketideModulePredictor {
 				if(carbon.getAtomicNumber() != 6) continue;
 				if(isBesideTerminalDoubleBondCarbon(molecule, carbon)){
 					for(IAtom terminalCarbonCandidate : molecule.getConnectedAtomsList(carbon)){
-						if(molecule.getConnectedAtomsCount(terminalCarbonCandidate) != 1) continue;
+						if(ChemicalUtilities.getConnectedAtomsCountNonHydrogen(molecule,terminalCarbonCandidate) != 1) continue;
 						IBond bondToChange = molecule.getBond(terminalCarbonCandidate,
 								molecule.getConnectedAtomsList(terminalCarbonCandidate).get(0)); //change to single bond, it is only connected to a single atom
 						bondToChange.setOrder(Order.SINGLE);
@@ -169,17 +175,17 @@ public class PolyketideModulePredictor {
 		return endCarbon;
 	}
 
-	private static boolean isBesideTerminalDoubleBondCarbon(IMolecule pk2, IAtom carbon) {
+	private static boolean isBesideTerminalDoubleBondCarbon(IAtomContainer pk2, IAtom carbon) {
 		boolean passes = false;
 		boolean besideTerminal = false;
 		int orderSum = 0;
 		int carbonSum = 0;
-		if(pk2.getConnectedAtomsCount(carbon) == 2){
+		if(ChemicalUtilities.getConnectedAtomsCountNonHydrogen(pk2, carbon) == 2){
 			for(IAtom atom : pk2.getConnectedAtomsList(carbon)){
 				if(atom.getAtomicNumber() == 6){
 					carbonSum ++;
 					orderSum += pk2.getBond(carbon, atom).getOrder().numeric();
-					if(pk2.getConnectedAtomsCount(atom) == 1) besideTerminal = true;
+					if(ChemicalUtilities.getConnectedAtomsCountNonHydrogen(pk2, atom) == 1) besideTerminal = true;
 				}
 			}
 		}
@@ -195,7 +201,7 @@ public class PolyketideModulePredictor {
 	private void predictStartCarbon() {
 		List<IAtom> atomsCarbonOnlyPath = new ArrayList<IAtom>();
 		List<IAtom> cyclicAtoms = ChemicalUtilities.getAtomsInRings(pk);
-		ArrayList<IAtom> ringsWithoutOxygenAtoms = ChemicalUtilities.getAtomsInRingsWithoutOxygen(pk); //change to multi oxygen as well
+		List<IAtom> ringsWithoutOxygenAtoms = ChemicalUtilities.getAtomsInRingsWithoutOxygen(pk); //change to multi oxygen as well
 
 		for(IAtom atom : pk.atoms()){
 			if(endCarbon == atom || atom.getAtomicNumber() != 6 || numConnectedCarbons(atom) < 2) continue; // can't be the same atom at the carboxylic and must be a carbon must be connected to two other carbons to be part of a pk chain
@@ -243,12 +249,12 @@ public class PolyketideModulePredictor {
 	 * @param carbonTwo end point
 	 * @return the list of carbons in the carbon only path between two carbons (from carbonOne to carbonTwo).  If there is no path this will return null
 	 */
-	public static List<IAtom> getCarbonOnlyPath(IMolecule molecule, IAtom carbonOne, IAtom carbonTwo) {
+	public static List<IAtom> getCarbonOnlyPath(IAtomContainer molecule, IAtom carbonOne, IAtom carbonTwo) {
 		
 		int numAtom = molecule.getAtomNumber(carbonOne);
 		int numStartCarbon = molecule.getAtomNumber(carbonTwo);
 		
-		IMolecule moleculeClone = null;
+		IAtomContainer moleculeClone = null;
 		try {
 			moleculeClone = molecule.clone();
 		} catch (CloneNotSupportedException e1) {
@@ -258,11 +264,11 @@ public class PolyketideModulePredictor {
 		IAtom cloneStartCarbon = moleculeClone.getAtom(numStartCarbon);
 		
 		List<IAtom> cloneShortestCarbonPath = new ArrayList<IAtom>();
-		IMoleculeSet carbonOnlyMolecules = removeOxygens(moleculeClone); 
+		IAtomContainerSet carbonOnlyMolecules = removeOxygens(moleculeClone); 
 		
-		IMolecule carbonOnlyMoleculeWithCarboxyclicCarbon = null;
-		for(int i = 0; carbonOnlyMolecules.getMoleculeCount() > i; i ++){
-			IMolecule mol = carbonOnlyMolecules.getMolecule(i);
+		IAtomContainer carbonOnlyMoleculeWithCarboxyclicCarbon = null;
+		for(int i = 0; carbonOnlyMolecules.getAtomContainerCount() > i; i ++){
+			IAtomContainer mol = carbonOnlyMolecules.getAtomContainer(i);
 			if(mol.contains(cloneStartCarbon)){
 				carbonOnlyMoleculeWithCarboxyclicCarbon = mol;
 			}
@@ -286,8 +292,7 @@ public class PolyketideModulePredictor {
 	 * @param cloneShortestCarbonPath shortest path of clone
 	 * @return shortest path of parent that is the parents atoms, not the clones atoms
 	 */
-	private static List<IAtom> getPathFromClone(IMolecule molecule, IMolecule moleculeClone, List<IAtom> cloneShortestCarbonPath) {
-		
+	private static List<IAtom> getPathFromClone(IAtomContainer molecule, IAtomContainer moleculeClone, List<IAtom> cloneShortestCarbonPath) {
 		List<Integer> atomNumbers = new ArrayList<Integer>();
 		for(IAtom atom : cloneShortestCarbonPath){
 			atomNumbers.add(moleculeClone.getAtomNumber(atom));
@@ -304,8 +309,7 @@ public class PolyketideModulePredictor {
 	 * @param molecule
 	 * @return molecules without oxygens
 	 */
-	private static IMoleculeSet removeOxygens(IMolecule molecule) {
-		
+	private static IAtomContainerSet removeOxygens(IAtomContainer molecule) {
 		for(IAtom atom : molecule.atoms()){
 			if(atom.getAtomicNumber() == 8){
 				for(IAtom atom2 : molecule.getConnectedAtomsList(atom)){
@@ -314,7 +318,7 @@ public class PolyketideModulePredictor {
 			}
 		}		
 		
-		IMoleculeSet partitions = ConnectivityChecker.partitionIntoMolecules(molecule);
+		IAtomContainerSet partitions = ConnectivityChecker.partitionIntoMolecules(molecule);
 		return partitions;
 	}
 
@@ -323,7 +327,7 @@ public class PolyketideModulePredictor {
 	 * @param molecule to be checked for carboxylic acids
 	 * @return number of carboxylic acids contained in molecule
 	 */
-	public static int getNumCarboxylicAcids(IMolecule molecule) {
+	public static int getNumCarboxylicAcids(IAtomContainer molecule) {
 		int numCarboxylicAcids = 0;
 		for(IAtom carbon : molecule.atoms()){
 			if(isCarboxylicCarbon(molecule,carbon)){
@@ -339,18 +343,24 @@ public class PolyketideModulePredictor {
 	 * @param carbon to check
 	 * @return true if carbon is the carboxcylic carbon in molecule
 	 */
-	public static boolean isCarboxylicCarbon(IMolecule molecule, IAtom carbon){
+	public static boolean isCarboxylicCarbon(IAtomContainer molecule, IAtom carbon){
+		if(carbon.getAtomicNumber() != 6){
+			return false;
+		}
+		
 		boolean isCarboyxlicCarbon = false;
 		
 		int singleBondO = 0;
 		int doubleBondO = 0;
 		int singleBondC = 0;
 		for(IAtom atom : molecule.getConnectedAtomsList(carbon)){
-			if(atom.getAtomTypeName() == null) continue;
-			if(atom.getAtomTypeName().contains("O.sp3")){
+			if(atom.getAtomicNumber() == 1 || atom.getAtomTypeName() == null){
+				continue;
+			}
+			if(atom.getAtomTypeName().equals("O.sp3")){
 				int numCarbon = 0;
 				for(IAtom connectedToOxygen : molecule.getConnectedAtomsList(atom)){
-					if(connectedToOxygen.getAtomTypeName().contains("C.")){
+					if(connectedToOxygen.getAtomicNumber() == 6){
 						numCarbon++;
 					}
 				}
@@ -358,17 +368,16 @@ public class PolyketideModulePredictor {
 					singleBondO ++;
 				}
 			}
-			if(atom.getAtomTypeName().contains("O.sp2")){
+			if(atom.getAtomTypeName().equals("O.sp2")){
 				doubleBondO ++;
 			}
-			if(atom.getAtomTypeName().contains("C.")){
+			if(atom.getAtomicNumber() == 6){
 				singleBondC ++;
 			}
 		}
 		if(singleBondO == 1 && doubleBondO == 1 && singleBondC == 1){
 			isCarboyxlicCarbon = true;
 		}
-		
 		return isCarboyxlicCarbon;
 	}
 		
@@ -388,7 +397,7 @@ public class PolyketideModulePredictor {
 	}
 	
 	/**
-	 * @return true if PolyketideModulePredictor assesses the IMolecule pk to be a polyketide or a fragment
+	 * @return true if PolyketideModulePredictor assesses the IAtomContainer pk to be a polyketide or a fragment
 	 */
 	public boolean isPK(){
 		return isPK;
@@ -405,5 +414,9 @@ public class PolyketideModulePredictor {
 	 */
 	public List<PKsubstrate> getLoadingUnits(){
 		return loadingUnits;
+	}
+
+	public IAtom getEndCarbon() {
+		return endCarbon;
 	}
 }

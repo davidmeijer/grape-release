@@ -1,0 +1,420 @@
+Aad	2-Aminoadipic acid	C(CC(C(=O)O)N)CC(=O)O	Aad
+Ahad	alpha-amino-hydroxyadipic acid	C(C(CC(=O)O)O)C(C(=O)O)N	Aad
+Aib	2-Aminoisobutyric acid	CC(C)(C(=O)O)N	Aib
+Ac-Aib	N-Acetyl-2-aminoisobutyric acid	CC(=O)NC(C)(C)C(=O)O	Aib
+Ala1	Alanine	C[C@@H](C(=O)O)N	Ala
+NMe-bAla	N-methyl-beta-alanine	CNCCC(=O)O	bAla	NMT
+NFo-Ala	N-formyl-Alanine	CC(C(=O)O)NC=O	Ala
+dhAla1	dehydroalanine	C=C(C(=O)O)N	Ala
+bAla1	beta-Alanine	O=C(/C=C/N)O	bAla
+bAla2	beta-Alanine	CC(CN)C(O)=O	bAla
+bU-dAla	beta-ureido-dehydroAlanine	C(C(O)=O)(/N)=C/NC(=O)N	Ala
+bAla3	beta-Alanine	C(CN)C(=O)O	bAla
+NMe-Ala1	N-Methyl-Alanine	C[C@@H](C(=O)O)NC	Ala	NMT
+NdMe-Ala	N-dimethyl-Alanine	C[C@@H](C(=O)O)N(C)C	Ala
+dhAla2	dehydro-Alanine	OCC(N)C	Ala
+dhAla3	dehydro-Alanine	NC(=O)C(O)=O	Ala
+dhAla4	dehydro-Alanine	NC(C(N)=O)=C	Ala
+dhAla5	dehydro-Alanine	NC(C(O)=N)=C	Ala
+nohAla	N-hydroxyl Alanine	O=C(C(C)NO)O	Ala
+3ch-Ala	3-cyclohex-2 Ala-Cyclohex	N[C@@H]([C@@H](O)[C@H]1CCCC=C1)C(O)=O	Ala
+NMe-Gly1	N-Methyl-Glycine	CNCC(=O)O	Gly	NMT
+Ph-Gly1	phenylglycine	C1=CC=C(C=C1)[C@@H](C(=O)O)N	Hpg
+Ph-Gly2	hydroxy-phenylglycine	OC1=CC=C(/C(C(O)=O)=N\O)C=C1	Hpg
+NMe-Ph-Gly	N-methyl-phenylglycine	CNC(C1=CC=CC=C1)C(=O)O	Hpg	NMT
+aFo-Gly	alpha-formylGlycine	C(=O)C(C(=O)O)N	Gly
+Gly	Glycine	C(C(=O)O)N	Gly
+hGly	hydroxy Glycine	NC(O)C(O)=O	Gly
+OH-Asn	Hydroxyasparagine	C(C(C(=O)N)O)(C(=O)O)N	OHAsn
+bMe-Asn	beta-methyl-asparagine	CC(C(C(=O)O)N)C(=O)N	Asn
+Asn1	Asparagine	C([C@@H](C(=O)O)N)C(=O)N	Asn
+Asn2	Asparagine	NC(CC(O)=N)C(O)=O	Asn
+Asn3	Asparagine	NC(CC(NC)=O)C(O)=O	Asn	NMT
+Asn4	Asparagine	NC(C/C(O)=N/C)C(O)=O	Asn	NMT
+NMe-Asn1	N-methylasparagine	CNC(CC(=O)N)C(=O)O	Asn	NMT
+OMe-Asp1	methoxyaspartic acid	C(C(C(C(=O)O)N)=[O]/C)(=O)O	Asp	OMT
+OH-Asp	Hydroxyaspartic acid	C(C(C(=O)O)O)(C(=O)O)N	OHAsp
+bOMe-Asp	beta-methoxy-aspartic acid	COC(=O)CC(C(=O)O)N	Asp	OMT
+bMe-Asp	beta-methyl-aspartic acid	CC([C@@H](C(=O)O)N)C(=O)O	MeAsp
+Asp	Aspartic acid	C([C@@H](C(=O)O)N)C(=O)O	Asp
+Bmt	4-butenyl-4-methyl threonine	C[C@H](C/C=C/C)[C@@H](O)[C@H](N)C(=O)O	Bmt
+NMe-Bmt	N-methyl-4-butenyl-4-methyl threonine	CC=CCC(C)[C@H]([C@@H](C(=O)O)NC)O	Bmt	NMT
+Me2-Bmt	4-butenyl-4-methyl-N,4-methyl threonine	CC=CCC(C)(C)[C@H]([C@@H](C(=O)O)NC)O	Bmt
+3d-NMe-Bmt	3-Desoxy-Methyl-4-butenyl-4-methyl threonine	CC=CCC(C)CC(NC)C(=O)O	Bmt	NMT
+Bz	benzoic acid	C1=CC=C(C=C1)C(=O)O	Bz
+Cap1	capreomycidine	C1CN=C(NC1C(C(=O)O)N)N	Cap
+Cap2	capreomycidine	OC1NC(N)=NC(C(C(O)=O)N)C1	Cap
+Cit	Citrulline	C(C[C@@H](C(=O)O)N)CNC(=O)N	Cit
+CMA	coronamic acid	CCC1CC1(C(=O)O)N	Cma
+norCMA	norcoronamic acid	CC1CC1(C(=O)O)N	Cma
+diMe-Cys	N,S-dimethylcysteine	CN[C@@H](CSC)C(=O)O	Cys
+dhCys	dehydro-cysteine	C(C(=O)O)(N)=CS	Cys
+aMe-Cys	alpha-methylcysteine	CC(CS)(C(=O)O)N	Cys
+Cys1	Cysteine	C([C@@H](C(=O)O)N)S	Cys
+Cys2	Cysteine	N[C@@H](CSC)C(O)=O	Cys
+Cys3	Cysteine	SCC(N)C(N)=O	Cys
+Cys4	Cysteine	SCC(N)C(O)=N	Cys
+bCys1	beta Cysteine	O=C(O)C(S)CN	Cys
+bCys2	beta Cysteine	NCC(S)C(O)=O	Cys
+NMe-Cys1	N-methylcysteine	CN[C@@H](CS)C(=O)O	Cys	NMT
+CysA	cysteic acid	C([C@@H](C(=O)O)N)S(=O)(=O)O	Cys
+Dab	2,4-diaminobutyric acid	C(CN)[C@@H](C(=O)O)N	Dab
+Dap	Dolaproine	C1C(CCN1)C(C(C(O)=O)C)OC	Dap
+dDap	O-desmethyldolaproine	C(C1CCCN1)(C(C(=O)O)C)O	Dap
+L-Dbu	(2S,3S)-2,3-diaminobutyric acid	C[C@@H]([C@@H](C(=O)O)N)N	Dab
+Dbu	(2S)-2,3-diaminobutyric acid	C[C@H]([C@@H](C(=O)O)N)N	Dab
+Dil	Dolaisoleucine	C(CC(O)=O)(OC)C(C(C)CC)NC	Ile
+dDil	N-desmethyldolaisoleucine	C(C(N)C(C)CC)(CC(O)=O)OC	Ile
+NFo-Dpr	N1-formyl-2,3-Diaminopropionic acid	C(C(CN)NC=O)(=O)O	Dpr
+Dpr1	2,3-Diaminopropionic acid	C(C(C(=O)O)N)N	Dpr
+Dpr2	2-methoxy,2,3-Diaminopropionic acid	COC(N)(CN)C(O)=O	Dpr
+NAc-Dpr	N1-acetyl-2,3-Diaminopropionic acid	C(C(CN)NC(C)=O)(=O)O	Dpr
+End1	enduracididine	C(C(O)=O)(N)CC1CNC(N1)=N	End
+End2	enduracididine	NC1=NC(C(O)C(N)C(O)=O)CN1	End
+bOH-Gln	beta-hydroxyglutamine	C(C(C(C(=O)O)N)O)C(=O)N	Gln
+NMe-Gln	N-methylglutamine	CNC(CCC(=O)N)C(=O)O	Gln	NMT
+NFo-Gln	N-formyl-Glutamine	C(CC(=O)N)C(C(=O)O)NC=O	Gln
+3Me-4Me-Gln	3,4-dimethylglutamine	C(C(O)=O)(N)C(C(C(N)=O)C)C	Gln
+bMe-Gln	beta-methylglutamine	C[C@@H](CC(=O)N)[C@@H](C(=O)O)N	Gln
+Gln1	Glutamine	C(CC(=O)N)[C@@H](C(=O)O)N	Gln
+Gln2	Glutamine	NC(CCC(O)=N)C(O)=O	Gln
+MeO-D-Glu	D-Glutamic acid methyl ester	COC(=O)CC[C@H](C(=O)O)N	Glu	OMT
+2Me-3Me-pGlu	2,3-dimethylpyroglutamic acid	C1(C(C(C(N1)=O)C)C)C(=O)O	Glu
+Glu1	Glutamic acid	C(CC(=O)O)[C@@H](C(=O)O)N	Glu
+Glu2	dihydroxylated Glutamic acid	NC(C(O)C(O)C(O)=O)C(O)=O	Glu
+pGlu	pyroglutamic acid	C1CC(=O)N[C@@H]1C(=O)O	Glu
+MeO-Glu	Glutamic acid methyl ester	COC(=O)CCC(C(=O)O)N	Glu	OMT
+3Me-Glu	3-Methyl-Glutamic acid	CC(CC(=O)O)C(C(=O)O)N	Glu
+Hip	hydroxyisovalerylpropionyl	CC(C)C(C(=O)C(C)C(=O)O)O	Hap
+Hysp	hydroxysecbutyl acetyl propionyl	C(C(C(C(O)C(CC)C)=O)C)(=O)O	Hap
+Hap	hydroxyacetyl propionyl	C(C(C(CO)=O)C)(=O)O	Hap
+His	Histidine	C1=C(NC=N1)C[C@@H](C(=O)O)N	His
+OH-His	Hydroxyhistidine	C1=C(NC=N1)C(C(C(=O)O)N)O	His
+OH-dHpg	N-hydroxy-dehydro-HydroxyPhenylGlycine	C1=CC(=O)C=CC1=C(C(=O)O)NO	Hpg
+Dhpg	3,5-dihydroxyphenylglycine	C1=C(C=C(C=C1O)O)C(C(=O)O)N	Dhpg
+Hpg	HydroxyPhenylGlycine	C1=CC(=CC=C1[C@@H](C(=O)O)N)O	Hpg
+Cl-Hpg	3-chloro-4-hydroxyphenylglycine	C1=CC(=C(C=C1[C@@H](C(=O)O)N)Cl)O	Hpg
+NMe-Hpg	N-methyl-HydroxyPhenylGlycine	CNC(C1=CC=C(C=C1)O)C(=O)O	Hpg	NMT
+Cl2-Hpg	3,5-dichloro-4-hydroxyphenylglycine	C1=C(C=C(C(=C1Cl)O)Cl)C(C(=O)O)N	Hpg
+Kyn	kynurenine	C1=CC=C(C(=C1)C(=O)C[C@@H](C(=O)O)N)N	Kyn
+Lys	Lysine	C(CCN)C[C@@H](C(=O)O)N	Lys
+OH-bLys	hydroxy-beta lysine	C(NCC(=O)O)(CCN)O	bLys
+bLys	beta lysine	C(C[C@@H](CC(=O)O)N)CN	bLys
+bbMe2-O-Met	beta,beta-dimethyl-Methionine-S-oxide	C(C(=O)O)(N)C(C[S](C)=O)(C)C	Met
+O-Met	Methionine-S-oxide	CS(=O)CC[C@@H](C(=O)O)N	Met
+O2-Met	Methionine sulfone	CS(=O)(=O)CC[C@@H](C(=O)O)N	Met
+Met	Methionine	CSCC[C@@H](C(=O)O)N	Met
+NFo-D-Abu	N-formyl-D-aminobyric acid	CCC(C(=O)O)NC=O	Abu
+OH-4Abu	4-amino-3-hydroxybutyric acid	NC[C@@H](O)CC(=O)O	Abu
+Abu	2-Aminobutyric acid	CC[C@@H](C(=O)O)N	Abu
+2Dh-Mabu	2-methylamino-2-dehydrobutyric acid	CNC(=CC)C(=O)O	Dhab
+dhAbu	2,3-dehydro-2-aminobutyric acid	CC=C(C(=O)O)/N	Dhab
+Hil	homoisoleucine	CCC(C)C[C@@H](C(=O)O)N	Ile
+Cl-Ile	Chloro-Isoleucine	C(C(O)=O)(N)C(C(C)Cl)C	Ile
+MeOx-Ile	methyloxazoline-isoleucine	C(N)(C(C)CC)C1=NC(C(C1)C)C(=O)O	Ile
+NMe-aIle	N-methyl-alloIsoleucine	CC[C@H](C)[C@@H](C(=O)O)NC	Ile	NMT
+NMe-Ile1	N-Methyl-Isoleucine	CC[C@H](C)[C@@H](C(=O)O)NC	Ile	NMT
+bMe-Ile	beta-methylisoleucine	CCC(C)(C)C(C(=O)O)N	Ile
+Ileol	Isoleucinol	CC[C@H](C)[C@@H](CO)N	Ile
+Ile1	Isoleucine	CC[C@H](C)[C@@H](C(=O)O)N	Ile
+Ile2	Isoleucine	CC(C(O)C)C(N)C(O)=O	Ile
+Ile3	Isoleucine	N[C@@H]([C@H](C(O)C)C)C(O)=O	Ile
+Ile4	Isoleucine	N[C@@H]([C@H](C1CO1)C)C(O)=O	Ile
+Ile8-1	Isoleucine-8	CC(C(N)C(O)=O)C(C)=O	Ile
+Ile8-2	Isoleucine-8	CC(C(N)C(O)=O)C(CO)=O	Ile
+Ile5	Isoleucine	OC([C@H]([C@H](CC)C)N(C/C=C(C)/C)C/C=C(C)\C)=O	Ile
+NMe-OMe-Ile	N,O-dimethyl-isoleucine	C(C(=O)OC)(NC)C(CC)C	Ile	NMT	OMT
+NMe-OH-Ile	N-methyl-hydroxyisoleucine	C(C(O)=O)(NC)C(C)CCO	Ile	NMT
+aIle	allo-Isoleucine	CC[C@@H](C)[C@@H](C(=O)O)N	Ile
+diMe-aIle	N,gamma-alloisoleucine	CC([C@@H](C)[C@@H](C(=O)O)NC)C	Ile
+NFo-Ile	N-formyl-Isoleucine	CCC(C)C(C(=O)O)NC=O	Ile
+NMe-Leu1	N-Methyl-Leucine	CC(C)CC(C(=O)O)NC	Leu	NMT
+t-Leu	tert-Leu	CC(C)(C)[C@@H](C(=O)O)N	Leu
+k-Leu	keto-Leucine	CC(C)CC(=O)C(=O)O	Leu
+Leuol	Leucinol	CC(C)CC(CO)N	Leu
+Leu1	Leucine	CC(C)C[C@@H](C(=O)O)N	Leu
+Leu2	Leucine	CC(C)/C=C(N)/C(O)=O	Leu
+Leu3	Leucine	N/C(C(O)=O)=C/C(C)C	Leu
+Leu4	Leucine	CC(=C)C[C@H](N)C(O)=O	Leu
+Cl3-NMe-dhLeu	tri-chloro-N-methyl-dehydroLeucine	C(C(O)=O)(NC)=CC(C)C(Cl)(Cl)Cl	Leu	NMT
+NMe-bMe-Leu	N,beta-dimethylLeucine	CC(C)C(C)C(C(=O)O)NC	Leu	NMT
+3OH-Leu	3-hydroxyleucine	CC(C)C([C@@H](C(=O)O)N)O	OHLeu
+Cl2-NMe-dhLeu	di-chloro-N-methyl-dehydroLeucine	C(C(O)=O)(NC)=CC(C)C(Cl)Cl	Leu	NMT
+Cl2-NMe-Leu	di-chloro-N-methyl-Leucine	C(C(O)=O)(NC)CC(C)C(Cl)Cl	Leu	NMT
+NdMe-Leu	N-dimethyl-leucine	CC(C)CC(C(=O)O)N(C)C	Leu
+Cl3-2OH-NMe-Leu	tri-chloro-2-hydroxy-N-methyl-Leucine	C(C(O)=O)(NC)(CC(C)C(Cl)(Cl)Cl)O	Leu	NMT
+NFo-Leu	N-formyl-Leucine	CC(C)CC(C(=O)O)NC=O	Leu
+Cl3-5OH-NMe-Leu	tri-chloro-5-hydroxy-N-methyl-Leucine	C(C(O)=O)(NC)CC(CO)C(Cl)(Cl)Cl	Leu	NMT
+Cl3-NMe-Leu	tri-chloro-N-methyl-Leucine	C(C(O)=O)(NC)CC(C)C(Cl)(Cl)Cl	Leu	NMT
+NAc-Leu	N-acetyl-Leucine	CC(C)C[C@@H](C(=O)O)NC(=O)C	Leu
+NtMe-Leu	N-trimethyl-leucine	C(C(=O)O)(CC(C)C)[N](C)(C)C	Leu
+OAc-Leuol	O-acetyl-leucinol	CC(C)CC(COC(=O)C)N	Leu
+Nva	Norvaline	CCC[C@@H](C(=O)O)N	Nva
+Et-Nva	alpha-ethylnorvaline	CCC(CC)C(C(=O)O)N	Nva
+Ival	isovaline	CCC(C)(C(=O)O)N	Iva
+bOH-Val1	beta-hydroxyvaline	CC(C)([C@@H](C(=O)O)N)O	OHVal
+gOH-NMe-Val	gama-hydroxy-N-Methyl-Valine	CC(CO)C(C(=O)O)NC	Val	NMT
+Ivalol	isovalinol	CCC(C)(CO)N	Iva
+NMe-hv-Val	N-methy homo vinylogous Valine	C(C(NC)C(C)C)=C(C(O)=O)C	Val	NMT
+Ac-Ival	N-acetyl-isovaline	CCC(C)(C(=O)O)NC(=O)C	Iva
+Valol	valinol	CC(C)C(CO)N	Val
+Ac-Val	N-Acetylvaline	CC(C)C(C(=O)O)NC(=O)C	Val
+bOH-NMe-Val	beta-hydroxy-N-Methyl-Valine	CC(C)(C(C(=O)O)NC)O	OHVal	NMT
+Val1	Valine	CC(C)[C@@H](C(=O)O)N	Val
+metVal	methylated Valine	CC(C)(C)C(N)C(O)=O	Val
+Val2	Valine	CC(C)C(C(O)=O)NC(C=C)(C)C	Val
+NMe-Val1	N-Methyl-Valine	CC(C)C(C(=O)O)NC	Val	NMT
+NOMe-Ac-Val	N-methoxyacetyl-valine	CC(C)C(C(=O)O)NC(=O)COC	Val	OMT
+NFo-Val	N-formyl-Valine	CC(C)[C@@H](C(=O)O)NC=O	Val
+nohVal	N-hydroxyl Valine	CC(C(NO)C(O)=C)C	OHVal
+Ac-OH-Orn	N-acetyl-HydroxyOrnithine	CC(=O)N(CCC[C@@H](C(=O)O)N)O	OHOrn
+NAc-Fo-OH-Orn	N-acetyl-N6-formyl-N6-hydroxyOrnithine	C(C(=O)O)(NC(C)=O)CCCN(O)C=O	OHOrn
+OH-Orn	N5-hydroxy ornithine	C(C[C@@H](C(=O)O)N)CNO	OHOrn
+Fo-OH-Orn	N6-formyl-HydroxyOrnithine	C(C(=O)O)(CCCN(C=O)O)N	OHOrn
+OH-cOrn	Hydroxy-cycloOrnithine	C1CC(C(=O)N(C1)O)N	OHOrn
+ohOrn	hydroxyl Ornithine	OC1CC(C(O)=O)NNC1	OHOrn
+Orn	Ornithine	C(C[C@@H](C(=O)O)N)CN	Orn
+bPhe1	beta phenylalanine	C1=CC=C(C=C1)C(CC(=O)O)N	bPhe
+bPhe2	beta Phenylalanine	NC(C1=CC=CC=C1)CC(O)=O	bPhe
+bOHPhe	beta hydroxy Phenylalanine	NC(C(O)C1=CC=CC=C1)C(O)=O	bPhe
+bOH-NMe-Phe	beta-hydroxy-N-Methyl-Phenylalanine	CNC(C(C1=CC=CC=C1)O)C(=O)O	OHPhe	NMT
+Br-Phe	bromophenylalanine	C1=CC(=CC=C1CC(C(=O)O)N)Br	Phe
+NMe-Phe1	N-Methyl-Phenylalanine	CN[C@H](CC1=CC=CC=C1)C(=O)O	Phe	NMT
+bOH-Br-Phe	beta-hydroxy-bromophenylalanine	C1=CC(=CC=C1C(C(C(=O)O)N)O)Br	OHPhe
+Phe1	Phenylalanine	C1=CC=C(C=C1)C[C@@H](C(=O)O)N	Phe
+Phe2	Phenylalanine-fungal-modified1	CN(C)C(=O)C1CC2=COC=CCC2N1	Phe
+Phe3	Phenylalanine-fungal-modified2	CN(C)C(=O)C1CC2=CC=CC(O)C2N1C	Phe
+Me-Phe	Methyl-Phenylalanine	CC([C@H](N)C(O)=O)C1=CC=CC=C1	MePhe
+Pheol	phenylalaninol	C1=CC=C(C=C1)C[C@@H](CO)N	Phe
+NOMe-Ac-D-Phe	N-methoxyacetyl-D-phenylalanine	COCC(=O)NC(CC1=CC=CC=C1)C(=O)O	Phe	OMT
+Ac-Phe	N-acetylphenylalanine	CC(=O)N[C@@H](CC1=CC=CC=C1)C(=O)O	Phe
+NMe-Me2A-Phe	N-methyl-4-dimethylamino-phenylalanine	C(C(=O)O)(NC)CC1=CC=C(C=C1)N(C)C	Phe	NMT
+NMe-dPhe	N-methyl-2,3-dehydrophenylalanine	C(C(O)=O)(=CC1=CC=CC=C1)NC	Phe	NMT
+3Me-Phe	3-methylphenylalanine	CC1=CC(=CC=C1)C[C@@H](C(=O)O)N	Phe
+NMe-MeA-Phe	N-methyl-4-methylamino-phenylalanine	CNC1=CC=C(C=C1)CC(C(=O)O)NC	Phe	NMT
+bMe-Br-Phe	beta-methyl-bromophenylalanine	C(C(=O)O)(C(C1=CC=C(C=C1)Br)C)N	Phe
+Hph	Homophenylalanine	C1=CC=C(C=C1)CC[C@@H](C(=O)O)N	Phe
+diOH-Phe	3,4-dihydroxyphenylalanine	C1=CC(=C(C=C1CC(C(=O)O)N)O)O	Phe
+Trp1	Tryptophan	C1=CC=C2C(=C1)C(=CN2)C[C@@H](C(=O)O)N	Trp
+Trp2	Tryptophan	O[C@@H](CC1=CNC2=CC=CC=C12)C(O)=O	Trp
+Trp3	Tryptophan	O=C(O)C1NC(C2(C/C=C(C)/C)C1)NC3=C2C=CC=C3	Trp
+Trp4	Tryptophan	O=C(O)C1NC(C2(C/C=C(C)/CC/C=C(C)/C)C1)NC3=C2C=CC=C3	Trp
+Trp5	Tryptophan-Deaminated	OC(=O)C(=O)CC1=CNC2=C1C=CC=C2	Trp
+Trp6	Tryptophan-fungal-modified1	CN1C2NC3=CC=CC=C3C2CC1C(=O)N(C)C	Trp
+Trp7	Tryptophan-fungal-modified2	CN1C2NC3=CC=CC=C3C2CC1C(=O)O(C)C	Trp
+Trp8	Tryptophan-derivative-fungal	NC(CC1(O)C=NC2=CC=CC=C12)C(O)=O	Trp
+rb-Trp	Tryprophan-derivative-ribo	CC1=C(NC2=C1C(CO)=CC=C2)C(O)=O	Trp
+1Me-Trp	N1-methyl-tryptophan	CN1C=C(C2=CC=CC=C21)CC(C(=O)O)N	Trp
+bbNMe-NMe-Trp	beta,beta,N1,N-tetramethyltryptophan	C1=CC=CC2=C1C(=C[N]2C)C(C(C(O)=O)NC)(C)C	Trp	NMT
+Br-OH-Trp	2-bromo-5-hydroxytryptophan	C(C(=O)O)(N)CC1=C([N]C2=C1C=C(C=C2)O)Br	Trp
+dh-Trp	2,3-Dehydro-Tryptophan	C1=CC=C2C(=C1)C(=CN2)C=C(C(=O)O)N	Trp
+bbMe-NMe-Trp	beta,beta,N-trimethyltryptophan	C1=CC=CC2=C1C(=C[N]2)C(C(C(O)=O)NC)(C)C	Trp	NMT
+N1-COOH-bhTrp	N1-carboxy-bichomotryptophan	C(CC1=C[N](C2=C1C=CC=C2)C(=O)O)CC(C(=O)O)N	Trp
+NMe-Br-Trp	N-methyl-2-Bromo-tryptophan	C(C(=O)O)(NC)CC1=C([N]C2=C1C=CC=C2)Br	Trp	NMT
+NMe-Cl-OH-Trp	N-methyl-6-chloro-5-hydroxytryptophan	C(C(=O)O)(NC)CC1=C[N]C2=C1C=C(C(=C2)Cl)O	Trp	NMT
+NMe-Cl-Trp	N-methyl-6-chloro-tryptophan	C(C(=O)O)(NC)CC1=C[N]C2=C1C=CC(=C2)Cl	Trp	NMT
+NMe-OH-Trp	N-methyl-5-hydroxytryptophan	C(C(=O)O)(NC)CC1=C[N]C2=C1C=C(C=C2)O	Trp	NMT
+OH-Trp	5-hydroxytryptophan	C1=CC2=C(C=C1O)C(=CN2)CC(C(=O)O)N	Trp
+Ac-Trp	N-acetyltryptophan	CC(=O)NC(CC1=CNC2=CC=CC=C21)C(=O)O	Trp
+Br-Trp	5-bromo-tryptophan	C1=CC2=C(C=C1Br)C(=CN2)CC(C(=O)O)N	Trp
+Trpol	tryptophanol	C1=CC=C2C(=C1)C(=CN2)C[C@@H](CO)N	Trp
+pTrp	phototryptophan	C1C(NC2C1(C3=CC=CC=C3N2)O)C(=O)O	Trp
+IdoA1	Indolic acid	O=C(O)C1=CNC2=C1C=CC=C2	Trp
+OMe-Trp1	methoxytryptophan	O(C(=O)[C@@H](N([H])[H])CC1=C[N](C2=CC=CC=C12)OC)[H]	Trp	OMT
+IdoA2	indolic acid variant	OCC1=CC=CC2=C1C(COC)=C(C(O)=O)N2	Trp
+MHqa	methyl hydroxy quinaldic acid	CC(O)C1=CC(=NC2=C1C=CCC2O)C(O)=O	Trp
+OMe-Thr1	O-methyl-threonine	C[C@H]([C@@H](C(=O)O)N)OC	Thr	OMT
+NMe-Thr1	N-methylthreonine	CC(C(C(=O)O)NC)O	Thr	NMT
+Thr1	Threonine	C[C@H]([C@@H](C(=O)O)N)O	Thr
+Thr2	Threonine	NC(C(C)=O)C(O)=O	Thr
+DHB1	Threonine	OC(C)/C=C(N)/C(O)=O	Thr
+DHB2	Threonine	N/C(C(O)=O)=C\C(C)O	Thr
+DHB3	Threonine	N/C(C(O)=O)=C\CC	Thr
+DHB4	Threonine	CC/C=C(N)/C(O)=O	Thr
+dcThr1	decarboyxlated Threonine	CC(CN)O	Thr
+dcThr2	decarboyxlated Threonine	CC(CN)=O	Thr
+Thr	Threonine	N[C@H](C(O)=O)[C@@H](C)OC(C=C)(C)C	Thr
+4OH-Thr	4-Hydroxythreonine	C([C@H]([C@@H](C(=O)O)N)O)O	Thr
+4Cl-Thr	4-Chloro-Threonine	C([C@H]([C@@H](C(=O)O)N)O)Cl	Thr
+aThr	allo-Threonine	C[C@@H]([C@@H](C(=O)O)N)O	Thr
+ck-Arg	cyclo alpha-ketoarginine	C12(C(CCCN1C(NC2=O)=N)N)O	Arg
+Argal	arginal	C(CC(C=O)N)CN=C(N)N	Arg
+v-Arg	vinylogous arginine	C(C(N)CCCNC(=N)N)=CC(=O)O	Arg
+diOH-Arg	3,4-dihydroxyArginine	C(C(C(C(O)=O)N)O)(CN=C(N)N)O	Arg
+k-Arg	alpha-ketoarginine	C(C(C(CCCNC(=N)N)N)=O)(=O)O	Arg
+hk-Arg	hydrated alpha-ketoarginine	C(C(C(CCCNC(=N)N)N)O)(=O)O	Arg
+Arg1	Arginine	C(C[C@@H](C(=O)O)N)CN=C(N)N	Arg
+Har	homoarginine	C(CCN=C(N)N)C[C@@H](C(=O)O)N	Arg
+Hpr	homoproline	C1CCN[C@@H](C1)C(=O)O	Pip
+4oxo-Hpr	4-oxo-homoproline	O=C1CCN[C@@H](C1)C(=O)O	Pip
+ProC	proline carboxamid	C1C[C@H](NC1)C(=O)N	Pro
+Pro1	Proline	C1C[C@H](NC1)C(=O)O	Pro
+Pro2	Proline	OC(C1NCCC1)=N	Pro
+Pro3	Proline	O=C(N)C1NCCC1	Pro
+Pro4	Proline	NC(=O)C1CCCN1	Pro
+metPro	methylProline	OC(C1C(C)(C)CCN1)=O	Pro
+DOPA1	Proline	NC(/C=C/C1=CNC(C(O)=O)C1)=O	Pro
+DOPA2	Proline	O=C(N(C)C)/C=C/C1=CNC(C(O)=O)C1	Pro
+DOPA3	Proline	C/C=C1CNC(C(O)=O)C\1	Pro
+3Me-Pro	3-methylproline	C[C@H]1CCN[C@@H]1C(=O)O	MePro
+3OH-5Me-Pro	3-Hydroxy-5-methylproline	C[C@H]1C[C@@H]([C@H](N1)C(=O)O)O	MePro
+NFo-Pro	N-Formyl-Proline	C1CC(N(C1)C=O)C(=O)O	Pro
+4oxo-5Me-Pro	4-oxo-5-methylproline	CC1C(=O)CC(N1)C(=O)O	MePro
+ohmePro	3-hydroxyl-3-methyl proline	OC1(C)C(C(O)=O)NCC1	MePro
+4oxo-Pro	4-oxo-proline	C1[C@H](NCC1=O)C(=O)O	Pro
+Cl2-Pro	3,4-dichloro-proline	C1C(C(C(N1)C(=O)O)Cl)Cl	Pro
+3OH-Pro	3-Hydroxyproline	C1CN[C@@H](C1O)C(=O)O	Pro
+3-4OH-Pro	3,4-Dihydroxyproline	N1CC(C(C1C(=O)O)O)O	Pro
+4OH-Pro	4-Hydroxyproline	C1[C@H](CN[C@@H]1C(=O)O)O	Pro
+5Me-Pro	5-methylproline	CC1CCC(N1)C(=O)O	MePro
+4Me-Pro	4-methylproline	CC1CC(NC1)C(=O)O	MePro
+Ac-Pro	acetylproline	CC(=O)N1CCCC1C(=O)O	Pro
+Hse1	Homoserine	C(CO)[C@@H](C(=O)O)N	Ser
+gSer	alpha-guanidino Serine	C(C(=O)O)(N)(O)NC(=N)N	Ser
+Iser	isoserine	C([C@@H](C(=O)O)O)N	Ser
+NMe-Ser1	N-Methyl-Serine	CNC(CO)C(=O)O	Ser	NMT
+Serol	Serinol	C(C(CO)N)O	Ser
+Ac-Ser	O-acetyl-Serine	CC(=O)OC[C@@H](C(=O)O)N	Ser
+NFo-Iser	N-formyl-isoserine	C(C(C(=O)O)O)NC=O	Ser
+Ser1	Serine	C([C@@H](C(=O)O)N)O	Ser
+Ser2	Serine	NOCC(N)C(O)=O	Ser
+Ser3	Serine	NC(C=O)C(O)=O	Ser
+Ser4	Serine	N[C@H](C(O)=O)COC(C=C)(C)C	Ser
+Ph-Ser	phenylserine	C1=CC=C(C=C1)[C@@H]([C@@H](C(=O)O)N)O	Ser
+DhAla6	methyl 2-aminoacrylate	NC(C(OC)=O)=C	Ser	DEH	CMT
+Hty1	Homotyrosine	C1=CC(=CC=C1CCC(C(=O)O)N)O	Tyr
+NMe-Hty	N-methyl-homotyrosine	C1=CC(=CC=C1CCC(C(=O)O)NC)O	Tyr	NMT
+3Me-Hty	3-methyl-homotyrosine	C1=CC(=CC=C1CC(C(C(=O)O)N)C)O	Tyr
+Tyr1	Tyrosine	C1=CC(=CC=C1C[C@@H](C(=O)O)N)O	Tyr
+Tyr2	Tyrosine	OC([C@H](CC1=CC=C(C=C1)O)NC(C)=O)=O	Tyr
+Tyr3	Tyrosine	N[C@@H](CC1=CC=C(C=C1)OC/C=C(C)/C)C(O)=O	Tyr
+Tyr4	Tyrosine	N[C@@H](CC1=CC=C(C=C1)OC(C=C)(C)C)C(O)=O	Tyr
+Cl-NMe-Tyr	Chloro-N-methyl-tyrosine	C(C(=O)O)(CC1=CC(=C(C=C1)O)Cl)NC	Tyr	NMT
+NMe-OMe-TyrC	N,O-dimethyl-tyrosinecarboxamid	CNC(CC1=CC=C(C=C1)OC)C(=O)N	Tyr	NMT	OMT
+Br-Tyr	bromotyrosine	C1=CC(=C(C=C1CC(C(=O)O)N)Br)O	Tyr
+e-Tyr	ethylene inserted tyrosine	C(C(N)CC1=CC=C(C=C1)O)CC(=O)O	Tyr
+NMe-Tyr1	N-methyltyrosine	CN[C@@H](CC1=CC=C(C=C1)O)C(=O)O	Tyr	NMT
+dv-Tyr	dehydro vinylogous tyrosine	C(C(N)=CC1=CC=C(C=C1)O)=CC(=O)O	Tyr
+Cl-Tyr	chloro-tyrosine	C1=CC(=C(C=C1CC(C(=O)O)N)Cl)O	Tyr
+bTyr	beta-tyrosine	C1=CC(=CC=C1C(CC(=O)O)N)O	Tyr
+NMe-OMe-Tyr	N,O-dimethyl-tyrosine	CNC(CC1=CC=C(C=C1)OC)C(=O)O	Tyr	NMT	OMT
+bOMe-Tyr	beta-methoxy-tyrosine	COC(C1=CC=C(C=C1)O)C(C(=O)O)N	Tyr	OMT
+bOH-Tyr	beta-hydroxy-tyrosine	C1=CC(=CC=C1C(C(C(=O)O)N)O)O	OHTyr
+bOH-Cl-Tyr	beta-hydroxy-chloro-tyrosine	C1=CC(=C(C=C1C(C(C(=O)O)N)O)Cl)O	OHTyr
+3NO2-Tyr	3-nitrotyrosine	C1=CC(=C(C=C1CC(C(=O)O)N)[N+](=O)[O-])O	Tyr
+v-Tyr	vinylogous tyrosine	C(C(N)CC1=CC=C(C=C1)O)=CC(=O)O	Tyr
+v-OH-Tyr	vinylogous hydroxy tyrosine	C(C(N)CC1=CC(=C(C=C1)O)O)=CC(=O)O	OHTyr
+#	Methylated standard	amino acids
+OMe-Ala	O-Methyl-Alanine	O=C(OC)[C@@H](N)C	Ala	OMT
+OMe-Cys	O-Methyl-Cysteine	SC[C@H](N)C(OC)=O	Cys	OMT
+OMe-Asp	O-Methyl-Aspartic acid	OC(C[C@H](N)C(OC)=O)=O	Asp	OMT
+OMe-Glu1	O-Methyl-Glutamic acid	O=C(OC)[C@@H](N)CCC(O)=O	Glu	OMT
+OMe-Phe	O-Methyl-Phenylalanine	N[C@H](C(OC)=O)CC1=CC=CC=C1	Phe	OMT
+OMe-Gly	O-Methyl-Glycine	O=C(OC)CN	Gly	OMT
+OMe-His	O-Methyl-Histidine	N[C@@H](CC1=CN=CN1)C(OC)=O	His	OMT
+bH-dmHis1	β-hydroxy-N1,N3-dimethylhistidinium	C[N+]1=CN(C)C=C1C(O)C(N)C(O)=O	His	NMT	CH
+bH-dmHis2	β-hydroxy-N1,N3-dimethylhistidinium	CN1C(C(O)C(N)C(O)=O)=C[N+](C)=C1	His	NMT	CH
+OMe-Ile	O-Methyl-Isoleucine	O=C(OC)[C@@H](N)[C@@H](C)CC	Ile	OMT
+OMe-Lys	O-Methyl-Lysine	N[C@H](C(OC)=O)CCCCN	Lys	OMT
+OMe-Leu	O-Methyl-Leucine	N[C@@H](CC(C)C)C(OC)=O	Leu	OMT
+OMe-Met	O-Methyl-Methionine	COC([C@@H](N)CCSC)=O	Met	OMT
+OMe-Asn	O-Methyl-Asparagine	NC(C[C@H](N)C(OC)=O)=O	Asn	OMT
+OMe-Pro	O-Methyl-Proline	O=C([C@@H]1CCCN1)OC	Pro	OMT
+OMe-Glu	O-Methyl-Glutamine	COC([C@@H](N)CCC(N)=O)=O	Gln	OMT
+OMe-Arg	O-Methyl-Arginine	O=C(OC)[C@@H](N)CCCNC(N)=N	Arg	OMT
+OMe-Ser1	O-Methyl-Serine	COC([C@@H](N)CO)=O	Ser	OMT
+OMe-Ser2	O-Methyl-Serine	OC(C(OC)N)=O	Ser	OMT
+OMe-Thr	O-Methyl-Threonine	N[C@H](C(O)=O)[C@H](OC)C	Thr	OMT
+OMe-Val	O-Methyl-Valine	N[C@H](C(OC)=O)C(C)C	Val	OMT
+OMe-Trp	O-Methyl-Tryptophan	O=C(OC)[C@@H](N)CC1=CNC2=C1C=CC=C2	Trp	OMT
+OMe-Tyr	O-Methyl-Tyrosine	N[C@@H](CC1=CC=C(O)C=C1)C(OC)=O	Tyr	OMT
+NMe-Ala	N-Methyl-Alanine	O=C(O)[C@@H](NC)C	Ala	NMT
+NMe-Cys	N-Methyl-Cysteine	SC[C@H](CN)C(O)=O	Cys	NMT
+NMe-Asp	N-Methyl-Aspartic acid	OC(C[C@H](NC)C(O)=O)=O	Asp	NMT
+NMe-Glu1	N-Methyl-Glutamic acid	O=C(O)[C@@H](NC)CCC(O)=O	Glu	NMT
+NMe-Phe	N-Methyl-Phenylalanine	CN[C@H](C(O)=O)CC1=CC=CC=C1	Phe	NMT
+NMe-Gly	N-Methyl-Glycine	O=C(O)CNC	Gly	NMT
+NMe-His	N-Methyl-Histidine	CN[C@@H](CC1=CN=CN1)C(O)=O	His	NMT
+NMe-Ile	N-Methyl-Isoleucine	O=C(O)[C@@H](NC)[C@@H](C)CC	Ile	NMT
+Ile-NMT	2-(dimethylamino)-3-methylpentanoic acid	CCC(C)C(N(C)C)C(O)=O	Ile	NMT
+NMe-Lys	N-Methyl-Lysine	CN[C@H](C(O)=O)CCCCN	Lys	NMT
+NMe-Leu	N-Methyl-Leucine	CN[C@@H](CC(C)C)C(O)=O	Leu	NMT
+NMe-Met	N-Methyl-Methionine	OC([C@@H](NC)CCSC)=O	Met	NMT
+NMe-Asn	N-Methyl-Asparagine	NC(C[C@H](NC)C(O)=O)=O	Asn	NMT
+NMe-Pro	N-Methyl-Proline	O=C([C@@H]1CCCN(C)1)O	Pro	NMT
+NMe-Glu2	N-Methyl-Glutamine	OC([C@@H](NC)CCC(N)=O)=O	Gln	NMT
+NMe-Arg	N-Methyl-Arginine	O=C(O)[C@@H](NC)CCCNC(N)=N	Arg	NMT
+NMe-Ser	N-Methyl-Serine	OC([C@@H](NC)CO)=O	Ser	NMT
+NMe-Thr	N-Methyl-Threonine	CN[C@H](C(O)=O)[C@H](O)C	Thr	NMT
+dMOHA	5,5-dimethyl-2-oxohexanoic acid	CC(C)(CCC(C(O)=O)=O)C	Thr	DEH	CMT
+NMe-Val	N-Methyl-Valine	CN[C@H](C(O)=O)C(C)C	Val	NMT
+NMe-Trp	N-Methyl-Tryptophan	O=C(O)[C@@H](NC)CC1=CNC2=C1C=CC=C2	Trp	NMT
+NMe-Tyr	N-Methyl-Tyrosine	CN[C@@H](CC1=CC=C(O)C=C1)C(O)=O	Tyr	NMT
+bMe-Phe	Beta-methylphenylalanine	NC(C(C)C1=CC=CC=C1)C(O)=O	Phe
+bOH-End	Beta-hydroxy-enduracididine	NC(C(O)C1CN=C(N)N1)C(O)=O	End
+Arg	Arginine	N[C@@H](CCCNC(N)=N)C(O)=O	Arg
+bMe-Cys	Beta-methyl-cysteine	CC(S)C(N)C(O)=O	Cys
+Oxo	3-methyl-2-oxopentoate	OC(C(O)C(CC)C)=O	Oxo
+bOH-Val	beta-hydroxy-valine	CC(C)C(NO)C(O)=O	OHVal
+gOH-Val	gamma-hydroxy-valine	CC(C(C(O)=O)N)CO	OHVal
+bOH-Phe	beta-hydroxy-phenylalanine	NC(C(O)=O)C(C1=CC=CC=C1)O	OHPhe
+Aeo	2-amino-9,10-epoxi-8-oxodecanoic acid	O=C(O)C(N)CCCCCC(C1CO1)=O	Aeo
+ohQA	3-OH quinaldic acid	O=C(O)C1=NC2=CC=CC=C2C=C1O	OHQA
+Piz	piperazic acid	O=C(O)C1NNCCC1	Piz
+dPiz	delta piperazic acid	O=C(O)C1NN=CCC1	Piz
+QxCA	quinoxaline-2-carboxylic acid	O=C(C1=NC2=CC=CC=C2N=C1)O	QxCA
+Ala2	Ala-red	NC(C(O)=O)=C	Ala
+Ala3	Ala-red	O=C(N)C(N)=C	Ala
+Cys	Cys-decarb	NCCS	Cys
+Aet	(E)-2-aminoethene-1-thiol	N/C=C/S	Cys	DCA
+Ala	Ala-Nhydroxy	O=C(O)C(NO)C	Ala
+Thr3	Thr-dhy	N/C(C(O)=O)=C\C	Thr
+Thr4	Thr	N/C(C(O)=O)=C(C)\OC	Thr
+bMe-Leu	Leu-betaMethyl	NC(C(O)=O)C(C(C)C)C	Leu	CMT
+cGln	Gln-cyc	O=C1N=C(O)CCN1	Gln
+#fungal
+OHPP	4-hydroxyphenylpyruvate	O=C(C(Cc1ccc(O)cc1)=O)O	OHPP
+Dha	DehydroalanOne	OC(C(N)=C)=O	Dha
+OHGln	HydroxyglutamOne	OC(C(N)C(O)CC(N)=O)=O	OHGln
+HMP	2-hydroxy-3-methylpentanoOc-acOd	O=C(C(O)C(C)CC)O	HMP
+Hse	Homo-serOne	OCCC(C(O)=O)N	Hse
+Hty	Homo-tyrosOne	OC1=CC=C(C=C1)CCC(C(O)=O)N	Hty
+OHHty	HydroxyhomotyrosOne-sulfate	NC(CC(O)C1=CC=C(O)C=C1)C(O)=O	OHHty
+OPA	Ondole-pyruvOc-acOd	O=C(C(O)=O)CC1=CNC2=CC=CC=C21	OPA
+OMeTrp	N-methoxytryptophan	OC(C(N)CC1=CN(OC)C2=C1C=CC=C2)=O	OMeTrp
+#Ambiguous	amino acids	with	placeholder	atom
+SerCysA1	SerOrCys	NC(CI)C(O)=O	SerCysA
+SerCysA2	SerOrCys	I/C=C/N	SerCysA
+SerCysA2	SerOrCys	CC(O)C(N)(I)C(O)=O	SerCysA
+#hormones
+pyrE	Pyroglutamate	O=C1CCC(C([O])=O)N1	Glu
+amGly	Amidated-glycine	NCC(N)=O	Gly
+amAla	Amidated-alanine	N[C@@H](C)C(N)=O	Ala
+amVal	Amidated-valine	N[C@@H](C(C)C)C(N)=O	Val
+amLeu	Amidated-leucine	N[C@@H](CC(C)C)C(N)=O	Leu
+amIle	Amidated-isoleucine	N[C@@H]([C@@H](C)CC)C(N)=O	Ile
+amAsn	amidated-Asn	O=C(N)[C@H](CC(N)=O)N	Asn
+amAsp	Amidated-Asp	O=C(N)[C@H](CC(O)=O)N	Asp
+amGlu	Amidated-glutamate	N[C@@H](CCC([O-])=O)C(N)=O	Glu
+amThr	Amidatede-threonine	N[C@@H]([C@H](O)C)C(N)=O	Thr
+amSer	Amidated-serine	N[C@@H](CO)C(N)=O	Ser
+amMet	Amidated-methionine	N[C@@H](CCSC)C(N)=O	Met
+amCys	Amidated-cysteine	N[C@@H](CS)C(N)=O	Cys
+amLys	Amidated-lysine	N[C@@H](CCCCN)C(N)=O	Lys
+amArg	Amidated-arginine	N[C@@H](CCCNC(N)=N)C(N)=O	Arg
+amGln	Amidated-glutamine	N[C@@H](CCC(N)=O)C(N)=O	Gln
+amPhe	Amidated-phenylalanine	N[C@@H](CC1=CC=CC=C1)C(N)=O	Phe
+amTyr	Amidated-tyrosine	N[C@@H](CC1=CC=C(O)C=C1)C(N)=O	Tyr
+amTrp	Amidated-tryptophan	N[C@@H](CC1=CNC2=C1C=CC=C2)C(N)=O	Trp
+amPro	Amidated-proline	O=C(N)[C@H]1NCCC1	Pro
+amHis	Amidated-Histidine	N[C@@H](CC1=CNC=N1)C(N)=O	His
+T4	T4	OC1=C(I)C=C(OC2=C(I)C=C(CC(C(O)=O)N)C=C2I)C=C1I	Tyr
+T3	T3	OC1=CC=C(OC2=C(I)C=C(CC(C(O)=O)N)C=C2I)C=C1I	Tyr
+Dop	dopamine	OC1=C(O)C=C(CCN)C=C1	Tyr
+Adr	adrenaline	OC1=C(O)C=C(C(O)CNC)C=C1	Tyr
+NorE	norepinephrine	OC1=C(O)C=C(C(O)CN)C=C1	Tyr
+#Other	non	aminos
+3HA	3-hydroxy anthranilic acid	O=C(O)C1=C(N)C(O)=CC=C1	3HA
+Hmaa	3-hydroxy-4-methyl anthranilic acid	OC(C(N)=C(C(O)=O)C=C1)=C1C	3HA
+Maa	3-methoxy anthranilic acid	O=C(O)C1=C(N)C(OC)=CC=C1	3HA
+4Hmaa	4-hydroxy-5-methoxy anthranilic acid	O=C(O)C1=C(N)C=C(O)C(OC)=C1	3HA

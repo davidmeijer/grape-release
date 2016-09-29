@@ -3,7 +3,7 @@ package ca.mcmaster.magarveylab.grape.enums;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-import org.openscience.cdk.interfaces.IMolecule;
+import org.openscience.cdk.interfaces.IAtomContainer;
 
 public enum SugarEnums{
 	GLUCOSE("Glucose" ,"OC[C@H]1OC([C@@H]([C@H]([C@@H]1O)O)O)O"),
@@ -108,8 +108,8 @@ public enum SugarEnums{
 		this.smiles = smiles;
 	}
 	
-	public static Map<String, IMolecule> getAll(){
-		Map<String, IMolecule> all = new LinkedHashMap<String, IMolecule>(); 
+	public static Map<String, IAtomContainer> getAll(){
+		Map<String, IAtomContainer> all = new LinkedHashMap<String, IAtomContainer>(); 
 		for(SugarEnums single : SugarEnums.values()){
 			all.put(single.fullName(), single.mol());
 		}
@@ -124,8 +124,8 @@ public enum SugarEnums{
 		return smiles;
 	}
 	
-	public IMolecule mol(){
-		IMolecule mol = MoleculeClasses.getMol(smiles);
+	public IAtomContainer mol(){
+		IAtomContainer mol = MoleculeClasses.getMol(smiles);
 		return mol;
 	}
 }

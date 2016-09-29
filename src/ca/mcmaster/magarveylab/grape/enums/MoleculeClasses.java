@@ -2,7 +2,7 @@ package ca.mcmaster.magarveylab.grape.enums;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
-import org.openscience.cdk.interfaces.IMolecule;
+import org.openscience.cdk.interfaces.IAtomContainer;
 
 import ca.mcmaster.magarveylab.grape.util.io.SmilesIO;
 
@@ -47,8 +47,8 @@ public class MoleculeClasses {
 			this.smiles = smiles;
 		}
 		
-		public static Map<String, IMolecule> getAll(){
-			Map<String, IMolecule> all = new LinkedHashMap<String, IMolecule>(); 
+		public static Map<String, IAtomContainer> getAll(){
+			Map<String, IAtomContainer> all = new LinkedHashMap<String, IAtomContainer>(); 
 			
 			for(AromaticFungal single : AromaticFungal.values()){
 				all.put(single.toString(), getMol(single.smiles));
@@ -88,8 +88,8 @@ public class MoleculeClasses {
 			this.smiles = smiles;
 		}
 		
-		public static Map<String, IMolecule> getAll(){
-			Map<String, IMolecule> all = new LinkedHashMap<String, IMolecule>(); 
+		public static Map<String, IAtomContainer> getAll(){
+			Map<String, IAtomContainer> all = new LinkedHashMap<String, IAtomContainer>(); 
 			
 			for(AromaticNotType2 single : AromaticNotType2.values()){
 				all.put(single.toString(), getMol(single.smiles));
@@ -138,8 +138,8 @@ public class MoleculeClasses {
 			this.smiles = smiles;
 		}
 		
-		public static Map<String, IMolecule> getAll(){
-			Map<String, IMolecule> all = new LinkedHashMap<String, IMolecule>(); 
+		public static Map<String, IAtomContainer> getAll(){
+			Map<String, IAtomContainer> all = new LinkedHashMap<String, IAtomContainer>(); 
 			
 			for(AromaticType2 single : AromaticType2.values()){
 				all.put(single.toString(), getMol(single.smiles));
@@ -166,8 +166,8 @@ public class MoleculeClasses {
 			this.smiles = smiles;
 		}
 		
-		public static Map<String, IMolecule> getAll(){
-			Map<String, IMolecule> all = new LinkedHashMap<String, IMolecule>(); 
+		public static Map<String, IAtomContainer> getAll(){
+			Map<String, IAtomContainer> all = new LinkedHashMap<String, IAtomContainer>(); 
 			
 			for(Terpenes single : Terpenes.values()){
 				all.put(single.toString(), getMol(single.smiles));
@@ -189,8 +189,8 @@ public class MoleculeClasses {
 			this.smiles = smiles;
 		}
 		
-		public static Map<String, IMolecule[]> getAll(){
-			Map<String, IMolecule[]> all = new LinkedHashMap<String, IMolecule[]>(); 
+		public static Map<String, IAtomContainer[]> getAll(){
+			Map<String, IAtomContainer[]> all = new LinkedHashMap<String, IAtomContainer[]>(); 
 			
 			for(Enedyine single : Enedyine.values()){
 				all.put(single.toString(), getMols(single.smiles));
@@ -199,23 +199,23 @@ public class MoleculeClasses {
 		}
 	}
 	
-	public static IMolecule getMol(String smiles){
-		IMolecule mol = null;
+	public static IAtomContainer getMol(String smiles){
+		IAtomContainer mol = null;
 		try {
-			mol = SmilesIO.readSmiles(smiles);
-			mol = SmilesIO.readSmiles(SmilesIO.generateSmiles(mol)); //Regenerates the SMILES
+			mol = SmilesIO.readSmilesTemplates(smiles);
+			mol = SmilesIO.readSmilesTemplates(SmilesIO.generateSmiles(mol)); //Regenerates the SMILES
 		} catch (Exception e) {
 			System.out.println("Bad SMILES string: " + smiles);
 		}
 		return mol;
 	}
 	
-	public static IMolecule[] getMols(String[] smiles){
-		IMolecule[] mols = new IMolecule[smiles.length];
+	public static IAtomContainer[] getMols(String[] smiles){
+		IAtomContainer[] mols = new IAtomContainer[smiles.length];
 		try {
 			for(int i = 0; smiles.length > i; i++){
-				IMolecule mol = SmilesIO.readSmiles(smiles[i]);
-				mols[i] = (SmilesIO.readSmiles(SmilesIO.generateSmiles(mol))); //Regenerates the SMILES
+				IAtomContainer mol = SmilesIO.readSmilesTemplates(smiles[i]);
+				mols[i] = (SmilesIO.readSmilesTemplates(SmilesIO.generateSmiles(mol))); //Regenerates the SMILES
 			}
 		} catch (Exception e) {
 			System.out.println("Bad SMILES string: " + smiles);

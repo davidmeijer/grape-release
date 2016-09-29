@@ -1,3 +1,0 @@
-The file amino_acids.txt was assembled from M Skinnider's code file DomainsEnum from package ca.mcmaster.magarveylab.prism.hmm.
-
-The file antibacterial_SMILES.txt was assembled from the Dropbox file Databases/NRP/Natural Product Antibacterial SMILES Database.xlsx.

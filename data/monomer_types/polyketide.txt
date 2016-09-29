@@ -1,7 +1,0 @@
-Me-Suc	methyl-succinimide	CC1CC(=O)NC1=O
-Adda	3-amino-9-methoxy-2,6,8-trimethyl-10-phenyldeca-4,6-dienoic acid	CC(C=C(C)C=CC(C(C)C(=O)O)N)C(CC1=CC=CC=C1)OC
-C8:3(t2.t4.t6)	trans2,trans4,trans6-trioctaneic acid	CC=CC=CC=CC(=O)O
-ADMAdda	O-Acetyl-O-demethylAdda.	C(C(C(C=CC(=CC(C(CC1=CC=CC=C1)OC(C)=O)C)C)N)C)(O)=O
-CFA	coronafacic acid	CC[C@@H]1C[C@H]2[C@H](CCC2=O)C(=C1)C(=O)O
-C6:2(t2.t4)	trans2,trans4-dihexaneic acid	CC=CC=CC(=O)O
-DMAdda	O-demethyl-Adda	C(C(C(C=CC(=CC(C(CC1=CC=CC=C1)O)C)C)N)C)(O)=O

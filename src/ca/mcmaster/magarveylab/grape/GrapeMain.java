@@ -74,9 +74,9 @@ public class GrapeMain {
 				
 				//TextOutput.writeFile(text, SmilesIO.getCleanFileName(name) + ".txt");
 
-				JsonOutput.writeJSON(inputEntry.getName(), inputEntry.getSmiles(), String.valueOf(x), chemicalAbstraction);
+				JsonOutput.writeJSON(".",inputEntry.getName(), inputEntry.getSmiles(), String.valueOf(x), chemicalAbstraction);
 
-				ImageOutput.createReport(inputEntry.getName(), inputEntry.getSmiles(), String.valueOf(x), chemicalAbstraction);
+				ImageOutput.createReport(".",inputEntry.getName(), inputEntry.getSmiles(), String.valueOf(x), chemicalAbstraction);
 			}
 			x ++;
 		}

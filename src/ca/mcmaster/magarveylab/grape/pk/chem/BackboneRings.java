@@ -19,7 +19,7 @@ import org.openscience.cdk.graph.PathTools;
 import org.openscience.cdk.interfaces.IAtom;
 import org.openscience.cdk.interfaces.IAtomContainer;
 import org.openscience.cdk.interfaces.IBond;
-import org.openscience.cdk.interfaces.IMolecule;
+import org.openscience.cdk.interfaces.IAtomContainer;
 import org.openscience.cdk.interfaces.IRingSet;
 import org.openscience.cdk.tools.manipulator.RingSetManipulator;
 
@@ -211,13 +211,13 @@ private boolean isLinear;
 	}
 
 	private void openDoubleRingOxygen() {
-		IMolecule template = null;
-		try {template = SmilesIO.readSmiles("CC(C)COC1(C)CC(O)CC(C)O1");} catch (Exception e) {} //doubleRing template to match
+		IAtomContainer template = null;
+		try {template = SmilesIO.readSmilesTemplates("CC(C)COC1(C)CC(O)CC(C)O1");} catch (Exception e) {} //doubleRing template to match
 		IBond templateCarbonOxygenBond1 = template.getBond(template.getAtom(5),template.getAtom(13));
 		IBond templateCarbonOxygenBond2 = template.getBond(template.getAtom(5),template.getAtom(4));
-		List<IBond> templateCarbonOxygenBond1Matches = ChemicalUtilities.findMatchingBondsFromTemplate(template, templateCarbonOxygenBond1, (IMolecule)pk);
+		List<IBond> templateCarbonOxygenBond1Matches = ChemicalUtilities.findMatchingBondsFromTemplate(template, templateCarbonOxygenBond1, (IAtomContainer)pk);
 		if(templateCarbonOxygenBond1Matches.size() < 1) return;
-		List<IBond> templateCarbonOxygenBond2Matches = ChemicalUtilities.findMatchingBondsFromTemplate(template, templateCarbonOxygenBond2, (IMolecule)pk);
+		List<IBond> templateCarbonOxygenBond2Matches = ChemicalUtilities.findMatchingBondsFromTemplate(template, templateCarbonOxygenBond2, (IAtomContainer)pk);
 		
 		for(IBond bond : templateCarbonOxygenBond1Matches){
 			pk.removeBond(bond);
@@ -237,16 +237,16 @@ private boolean isLinear;
 	}
 
 	private void openAvermectinLikeEnd() {
-		IMolecule template = null;
-		try {template = SmilesIO.readSmiles("OC1C=CC(C(O)=O)[C@]2(O)CCO[C@H]12");} catch (Exception e) {}
+		IAtomContainer template = null;
+		try {template = SmilesIO.readSmilesTemplates("OC1C=CC(C(O)=O)[C@]2(O)CCO[C@H]12");} catch (Exception e) {}
 		IBond templateHydroxyl = template.getBond(template.getAtom(8),template.getAtom(9)); //change to double bond
 		IBond templateCarbonRingBreak = template.getBond(template.getAtom(4),template.getAtom(8)); //break this bond
 		IBond templateOxygenRemove = template.getBond(template.getAtom(12),template.getAtom(13)); //Remove this oxygen
 		
-		List<IBond> templateHydroxylMatches = ChemicalUtilities.findMatchingBondsFromTemplate(template, templateHydroxyl, (IMolecule)pk);
+		List<IBond> templateHydroxylMatches = ChemicalUtilities.findMatchingBondsFromTemplate(template, templateHydroxyl, (IAtomContainer)pk);
 		if(templateHydroxylMatches.size() < 1) return;
-		List<IBond> templateCarbonRingBreakMatches = ChemicalUtilities.findMatchingBondsFromTemplate(template, templateCarbonRingBreak, (IMolecule)pk);
-		List<IBond> templateOxygenRemoveMatches = ChemicalUtilities.findMatchingBondsFromTemplate(template, templateOxygenRemove, (IMolecule)pk);
+		List<IBond> templateCarbonRingBreakMatches = ChemicalUtilities.findMatchingBondsFromTemplate(template, templateCarbonRingBreak, (IAtomContainer)pk);
+		List<IBond> templateOxygenRemoveMatches = ChemicalUtilities.findMatchingBondsFromTemplate(template, templateOxygenRemove, (IAtomContainer)pk);
 		
 		for(IBond bond : templateHydroxylMatches){
 			bond.setOrder(IBond.Order.DOUBLE);

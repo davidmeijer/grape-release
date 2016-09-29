@@ -4,8 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 import org.openscience.cdk.graph.ConnectivityChecker;
 import org.openscience.cdk.interfaces.IAtom;
-import org.openscience.cdk.interfaces.IMolecule;
-import org.openscience.cdk.interfaces.IMoleculeSet;
+import org.openscience.cdk.interfaces.IAtomContainer;
+import org.openscience.cdk.interfaces.IAtomContainerSet;
+import org.openscience.cdk.tools.manipulator.AtomContainerManipulator;
 
 import ca.mcmaster.magarveylab.grape.enums.AcylAdenylatingSubstrates;
 import ca.mcmaster.magarveylab.grape.enums.DomainEnums.AminoAcidEnums;
@@ -35,12 +36,17 @@ public class Fragment
 	
 	private FragmentType fragmenType;
 	
-	private IMolecule molecule = null;
+	private IAtomContainer atomContainer = null;
+	private List<String> specificNames = new ArrayList<String>();
 	private IAtom thiazoleS = null;
+	private IAtom thiazolineS = null;
 	private IAtom betaLactamS = null;
 	private IAtom oxazoleO = null;
+	private IAtom oxazolineO = null;
 	private List<IAtom> aminoNs = new ArrayList<IAtom>();
 	private List<IAtom> aminoCs = new ArrayList<IAtom>();
+	private List<IAtom> thioEsterAtoms = new ArrayList<IAtom>();
+	private List<IAtom> lactamAtoms = new ArrayList<IAtom>();
 	private IAtom lactoneCarboxylC = null;
 	private IAtom lactoneHydroxylO = null;
 	private IAtom lactoneHydroxylC = null;
@@ -55,6 +61,8 @@ public class Fragment
 	private double tanimotoScore = -1;
 	// A boolean to track whether connectivity of this monomer fragment is reliable.
 	private boolean ignoreConnectivity = false;
+	// Is a result of a ketoextension
+	private boolean ketoExtension = false;
 	// A list of domains
 	private List<AminoAcidEnums> aminoAcidDomains = new ArrayList<AminoAcidEnums>();
 	private KnownOtherEnums knownOther = null;
@@ -74,8 +82,8 @@ public class Fragment
 	 * Consstruct a monomer fragment from a molecule
 	 * @param molecule
 	 */
-	public Fragment(IMolecule molecule) {
-		this.molecule = molecule;
+	public Fragment(IAtomContainer molecule) {
+		this.atomContainer = molecule;
 	}
 	
 	/**
@@ -83,18 +91,18 @@ public class Fragment
 	 * are not preserved, and therefore will need to be repopulated.
 	 * @return An ArrayList of monomer fragments based on connected components.
 	 */
-	public ArrayList<Fragment> partitionIntoMonomerFragments() {
+	public List<Fragment> partitionIntoMonomerFragments() {
 		ArrayList<Fragment> monomerFragments = new ArrayList<Fragment>();
 		
-		IMoleculeSet partitions = ConnectivityChecker.partitionIntoMolecules(molecule);
+		IAtomContainerSet partitions = ConnectivityChecker.partitionIntoMolecules(atomContainer);
 		
-		if(partitions.getMoleculeCount() == 1) {
+		if(partitions.getAtomContainerCount() == 1) {
 			monomerFragments.add(this);
 			return(monomerFragments);
 		}
 		
-		for(int i = 0; i < partitions.getMoleculeCount(); i++) {
-			IMolecule currentMolecule = partitions.getMolecule(i);
+		for(int i = 0; i < partitions.getAtomContainerCount(); i++) {
+			IAtomContainer currentMolecule = partitions.getAtomContainer(i);
 			Fragment newFragment = new Fragment(currentMolecule);
 			if(currentMolecule.contains(thiazoleS)) {
 				newFragment.setThiazoleS(thiazoleS);
@@ -106,12 +114,22 @@ public class Fragment
 				if(currentMolecule.contains(aminoN)) {
 					newFragment.addAminoN(aminoN);
 					newFragment.setAtomAfterNTerminus(atomAfterNTerminus);
-				}	
+				}
 			}
 			for(IAtom aminoC : aminoCs){
 				if(currentMolecule.contains(aminoC)) {
 					newFragment.addAminoC(aminoC);
 					newFragment.setAtomAfterCTerminus(atomAfterCTerminus);
+				}
+			}
+			for(IAtom atom : thioEsterAtoms){
+				if(currentMolecule.contains(atom)) {
+					newFragment.addThioEsterAtom(atom);
+				}
+			}
+			for(IAtom atom : lactamAtoms){
+				if(currentMolecule.contains(atom)) {
+					newFragment.addLactamAtom(atom);
 				}
 			}
 			if(currentMolecule.contains(lactoneCarboxylC)) {
@@ -132,6 +150,7 @@ public class Fragment
 			if(currentMolecule.contains(betaLactamS)) {
 				newFragment.setBetaLactamS(betaLactamS);
 			}
+			//set ribosomal breakage atoms
 			monomerFragments.add(newFragment);
 		}
 		return monomerFragments;
@@ -149,7 +168,7 @@ public class Fragment
 			return null;
 		}
 		for(Fragment m : monomerFragmentList) {
-			if(m.getMolecule().contains(atomAfterNTerminus)) {
+			if(m.getAtomContainer().contains(atomAfterNTerminus)) {
 				return(m);
 			}
 		}
@@ -163,21 +182,31 @@ public class Fragment
 	 */
 	public Fragment getFragmentAfterCTerminus(List<Fragment> monomerFragmentList) {
 		if(atomAfterCTerminus == null) {
+			//System.out.println("ISNULL!");
 			return null;
 		}
+//		System.out.println(atomAfterCTerminus);
 		for(Fragment m : monomerFragmentList) {
-			if(m.getMolecule().contains(atomAfterCTerminus)) {
+			if(m.getAtomContainer().contains(atomAfterCTerminus)) {
+			//	System.out.println("FOUND ONE");
 				return(m);
 			}
 		}
+		//System.out.println("DIDN'T FIND ONE");
 		return null;
 	}
 	
-	public IMolecule getMolecule() {
-		return this.molecule;
+	public IAtomContainer getAtomContainer() {
+		return this.atomContainer;
 	}
-	public void setMolecule(IMolecule newMolecule) {
-		this.molecule = newMolecule;
+	public void setAtomContainer(IAtomContainer newMolecule) {
+		this.atomContainer = newMolecule;
+	}
+	public void addSpecificName(String specificName) {
+		this.specificNames.add(specificName);
+	}
+	public List<String> getSpecificNames() {
+		return specificNames;
 	}
 	public List<IAtom> getAminoNs() {
 		return aminoNs;
@@ -208,6 +237,14 @@ public class Fragment
 	public void setLactoneCarboxylC(IAtom lactoneCarboxylC) {
 		this.lactoneCarboxylC = lactoneCarboxylC;
 	}
+
+	public void addThioEsterAtom(IAtom atom) {
+		thioEsterAtoms.add(atom);
+	}
+	
+	public List<IAtom> getThioEsterAtoms(){
+		return thioEsterAtoms;
+	}	
 
 	public IAtom getLactoneHydroxylO() {
 		return lactoneHydroxylO;
@@ -245,6 +282,14 @@ public class Fragment
 		this.thiazoleS = thiazoleS;
 	}
 
+	public IAtom getThiazolineS() {
+		return thiazolineS;
+	}
+
+	public void setThiazolineS(IAtom thiazolineS) {
+		this.thiazolineS = thiazolineS;
+	}
+
 	/**
 	 * @return the oxazoleO
 	 */
@@ -257,6 +302,14 @@ public class Fragment
 	 */
 	public void setOxazoleO(IAtom oxazoleO) {
 		this.oxazoleO = oxazoleO;
+	}
+
+	public IAtom getOxazolineO() {
+		return oxazolineO;
+	}
+
+	public void setOxazolineO(IAtom oxazolineO) {
+		this.oxazolineO = oxazolineO;
 	}
 
 	/**
@@ -313,6 +366,13 @@ public class Fragment
 	 */
 	public void setAtomAfterLactoneHydroxyl(IAtom atomAfterLactoneHydroxyl) {
 		this.atomAfterLactoneHydroxyl = atomAfterLactoneHydroxyl;
+	}
+	
+	public List<IAtom> getLactamAtoms(){
+		return lactamAtoms;
+	}
+	public void addLactamAtom(IAtom atom) {
+		lactamAtoms.add(atom);
 	}
 
 	/**
@@ -565,6 +625,15 @@ public class Fragment
 		this.atomOppositeSugarBond = atomOppositeSugarBond;
 	}
 	
+
+	public void setAsKetoExtension() {
+		ketoExtension = true;
+	}
+	
+	public boolean ketoExtension(){
+		return ketoExtension;
+	}
+	
 	/**
 	 * Set to false when this fragment is part of a larger cyclic list of ordered monomer fragments. This means the start is unknown
 	 * @param b
@@ -591,7 +660,7 @@ public class Fragment
 			return null;
 		}
 		for(Fragment m : monomerFragments) {
-			if(m.getMolecule().contains(this.atomInAttachedSugar)) {
+			if(m.getAtomContainer().contains(this.atomInAttachedSugar)) {
 				return m;
 			}
 		}
@@ -606,7 +675,7 @@ public class Fragment
 			return null;
 		}
 		for(Fragment m : monomerFragments) {
-			if(m.getMolecule().contains(this.atomOppositeSugarBond)) {
+			if(m.getAtomContainer().contains(this.atomOppositeSugarBond)) {
 				return m;
 			}
 		}
@@ -641,7 +710,7 @@ public class Fragment
 			ncols = 4;
 		}
 		for (int i = 0; i < monomerFragments.size(); i++) {
-			SmilesIO.drawMolecule(monomerFragments.get(i).getMolecule(),
+			SmilesIO.drawMolecule(monomerFragments.get(i).getAtomContainer(),
 					"temp_step_" + i);
 		}
 		String command = "montage images/temp_step_* -mode concatenate -tile "
@@ -653,5 +722,12 @@ public class Fragment
 		command += "rm images/temp_step_*;";
 	
 		ShellUtilities.runCommand(command);
+	}
+
+	public void addImplicitHydrogens() {
+		AtomContainerManipulator.convertImplicitToExplicitHydrogens(atomContainer);
+		for(IAtom atom : atomContainer.atoms()){
+			atom.setImplicitHydrogenCount(0);
+		}		
 	}
 }

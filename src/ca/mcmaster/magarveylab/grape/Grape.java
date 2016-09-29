@@ -22,7 +22,7 @@ public class Grape {
 
 	public Grape(GrapeConfig gc){
 		this.gc = gc;
-		predictor =  new NRPPredictor("data/monomer_types/amino_acids_with_domains.txt", gc.fungal());
+		predictor =  new NRPPredictor(gc.getAminoAcidsPath());
 	}
 	
 	/**
@@ -36,19 +36,19 @@ public class Grape {
 			if(gc.txt()){
 				String textOutput = TextOutput.createOutputFile(chemicalAbstraction);
 				if(!gc.getName().isEmpty()){
-					TextOutput.writeFile(textOutput, gc.getName() + ".txt");
+					TextOutput.writeFile(textOutput, gc.getOutputPath(), gc.getName() + ".txt");
 				}else if(!gc.getID().isEmpty()){
-					TextOutput.writeFile(textOutput, gc.getID() + ".txt");
+					TextOutput.writeFile(textOutput, gc.getOutputPath(), gc.getID() + ".txt");
 				}else{
-					TextOutput.writeFile(textOutput, "output.txt");
+					TextOutput.writeFile(textOutput, gc.getOutputPath(), "output.txt");
 				}	
 			}
 			if(gc.json()){
-				JsonOutput.writeJSON(gc.getName(), gc.getSmiles(), gc.getID(), chemicalAbstraction);
+				JsonOutput.writeJSON(gc.getOutputPath(), gc.getName(), gc.getSmiles(), gc.getID(), chemicalAbstraction);
 			}
 			if(gc.image()){
 				try {
-					ImageOutput.createReport(gc.getName(), gc.getSmiles(), gc.getID(), chemicalAbstraction);
+					ImageOutput.createReport(gc.getOutputPath(), gc.getName(), gc.getSmiles(), gc.getID(), chemicalAbstraction);
 				} catch (CDKException e) {
 					System.err.println("Could not draw molecule");
 				}
@@ -66,15 +66,15 @@ public class Grape {
 				}
 				if(gc.txt()){
 					String textOutput = TextOutput.createOutputFile(chemicalAbstraction);
-					TextOutput.writeFile(textOutput, name + ".txt");
+					TextOutput.writeFile(textOutput, gc.getOutputPath(), name + ".txt");
 				}
 				if(gc.json()){
-					JsonOutput.writeJSON(name, smiles, name, chemicalAbstraction);
+					JsonOutput.writeJSON(gc.getOutputPath(), name, smiles, name, chemicalAbstraction);
 				}
 				if(gc.image()){
 					try{
-						ImageOutput.createReport(name, smiles, name, chemicalAbstraction);
-					}catch(CDKException e){
+						ImageOutput.createReport(gc.getOutputPath(), name, smiles, name, chemicalAbstraction);
+					}catch(Exception e){
 						System.err.println("Could not draw: " + name);
 					}
 				}

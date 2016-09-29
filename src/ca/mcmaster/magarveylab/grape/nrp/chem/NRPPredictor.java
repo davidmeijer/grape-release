@@ -14,16 +14,19 @@ import java.util.Set;
 
 import org.openscience.cdk.Atom;
 import org.openscience.cdk.Bond;
+import org.openscience.cdk.DefaultChemObjectBuilder;
 import org.openscience.cdk.exception.CDKException;
-import org.openscience.cdk.exception.InvalidSmilesException;
 import org.openscience.cdk.graph.ConnectivityChecker;
-import org.openscience.cdk.graph.PathTools;
+import org.openscience.cdk.graph.ShortestPaths;
 import org.openscience.cdk.interfaces.IAtom;
 import org.openscience.cdk.interfaces.IBond;
-import org.openscience.cdk.interfaces.IMolecule;
-import org.openscience.cdk.interfaces.IMoleculeSet;
+import org.openscience.cdk.interfaces.IBond.Order;
+import org.openscience.cdk.interfaces.IChemObjectBuilder;
+import org.openscience.cdk.interfaces.IAtomContainer;
+import org.openscience.cdk.interfaces.IAtomContainerSet;
 import org.openscience.cdk.isomorphism.UniversalIsomorphismTester;
 import org.openscience.cdk.smiles.smarts.SMARTSQueryTool;
+import org.openscience.cdk.tools.manipulator.AtomContainerManipulator;
 
 import ca.mcmaster.magarveylab.grape.enums.AcylAdenylatingSubstrates;
 import ca.mcmaster.magarveylab.grape.enums.DomainEnums;
@@ -55,22 +58,26 @@ import ca.mcmaster.magarveylab.grape.util.io.SmilesIO;
  *
  */
 public class NRPPredictor {
-	private ArrayList<IMolecule> aminoAcids;
+	
+	IChemObjectBuilder builder = DefaultChemObjectBuilder.getInstance();
+	UniversalIsomorphismTester uit = new UniversalIsomorphismTester();
+	private ArrayList<IAtomContainer> aminoAcids;
+	private ArrayList<String>	aminoAcidSpecificName;
 	private ArrayList<AminoAcidEnums> aminoAcidEnums;
 	private ArrayList<ArrayList<TailoringDomainEnums>> aminoAcidTailoringEnums;
-	private Map<String, IMolecule> sugarsMap = SugarEnums.getAll();
-	private ArrayList<IMolecule> multipleAminoAcidMols = MultipleAminoAcidEnums.allMols();
+	private Map<String, IAtomContainer> sugarsMap = SugarEnums.getAll();
+	private ArrayList<IAtomContainer> multipleAminoAcidMols = MultipleAminoAcidEnums.allMols();
 	private ArrayList<AminoAcidEnums[]> mutlipleAminoAcidConstituents = MultipleAminoAcidEnums.allAminoAcids();
-	private IMolecule[] fattyAcids = FattyAcidsEnums.mols();
+	private IAtomContainer[] fattyAcids = FattyAcidsEnums.mols();
 	private CatigorizeOtherPK nonStandardPKIdentifier;
-	private boolean fungal = false;
 
 	/**
 	* Constructor for this GrapePredictor instance.
 	*/
 	public NRPPredictor(String aminoAcidPath) {
-		aminoAcids = new ArrayList<IMolecule>();
+		aminoAcids = new ArrayList<IAtomContainer>();
 		aminoAcidEnums = new ArrayList<AminoAcidEnums>();
+		aminoAcidSpecificName = new ArrayList<String>();
 		aminoAcidTailoringEnums = new ArrayList<ArrayList<TailoringDomainEnums>>();
 		nonStandardPKIdentifier = new CatigorizeOtherPK();
 		
@@ -79,21 +86,9 @@ public class NRPPredictor {
 		//System.out.println("Finished reading input.");
 	}
 	
-	public NRPPredictor(String aminoAcidPath, boolean fungal) {
-		aminoAcids = new ArrayList<IMolecule>();
-		aminoAcidEnums = new ArrayList<AminoAcidEnums>();
-		aminoAcidTailoringEnums = new ArrayList<ArrayList<TailoringDomainEnums>>();
-		nonStandardPKIdentifier = new CatigorizeOtherPK();
-		this.fungal = fungal;
-		
-		readAminoAcidInput(aminoAcidPath);
-
-		//System.out.println("Finished reading input.");
-	}
-	
-	public ChemicalAbstraction getChemicalAbstraction(IMolecule nrp) {
+	public ChemicalAbstraction getChemicalAbstraction(IAtomContainer nrp) throws CDKException {
 		// Get macrolide type
-		IMolecule currentMoleculeClone = null;
+		IAtomContainer currentMoleculeClone = null;
 		try {
 			currentMoleculeClone = nrp.clone();
 		} catch (CloneNotSupportedException e1) {
@@ -120,9 +115,7 @@ public class NRPPredictor {
 				m.setFragmentType(FragmentType.UNKNOWN_OTHER);
 			}
 		}
-		
 		chemicalAbstraction.setMonomerFragments(monomerFragments);
-		
 		Map<FragmentType, Integer> numOfType = new HashMap<FragmentType, Integer>();
 		for(FragmentType type : FragmentType.values()){
 			numOfType.put(type, 0);
@@ -141,6 +134,7 @@ public class NRPPredictor {
 			}
 		}
 		*/
+		
 		
 		// Only allow FA_OR_PK pieces for compounds with at least two amino acids
 		if(numOfType.get(FragmentType.AMINO_ACID) < 2) {
@@ -211,8 +205,9 @@ public class NRPPredictor {
 	/**
 	 * Get an ordered list of monomer fragmentsSs
 	 * @return
+	 * @throws CDKException 
 	 */
-	public List<Fragment> getMonomerFragments(IMolecule nrp, int macrolideType, ChemicalSubType PKType, ChemicalAbstraction chemicalAbstraction) {
+	public List<Fragment> getMonomerFragments(IAtomContainer nrp, int macrolideType, ChemicalSubType PKType, ChemicalAbstraction chemicalAbstraction) throws CDKException {
 		
 		try {
 			nrp = nrp.clone();
@@ -220,15 +215,16 @@ public class NRPPredictor {
 			e.printStackTrace();
 		}
 		
-		NRPModifier nrpModifier = new NRPModifier(nrp, chemicalAbstraction, fungal);
+		NRPModifier nrpModifier = new NRPModifier(nrp, chemicalAbstraction);
+		nrpModifier.performAllNrpModifications();
 		
 		List<Fragment> monomerFragments = nrpModifier.getMonomerFragments();
 		
 		for(int i = 0; i < monomerFragments.size(); i++) {
 			Fragment fragmentInConsideration = monomerFragments.get(i);
 			int numNitrogens = 0;
-			for(int j = 0; j < fragmentInConsideration.getMolecule().getAtomCount(); j++) {
-				if(fragmentInConsideration.getMolecule().getAtom(j).getAtomicNumber() == 7) {
+			for(int j = 0; j < fragmentInConsideration.getAtomContainer().getAtomCount(); j++) {
+				if(fragmentInConsideration.getAtomContainer().getAtom(j).getAtomicNumber() == 7) {
 					numNitrogens++;
 				}
 			}
@@ -236,9 +232,10 @@ public class NRPPredictor {
 				fragmentInConsideration.setNumNitrogens(numNitrogens);
 			}
 		}
-		
 		for(int i = 0; i < monomerFragments.size(); i++) {
 			Fragment currentFragment = monomerFragments.get(i);
+			AtomContainerManipulator.percieveAtomTypesAndConfigureUnsetProperties(currentFragment.getAtomContainer());
+			currentFragment.addImplicitHydrogens();
 			if(currentFragment.getFragmentType() == FragmentType.MULTIPLE_AMINO_ACID_PIECE) {
 				currentFragment.setFragmentType(null);				
 			}
@@ -261,6 +258,9 @@ public class NRPPredictor {
 				identifyAsAcylAdenlyatingSubstrate(currentFragment);
 			}
 			if(currentFragment.getFragmentType() == null) {
+				identifyAsAminoAcid(currentFragment);
+			}
+			if(currentFragment.getFragmentType() == null) {
 				Fragment[] pieces = getKetoextendedAAPieces(currentFragment, macrolideType);
 				if(pieces != null) {
 					Fragment CFragment = pieces[0];
@@ -273,12 +273,9 @@ public class NRPPredictor {
 					continue;
 				}
 			}
-			if(currentFragment.getFragmentType() == null) {
-				identifyAsAminoAcid(currentFragment);
-			}
 			if(currentFragment.getFragmentType() == null && !PKType.equals(ChemicalSubType.ENEDYINE) && !PKType.equals(ChemicalSubType.TYPE_2) && !PKType.equals(ChemicalSubType.NON_TYPE_2_AROMATIC) && !PKType.equals(ChemicalSubType.TERPENE)){
 				// Check if it is a possible polyketide.
-				identifyAsLinearPK(currentFragment, macrolideType);	
+				identifyAsLinearPK(currentFragment, macrolideType);
 			}
 			if(currentFragment.getFragmentType() == null && !PKType.equals(ChemicalSubType.ENEDYINE) && !PKType.equals(ChemicalSubType.TYPE_2) && !PKType.equals(ChemicalSubType.NON_TYPE_2_AROMATIC) && !PKType.equals(ChemicalSubType.TERPENE)) {
 				//identifyAsFattyAcid(currentFragment);
@@ -300,13 +297,13 @@ public class NRPPredictor {
 			}
 			// If there are at least four carbons, two nitrogens, and two oxygens,
 			// then we consider the possibility that this consists of multiple amino acids
-			/*
-			if(currentFragment.getMonomerType() == null) {
+			
+			if(currentFragment.getFragmentType() == null) {
 				int numCarbons = 0;
 				int numNitrogens = 0;
 				int numOxygens = 0;
-				for(int j = 0; j < currentFragment.getMolecule().getAtomCount(); j++) {
-					switch(currentFragment.getMolecule().getAtom(j).getAtomicNumber()) {
+				for(int j = 0; j < currentFragment.getAtomContainer().getAtomCount(); j++) {
+					switch(currentFragment.getAtomContainer().getAtom(j).getAtomicNumber()) {
 					case 6:
 						numCarbons++;
 						break;
@@ -319,24 +316,21 @@ public class NRPPredictor {
 					}
 				}
 				if(numCarbons >= 4 && numNitrogens >= 2 && numOxygens >= 4) {
-					currentFragment.setMonomerType(FragmentType.MULTIPLE_AMINO_ACID_PIECE);
+					currentFragment.setFragmentType(FragmentType.MULTIPLE_AMINO_ACID_PIECE);
 				}
 			}
-			*/
+			
 			if(currentFragment.getFragmentType() == null) {
 				currentFragment.setFragmentType(FragmentType.UNKNOWN_OTHER);
 			}
 		}
-		//for(int i = 0; i < monomerFragments.size(); i++) {
-		//	System.out.println(monomerFragments.get(i).getMonomerType());
-		//}
 		return(monomerFragments);
 	}
 	
 	private void identifyAsKnownOther(Fragment fragment) {
 		for(KnownOtherEnums knownOther : KnownOtherEnums.values()){
 			if(knownOther.getMol() != null){
-				double score = ChemicalUtilities.getTanimotoScore(fragment.getMolecule(), knownOther.getMol());
+				double score = ChemicalUtilities.getTanimotoScore(fragment.getAtomContainer(), knownOther.getMol());
 				if(score > 0.9){
 					fragment.setFragmentType(FragmentType.KNOWN_OTHER);
 					fragment.setKnownOther(knownOther);
@@ -349,13 +343,12 @@ public class NRPPredictor {
 	}
 
 	private void identifyAsAcylAdenlyatingSubstrate(Fragment fragment) {
-		
-		for(AcylAdenylatingSubstrates starter  : AcylAdenylatingSubstrates.values()){
-			IMolecule[] mols = starter.mols();
+		for(AcylAdenylatingSubstrates acyl  : AcylAdenylatingSubstrates.values()){
+			IAtomContainer[] mols = acyl.mols();
 			for(int i = 0; mols.length > i; i++){
-				if(ChemicalUtilities.getTanimotoScore(fragment.getMolecule(), mols[i]) > 0.9){
-					fragment.addStarter(starter);
-					fragment.setTanimotoScore(ChemicalUtilities.getTanimotoScore(fragment.getMolecule(), mols[i]));
+				if(ChemicalUtilities.getTanimotoScore(fragment.getAtomContainer(), mols[i]) > 0.9){
+					fragment.addStarter(acyl);
+					fragment.setTanimotoScore(ChemicalUtilities.getTanimotoScore(fragment.getAtomContainer(), mols[i]));
 					fragment.setFragmentType(FragmentType.ACYL_ADENYLATING);
 					return;
 				}
@@ -366,9 +359,9 @@ public class NRPPredictor {
 	private void identifyAsSmallPolyketide(Fragment currentFragment) {
 		
 		for(SmallPKunits smallPK  : SmallPKunits.values()){
-			if(ChemicalUtilities.getTanimotoScore(currentFragment.getMolecule(), smallPK.mol()) > 0.95){
+			if(ChemicalUtilities.getTanimotoScore(currentFragment.getAtomContainer(), smallPK.mol()) > 0.95){
 				currentFragment.setFragmentType(FragmentType.POLYKETIDE);
-				currentFragment.setTanimotoScore(ChemicalUtilities.getTanimotoScore(currentFragment.getMolecule(), smallPK.mol()));
+				currentFragment.setTanimotoScore(ChemicalUtilities.getTanimotoScore(currentFragment.getAtomContainer(), smallPK.mol()));
 				List<PolyKetideDomainEnums> pkDomain = new ArrayList<PolyKetideDomainEnums>();
 				for(int i = 0; smallPK.pkDomains().length > i; i++){
 					pkDomain.add(smallPK.pkDomains()[i]);
@@ -386,11 +379,20 @@ public class NRPPredictor {
 			}
 		}
 	}
+	
+	private boolean identifyAsSmallPolyketide(IAtomContainer mol) {
+		for(SmallPKunits smallPK  : SmallPKunits.values()){
+			if(ChemicalUtilities.getTanimotoScore(mol, smallPK.mol()) > 0.95){
+				return true;
+			}
+		}
+		return false;
+	}
 
 	private void identifySubstrctureAsStarter(Fragment fragment) {
-		IMolecule mol = null;
+		IAtomContainer mol = null;
 		try {
-			mol = SmilesIO.readSmiles(SmilesIO.generateSmiles(fragment.getMolecule()));
+			mol = SmilesIO.readSmilesTemplates(SmilesIO.generateSmiles(fragment.getAtomContainer()));
 		} catch (IOException | CDKException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
@@ -398,9 +400,9 @@ public class NRPPredictor {
 		for(AcylAdenylatingSubstrates starter  : AcylAdenylatingSubstrates.values()){
 			if(!starter.canCheckForSubstructure()) continue;
 			try {
-				IMolecule[] mols = starter.mols();
+				IAtomContainer[] mols = starter.mols();
 				for(int i = 0; mols.length > i; i++){
-					if(UniversalIsomorphismTester.isSubgraph(mol, mols[i])){
+					if(uit.isSubgraph(mol, mols[i])){
 						fragment.addStarter(starter);
 						return;
 					}
@@ -410,10 +412,9 @@ public class NRPPredictor {
 	}
 
 	private void identifyAsMultipleAminoAcids(Fragment fragment) {
-		ArrayList<Double> tanimotoScores = ChemicalUtilities.getTanimotoScores(fragment.getMolecule(), multipleAminoAcidMols);
+		ArrayList<Double> tanimotoScores = ChemicalUtilities.getTanimotoScores(fragment.getAtomContainer(), multipleAminoAcidMols);
 		int highestScoreIndex = ChemicalUtilities.getHighestTanimotoScoreIndex(tanimotoScores);
-		
-		if(tanimotoScores.get(highestScoreIndex) > 0.95) {
+		if(tanimotoScores.get(highestScoreIndex) > 0.90) {
 			fragment.addAminoAcidDomains(mutlipleAminoAcidConstituents.get(highestScoreIndex));
 			fragment.setFragmentType(FragmentType.MULTIPLE_AMINO_ACID_PIECE);
 			fragment.setTanimotoScore(tanimotoScores.get(highestScoreIndex));
@@ -421,32 +422,35 @@ public class NRPPredictor {
 	}
 	
 	public void identifyAsPerfectAminoAcid(Fragment fragment) {
-		ArrayList<Double> aminoAcidTanimotoScores = ChemicalUtilities.getTanimotoScores(fragment.getMolecule(), aminoAcids);
+		ArrayList<Double> aminoAcidTanimotoScores = ChemicalUtilities.getTanimotoScores(fragment.getAtomContainer(), aminoAcids);
 		int highestScoreIndex = ChemicalUtilities.getHighestTanimotoScoreIndex(aminoAcidTanimotoScores);
 		if(aminoAcidTanimotoScores.get(highestScoreIndex) == 1.0) {
 			fragment.addAminoAcidDomain(aminoAcidEnums.get(highestScoreIndex));
+			fragment.addSpecificName(aminoAcidSpecificName.get(highestScoreIndex));
 			fragment.setFragmentType(FragmentType.AMINO_ACID);
 			fragment.setTanimotoScore(aminoAcidTanimotoScores.get(highestScoreIndex));
 		}
 	}
 	
 	public void identifyAsAminoAcid(Fragment fragment) {
-		ArrayList<Double> aminoAcidTanimotoScores = ChemicalUtilities.getTanimotoScores(fragment.getMolecule(), aminoAcids);
+		ArrayList<Double> aminoAcidTanimotoScores = ChemicalUtilities.getTanimotoScores(fragment.getAtomContainer(), aminoAcids);
 		int highestScoreIndex = ChemicalUtilities.getHighestTanimotoScoreIndex(aminoAcidTanimotoScores);
 		if(aminoAcidTanimotoScores.get(highestScoreIndex) >=  0.9) {
 			fragment.addAminoAcidDomain(aminoAcidEnums.get(highestScoreIndex));
 			fragment.setFragmentType(FragmentType.AMINO_ACID);
+			fragment.addSpecificName(aminoAcidSpecificName.get(highestScoreIndex));
 			fragment.setTanimotoScore(aminoAcidTanimotoScores.get(highestScoreIndex));
 		}
 		// If this piece contains a thiazole, check if it contains a cysteine as a substructure
 		if(fragment.getTailoringDomains().contains(TailoringDomainEnums.THIAZOLE) ||
 				fragment.getTailoringDomains().contains(TailoringDomainEnums.SULFUR_BETA_LACTAM)) {
 			try {
-				IMolecule cysteineSubstructure = SmilesIO.readSmiles("C(C(C(=O)O)N)S");
-				if(UniversalIsomorphismTester.isSubgraph(fragment.getMolecule(), cysteineSubstructure)) {
+				IAtomContainer cysteineSubstructure = SmilesIO.readSmilesTemplates("C(C(C(=O)O)N)S");
+				if(uit.isSubgraph(fragment.getAtomContainer(), cysteineSubstructure)) {
 					fragment.setFragmentType(FragmentType.AMINO_ACID);
 					fragment.addAminoAcidDomain(AminoAcidEnums.Cysteine);
-					double tanimoto = ChemicalUtilities.getTanimotoScore(fragment.getMolecule(), cysteineSubstructure);
+					fragment.addSpecificName("Cys-t");
+					double tanimoto = ChemicalUtilities.getTanimotoScore(fragment.getAtomContainer(), cysteineSubstructure);
 					fragment.setTanimotoScore(tanimoto);
 				}
 			} catch (IOException e)  {
@@ -463,7 +467,7 @@ public class NRPPredictor {
 	 * @return
 	 */
 	
-	public boolean isAminoAcid(IMolecule molecule) {
+	public boolean isAminoAcid(IAtomContainer molecule) {
 		ArrayList<Double> aminoAcidTanimotoScores = ChemicalUtilities.getTanimotoScores(molecule, aminoAcids);
 		int highestScoreIndex = ChemicalUtilities.getHighestTanimotoScoreIndex(aminoAcidTanimotoScores);
 		if(aminoAcidTanimotoScores.get(highestScoreIndex) >= 0.9) {
@@ -483,8 +487,8 @@ public class NRPPredictor {
 		String bestMatchName = null;
 		double highestScore = 0;
 		
-		for(Entry<String, IMolecule> sugar : sugarsMap.entrySet()){
-			double score = ChemicalUtilities.getTanimotoScore(fragment.getMolecule(), sugar.getValue());
+		for(Entry<String, IAtomContainer> sugar : sugarsMap.entrySet()){
+			double score = ChemicalUtilities.getTanimotoScore(fragment.getAtomContainer(), sugar.getValue());
 			if(score > highestScore){
 				bestMatchName = sugar.getKey();
 				highestScore = score;
@@ -503,20 +507,16 @@ public class NRPPredictor {
 		if(fragment.getFragmentType() == FragmentType.SUGAR) {
 			// Identify sugar modifications
 			// Check for nitrogens
-			for(int i = 0; i < fragment.getMolecule().getAtomCount(); i++) {
-				if(fragment.getMolecule().getAtom(i).getAtomicNumber() == 7) {
+			for(int i = 0; i < fragment.getAtomContainer().getAtomCount(); i++) {
+				if(fragment.getAtomContainer().getAtom(i).getAtomicNumber() == 7) {
 					fragment.addSugarModification(SugarModificationsEnums.AMINOTRANSFER);
 				}
 				// N Methylations
 				SMARTSQueryTool querytool = null;
-				try {
-					querytool = new SMARTSQueryTool("N[C;D1]");
-				} catch (CDKException e) {
-					e.printStackTrace();
-				}
+				querytool = new SMARTSQueryTool("N[C;D1]", builder);
 				boolean hasNMethyl = false;
 				try {
-					hasNMethyl = querytool.matches(fragment.getMolecule());
+					hasNMethyl = querytool.matches(fragment.getAtomContainer());
 				} catch (CDKException e) {
 					e.printStackTrace();
 				}
@@ -527,14 +527,10 @@ public class NRPPredictor {
 				
 				// O Methylations
 				querytool = null;
-				try {
-					querytool = new SMARTSQueryTool("O[C;D1]");
-				} catch (CDKException e) {
-					e.printStackTrace();
-				}
+				querytool = new SMARTSQueryTool("O[C;D1]", builder);
 				boolean hasOMethyl = false;
 				try {
-					hasOMethyl = querytool.matches(fragment.getMolecule());
+					hasOMethyl = querytool.matches(fragment.getAtomContainer());
 				} catch (CDKException e) {
 					e.printStackTrace();
 				}
@@ -550,7 +546,7 @@ public class NRPPredictor {
 	public void identifyAsFattyAcid(Fragment fragment) {
 		// Check if this matches a known fatty acid
 		if(fragment.getFragmentType() == null) {
-			double highestFattyAcidScore = ChemicalUtilities.getHighestTanimotoScore(fragment.getMolecule(), Arrays.asList(fattyAcids));
+			double highestFattyAcidScore = ChemicalUtilities.getHighestTanimotoScore(fragment.getAtomContainer(), Arrays.asList(fattyAcids));
 			if(highestFattyAcidScore > 0.8) {
 				fragment.setFragmentType(FragmentType.FATTY_ACID);
 				fragment.setTanimotoScore(highestFattyAcidScore);
@@ -593,17 +589,17 @@ public class NRPPredictor {
 	 */
 	public void identifyAsStandardFattyAcid(Fragment fragment) {
 		// exit if the molecule contains anything other than a carbon, oxygen, hydrogen
-		for(int i = 0; i < fragment.getMolecule().getAtomCount(); i++) {
-			int atomicNumber = fragment.getMolecule().getAtom(i).getAtomicNumber();
+		for(int i = 0; i < fragment.getAtomContainer().getAtomCount(); i++) {
+			int atomicNumber = fragment.getAtomContainer().getAtom(i).getAtomicNumber();
 			if(atomicNumber != 1 && atomicNumber != 6 && atomicNumber != 8) {
 				return;
 			}
 		}
-		IMolecule fattyAcid3OHTemplate = null;
-		IMolecule fattyAcidTemplate = null;
+		IAtomContainer fattyAcid3OHTemplate = null;
+		IAtomContainer fattyAcidTemplate = null;
 		try {
-			fattyAcidTemplate = SmilesIO.readSmiles("CC(O)=O");
-			fattyAcid3OHTemplate = SmilesIO.readSmiles("CC(O)CC(O)=O");
+			fattyAcidTemplate = SmilesIO.readSmilesTemplates("CC(O)=O");
+			fattyAcid3OHTemplate = SmilesIO.readSmilesTemplates("CC(O)CC(O)=O");
 		} catch (IOException | CDKException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -612,8 +608,8 @@ public class NRPPredictor {
 		boolean matches3OHFattyAcid = false;
 		try {
 			
-			matchesNormalFattyAcid = UniversalIsomorphismTester.isSubgraph(fragment.getMolecule(), fattyAcidTemplate);
-			matches3OHFattyAcid = UniversalIsomorphismTester.isSubgraph(fragment.getMolecule(), fattyAcid3OHTemplate);
+			matchesNormalFattyAcid = uit.isSubgraph(fragment.getAtomContainer(), fattyAcidTemplate);
+			matches3OHFattyAcid = uit.isSubgraph(fragment.getAtomContainer(), fattyAcid3OHTemplate);
 		} catch (CDKException e) {
 			return;
 		}
@@ -624,21 +620,18 @@ public class NRPPredictor {
 		int numOxygens = 0;
 		int numCarbons = 0;
 		//int numTertiaryCarbons = 0;
-		for(int i = 0; i < fragment.getMolecule().getAtomCount(); i++) {
-			int atomicNumber = fragment.getMolecule().getAtom(i).getAtomicNumber();
+		for(int i = 0; i < fragment.getAtomContainer().getAtomCount(); i++) {
+			int atomicNumber = fragment.getAtomContainer().getAtom(i).getAtomicNumber();
 			if(atomicNumber == 8) {
 				numOxygens++;
 			}
 			if(atomicNumber == 6) {
 				numCarbons++;
-				if(fragment.getMolecule().getConnectedAtomsCount(fragment.getMolecule().getAtom(i)) == 3) {
-				//	numTertiaryCarbons++;
-				}
 			}
 		}
 		
 		// Check that there are no carbon rings
-		ArrayList<IAtom> atomsInCarbonRings = ChemicalUtilities.getAtomsInCarbonRings(fragment.getMolecule());
+		ArrayList<IAtom> atomsInCarbonRings = ChemicalUtilities.getAtomsInCarbonRings(fragment.getAtomContainer());
 		if(!atomsInCarbonRings.isEmpty()) {
 			return;
 		}
@@ -658,14 +651,10 @@ public class NRPPredictor {
 		
 		// Check that there are at least four carbons in a row
 		SMARTSQueryTool querytool = null;
-		try {
-			querytool = new SMARTSQueryTool("C[C;D2][C;D2][C;D2][C;D2]C");
-		} catch (CDKException e) {
-			e.printStackTrace();
-		}
+		querytool = new SMARTSQueryTool("C[C;D2][C;D2][C;D2][C;D2]C", builder);
 		boolean matches = false;
 		try {
-			matches = querytool.matches(fragment.getMolecule());
+			matches = querytool.matches(fragment.getAtomContainer());
 		} catch (CDKException e) {
 			e.printStackTrace();
 		}
@@ -681,16 +670,12 @@ public class NRPPredictor {
 	 * Identify as a linear polyketide
 	 * @param currentFragment
 	 */
-	public void identifyAsLinearPK(Fragment currentFragment, int macrolideType) {
+	private void identifyAsLinearPK(Fragment currentFragment, int macrolideType) {
 		// If there are is a lactone bond and an amino bond
 		if(currentFragment.getLactoneHydroxylC() != null && currentFragment.getAminoCs().size() > 0) {
 			//identifyAsLinearPK(currentFragment, currentFragment.getAminoC(), currentFragment.getLactoneHydroxylC());
 			identifyAsLinearPK(currentFragment, null, currentFragment.getAminoCs().get(0), macrolideType);
-			
-			int pathLength = PathTools.getShortestPath(currentFragment.getMolecule(), currentFragment.getAminoCs().get(0), currentFragment.getLactoneHydroxylC()).size();
-			if(currentFragment.getFragmentType() != null && pathLength == 3) {
-				currentFragment.setFragmentType(FragmentType.FA_OR_PK);
-			}
+			ShortestPaths sp = new ShortestPaths(currentFragment.getAtomContainer(), currentFragment.getAminoCs().get(0));
 		}
 		// If there is one connected amino acid
 		else if(currentFragment.getAminoCs().size() > 0 && currentFragment.getAminoNs().size() > 0) {
@@ -698,10 +683,6 @@ public class NRPPredictor {
 			if(currentFragment.getFragmentType() != null) {
 				currentFragment.setFragmentType(FragmentType.FA_OR_PK);
 			}
-		}
-		
-		else if(currentFragment.getLactoneCarboxylC() != null) {
-			identifyAsLinearPK(currentFragment, null, currentFragment.getLactoneCarboxylC(), macrolideType);
 		}
 		// If this does not appear to be an amino acid
 		else {
@@ -711,16 +692,13 @@ public class NRPPredictor {
 		if(currentFragment.getFragmentType() == FragmentType.POLYKETIDE) {
 			SMARTSQueryTool querytoolSingle = null;
 			SMARTSQueryTool querytoolDouble = null;
-			try {
-				querytoolSingle = new SMARTSQueryTool("[#6;A][#6;A;D2][#6;A;D2][#6;A;D2][#6;A;D2][#6;A]");
-				querytoolDouble = new SMARTSQueryTool("[#6;A]=[#6;A;D2]\\[#6;A;D2]=[#6;A;D2]\\[#6;A;D2]=[#6;A]");
-			} catch (CDKException e) {
-				e.printStackTrace();
-			}
+			querytoolSingle = new SMARTSQueryTool("[#6;A][#6;A;D2][#6;A;D2][#6;A;D2][#6;A;D2][#6;A]", builder);
+			querytoolDouble = new SMARTSQueryTool("[#6;A]=[#6;A;D2]\\[#6;A;D2]=[#6;A;D2]\\[#6;A;D2]=[#6;A]", builder);
 			boolean matches = false;
 			try {
-				matches = querytoolSingle.matches(currentFragment.getMolecule());
-				if(!matches) matches = querytoolDouble.matches(currentFragment.getMolecule());
+				currentFragment.addImplicitHydrogens();
+				matches = querytoolSingle.matches(currentFragment.getAtomContainer());
+				if(!matches) matches = querytoolDouble.matches(currentFragment.getAtomContainer());
 			} catch (CDKException e) {
 				e.printStackTrace();
 			}
@@ -730,10 +708,10 @@ public class NRPPredictor {
 		}
 		
 		// Check if this is possibily a modified amino acid - nitrogen containing with at most 20 atoms and two or fewer PK units
-		if(currentFragment.getMolecule().getAtomCount() <= 20) {
+		if(currentFragment.getAtomContainer().getAtomCount() <= 20) {
 			boolean hasNitrogen = false;
-			for(int i = 0; i < currentFragment.getMolecule().getAtomCount(); i++) {
-				if(currentFragment.getMolecule().getAtom(i).getAtomicNumber() == 7) {
+			for(int i = 0; i < currentFragment.getAtomContainer().getAtomCount(); i++) {
+				if(currentFragment.getAtomContainer().getAtom(i).getAtomicNumber() == 7) {
 					hasNitrogen = true;
 				}
 			}
@@ -741,10 +719,6 @@ public class NRPPredictor {
 				currentFragment.setFragmentType(FragmentType.FA_OR_PK);
 			}
 		}
-		// Check if a ketone has been converted to an anime for incorporation into a peptide bond
-		//if(currentFragment.getAminoC() != null && currentFragment.getAminoN() != null) {
-			//identifyAsAmineKetoneLinearPK(currentFragment);
-		//}
 	}
 
 
@@ -759,12 +733,11 @@ public class NRPPredictor {
 	 */
 	public void identifyAsLinearPK(Fragment currentFragment, IAtom start, IAtom end, int macrolideType) {
 		// If there are two connected amino acids
-		
-		if(end != null && start != null && ChemicalUtilities.hasCarbonPath(currentFragment.getMolecule(), start, end)) {
+		if(end != null && start != null && ChemicalUtilities.hasCarbonPath(currentFragment.getAtomContainer(), start, end)) {
 			try {
 				PolyketideModulePredictor pkPredictor =
 						new PolyketideModulePredictor(
-								currentFragment.getMolecule(),
+								currentFragment.getAtomContainer(),
 								start,
 								end,
 								macrolideType
@@ -779,16 +752,16 @@ public class NRPPredictor {
 					//currentFragment.setPkModifications(modifications);
 				}
 			} catch(Exception e) {
-				//System.out.println("Error in linear PK predictor - skipping");
+				//e.printStackTrace();
+				System.err.println("Error in linear PK predictor - skipping a portion of PK predictions");
 			}
 		}
 		// If there is an end
 		else if(end != null) {
 			PolyketideModulePredictor pkPredictor = null;
 			try {
-				
 				pkPredictor = new PolyketideModulePredictor(
-						currentFragment.getMolecule(),
+						currentFragment.getAtomContainer(),
 						end,
 						macrolideType);
 				if(pkPredictor.isPK()) {
@@ -802,7 +775,7 @@ public class NRPPredictor {
 				}
 			} catch (Exception e) {
 				//e.printStackTrace();
-				//System .out.println("Error in linear PK predictor - skipping");
+				System.err.println("Error in linear PK predictor - skipping a portion of PK predictions");
 			}
 			
 			
@@ -811,7 +784,7 @@ public class NRPPredictor {
 			PolyketideModulePredictor pkPredictor = null;
 			try {
 			pkPredictor = new PolyketideModulePredictor(
-					currentFragment.getMolecule(),
+					currentFragment.getAtomContainer(),
 					macrolideType
 					);
 			if(pkPredictor.isPK()) {
@@ -824,8 +797,8 @@ public class NRPPredictor {
 				//currentFragment.setPkModifications(modifications);
 			}
 			} catch(Exception e) {
-				e.printStackTrace();
-				//System.out.println("Error in linear PK predictor - skipping");
+				//e.printStackTrace();
+				System.err.println("Error in linear PK predictor - skipping a portion of PK predictions");
 			}
 		}
 		List<List<PolyKetideDomainEnums>> allDomains = currentFragment.getPkDomains();
@@ -846,7 +819,7 @@ public class NRPPredictor {
 	 * @param currentFragment
 	 */
 	public void identifyAsAminoglycosideCyclohexane(Fragment currentFragment) {
-		List<Set<IAtom>> smallRings = ChemicalUtilities.getSmallestRings(currentFragment.getMolecule());
+		List<Set<IAtom>> smallRings = ChemicalUtilities.getSmallestRings(currentFragment.getAtomContainer());
 		if(smallRings.size() != 1) {
 			return;
 		}
@@ -868,131 +841,227 @@ public class NRPPredictor {
 	 * @param currentFragment
 	 * @return
 	 */
-
 	public Fragment[] getKetoextendedAAPieces(Fragment currentFragment, int macrolideType) {
-		//if(currentFragment.getAminoNs().size() < 1 || macrolideType > 0 || PolyketideModulePredictor.getNumCarboxylicAcids(currentFragment.getMolecule()) > 1) return null;
-		if(currentFragment.getAminoNs().size() < 1 || macrolideType > 0) return null;
-		for(IAtom aminoN : currentFragment.getAminoNs()){
-			boolean appropriateAminoN = true;
-			for(IAtom atom : currentFragment.getMolecule().getConnectedAtomsList(aminoN)){
-				if(atom.getAtomicNumber() != 6){
-					appropriateAminoN = false;
+		IAtomContainer mol = currentFragment.getAtomContainer();
+		if(macrolideType > 0) {
+			return null;
+		}
+		for(IAtom aminoN : mol.atoms()){
+			if(aminoN.getAtomicNumber() != 7){
+				continue;
+			}
+			boolean appropriateAminoN = false;
+			if(currentFragment.getAminoNs().contains(aminoN)){
+				appropriateAminoN = true;
+				for(IAtom atom : mol.getConnectedAtomsList(aminoN)){
+					if(atom.getAtomicNumber() != 7 &&
+							atom.getAtomicNumber() != 6 && 
+							atom.getAtomicNumber() != 1){
+						appropriateAminoN = false;
+						break;
+					}
+				}
+			}
+			//if not appropriate nitrogen, see if it is primary
+			if(!appropriateAminoN){
+				if(ChemicalUtilities.getConnectedAtomsCountNonHydrogen(mol, aminoN) == 1){
+					appropriateAminoN = true;
+				}
+			}
+			
+			boolean inSmallRing = false;
+			List<Set<IAtom>> smallestRings = ChemicalUtilities.getSmallestRings(mol);
+			for(Set<IAtom> ring : smallestRings){
+				if(ring.contains(aminoN) && ring.size() < 7){
+					inSmallRing = true;
 					break;
 				}
-//				else if(currentFragment.getMolecule().getConnectedAtomsCount(atom) != 2){
-//					appropriateAminoN = false;
-//					break;
-//				}
 			}
-			if(!appropriateAminoN) continue;
 			
+			if(inSmallRing){
+				appropriateAminoN = true;
+			}
+			
+			//if still no appropriate aminoN then skip this fragment
+			if(!appropriateAminoN){
+				continue;
+			}
 			// Create the array that will contain the C fragment and N fragment respectively
 			Fragment[] pieces = new Fragment[2];
 			// Check if this is a ketoextended amino acid
-			IAtom adjacentCarbon = null;
-			for(IAtom a : currentFragment.getMolecule().getConnectedAtomsList(aminoN)) {
-				if(a.getAtomicNumber() == 6
-						&& currentFragment.getMolecule().getConnectedAtomsCount(a) > 1) {
-					adjacentCarbon = a;
+			IAtom possiblePKcarbon = null;
+			List<IBond> candidateBondsToBreak = new ArrayList<IBond>();
+			
+			//check if a cyclized amino acid
+			if(inSmallRing){
+				IAtomContainer template = null; 
+				try {
+					template = SmilesIO.readSmilesTemplates("CC(=O)CN");
+				} catch(Exception e) {
+					e.printStackTrace();
+				}
+				IBond templateBondToBreak = template.getBond(template.getAtom(0),template.getAtom(1));
+				candidateBondsToBreak.addAll(ChemicalUtilities.findMatchingBondsFromTemplate(template, templateBondToBreak, mol));
+			}
+			
+			//check if linear regular amino acid
+			if(candidateBondsToBreak.size() == 0){
+				IAtomContainer template = null; 
+				try {
+					template = SmilesIO.readSmilesTemplates("CCC(=O)C(C)N");
+				} catch(Exception e) {
+					e.printStackTrace();
+				}
+				IBond templateBondToBreak = template.getBond(template.getAtom(1),template.getAtom(2));
+				candidateBondsToBreak.addAll(ChemicalUtilities.findMatchingBondsFromTemplate(template, templateBondToBreak, mol));
+			}
+			for(IBond bond : candidateBondsToBreak){
+				boolean ketoCarbon = false;
+				for(IAtom atom : bond.atoms()){
+					for(IAtom a : mol.getConnectedAtomsList(atom)){
+						if(a.getAtomicNumber() == 8 && mol.getBond(a, atom).getOrder().equals(Order.DOUBLE)){
+							ketoCarbon = true;
+						}
+					}
+					if(!ketoCarbon){
+						possiblePKcarbon = atom;
+						break;
+					}
 				}
 			}
-			ArrayList<IBond> candidateBondsToBreak = new ArrayList<IBond>();
-			for(IBond b : currentFragment.getMolecule().getConnectedBondsList(adjacentCarbon)) {
-				if(b.contains(aminoN)) continue;
-				candidateBondsToBreak.add(b);
+			//if neither try an extension out
+			if(candidateBondsToBreak.size() == 0){
+				for(IAtom a : mol.getConnectedAtomsList(aminoN)) {
+					if(a.getAtomicNumber() == 6
+							&& ChemicalUtilities.getConnectedAtomsCountNonHydrogen(mol, a) > 1) {
+						possiblePKcarbon = a;
+					}
+				}
+				for(IBond b : currentFragment.getAtomContainer().getConnectedBondsList(possiblePKcarbon)) {
+					if(b.contains(aminoN)) 
+						continue;
+					candidateBondsToBreak.add(b);
+				}
+				
 			}
 			for(IBond b : candidateBondsToBreak) {
 				// Try breaking this bond, and see if this forms a linear polyketide
-				
-				currentFragment.getMolecule().removeBond(b);
-				
-				IAtom possibleEndCarbon = null;
-				if(b.getAtom(0).equals(adjacentCarbon)) {
-					possibleEndCarbon = b.getAtom(1);
-				}
-				else {
-					possibleEndCarbon = b.getAtom(0);
-				}
-				
-				IMoleculeSet partitions = ConnectivityChecker.partitionIntoMolecules(currentFragment.getMolecule());
-				IMolecule possiblePK = null;
-				if(partitions.getMoleculeCount() != 2) {
-					currentFragment.getMolecule().addBond(b);
+				mol.removeBond(b);
+				IAtomContainerSet partitions = ConnectivityChecker.partitionIntoMolecules(mol);
+				if(partitions.getAtomContainerCount() != 2) {
+					currentFragment.getAtomContainer().addBond(b);
 					continue;
 				}
 				
-				if(partitions.getMolecule(0).contains(aminoN)) {
-					possiblePK = partitions.getMolecule(1);
+				IAtomContainer possiblePK = null;
+				if(partitions.getAtomContainer(0).contains(aminoN)) {
+					possiblePK = partitions.getAtomContainer(1);
 				}
 				else {
-					possiblePK = partitions.getMolecule(0);
+					possiblePK = partitions.getAtomContainer(0);
 				}
 				
-				IMolecule carbonToAdd = null;
-				try {
-					carbonToAdd = SmilesIO.readSmiles("C");} catch (Exception e1){}
-				IAtom carbonAtom = carbonToAdd.getAtom(0);
+				if(!possiblePK.contains(possiblePKcarbon)){
+					if(possiblePK.contains(b.getAtom(0))){
+						possiblePKcarbon = b.getAtom(0);
+					}else{
+						possiblePKcarbon = b.getAtom(1);
+					}
+				}
+				
+				//Extend the "end" by 1 as this underwent decarboxylation
+				IAtom carbonAtom = new Atom("C");
+				carbonAtom.setAtomTypeName("C.sp3");
 				possiblePK.addAtom(carbonAtom);
-				possiblePK.addBond(new Bond(carbonAtom, possibleEndCarbon, IBond.Order.SINGLE));
-				possibleEndCarbon = carbonAtom;
-				
-				boolean isPK = false;
-				// Do this as a check
-				PolyketideModulePredictor pkPredictor = null;
-				try {
-					//Extend the "end" by 1 as this underwent decarboxcylation
-					// Two cases: if there was something attached to the C terminus, or if this is a terminal piece
-					pkPredictor = new PolyketideModulePredictor(
-								possiblePK,
-								0
-								);	
-					if(pkPredictor.isPK()) {
-						isPK = true;
-					}
-				} catch (Exception e) {
-					e.printStackTrace();
-					isPK = false;
-				}
-				
-				currentFragment.getMolecule().addBond(b);
-				if(isPK == false) continue;
-				//SmilesIO.drawMolecule(currentFragment.getMolecule(), "keto_before");
-				
-				//Try to find the 'carbon backbone start' for the potential PK piece
-				IAtom pkCarboxylicCarbon = PolyketideModulePredictor.predictEndCarbon(currentFragment.getMolecule());
-				for(IAtom carbon : currentFragment.getMolecule().atoms()){
-					if(PolyketideModulePredictor.isCarboxylicCarbon(currentFragment.getMolecule(), carbon)){
-						pkCarboxylicCarbon = carbon;
-					}
-				}
-				
-				//Trace the potential carbon backbone of the potential PK portion, this is used to count the number of carbons in the backbone
-				//See if it a beta or alpha amino acids
-				List<IAtom> path = null;
-				try{
-					path = PolyketideModulePredictor.getCarbonOnlyPath(currentFragment.getMolecule(), pkCarboxylicCarbon, aminoN);
-				}catch(Exception e){
-					continue;
-				}
-				if(path.size() < 5) return null;
-				IAtom aminoCarboxylicCarbon = null;
-				IAtom startCarbon = null;
-				if(path.size() % 2 != 0){
-					currentFragment.getMolecule().removeBond(path.get(path.size()-2), path.get(path.size()-3));
-					aminoCarboxylicCarbon = path.get(path.size()-2);
-					startCarbon = path.get(path.size()-3);
-				}else{
-					currentFragment.getMolecule().removeBond(path.get(path.size()-3), path.get(path.size()-4));
-					aminoCarboxylicCarbon = path.get(path.size()-3);
-					startCarbon = path.get(path.size()-4);
-				}
-				
-				List<Fragment> fragmentPartitions = currentFragment.partitionIntoMonomerFragments();
-				
+				possiblePK.addBond(new Bond(carbonAtom, possiblePKcarbon, IBond.Order.SINGLE));
+				//possiblePKcarbon = carbonAtom;
 				Fragment aminoAcidFrag = null;
 				Fragment pkFrag = null;
+				IAtom aminoCarboxylicCarbon = null;
+				IAtom startCarbon = null;
+				List<Fragment> fragmentPartitions;
+				boolean match = false;
+				try{
+					match = identifyAsSmallPolyketide(possiblePK);
+				}catch(Exception e){
+					//System.err.println("Can't keto extend, not connected");
+					currentFragment.getAtomContainer().addBond(b);
+					return null;
+				}
+				if(match){
+					fragmentPartitions = currentFragment.partitionIntoMonomerFragments();
+					
+					if(fragmentPartitions.get(0).getAtomContainer().contains(aminoN)) {
+						aminoAcidFrag = fragmentPartitions.get(0);
+						pkFrag = fragmentPartitions.get(1);
+					}
+					else {
+						aminoAcidFrag = fragmentPartitions.get(1);
+						pkFrag = fragmentPartitions.get(0);
+					}
+					if(b.getAtom(0).equals(possiblePKcarbon)){
+						aminoCarboxylicCarbon = b.getAtom(1);
+					}else{
+						aminoCarboxylicCarbon = b.getAtom(0);
+					}
+					startCarbon = possiblePKcarbon;
+				}else{
+					// Do this as a check
+					boolean isPK = false;
+					PolyketideModulePredictor pkPredictor = null;
+					try {
+						pkPredictor = new PolyketideModulePredictor(
+									possiblePK,
+									0
+									);	
+						if(pkPredictor.isPK()) {
+							isPK = true;
+						}
+					} catch (Exception e) {
+						System.err.println("Error in linear PK predictor - skipping a portion of PK predictions");
+						//e.printStackTrace();
+						
+						isPK = false;
+					}
+					mol.addBond(b);
+					if(isPK == false) {
+						continue;
+					}
+					//Try to find the 'carbon backbone start' for the potential PK piece
+					IAtom pkCarboxylicCarbon = PolyketideModulePredictor.predictEndCarbon(possiblePK);
+					if(pkCarboxylicCarbon == null){
+						for(IAtom carbon : possiblePK.atoms()){
+							if(PolyketideModulePredictor.isCarboxylicCarbon(possiblePK, carbon)){
+								pkCarboxylicCarbon = carbon;
+							}
+						}
+					}
+					//Trace the potential carbon backbone of the potential PK portion, this is used to count the number of carbons in the backbone
+					//See if it a beta or alpha amino acids
+					List<IAtom> path = null;
+					try{
+						path = PolyketideModulePredictor.getCarbonOnlyPath(mol, pkCarboxylicCarbon, aminoN);
+					}catch(Exception e){
+						System.err.println("Couldn't get carbon only path");
+						continue;
+					}
+					if(path.size() < 5) {
+						return null;
+					}
+					if(path.size() % 2 != 0){
+						currentFragment.getAtomContainer().removeBond(path.get(path.size()-3), path.get(path.size()-4));
+						aminoCarboxylicCarbon = path.get(path.size()-3);
+						startCarbon = path.get(path.size()-4);
+					}else{ //out dated
+						currentFragment.getAtomContainer().removeBond(path.get(path.size()-4), path.get(path.size()-5));
+						aminoCarboxylicCarbon = path.get(path.size()-4);
+						startCarbon = path.get(path.size()-5);
+					}
+					
+					fragmentPartitions = currentFragment.partitionIntoMonomerFragments();
+				}
 				
-				if(fragmentPartitions.get(0).getMolecule().contains(aminoN)) {
+				if(fragmentPartitions.get(0).getAtomContainer().contains(aminoN)) {
 					aminoAcidFrag = fragmentPartitions.get(0);
 					pkFrag = fragmentPartitions.get(1);
 				}
@@ -1001,24 +1070,48 @@ public class NRPPredictor {
 					pkFrag = fragmentPartitions.get(0);
 				}
 				
-				//Add carboxylic acid to the amino acid piece
-				Atom firstO = new Atom("O");
-				firstO.setAtomTypeName("O.sp3");
-				Atom secondO = new Atom("O");
-				firstO.setAtomTypeName("O.sp2");
-				Atom carboxylCarbon = new Atom("C");
-				carboxylCarbon.setAtomTypeName("C.sp2");
-				aminoAcidFrag.getMolecule().addAtom(firstO);
-				aminoAcidFrag.getMolecule().addAtom(secondO);
-				aminoAcidFrag.getMolecule().addAtom(carboxylCarbon);
-				aminoAcidFrag.getMolecule().addBond(new Bond(carboxylCarbon, firstO, IBond.Order.SINGLE));
-				aminoAcidFrag.getMolecule().addBond(new Bond(carboxylCarbon, secondO, IBond.Order.DOUBLE));
-				aminoAcidFrag.getMolecule().addBond(new Bond(carboxylCarbon, aminoCarboxylicCarbon, IBond.Order.SINGLE));
-				//PK piece does not have any atoms added to it
+				//Forming carboyxylic acid with the aminoCarboxylicCarbon
+				//check what the carbon is connected to
+				int singleBondO = 0;
+				int doubleBondO = 0;
+				for(IAtom atom : aminoAcidFrag.getAtomContainer().getConnectedAtomsList(aminoCarboxylicCarbon)){
+					if(atom.getAtomicNumber() == 1 || atom.getAtomTypeName() == null){
+						continue;
+					}
+					if(atom.getAtomTypeName().equals("O.sp3")){
+						for(IAtom connectedToOxygen : aminoAcidFrag.getAtomContainer().getConnectedAtomsList(atom)){
+							if(!connectedToOxygen.equals(aminoCarboxylicCarbon)){
+								if(aminoAcidFrag.getAtomContainer().getConnectedAtomsCount(connectedToOxygen) == 1 && connectedToOxygen.getAtomicNumber() == 6){
+									aminoAcidFrag.getAtomContainer().removeAtomAndConnectedElectronContainers(connectedToOxygen);
+									aminoAcidFrag.addTailoringDomain(TailoringDomainEnums.O_METHYLTRANSFERASE);
+								}
+							}
+						}
+							singleBondO ++;
+					}
+					if(atom.getAtomTypeName().equals("O.sp2")){
+						doubleBondO ++;
+					}
+				}
+
+				//add if not there
+				if(singleBondO == 0){
+					Atom firstO = new Atom("O");
+					firstO.setAtomTypeName("O.sp3");
+					aminoAcidFrag.getAtomContainer().addAtom(firstO);
+					aminoAcidFrag.getAtomContainer().addBond(new Bond(aminoCarboxylicCarbon, firstO, IBond.Order.SINGLE));
+				}
 				
+				//add if not there
+				if(doubleBondO == 0){
+					Atom secondO = new Atom("O");
+					secondO.setAtomTypeName("O.sp2");
+					aminoAcidFrag.getAtomContainer().addAtom(secondO);
+					aminoAcidFrag.getAtomContainer().addBond(new Bond(aminoCarboxylicCarbon, secondO, IBond.Order.DOUBLE));
+				}
 				//Add all aminoNs to the new fragments
 				for(IAtom aminoNtoAdd : currentFragment.getAminoNs()){
-					if(pkFrag.getMolecule().contains(aminoNtoAdd)){
+					if(pkFrag.getAtomContainer().contains(aminoNtoAdd)){
 						if(!pkFrag.getAminoNs().contains(aminoNtoAdd)){
 							pkFrag.addAminoN(aminoNtoAdd);
 						}
@@ -1032,11 +1125,8 @@ public class NRPPredictor {
 				aminoAcidFrag.addAminoC(aminoCarboxylicCarbon);
 				aminoAcidFrag.setAtomAfterCTerminus(startCarbon);
 				pkFrag.setAtomAfterNTerminus(aminoCarboxylicCarbon);
-				identifyAsLinearPK(pkFrag, 0);
-				
-				//SmilesIO.drawMolecule(aminoAcidFrag.getMolecule(), "cfrag");
-				//SmilesIO.drawMolecule(pkFrag.getMolecule(), "nfrag");
-				
+				pkFrag.setAsKetoExtension();
+				identifyAsLinearPK(pkFrag, 0);				
 				pieces[0] = aminoAcidFrag;
 				pieces[1] = pkFrag;
 				return pieces;
@@ -1049,7 +1139,7 @@ public class NRPPredictor {
 	 * Read Amino Acid input. 
 	 */
 	private void readAminoAcidInput(String aminoAcidPath) {
-		// Generate array of amino acids and NRP IMolecules from the file.
+		// Generate array of amino acids and NRP IAtomContainers from the file.
 		
 		// Read amino acid file
 		Scanner aaScanner = null;
@@ -1073,14 +1163,15 @@ public class NRPPredictor {
 				continue;
 			}
 			try {
-				aminoAcids.add(SmilesIO.readSmiles(vals[2]));
+				aminoAcidSpecificName.add(vals[0]);
+				aminoAcids.add(SmilesIO.readSmilesTemplates(vals[2]));
 				aminoAcidEnums.add(DomainEnums.getAminoAcidEnumFromAbbreviation(vals[3]));
 				ArrayList<TailoringDomainEnums> tailoringDomains = new ArrayList<TailoringDomainEnums>();
 				for(int i = 4; i < vals.length; i++) {
 					// These are tailoring domains
 					TailoringDomainEnums tailoringDomain = DomainEnums.getTailoringDomainFromAbbreviation(vals[i]);
 					if(tailoringDomain == null) {
-						System.out.println("Warning: In amino acid file, found unknown tailoring domain " + vals[i] + " - skipping");
+						System.err.println("Warning: In amino acid file, found unknown tailoring domain " + vals[i] + " - skipping");
 					}
 					else {
 						tailoringDomains.add(tailoringDomain);

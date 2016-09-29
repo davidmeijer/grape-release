@@ -97,6 +97,9 @@ import org.openscience.cdk.exception.InvalidSmilesException;
 		Option name = OptionBuilder.withLongOpt("name").hasArg().withArgName("NAME")
 				.withDescription("Give the molecule a name.").create("n");
 
+		Option aminoAcid = OptionBuilder.withLongOpt("aminoAcidPath").hasArg().withArgName("OUTPUT")
+				.withDescription("Set amino acid file path.").create("a");
+		
 		Option output = OptionBuilder.withLongOpt("output").hasArg().withArgName("OUTPUT")
 				.withDescription("Set an output folder path.").create("o");
 		
@@ -105,8 +108,6 @@ import org.openscience.cdk.exception.InvalidSmilesException;
 		Option json = new Option("json", "JSON", false, "Create JSON file output");
 		Option text = new Option("txt", "text", false, "Create text file output");
 		
-		Option fungal = new Option("fn", "fungal", false, "Set if the molecules are fungal for fungal specific chemistries");
-
 		Option help = new Option("h", "help", false, "Print this message");
 		Option version = new Option("v", "version", false, "Print the current version and exit");
 	
@@ -114,6 +115,7 @@ import org.openscience.cdk.exception.InvalidSmilesException;
 		options.addOption(smiles);
 		options.addOption(id);
 		options.addOption(name);
+		options.addOption(aminoAcid);
 		options.addOption(output);
 
 		options.addOption(images);
@@ -122,7 +124,6 @@ import org.openscience.cdk.exception.InvalidSmilesException;
 
 		options.addOption(help);
 		options.addOption(version);
-		options.addOption(fungal);
 
 		return options;
 	}
@@ -151,6 +152,9 @@ import org.openscience.cdk.exception.InvalidSmilesException;
 		if(line.hasOption("o")){
 			gc.setOutputPath(line.getOptionValue("o"));
 		}
+		if(line.hasOption("a")){
+			gc.setAminoAcidsPath(line.getOptionValue("a"));
+		}
 		if(line.hasOption("img")){
 			gc.setImageTrue();
 		}
@@ -159,9 +163,6 @@ import org.openscience.cdk.exception.InvalidSmilesException;
 		}
 		if(line.hasOption("txt")){
 			gc.setTxtTrue();
-		}
-		if(line.hasOption("fn")){
-			gc.setFungalTrue();
 		}
 	}
 }

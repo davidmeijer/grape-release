@@ -1,1 +1,0 @@
-Arylomycin A1	O=C(C(N(C)C(CNC(C(C)NC(C(CO)N(C)C(CCCCCCCC(C)C)=O)=O)=O)=O)C1=CC=C(C(C2=C(O)C=CC3=C2)=C1)O)NC(C)C(NC(C3)C(O)=O)=O

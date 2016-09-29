@@ -1,2 +1,0 @@
->Valinomycin
-CC1C(NC(C(OC(C(NC(C(OC(C(NC(C(OC(C(NC(C(OC(C(NC(C(OC(C(NC(C(O1)=O)C(C)C)=O)C(C)C)=O)C(C)C)=O)C)=O)C(C)C)=O)C(C)C)=O)C(C)C)=O)C)=O)C(C)C)=O)C(C)C)=O)C(C)C)=O

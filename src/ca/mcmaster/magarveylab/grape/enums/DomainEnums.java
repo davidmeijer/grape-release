@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.openscience.cdk.interfaces.IMolecule;
+import org.openscience.cdk.interfaces.IAtomContainer;
 
 import ca.mcmaster.magarveylab.grape.pk.modules.PKsubstrate;
 import ca.mcmaster.magarveylab.grape.util.io.SmilesIO;
@@ -130,6 +130,18 @@ public class DomainEnums {
 		piperazic_acid("Piz"),
 		quinoxaline_carboxylic_acid("QxCA"),
 		_3_hydroxy_anthranilic_acid("3HA"),
+		//fungal
+		_4_hydroxyphenylpyruvate("OHPP"),
+		DehydroalanOne("Dha"),
+		HydroxyglutamOne("OHGln"),
+		_2_hydroxy_3_methylpentanoOc_acOd("HMP"),
+		Homo_serOne("Hse"),
+		Homo_tyrosOne("Hty"),
+		HydroxyhomotyrosOne_sulfate("OHHty"),
+		Ondole_pyruvOc_acOd("OPA"),
+		N_methoxytryptophan("OMeTrp"),		
+		//ambiguous set
+		Serine_or_Cysteine("SerCysA"),
 		;
 		
 		private final String abbreviation;
@@ -154,8 +166,11 @@ public class DomainEnums {
 		return(null);
 	}
 	
-	public enum MultipleAminoAcidEnums {
-		SER_ASP_ASN("Cc1c(N)nc(nc1C(O)=O)C(CC(N)=O)NCC(N)C(N)=O", new AminoAcidEnums[]{AminoAcidEnums.Serine, AminoAcidEnums.Asparagine, AminoAcidEnums.Asparagine});
+	public enum MultipleAminoAcidEnums { //NCCCC(C(N)C(O)O)C1=CC=CC2=C1NC=C2C[C@H](N)C(O)=O
+		SER_ASP_ASN("Cc1c(N)nc(nc1C(O)=O)C(CC(N)=O)NCC(N)C(N)=O", new AminoAcidEnums[]{AminoAcidEnums.Serine, AminoAcidEnums.Asparagine, AminoAcidEnums.Asparagine}),
+		TRP_GLU("[N][C]([C](O[C]c1c(C([O])=O)n([O])c2[c][c][c]c([C][O])c12)[C]([O])C([O])=O)C([O])=O", new AminoAcidEnums[]{AminoAcidEnums.Tryptophan, AminoAcidEnums.Glutamic_Acid}),
+		TRP_LYS("NCCCC(C(N)C(O)O)C1=CC=CC2=C1NC=C2C[C@H](N)C(O)=O", new AminoAcidEnums[]{AminoAcidEnums.Tryptophan, AminoAcidEnums.Lysine}),
+		;
 		
 		private final String smiles;
 		private final AminoAcidEnums[] aminoAcids;
@@ -170,23 +185,23 @@ public class DomainEnums {
 		public AminoAcidEnums[] aminoAcids(){
 			return aminoAcids;
 		}
-		public static Map<IMolecule, AminoAcidEnums[]> getAll() {
-			Map<IMolecule, AminoAcidEnums[]> allMultiMap = new HashMap<IMolecule, AminoAcidEnums[]>();
+		public static Map<IAtomContainer, AminoAcidEnums[]> getAll() {
+			Map<IAtomContainer, AminoAcidEnums[]> allMultiMap = new HashMap<IAtomContainer, AminoAcidEnums[]>();
 			for(MultipleAminoAcidEnums single : MultipleAminoAcidEnums.values()){
-				IMolecule mol = null;
+				IAtomContainer mol = null;
 				try{
-					mol = SmilesIO.readSmiles(single.smiles());
+					mol = SmilesIO.readSmilesTemplates(single.smiles());
 				}catch(Exception e){}
 				allMultiMap.put(mol, single.aminoAcids);
 			}
 			
 			return allMultiMap;
 		}
-		public static ArrayList<IMolecule> allMols() {
-			ArrayList<IMolecule> mols = new ArrayList<IMolecule>();
+		public static ArrayList<IAtomContainer> allMols() {
+			ArrayList<IAtomContainer> mols = new ArrayList<IAtomContainer>();
 			for(MultipleAminoAcidEnums single : MultipleAminoAcidEnums.values()){
-				IMolecule mol = null;
-				try{mol = SmilesIO.readSmiles(single.smiles());}catch(Exception e){}
+				IAtomContainer mol = null;
+				try{mol = SmilesIO.readSmilesTemplates(single.smiles());}catch(Exception e){}
 				mols.add(mol);
 			}
 			return mols;
@@ -205,7 +220,7 @@ public class DomainEnums {
 	public enum TailoringDomainEnums {
 		// Tailoring enzymes
 		GLYCOSYLTRANSFERASE("GTr"),
-		CHLORINATION("Cl"),
+		HALOGENATION("Cl"),
 		SULFOTRANSFERASE("ST"),
 		TRYPTOPHAN_DIOXYGENASE("Kyn"),
 		PROLINE_DEHYDROGENASE("DHO"),
@@ -220,7 +235,22 @@ public class DomainEnums {
 		OXAZOLE("OXZ"),
 		SULFUR_BETA_LACTAM("SULFUR_BETA_LACTAM"),
 		PRENYLATION("PRN"), 
-		C_HYDROXYLATION("CH");
+		C_HYDROXYLATION("CH"), 
+		LANTITHIONE_LINKAGE("LL"),
+		PYRIDINE_CLYLYZATION("PC"),
+		DURAMYCIN_LIKE_LINKAGE("DLL"),
+		BOTTROMYCIN_LIKE_LINKAGE("BLL"), 
+		THIOL_AMIDE("TA"),
+		DECARBOXYLATION("DCA"),
+		DEHYDRATASE("DEH"), 
+		OXAZOLINE("OXZN"),
+		THIAZOLINE("THZN"), 
+		AVI_CYSTEINE_LINKAGE("ACL"), 
+		LABIONIN_LINKAGE("LAL"),
+		TRIFOLOTOXIN_REDUCTION("TR"), 
+		THIOL_ESTHER("THE"), 
+		LACTAM("LCTM"), 
+		TERT_THIO_ETHER("TTE"),
 		;
 		
 		private final String abbreviation;
@@ -279,7 +309,7 @@ public class DomainEnums {
 			return abbreviation;
 		}
 		
-		public IMolecule mol() {
+		public IAtomContainer mol() {
 			return MoleculeClasses.getMol(smiles);
 		}
 	}
@@ -293,10 +323,17 @@ public class DomainEnums {
 		ethylmalonate_K("O=C(O)CCC", new PKsubstrate[]{PKsubstrate.ETHYLMALONYL}, new PolyKetideDomainEnums[]{PolyKetideDomainEnums.KETONE}),
 		_2_methoxyacetic_acid("OC(COC)=O", new PKsubstrate[]{PKsubstrate.MALONYL}, new PolyKetideDomainEnums[]{PolyKetideDomainEnums.HYDROXYL}),
 		ethanol("CCO", new PKsubstrate[]{PKsubstrate.MALONYL}, new PolyKetideDomainEnums[]{PolyKetideDomainEnums.HYDROXYL}),
-		_2_methylbut_2_enoic_acid("OC(/C(C)=C/C)=O", new PKsubstrate[]{PKsubstrate.METHYLMALONYL, PKsubstrate.MALONYL}, new PolyKetideDomainEnums[]{PolyKetideDomainEnums.KETONE, PolyKetideDomainEnums.SINGLEBOND}), //TODO FIX
+		_2_methylbut_2_enoic_acid("OC(/C(C)=C/C)=O", new PKsubstrate[]{PKsubstrate.METHOXYLMALONYL, PKsubstrate.MALONYL}, new PolyKetideDomainEnums[]{PolyKetideDomainEnums.KETONE, PolyKetideDomainEnums.DOUBLEBOND}), //TODO FIX
+		_2_methylbutanoic_acid("CCC(C)C(O)=O", new PKsubstrate[]{PKsubstrate.MALONYL, PKsubstrate.METHYLMALONYL}, new PolyKetideDomainEnums[]{PolyKetideDomainEnums.KETONE, PolyKetideDomainEnums.KETONE}),
 		isobutryic_acid("OC(C(C)C)=O", new PKsubstrate[]{PKsubstrate.ISOBUTRYL}, new PolyKetideDomainEnums[]{PolyKetideDomainEnums.KETONE}),
 		_3_methoxyacrylic_acid("OC(/C=C/OC)=O", new PKsubstrate[]{PKsubstrate.MALONYL}, new PolyKetideDomainEnums[]{PolyKetideDomainEnums.KETONE}),
 		acrylic_acid("OC(C=C)=O", new PKsubstrate[]{PKsubstrate.ETHYLMALONYL}, new PolyKetideDomainEnums[]{PolyKetideDomainEnums.KETONE}),
+		methyl_malonate("CCC(O)=O", new PKsubstrate[]{PKsubstrate.METHYLMALONYL}, new PolyKetideDomainEnums[]{PolyKetideDomainEnums.KETONE}),
+		methyl_malonate2("CC(O)=O", new PKsubstrate[]{PKsubstrate.METHYLMALONYL}, new PolyKetideDomainEnums[]{PolyKetideDomainEnums.KETONE}),
+		methyl_malonate_hydroxyl("CCC(O)=O", new PKsubstrate[]{PKsubstrate.METHYLMALONYL}, new PolyKetideDomainEnums[]{PolyKetideDomainEnums.KETONE}),
+		malonate("CC(O)C(O)=O", new PKsubstrate[]{PKsubstrate.MALONYL}, new PolyKetideDomainEnums[]{PolyKetideDomainEnums.KETONE}),
+		methoxy_malonate("COC(C)C(O)=O", new PKsubstrate[]{PKsubstrate.METHOXYLMALONYL}, new PolyKetideDomainEnums[]{PolyKetideDomainEnums.HYDROXYL}), //OCC(O)=O
+		hydroxy_malonate("OCC(O)=O", new PKsubstrate[]{PKsubstrate.MALONYL}, new PolyKetideDomainEnums[]{PolyKetideDomainEnums.HYDROXYL}),
 		;
 		private final String smiles;
 		private final PKsubstrate[] pkSubstrate;
@@ -316,7 +353,7 @@ public class DomainEnums {
 		public PolyKetideDomainEnums[] pkDomains(){
 			return pkDomain;
 		}
-		public IMolecule mol() {
+		public IAtomContainer mol() {
 			return MoleculeClasses.getMol(smiles);
 		}
 	}
@@ -349,12 +386,12 @@ public class DomainEnums {
 			return smiles;
 		}
 		
-		public static Map<CStarterSubstrate, IMolecule> all(){
-			Map<CStarterSubstrate, IMolecule> all = new HashMap<CStarterSubstrate, IMolecule>();
+		public static Map<CStarterSubstrate, IAtomContainer> all(){
+			Map<CStarterSubstrate, IAtomContainer> all = new HashMap<CStarterSubstrate, IAtomContainer>();
 			
 			for(CStarterSubstrate substrate : CStarterSubstrate.values()){
-				IMolecule mol = null;
-				try{mol = SmilesIO.readSmiles(substrate.smiles());}catch(Exception e){}
+				IAtomContainer mol = null;
+				try{mol = SmilesIO.readSmilesTemplates(substrate.smiles());}catch(Exception e){}
 				all.put(substrate, mol);
 			}
 			return all;

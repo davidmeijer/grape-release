@@ -7,7 +7,7 @@ import org.openscience.cdk.graph.ConnectivityChecker;
 import org.openscience.cdk.interfaces.IAtom;
 import org.openscience.cdk.interfaces.IAtomContainer;
 import org.openscience.cdk.interfaces.IBond;
-import org.openscience.cdk.interfaces.IMolecule;
+import org.openscience.cdk.interfaces.IAtomContainer;
 
 /**
  * Finds macrocycles of lactones/lactams, can find counts of each, and detemrine the key molecules involved (hydroxyl and carboxyl carbons and hydroxyl oxygen)
@@ -22,7 +22,7 @@ public class MacrocycleFinder {
 	 * @return the lactone carbons and hydroxyl oxygen
 	 */
 	
-	public static List<List<IAtom>> getLactoneCandO(IMolecule molecule){
+	public static List<List<IAtom>> getLactoneCandO(IAtomContainer molecule){
 		
 		List<List<IAtom>> lactoneAtoms = getLactCandO(molecule, "O.sp3");
 		
@@ -33,7 +33,7 @@ public class MacrocycleFinder {
 	 * @param molecule being analyzed
 	 * @return the lactam carbons and hydroxyl oxygen
 	 */
-	public static List<IAtom> getLactamCandN(IMolecule molecule){
+	public static List<IAtom> getLactamCandN(IAtomContainer molecule){
 		
 		List<List<IAtom>> lactamAtoms = getLactCandO(molecule, "N.amide");
 		return lactamAtoms.get(0);
@@ -45,7 +45,7 @@ public class MacrocycleFinder {
 	 * @param type of atom being looked for, either N.amide (lactam) or O.sp3 (lactone)
 	 * @return the lact carbons and hydroxyl oxygen
 	 */
-	private static List<List<IAtom>> getLactCandO(IMolecule molecule, String type) {
+	private static List<List<IAtom>> getLactCandO(IAtomContainer molecule, String type) {
 		List<List<IAtom>> allCandOs = new ArrayList<List<IAtom>>();		
 		
 		for(int index = 0; index < molecule.getAtomCount(); index++) {
@@ -95,7 +95,7 @@ public class MacrocycleFinder {
 	 * @param molecule being analyzed
 	 * @return number of lactams
 	 */
-	public static int getLactamCount(IMolecule molecule) {
+	public static int getLactamCount(IAtomContainer molecule) {
 		int lactamCount = getLactCount(molecule, "N.amide");
 		return lactamCount;
 	}
@@ -117,7 +117,6 @@ public class MacrocycleFinder {
 	private static int getLactCount(IAtomContainer molecule, String type) {
 		int lactCount = 0;
 		for(int index = 0; index < molecule.getAtomCount(); index++) {
-			
 			if(!(molecule.getAtom(index).getAtomTypeName().equals(type))) {
 				continue;
 			}
