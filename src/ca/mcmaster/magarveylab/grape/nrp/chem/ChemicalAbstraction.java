@@ -9,13 +9,18 @@ import ca.mcmaster.magarveylab.grape.enums.MoleculeClasses.ChemicalType;
 public class ChemicalAbstraction {
 	private List<Fragment> monomerFragments  = new ArrayList<Fragment>();
 	private ChemicalType chemicalType;
+	private String name;
 	private ChemicalSubType chemicalSubType = ChemicalSubType.NONE;
 	private String chemicalScaffoldName = null;
 	private String errorMessage;
 	private boolean error = false;
 	
-	public ChemicalAbstraction() {
-		
+	public ChemicalAbstraction(String name) {
+		this.name = name;
+	}
+
+	public String getName() {
+		return name;
 	}
 
 	/**

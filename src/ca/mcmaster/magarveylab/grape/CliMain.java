@@ -26,8 +26,10 @@ import org.openscience.cdk.exception.InvalidSmilesException;
 	 */
 	public static void main(String[] args) {
 		Options options = createOptions();
-		String header = "GRAPE - Genetic Retro Assembly Prediction Engine, is a tool designed to deconstruct natural products into fragments that represent their biosynthetic components.";
-		String footer = "Magarvey Lab 2015. Written by Chris Dejong and Greg Chen.";
+		String header = "GRAPE - Genetic Retro Assembly Prediction Engine, " +
+				"is a tool designed to deconstruct natural products into " +
+				"fragments that represent their biosynthetic components.";
+		String footer = "Magarvey Lab 2016. Written by Chris Dejong and Greg Chen.";
 		
 		try {
 			CommandLineParser parser = new GnuParser();

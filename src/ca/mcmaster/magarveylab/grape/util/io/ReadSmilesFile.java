@@ -5,7 +5,7 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Scanner;
 
-public class ReadFile {
+public class ReadSmilesFile {
 
 	@SuppressWarnings("resource")
 	public static Map<String, String> read(File file) {

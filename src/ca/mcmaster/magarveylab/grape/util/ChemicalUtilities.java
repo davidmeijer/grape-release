@@ -17,7 +17,6 @@ import org.openscience.cdk.graph.ConnectivityChecker;
 import org.openscience.cdk.interfaces.IAtom;
 import org.openscience.cdk.interfaces.IBond;
 import org.openscience.cdk.interfaces.IAtomContainer;
-import org.openscience.cdk.interfaces.IBond.Order;
 import org.openscience.cdk.isomorphism.UniversalIsomorphismTester;
 import org.openscience.cdk.isomorphism.mcss.RMap;
 import org.openscience.cdk.smsd.Isomorphism;
@@ -28,7 +27,7 @@ import ca.mcmaster.magarveylab.grape.enums.DomainEnums.CStarterSubstrate;
 import ca.mcmaster.magarveylab.grape.nrp.chem.ChemicalAbstraction;
 import ca.mcmaster.magarveylab.grape.nrp.chem.Fragment;
 import ca.mcmaster.magarveylab.grape.nrp.chem.Fragment.FragmentType;
-import ca.mcmaster.magarveylab.grape.nrp.chem.NRPPredictor;
+import ca.mcmaster.magarveylab.grape.nrp.chem.MoleculePredictor;
 import ca.mcmaster.magarveylab.grape.util.io.SmilesIO;
 
 public class ChemicalUtilities {
@@ -492,13 +491,14 @@ public class ChemicalUtilities {
 	/**
 	 * Get monomer fragments from SMILES string
 	 * @param smiles
+	 * @param name 
 	 * @throws ExceptionSmilesTooLarge 
 	 * @throws ExceptionSmilesNotConnected 
 	 * @throws InvalidSmilesException 
 	 */
-	public static ChemicalAbstraction getChemicalAbstractionFromSmiles(String smiles, NRPPredictor predictor){
+	public static ChemicalAbstraction getChemicalAbstractionFromSmiles(String smiles, String name, MoleculePredictor predictor){
 		IAtomContainer currentMolecule = null;
-		ChemicalAbstraction chemicalAbstraction = new ChemicalAbstraction();
+		ChemicalAbstraction chemicalAbstraction = new ChemicalAbstraction(name);
 		try {
 			currentMolecule = SmilesIO.readSmiles(smiles);
 		} catch (IllegalArgumentException | IOException | CDKException e) {
@@ -511,11 +511,9 @@ public class ChemicalUtilities {
 		}else{
 			try {
 				if(AtomContainerManipulator.getNaturalExactMass(currentMolecule) > 2500){ //TODO: currently no overrride
-					System.err.println("Molecule large... may take a while");
-					chemicalAbstraction = predictor.getChemicalAbstraction(currentMolecule);
-				} else{
-					chemicalAbstraction = predictor.getChemicalAbstraction(currentMolecule);
+					System.out.println("Molecule is large... this may take a while");
 				}
+				chemicalAbstraction = predictor.getChemicalAbstraction(currentMolecule, name);
 			} catch(Exception e) {
 				e.printStackTrace();
 				chemicalAbstraction.setErrorMessage("Could not be broken down");			

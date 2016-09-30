@@ -6,10 +6,10 @@ public class GrapeConfig {
 	
 	private static GrapeConfig config = new GrapeConfig();
 	
-	private String version = "2.10.1";
+	private String version = "3.0.1";
 	private File file = null;
 	private String smiles = new String();
-	private String name = new String();
+	private String name = "molecule";
 	private String id = new String();
 	private boolean image = false;
 	private boolean json = false;
@@ -50,7 +50,6 @@ public class GrapeConfig {
 	public String getOutputPath(){
 		return outputPath;
 	}
-	
 	public String getAminoAcidsPath() {
 		return aminoAcidsPath;
 	}

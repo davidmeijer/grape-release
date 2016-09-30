@@ -18,7 +18,7 @@ import ca.mcmaster.magarveylab.grape.enums.MoleculeClasses.Terpenes;
 import ca.mcmaster.magarveylab.grape.enums.MoleculeClasses.AromaticType2;
 import ca.mcmaster.magarveylab.grape.util.io.SmilesIO;
 
-public class CatigorizeOtherPK {
+public class PolyketideWalker {
 	
 	private static UniversalIsomorphismTester uit = new UniversalIsomorphismTester();
 	private static Map<String, IAtomContainer> otherAromaticMolecules = AromaticNotType2.getAll();
