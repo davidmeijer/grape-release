@@ -1,4 +1,4 @@
-## GRAPE  
+## GARLIC  
 
 GRAPE (Generalized Retrobiosynthetic Assembly Prediction Engine) is a software package for the retrobiosynthesis of natural small molecules, particularly those that are bacterially derived.
 
@@ -23,6 +23,8 @@ $ java -jar grape.jar -h
 ## Dependencies
 
 The dependant libraries are located in this repository. The neo4j library will soon be replaced as currently only the json constructor (ajax) is used in the release version of GRAPE and there are no connections to a neo4j database.
+
+GRAPE requires the CDK >= 1.5.9
 
 ## Citing GRAPE
 
