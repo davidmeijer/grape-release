@@ -4,7 +4,7 @@ GRAPE (Generalized Retrobiosynthetic Assembly Prediction Engine) is a software p
 
 ## Usage
 
-PRISM is a Java package, which can be compiled then run from the command line. 
+GRAPE is a Java package, which can be compiled then run from the command line. 
 
 A sample command line run might look like: 
 
