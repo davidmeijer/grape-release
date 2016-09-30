@@ -1,4 +1,4 @@
-## GARLIC  
+## GRAPE  
 
 GRAPE (Generalized Retrobiosynthetic Assembly Prediction Engine) is a software package for the retrobiosynthesis of natural small molecules, particularly those that are bacterially derived.
 
