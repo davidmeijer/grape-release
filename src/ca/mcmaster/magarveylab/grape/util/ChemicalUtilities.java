@@ -24,10 +24,10 @@ import org.openscience.cdk.smsd.interfaces.Algorithm;
 import org.openscience.cdk.tools.manipulator.AtomContainerManipulator;
 
 import ca.mcmaster.magarveylab.grape.enums.DomainEnums.CStarterSubstrate;
-import ca.mcmaster.magarveylab.grape.nrp.chem.ChemicalAbstraction;
-import ca.mcmaster.magarveylab.grape.nrp.chem.Fragment;
-import ca.mcmaster.magarveylab.grape.nrp.chem.Fragment.FragmentType;
-import ca.mcmaster.magarveylab.grape.nrp.chem.MoleculePredictor;
+import ca.mcmaster.magarveylab.grape.mol.chem.ChemicalAbstraction;
+import ca.mcmaster.magarveylab.grape.mol.chem.Fragment;
+import ca.mcmaster.magarveylab.grape.mol.chem.MoleculePredictor;
+import ca.mcmaster.magarveylab.grape.mol.chem.Fragment.FragmentType;
 import ca.mcmaster.magarveylab.grape.util.io.SmilesIO;
 
 public class ChemicalUtilities {

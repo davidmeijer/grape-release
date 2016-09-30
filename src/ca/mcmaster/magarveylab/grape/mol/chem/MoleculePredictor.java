@@ -1,4 +1,4 @@
-package ca.mcmaster.magarveylab.grape.nrp.chem;
+package ca.mcmaster.magarveylab.grape.mol.chem;
 
 import java.util.HashMap;
 import java.util.List;
@@ -10,9 +10,9 @@ import org.openscience.cdk.tools.manipulator.AtomContainerManipulator;
 import ca.mcmaster.magarveylab.grape.enums.DomainEnums.TailoringDomainEnums;
 import ca.mcmaster.magarveylab.grape.enums.MoleculeClasses.ChemicalSubType;
 import ca.mcmaster.magarveylab.grape.enums.MoleculeClasses.ChemicalType;
-import ca.mcmaster.magarveylab.grape.nrp.chem.Fragment.FragmentType;
-import ca.mcmaster.magarveylab.grape.nrp.chem.matcher.UnusualPolyketideIdentifier;
-import ca.mcmaster.magarveylab.grape.nrp.chem.matcher.SubstrateMatcher;
+import ca.mcmaster.magarveylab.grape.mol.chem.Fragment.FragmentType;
+import ca.mcmaster.magarveylab.grape.mol.chem.matcher.SubstrateMatcher;
+import ca.mcmaster.magarveylab.grape.mol.chem.matcher.UnusualPolyketideIdentifier;
 import ca.mcmaster.magarveylab.grape.pk.chem.PolyketideWalker;
 import ca.mcmaster.magarveylab.grape.pk.chem.MacrolideChecker;
 

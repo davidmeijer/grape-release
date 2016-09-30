@@ -10,7 +10,7 @@ import org.openscience.cdk.interfaces.IAtomContainer;
 import ca.mcmaster.magarveylab.grape.enums.DomainEnums;
 import ca.mcmaster.magarveylab.grape.enums.DomainEnums.AminoAcidEnums;
 import ca.mcmaster.magarveylab.grape.enums.DomainEnums.TailoringDomainEnums;
-import ca.mcmaster.magarveylab.grape.nrp.chem.matcher.SubstrateMatcher;
+import ca.mcmaster.magarveylab.grape.mol.chem.matcher.SubstrateMatcher;
 
 public class ReadAminoAcidFile {
 	

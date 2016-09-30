@@ -1,4 +1,4 @@
-package ca.mcmaster.magarveylab.grape.nrp.chem.matcher;
+package ca.mcmaster.magarveylab.grape.mol.chem.matcher;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,8 +19,8 @@ import org.openscience.cdk.smiles.smarts.SMARTSQueryTool;
 
 import ca.mcmaster.magarveylab.grape.enums.DomainEnums.PolyKetideDomainEnums;
 import ca.mcmaster.magarveylab.grape.enums.DomainEnums.TailoringDomainEnums;
-import ca.mcmaster.magarveylab.grape.nrp.chem.Fragment;
-import ca.mcmaster.magarveylab.grape.nrp.chem.Fragment.FragmentType;
+import ca.mcmaster.magarveylab.grape.mol.chem.Fragment;
+import ca.mcmaster.magarveylab.grape.mol.chem.Fragment.FragmentType;
 import ca.mcmaster.magarveylab.grape.pk.chem.BackboneAnalyser;
 import ca.mcmaster.magarveylab.grape.pk.chem.PolyketideModulePredictor;
 import ca.mcmaster.magarveylab.grape.pk.modules.PKsubstrate;

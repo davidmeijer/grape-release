@@ -7,8 +7,8 @@ import java.util.Map.Entry;
 import org.openscience.cdk.exception.CDKException;
 import org.openscience.cdk.exception.InvalidSmilesException;
 
-import ca.mcmaster.magarveylab.grape.nrp.chem.ChemicalAbstraction;
-import ca.mcmaster.magarveylab.grape.nrp.chem.MoleculePredictor;
+import ca.mcmaster.magarveylab.grape.mol.chem.ChemicalAbstraction;
+import ca.mcmaster.magarveylab.grape.mol.chem.MoleculePredictor;
 import ca.mcmaster.magarveylab.grape.util.ChemicalUtilities;
 import ca.mcmaster.magarveylab.grape.util.io.ImageOutput;
 import ca.mcmaster.magarveylab.grape.util.io.JsonOutput;

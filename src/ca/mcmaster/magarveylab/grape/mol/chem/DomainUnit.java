@@ -1,4 +1,4 @@
-package ca.mcmaster.magarveylab.grape.nrp.chem;
+package ca.mcmaster.magarveylab.grape.mol.chem;
 
 import java.util.ArrayList;
 

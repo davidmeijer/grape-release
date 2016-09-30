@@ -16,9 +16,9 @@ import org.openscience.cdk.exception.CDKException;
 import ca.mcmaster.magarveylab.grape.GrapeConfig;
 import ca.mcmaster.magarveylab.grape.enums.DomainEnums.AminoAcidEnums;
 import ca.mcmaster.magarveylab.grape.enums.DomainEnums.PolyKetideDomainEnums;
-import ca.mcmaster.magarveylab.grape.nrp.chem.ChemicalAbstraction;
-import ca.mcmaster.magarveylab.grape.nrp.chem.Fragment;
-import ca.mcmaster.magarveylab.grape.nrp.chem.Fragment.FragmentType;
+import ca.mcmaster.magarveylab.grape.mol.chem.ChemicalAbstraction;
+import ca.mcmaster.magarveylab.grape.mol.chem.Fragment;
+import ca.mcmaster.magarveylab.grape.mol.chem.Fragment.FragmentType;
 import ca.mcmaster.magarveylab.grape.util.ChemicalUtilities;
 
 public class JsonOutput {

@@ -1,4 +1,4 @@
-package ca.mcmaster.magarveylab.grape.nrp.chem.matcher;
+package ca.mcmaster.magarveylab.grape.mol.chem.matcher;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -26,8 +26,8 @@ import ca.mcmaster.magarveylab.grape.enums.DomainEnums.PolyKetideDomainEnums;
 import ca.mcmaster.magarveylab.grape.enums.DomainEnums.SmallPKunits;
 import ca.mcmaster.magarveylab.grape.enums.DomainEnums.SugarModificationsEnums;
 import ca.mcmaster.magarveylab.grape.enums.DomainEnums.TailoringDomainEnums;
-import ca.mcmaster.magarveylab.grape.nrp.chem.Fragment;
-import ca.mcmaster.magarveylab.grape.nrp.chem.Fragment.FragmentType;
+import ca.mcmaster.magarveylab.grape.mol.chem.Fragment;
+import ca.mcmaster.magarveylab.grape.mol.chem.Fragment.FragmentType;
 import ca.mcmaster.magarveylab.grape.pk.modules.PKsubstrate;
 import ca.mcmaster.magarveylab.grape.util.ChemicalUtilities;
 import ca.mcmaster.magarveylab.grape.util.io.ReadAminoAcidFile;

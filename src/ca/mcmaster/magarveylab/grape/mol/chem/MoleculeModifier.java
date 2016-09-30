@@ -1,4 +1,4 @@
-package ca.mcmaster.magarveylab.grape.nrp.chem;
+package ca.mcmaster.magarveylab.grape.mol.chem;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -15,10 +15,10 @@ import org.openscience.cdk.interfaces.IChemObjectBuilder;
 import org.openscience.cdk.isomorphism.UniversalIsomorphismTester;
 import ca.mcmaster.magarveylab.grape.enums.DomainEnums.PolyKetideDomainEnums;
 import ca.mcmaster.magarveylab.grape.enums.DomainEnums.TailoringDomainEnums;
-import ca.mcmaster.magarveylab.grape.nrp.chem.Fragment.FragmentType;
-import ca.mcmaster.magarveylab.grape.nrp.chem.modifications.BridgeBreakages;
-import ca.mcmaster.magarveylab.grape.nrp.chem.modifications.SubstrateBreakages;
-import ca.mcmaster.magarveylab.grape.nrp.chem.modifications.UniqueSubstructureBreakages;
+import ca.mcmaster.magarveylab.grape.mol.chem.Fragment.FragmentType;
+import ca.mcmaster.magarveylab.grape.mol.chem.modifications.BridgeBreakages;
+import ca.mcmaster.magarveylab.grape.mol.chem.modifications.SubstrateBreakages;
+import ca.mcmaster.magarveylab.grape.mol.chem.modifications.UniqueSubstructureBreakages;
 import ca.mcmaster.magarveylab.grape.pk.modules.PKsubstrate;
 import ca.mcmaster.magarveylab.grape.util.ChemicalUtilities;
 import ca.mcmaster.magarveylab.grape.util.io.SmilesIO;

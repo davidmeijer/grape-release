@@ -1,4 +1,4 @@
-package ca.mcmaster.magarveylab.grape.nrp.chem.modifications;
+package ca.mcmaster.magarveylab.grape.mol.chem.modifications;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -16,8 +16,8 @@ import org.openscience.cdk.interfaces.IAtomContainer;
 import org.openscience.cdk.interfaces.IAtomContainerSet;
 import org.openscience.cdk.interfaces.IBond;
 
-import ca.mcmaster.magarveylab.grape.nrp.chem.Fragment;
-import ca.mcmaster.magarveylab.grape.nrp.chem.MoleculeModifier;
+import ca.mcmaster.magarveylab.grape.mol.chem.Fragment;
+import ca.mcmaster.magarveylab.grape.mol.chem.MoleculeModifier;
 import ca.mcmaster.magarveylab.grape.util.ChemicalUtilities;
 import ca.mcmaster.magarveylab.grape.util.io.SmilesIO;
 
