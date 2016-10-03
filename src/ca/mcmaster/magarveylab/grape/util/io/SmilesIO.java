@@ -44,7 +44,7 @@ import org.openscience.cdk.renderer.generators.*;
 public class SmilesIO {
 	
 	/**
-	 * Generate an IAtomContainer from a SMILES string. Ignores stereochemistry
+	 * Generate an IAtomContainer from a SMILES string.
 	 * @param smiles	The structure to generate an IAtomContainer instance from, as a SMILES string
 	 * @return			An IAtomContainer object corresponding to the input SMILES
 	 * @throws IOException 
@@ -57,20 +57,16 @@ public class SmilesIO {
 			SmilesParser parser = new SmilesParser(builder);
 	        parser.kekulise(true);
 			mol = parser.parseSmiles(smiles);
+			// Remove hydrogens
+			mol = AtomContainerManipulator.removeHydrogens(mol);
+			//redraw makes input more 'standard' for CDK
 			mol = parser.parseSmiles(generateSmiles(mol));
-			mol = AtomContainerManipulator.removeNonChiralHydrogens(mol);
-			AtomContainerManipulator.percieveAtomTypesAndConfigureAtoms(mol);
+			mol = AtomContainerManipulator.removeHydrogens(mol);
+			AtomContainerManipulator.percieveAtomTypesAndConfigureUnsetProperties(mol);
 		}
 		return mol;
 	}
 	
-	/**
-	 * This method reads the smiles, but also converts to canonical, so no stereochemistry is considered
-	 * @param smiles
-	 * @return
-	 * @throws IOException
-	 * @throws CDKException
-	 */
 	public static IAtomContainer readSmilesTemplates(String smiles) throws IOException, CDKException {
 		IAtomContainer mol = null;
 		synchronized (SmilesIO.class) {
@@ -79,14 +75,14 @@ public class SmilesIO {
 	        parser.kekulise(true);
 			mol = parser.parseSmiles(smiles);
 			// Remove hydrogens
-			mol = AtomContainerManipulator.removeNonChiralHydrogens(mol);
+			mol = AtomContainerManipulator.removeHydrogens(mol);
 			AtomContainerManipulator.percieveAtomTypesAndConfigureUnsetProperties(mol);
 		}
 		return mol;
 	}
 
 	/**
-	 * Generate a SMILES string from an IAtomContainer, this is canonical with no stereochemistry
+	 * Generate a SMILES string from an IAtomContainer
 	 * @param imol	The molecule to be parsed
 	 * @return		The molecule's structures as a SMILES string
 	 * @throws CDKException 
@@ -99,8 +95,12 @@ public class SmilesIO {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		new SmilesGenerator();
-		SmilesGenerator sg = SmilesGenerator.unique();
+		AtomContainerManipulator.convertImplicitToExplicitHydrogens(molCopy);
+		molCopy = AtomContainerManipulator.removeHydrogens(molCopy);
+		SmilesGenerator sg = new SmilesGenerator();
+		for(IAtom atom : molCopy.atoms()){
+			atom.setImplicitHydrogenCount(0);
+		}
 		String smiles = sg.create(molCopy);
 		return smiles;
 	}
