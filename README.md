@@ -31,3 +31,7 @@ GRAPE requires the CDK >= 1.5.9
 Please cite: 
 
 > XXXXXXXXX
+
+## DISCLAIMER
+
+This software is patent pending
