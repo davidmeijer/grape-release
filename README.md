@@ -30,8 +30,8 @@ GRAPE requires the CDK >= 1.5.9
 
 Please cite: 
 
-> XXXXXXXXX
+> https://www.nature.com/articles/nchembio.2188
 
 ## DISCLAIMER
 
-This software is patent pending
+This software is supported by a patent
